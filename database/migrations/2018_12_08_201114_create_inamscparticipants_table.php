@@ -10,6 +10,7 @@ class CreateInamscparticipantsTable extends Migration
     {
         Schema::create('inamscparticipants', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('inamsc_id');
             $table->text('nama');
             $table->text('universitas');
             $table->text('jurusan');

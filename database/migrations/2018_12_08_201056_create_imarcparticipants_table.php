@@ -11,6 +11,7 @@ class CreateImarcparticipantsTable extends Migration
         Schema::create('imarcparticipants', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('imarc_id');
+            $table->text('nama');
             $table->text('universitas');
             $table->text('jurusan');
             // $table->timestamps();

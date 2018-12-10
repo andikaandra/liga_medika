@@ -35,4 +35,12 @@ Route::prefix('admin')->group(function () {
 Route::prefix('users')->group(function () {
   Route::put('inamsc/register', 'InamscController@store');
   Route::post('inamsc/simposium', 'InamscController@registerSymposium');
+  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
 });
+
+// get inamsc page
+Route::prefix('inamsc')->group(function () {
+  Route::get('/video-publikasi', 'InamscController@videoPublikasi');
+  Route::get('/literature-review', 'InamscController@literatureReview');
+});
+
