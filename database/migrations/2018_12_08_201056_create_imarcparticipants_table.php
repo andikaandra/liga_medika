@@ -10,7 +10,10 @@ class CreateImarcparticipantsTable extends Migration
     {
         Schema::create('imarcparticipants', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->unsignedInteger('imarc_id');
+            $table->text('universitas');
+            $table->text('jurusan');
+            // $table->timestamps();
         });
     }
 

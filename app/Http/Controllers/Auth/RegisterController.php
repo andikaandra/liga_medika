@@ -47,16 +47,30 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-        // dispatch(new SendVerificationEmail($user));
-        return view('verification');
+        return response()->json(['message' => 'User successfully registered.'], 201);
+        // return view('verification');
     }
 
     public function verify($token)
     {
+      try {
         $user = User::where('email_token',$token)->first();
-        $user->verified = 1;
-        if($user->save()){
-            return view('emailconfirm',['user'=>$user]);
+
+        if (!$user) {
+          throw new \Exception("Page not found", 404);
         }
+
+        if ($user->verified) {
+          return "Click here to login";
+        }
+        $user->verified = 1;
+        $user->save();
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage()], $e->getCode());
+      }
+
+      return response()->json(['message' => 'Email verified.', 'user' => $user], 200);
+
+      // return view('email.email-confirmed',['user'=>$user]);
     }
 }

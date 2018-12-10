@@ -9,8 +9,13 @@ class CreateImssoTable extends Migration
     public function up()
     {
         Schema::create('imsso', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('user_id');
+          $table->text('link_travel_plan');
+          $table->text('file_path');
+          $table->integer('status_pembayaran');
+          $table->integer('status_lolos');
+          $table->timestamps();
         });
     }
 

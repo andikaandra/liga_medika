@@ -9,8 +9,12 @@ class CreateSymposiumTable extends Migration
     public function up()
     {
         Schema::create('symposium', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('id_user');
+          $table->text('nama');
+          $table->text('ktp');
+          $table->integer('status_pembayaran');
+          $table->timestamps();
         });
     }
 

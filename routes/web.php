@@ -16,7 +16,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
+Route::get('/email/verify/{token}', 'Auth\RegisterController@verify');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index');
+
+
+// admin
+Route::prefix('admin')->group(function () {
+  Route::get('inamsc', 'InamscController@getInamsc');
+  Route::get('inamsc/simposium', 'InamscController@getSymposium');
+});
+
+
+// participant
+// inamsc
+
+Route::prefix('users')->group(function () {
+  Route::put('inamsc/register', 'InamscController@store');
+  Route::post('inamsc/simposium', 'InamscController@registerSymposium');
+});

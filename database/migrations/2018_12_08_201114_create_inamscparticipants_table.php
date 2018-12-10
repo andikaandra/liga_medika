@@ -10,7 +10,11 @@ class CreateInamscparticipantsTable extends Migration
     {
         Schema::create('inamscparticipants', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->text('nama');
+            $table->text('universitas');
+            $table->text('jurusan');
+            $table->text('kode_ambassador')->nullable();
+            // $table->timestamps();
         });
     }
 

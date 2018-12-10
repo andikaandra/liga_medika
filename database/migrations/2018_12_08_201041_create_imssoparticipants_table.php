@@ -9,8 +9,10 @@ class CreateImssoparticipantsTable extends Migration
     public function up()
     {
         Schema::create('imssoparticipants', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('imsso_id');
+          $table->text('universitas');
+          $table->text('jurusan');
         });
     }
 

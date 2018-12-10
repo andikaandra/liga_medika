@@ -10,6 +10,8 @@ class CreateEticketsTable extends Migration
     {
         Schema::create('etickets', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('hfgm_id');
+            $table->text('nomor_ticket');
             $table->timestamps();
         });
     }

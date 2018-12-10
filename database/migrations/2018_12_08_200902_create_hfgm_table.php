@@ -9,8 +9,14 @@ class CreateHfgmTable extends Migration
     public function up()
     {
         Schema::create('hfgm', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('user_id');
+          $table->integer('type');
+          $table->text('nama');
+          $table->text('ktp');
+          $table->integer('status_pembayaran');
+          $table->integer('jumlah_tiket');
+          $table->timestamps();
         });
     }
 
