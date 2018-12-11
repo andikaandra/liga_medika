@@ -44,4 +44,11 @@ Route::prefix('users')->group(function () {
 
 
 
+  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
+});
+
+// get inamsc page
+Route::prefix('inamsc')->group(function () {
+  Route::get('/video-publikasi', 'InamscController@videoPublikasi');
+  Route::get('/literature-review', 'InamscController@literatureReview');
 });
