@@ -71,8 +71,6 @@
           @else
             @include('registration-forms.pre-registration')
           @endif
-
-          <p>nanti kalo udah milih cabang halaman yang muncul adalah yg dibawah!</p>
           <br>
         </div>
       </div>
