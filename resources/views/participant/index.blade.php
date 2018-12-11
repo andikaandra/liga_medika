@@ -47,7 +47,9 @@
         <div class="card">
 
 
-          {{-- @include('registration-forms.pre-registration') --}}
+          @include('registration-forms.pre-registration')
+          <p>nanti kalo udah milih cabang halaman yang muncul adalah yg dibawah!</p>
+          <br>
           @include('registration-forms.register-inamsc')
         </div>
       </div>

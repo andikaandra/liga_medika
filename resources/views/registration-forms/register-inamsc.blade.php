@@ -16,7 +16,7 @@
       Register INAMSC
     </h3>
   </div>
-  <p>Please choose a sub competition you would like to register</p>
+  <p>Please choose a sub competition/ event you would like to register</p>
 
   <div class="cabangs">
     <div class="row">
