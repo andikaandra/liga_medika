@@ -9,6 +9,7 @@ use App\Payment;
 use App\INAMSC;
 use App\INAMSCParticipant;
 use Auth;
+use App\Lomba;
 
 class InamscController extends Controller
 {
@@ -21,7 +22,8 @@ class InamscController extends Controller
     }
 
     public function registerSymposiumPage() {
-      return view('registration-forms.symposium');
+      $lomba = Lomba::where('nama', 'INAMSC')->first();
+      return view('registration-forms.symposium', ['lomba' => $lomba]);
     }
 
     // register current user to inamsc
@@ -126,7 +128,9 @@ class InamscController extends Controller
           'user_id' => $user_id,
           'nama' => $request->nama,
           'ktp' => str_replace("public","", $path),
-          'status_pembayaran' => $request->status_pembayaran
+          'status_pembayaran' => $request->status_pembayaran,
+          'gelombang' => $request->gelombang,
+          'status_pembayaran' => 0
         ]);
 
 
@@ -137,7 +141,7 @@ class InamscController extends Controller
           'user_id' => $user_id,
           'tipe_lomba' => $tipe_lomba,
           'location' => str_replace("public","", $path),
-          'tipe_pembayaran' => $request->tipe_pembayaran,
+          'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
           'nama_rekening' => $request->nama_rekening,
           'jumlah' => $request->jumlah_transfer
         ]);
@@ -146,7 +150,9 @@ class InamscController extends Controller
         return response()->json($e->getMessage(), 500);
       }
 
-      return response()->json(['message' => 'success'], 201);
+      return redirect()->back();
+
+      // return response()->json(['message' => 'success'], 201);
 
     }
 

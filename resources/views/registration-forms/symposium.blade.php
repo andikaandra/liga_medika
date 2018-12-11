@@ -15,7 +15,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-warning">
-          <p>Hello <strong>Adis</strong>. You have been assigned unique <strong>ID 003</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp 150.003</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>Adis</strong>. You have been assigned unique <strong>ID 003</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + 003,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <hr>
+          <p>Simposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
         <div class="card">
           <div class="progress-section">
@@ -35,7 +37,7 @@
             </div>
             <p>Please fill in the following fields</p>
 
-            <form class="" action="#" method="post">
+            <form class="" action="#" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="row">
                 <div class="col-md-6">
@@ -63,7 +65,8 @@
                   </div>
                 </div>
               </div>
-
+              <input type="hidden" name="gelombang" value="{{$lomba->gelombang_sekarang}}">
+              <input type="submit" name="" value="Submit" class="btn btn-success">
             </form>
 
           </div>

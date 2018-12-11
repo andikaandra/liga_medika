@@ -10,7 +10,7 @@ class CreateSymposiumTable extends Migration
     {
         Schema::create('symposium', function (Blueprint $table) {
           $table->increments('id');
-          $table->unsignedInteger('id_user');
+          $table->unsignedInteger('user_id');
           $table->text('nama');
           $table->text('ktp');
           $table->integer('status_pembayaran');

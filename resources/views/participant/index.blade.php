@@ -46,10 +46,13 @@
 
     {{-- <div class="container"> --}}
       <div class="col-md-12">
+        @if (Auth::user() && Auth::user()->cabang != null)
         <div class="alert alert-info">
           Hello <strong>Adis</strong>. You chose INAMSC in pre-registration. Please complete the next step.
           If you would like to start over, you may <a href="#">Click here to reset</a>.
         </div>
+      @endif
+
         @if (\Session::get('message'))
           <div class="alert alert-success">
             {{\Session::get('message')}}
@@ -57,9 +60,14 @@
         @endif
         <div class="card">
 
-          @if (Auth::user() && Auth::user()->cabang != null)
+          @if (Auth::user() && Auth::user()->cabang == 3)
             @include('registration-forms.register-inamsc')
-
+          @elseif (Auth::user()->cabang == 1)
+            <p>Cabang 1</p>
+          @elseif (Auth::user()->cabang == 2)
+            <p>Cabang 2</p>
+          @elseif (Auth::user()->cabang == 4)
+            <p>Cabang 4</p>
           @else
             @include('registration-forms.pre-registration')
           @endif
