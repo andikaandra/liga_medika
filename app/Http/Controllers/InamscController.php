@@ -10,20 +10,6 @@ use App\INAMSC;
 
 class InamscController extends Controller
 {
-    // register current user to inamsc
-    public function store(Request $request) {
-      // TODO: change user_id to current logged in user
-      $user_id = 1;
-      $user = User::find($user_id)->update([
-        'penanggung_jawab' => $request->penanggung_jawab,
-        'cabang' => $request->cabang,
-        'universitas' => $request->universitas
-      ]);
-      //
-      // $user = User::find($user_id);
-
-      return response()->json(['message' => $user], 200);
-    }
 
     // register symposium and workshop
     public function registerSymposium(Request $request) {
@@ -32,6 +18,11 @@ class InamscController extends Controller
       $user_id = 1;
       $tipe_lomba = 1;
       try {
+
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 1,
+        ]);
+
         // register symposium
         Symposium::create([
           'user_id' => $user_id,

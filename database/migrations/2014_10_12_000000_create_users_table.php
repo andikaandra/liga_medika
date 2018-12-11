@@ -16,7 +16,8 @@ class CreateUsersTable extends Migration
             $table->integer('role')->default(1); //1 user, 2 admin
             $table->string('penanggung_jawab')->nullable();
             $table->string('universitas')->nullable();
-            $table->integer('cabang')->nullable();//1 imsso,2 imarc,3 inamsc,4 symposium,5 hfgm
+            $table->integer('cabang')->nullable();//1 imsso,2 imarc,3 inamsc, 4 hfgm
+            $table->integer('cabang_spesifik')->nullable(); //1 simposium, 2 vid edukasi & pp, 3 litrev & rpp
             $table->tinyInteger('verified')->default(0);
             $table->string('email_token')->nullable();
             $table->rememberToken();

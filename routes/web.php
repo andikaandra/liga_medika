@@ -30,9 +30,18 @@ Route::prefix('admin')->group(function () {
 
 
 // participant
-// inamsc
+
 
 Route::prefix('users')->group(function () {
-  Route::put('inamsc/register', 'InamscController@store');
+  // pages
+  Route::get('/', 'ParticipantController@index');
+
+  // register cabang lomba
+  Route::put('register', 'LombaController@store');
+
+  // inamsc
   Route::post('inamsc/simposium', 'InamscController@registerSymposium');
+
+
+
 });
