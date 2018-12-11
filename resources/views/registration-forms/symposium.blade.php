@@ -47,8 +47,6 @@
                     <label for="">Scan KTP/ KTM</label>
                     <br><input type="file" name="ktp" accept="image/*" value="">
                   </div>
-                  {{-- <hr> --}}
-
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
@@ -65,8 +63,6 @@
                   </div>
                 </div>
               </div>
-
-
 
             </form>
 

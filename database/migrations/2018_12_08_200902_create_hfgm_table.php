@@ -16,6 +16,7 @@ class CreateHfgmTable extends Migration
           $table->text('ktp');
           $table->integer('status_pembayaran');
           $table->integer('jumlah_tiket');
+          $table->integer('gelombang');
           $table->timestamps();
         });
     }

@@ -31,7 +31,7 @@
        content: counter(step);
        counter-increment: step;
        line-height: 30px;
-       border: 2px solid #7d7d7d;
+       border: 2px solid #7d7d7d !important;
        display: block;
        text-align: center;
        margin: 0 auto 10px auto;
@@ -55,10 +55,10 @@
        color: green;
     }
     .progressbar li.active:before {
-       border-color: #55b776;
+       border-color: #55b776 !important;
     }
     .progressbar li.active + li:after {
-       background-color: #55b776;
+       background-color: #55b776 !important;
     }
 
     .progress-section{
@@ -97,5 +97,14 @@
     <script src="{{asset('admin-dashboard/js/off-canvas.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/misc.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/dashboard.js')}}"></script>
+    <script type="text/javascript">
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+    </script>
+    @yield('script')
+
 </body>
 </html>

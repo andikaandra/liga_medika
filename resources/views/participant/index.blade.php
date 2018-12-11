@@ -42,15 +42,30 @@
 <div class="content-wrapper">
 
   <div class="row">
+
+
     {{-- <div class="container"> --}}
       <div class="col-md-12">
+        <div class="alert alert-info">
+          Hello <strong>Adis</strong>. You chose INAMSC in pre-registration. Please complete the next step.
+          If you would like to start over, you may <a href="#">Click here to reset</a>.
+        </div>
+        @if (\Session::get('message'))
+          <div class="alert alert-success">
+            {{\Session::get('message')}}
+          </div>
+        @endif
         <div class="card">
 
+          @if (Auth::user() && Auth::user()->cabang != null)
+            @include('registration-forms.register-inamsc')
 
-          @include('registration-forms.pre-registration')
+          @else
+            @include('registration-forms.pre-registration')
+          @endif
+
           <p>nanti kalo udah milih cabang halaman yang muncul adalah yg dibawah!</p>
           <br>
-          @include('registration-forms.register-inamsc')
         </div>
       </div>
     </div>

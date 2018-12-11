@@ -19,8 +19,8 @@
     <input type="hidden" name="_method" value="PUT">
     <div class="col-md-6">
       <div class="form-group">
-        <label for="">Cabang lomba: </label>
-        <select class="form-control" name="cabang">
+        <label for="">Competition/ event: </label>
+        <select class="form-control" name="cabang" required>
           <option value="3">INAMSC</option>
           <option value="2">IMARC</option>
           <option value="1">IMSSO</option>
@@ -28,14 +28,14 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="">Nama penganggung jawab: </label>
-        <input type="text" class="form-control" name="penanggung_jawab" value="">
+        <label for="">Name of Person in Charge: </label>
+        <input type="text" class="form-control" name="penanggung_jawab" value="" required>
       </div>
       <div class="form-group">
-        <label for="">Asal universitas: </label>
-        <input type="text" class="form-control" name="" value="">
+        <label for="">University: </label>
+        <input type="text" class="form-control" name="" value="" required>
       </div>
     </div>
-    <input type="submit" class="btn btn-success" name="" value="Submit">
+    <input type="submit" class="btn btn-success" name="" value="Submit" required>
   </form>
 </div>

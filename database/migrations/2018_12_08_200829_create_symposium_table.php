@@ -14,6 +14,7 @@ class CreateSymposiumTable extends Migration
           $table->text('nama');
           $table->text('ktp');
           $table->integer('status_pembayaran');
+          $table->integer('gelombang');
           $table->timestamps();
         });
     }

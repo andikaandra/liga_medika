@@ -8,6 +8,7 @@ use App\Symposium;
 use App\Payment;
 use App\INAMSC;
 use App\INAMSCParticipant;
+use Auth;
 
 class InamscController extends Controller
 {
@@ -28,6 +29,9 @@ class InamscController extends Controller
     public function store(Request $request) {
       // TODO: change user_id to current logged in user
       $user_id = 1;
+      if (Auth::user()) {
+        $user_id = Auth::user()->id;
+      }
       $user = User::find($user_id)->update([
         'penanggung_jawab' => $request->penanggung_jawab,
         'cabang' => $request->cabang,
@@ -46,6 +50,9 @@ class InamscController extends Controller
 
       $user_id = 1;
       $tipe_lomba = 2;
+      if (Auth::user()) {
+        $user_id = Auth::user()->id;
+      }
       try {
         // register video publikasi
         $inamsc = INAMSC::create([
@@ -75,25 +82,36 @@ class InamscController extends Controller
       // tipe lomba aswell
       $user_id = 1;
       $tipe_lomba = 1;
+      if (Auth::user()) {
+        $user_id = Auth::user()->id;
+      }
       try {
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 1,
         ]);
 
+        $path = $request->file('ktp')->store('public/identifications');
+
         // register symposium
         Symposium::create([
           'user_id' => $user_id,
           'nama' => $request->nama,
-          'ktp' => $request->ktp,
+          'ktp' => str_replace("public","", $path),
           'status_pembayaran' => $request->status_pembayaran
         ]);
+
+
+        $path = $request->file('bukti_pembayaran')->store('public/symposium-payments');
+
         // upload payment details
         Payment::create([
           'user_id' => $user_id,
           'tipe_lomba' => $tipe_lomba,
-          'location' => $request->location,
-          'tipe_pembayaran' => $request->tipe_pembayaran
+          'location' => str_replace("public","", $path),
+          'tipe_pembayaran' => $request->tipe_pembayaran,
+          'nama_rekening' => $request->nama_rekening,
+          'jumlah' => $request->jumlah_transfer
         ]);
         // done -> wait for admin confirmation
       } catch (\Exception $e) {

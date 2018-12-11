@@ -12,6 +12,8 @@
 */
 
 Auth::routes();
+Route::post('login', 'Auth\LoginController@doLogin');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,6 +28,8 @@ Route::get('/admin', 'AdminController@index');
 Route::prefix('admin')->group(function () {
   Route::get('inamsc', 'InamscController@getInamsc');
   Route::get('inamsc/simposium', 'InamscController@getSymposium');
+  Route::get('lombas/{id}', 'LombaController@findLomba');
+  Route::put('lombas/{id}', 'LombaController@updateLomba');
 });
 
 

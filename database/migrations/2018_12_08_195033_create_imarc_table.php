@@ -14,7 +14,8 @@ class CreateImarcTable extends Migration
             $table->text('link_travel_plan');
             $table->text('file_path');
             $table->integer('status_pembayaran');
-            $table->integer('status_lolos');
+            $table->integer('status_lolos')->default(0);
+            $table->integer('gelombang');
             $table->timestamps();
         });
     }
