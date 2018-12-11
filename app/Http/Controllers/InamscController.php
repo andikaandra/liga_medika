@@ -9,15 +9,18 @@ use App\Payment;
 use App\INAMSC;
 use App\INAMSCParticipant;
 use Auth;
+use App\Lomba;
 
 class InamscController extends Controller
 {
     public function registerVideoPublikasiPage(){
-        return view('registration-forms.videoPublikasi');
+        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        return view('registration-forms.videoPublikasi', compact('lomba'));
     }
 
     public function registerLiteratureReviewPage(){
-        return view('registration-forms.literatureReview');
+        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        return view('registration-forms.literatureReview', compact('lomba'));
     }
 
     public function registerSymposiumPage() {
@@ -54,10 +57,14 @@ class InamscController extends Controller
       }
       try {
         // register video publikasi
+        $path = $request->file('data_peserta')->store('public/inamsc/video-publikasi-participants');
+
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => 'NULL'
+          'file_path' => str_replace("public","", $path),
+          'gelombang' => $request->gelombang,
+          'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
@@ -69,6 +76,18 @@ class InamscController extends Controller
             'kode_ambassador' => $request->{'kode'.$i}
           ]);
         }
+
+        $path = $request->file('bukti_pembayaran')->store('public/video-publikasi-payments');
+        // upload payment details
+        Payment::create([
+          'user_id' => $user_id,
+          'tipe_lomba' => $tipe_lomba,
+          'location' => str_replace("public","", $path),
+          'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
+          'nama_rekening' => $request->nama_rekening,
+          'jumlah' => $request->jumlah_transfer
+        ]);
+
       } catch (\Exception $e) {
         return response()->json($e->getMessage(), 500);
       }
@@ -83,10 +102,13 @@ class InamscController extends Controller
       $tipe_lomba = 3;
       try {
         // register literature review
+        $path = $request->file('data_peserta')->store('public/inamsc/literature-review-participants');
+
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => 'NULL'
+          'file_path' => str_replace("public","", $path),
+          'gelombang' => $request->gelombang
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
@@ -98,6 +120,7 @@ class InamscController extends Controller
             'kode_ambassador' => $request->{'kode'.$i}
           ]);
         }
+
       } catch (\Exception $e) {
         return response()->json($e->getMessage(), 500);
       }

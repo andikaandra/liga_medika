@@ -1,9 +1,9 @@
 <div class="progress-section">
   <ul class="progressbar">
-     <li class="active">Choose cabang</li>
-     <li class="">choose interest</li>
-     <li>add friends</li>
-     <li>View map</li>
+      <li class="active">Choose Cabang</li>
+      <li class="">Choose Spedific</li>
+      <li>Fill registration form & Proof of payment</li>
+      <li>Admin Verification</li>
   </ul>
 </div>
 
@@ -14,7 +14,7 @@
     </h3>
   </div>
 
-  <form class="" action="{{url('users/register')}}" method="post">
+  <form class="" action="{{url('users/register')}}" method="post" autocomplete="off">
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="PUT">
     <div class="col-md-6">
@@ -33,7 +33,7 @@
       </div>
       <div class="form-group">
         <label for="">University: </label>
-        <input type="text" class="form-control" name="" value="" required>
+        <input type="text" class="form-control" name="universitas" value="" required>
       </div>
     </div>
     <input type="submit" class="btn btn-success" name="" value="Submit" required>

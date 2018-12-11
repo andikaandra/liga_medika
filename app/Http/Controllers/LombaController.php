@@ -29,6 +29,17 @@ class LombaController extends Controller
     // return response()->json(['message' => $user], 200);
   }
 
+  public function resetCabang(Request $request) {
+    $user = User::find($request->user_id)->update([
+      'penanggung_jawab' => NULL,
+      'cabang' => NULL,
+      'universitas' => NULL,
+      'cabang_spesifik' => NULL
+    ]);
+    return redirect()->back()->with('message', 'Reset Data Success!');
+  }
+
+
   public function findLomba($id) {
     return response()->json(Lomba::find($id));
   }
