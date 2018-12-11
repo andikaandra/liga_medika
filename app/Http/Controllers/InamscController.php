@@ -19,6 +19,10 @@ class InamscController extends Controller
         return view('movies');
     }
 
+    public function registerSymposiumPage() {
+      return view('registration-forms.symposium');
+    }
+
 
     // register current user to inamsc
     public function store(Request $request) {

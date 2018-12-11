@@ -40,9 +40,8 @@ Route::prefix('users')->group(function () {
   Route::put('register', 'LombaController@store');
 
   // inamsc
+  Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
   Route::post('inamsc/simposium', 'InamscController@registerSymposium');
-
-
 
   Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
 });
