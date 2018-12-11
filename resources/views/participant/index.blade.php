@@ -48,6 +48,7 @@
   <div class="row">
 
       <div class="col-md-12">
+        {{-- user hasn't verif email, tell them to check inbox --}}
         @if (!Auth::user()->verified)
           <div class="alert alert-warning">
             <p>Before you can register, please <strong>verify your email address</strong> by checking your inbox.
@@ -57,37 +58,67 @@
             <small>We might end up in your spam folder. Don't forget to check it aswell.</small>
           </div>
         @endif
-
-        @if (Auth::user() && Auth::user()->cabang != null)
+        {{-- user already chose cabang but hasnt chose cabang spesifik --}}
+        @if (Auth::user() && Auth::user()->cabang != null && !Auth::user()->cabang_spesifik)
           <div class="alert alert-info">
             Hello <strong>Adis</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
             If you would like to start over, you may <a href="#">Click here to reset</a>.
           </div>
+        @else
+            {{-- user has email verified, has registered cabang and cabang spesifik, welcome message --}}
+          <div class="alert alert-info">
+            Hello <strong>Adis</strong>. This is your user dashboard. You will find relevant information like payment and account status,
+            submissions and many things.
+          </div>
+
         @endif
 
+        {{-- notif sukses --}}
         @if (\Session::get('message'))
           <div class="alert alert-success">
             {{\Session::get('message')}}
           </div>
         @endif
 
+          {{-- if user hasnt verified email, can't regis --}}
           @if (!Auth::user()->verified)
             <div class="card div-disabled">
           @else
             <div class="card">
           @endif
-          
+
+          @if (Auth::user()->cabang_spesifik)
+
+
+            <div class="card-body">
+              <p>hi you will find info here</p>
+                @if (Auth::user()->cabang == 3)
+                  <p>Dashboard Cabang 3</p>
+                @elseif (Auth::user()->cabang == 1)
+                  <p>Dashboard Cabang 1</p>
+                @elseif (Auth::user()->cabang == 2)
+                  <p>Dashboard Cabang 2</p>
+                @elseif (Auth::user()->cabang == 4)
+                  <p>Dashboard Cabang 4</p>
+                @endif
+            </div>
+
+          @else
+            {{-- havent registered cabang spesifik --}}
             @if (Auth::user() && Auth::user()->cabang == 3)
               @include('registration-forms.register-inamsc')
             @elseif (Auth::user()->cabang == 1)
-              <p>Cabang 1</p>
+              <p>Regis Cabang 1</p>
             @elseif (Auth::user()->cabang == 2)
-              <p>Cabang 2</p>
+              <p>Regis Cabang 2</p>
             @elseif (Auth::user()->cabang == 4)
-              <p>Cabang 4</p>
+              <p>Regis Cabang 4</p>
             @else
               @include('registration-forms.pre-registration')
             @endif
+
+          @endif
+
 
           <br>
         </div>

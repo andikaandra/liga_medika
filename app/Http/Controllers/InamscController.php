@@ -150,7 +150,7 @@ class InamscController extends Controller
         return response()->json($e->getMessage(), 500);
       }
 
-      return redirect()->back();
+      return redirect('users');
 
       // return response()->json(['message' => 'success'], 201);
 

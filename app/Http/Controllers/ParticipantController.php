@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Lomba;
 use Auth;
+use App\Payment;
 
 class ParticipantController extends Controller
 {
@@ -14,9 +15,14 @@ class ParticipantController extends Controller
         $cabang_id = Auth::user()->cabang;
       }
 
+      // check if user has registered cabang spesifik
+      if (Auth::user()->cabang_spesifik) {
+        $accountStatus = Payment::find(Auth::user()->id); //check payment status
+      }
+
       $lomba = Lomba::find($cabang_id);
-      
-      return view('participant.index', ['lomba' => $lomba]);
+
+      return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus]);
     }
 
     public function dashboard() {
