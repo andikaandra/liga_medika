@@ -21,15 +21,20 @@ Route::get('/', function () {
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'AdminController@index');
 
 
 // admin
 Route::prefix('admin')->group(function () {
+  Route::get('/', 'AdminController@index');
+  Route::get('/verification/simposium', 'AdminController@verifSimposium')->name('verif.simposium');
+  Route::get('/verification/simposium-acc', 'AdminController@verifSimposiumAcc')->name('verif.simposium.acc');
+  Route::get('/verification/simposium-reject', 'AdminController@verifSimposiumReject')->name('verif.simposium.reject');
+
   Route::get('inamsc', 'InamscController@getInamsc');
   Route::get('inamsc/simposium', 'InamscController@getSymposium');
   Route::get('lombas/{id}', 'LombaController@findLomba');
   Route::put('lombas/{id}', 'LombaController@updateLomba');
+  Route::get('payment/{type}/{id}', 'AdminController@getPayment');
 });
 
 

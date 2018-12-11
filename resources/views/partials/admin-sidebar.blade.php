@@ -7,7 +7,7 @@
           <span class="login-status online"></span> <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
-          <span class="font-weight-bold mb-2">David Grey. H</span>
+          <span class="font-weight-bold mb-2">{{Auth::user()->name}}</span>
           <span class="text-secondary text-small">Project Manager</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
@@ -27,9 +27,9 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium')}}">Simposium & Workshop</a></li>
+          <li class="nav-item"> <a class="nav-link" href="">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="">Literature Review & Research Public Poster</a></li>
         </ul>
       </div>
     </li>
@@ -41,7 +41,7 @@
       </a>
       <div class="collapse" id="ui-basic2">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Simposium & Workshop</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.acc')}}">Simposium & Workshop</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Education Video Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Literature Review & Research Public Poster</a></li>
         </ul>
@@ -55,7 +55,7 @@
       </a>
       <div class="collapse" id="ui-basic3">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Simposium & Workshop</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.reject')}}">Simposium & Workshop</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Education Video Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Literature Review & Research Public Poster</a></li>
         </ul>
