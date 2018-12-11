@@ -15,6 +15,7 @@ class ParticipantController extends Controller
       }
 
       $lomba = Lomba::find($cabang_id);
+      return $cabang_id;
       return view('participant.index', ['lomba' => $lomba]);
     }
 
