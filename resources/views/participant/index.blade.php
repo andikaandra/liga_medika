@@ -59,7 +59,7 @@
             <small>We might end up in your spam folder. Don't forget to check it aswell.</small>
           </div>
         @endif
-    
+
         {{-- user already chose cabang but hasnt chose cabang spesifik --}}
         @if (Auth::user() && Auth::user()->cabang != null && !Auth::user()->cabang_spesifik)
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
@@ -70,11 +70,12 @@
               If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
           </div>
           </form>
-        @else
+        @elseif (Auth::user()->cabang_spesifik)
             {{-- user has email verified, has registered cabang and cabang spesifik, this is welcome message --}}
           <div class="alert alert-info">
-            Hello <strong>Adis</strong>. This is your user dashboard. You will find relevant information like payment and account status,
-            submissions and many things.
+            Hello <strong>{{Auth::user()->name}}</strong>. This is your user dashboard. You will find relevant information like payment and account status,
+            submissions and many things. If you see this message it means you have completed the registration process. Although our admins may still have to
+            verify your payment(s).
           </div>
 
         @endif
@@ -93,6 +94,7 @@
             <div class="card">
           @endif
 
+            {{-- user has completed registration--}}
           @if (Auth::user()->cabang_spesifik)
 
 

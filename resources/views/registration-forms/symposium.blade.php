@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-warning">
-          <p>Hello <strong>Adis</strong>. You have been assigned unique <strong>{{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>Adis</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>
           <p>Simposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
         </div>

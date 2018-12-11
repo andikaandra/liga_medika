@@ -14,7 +14,7 @@ class ParticipantController extends Controller
       if (Auth::user()) {
         $cabang_id = Auth::user()->cabang;
       }
-
+      $accountStatus = null;
       // check if user has registered cabang spesifik
       if (Auth::user()->cabang_spesifik) {
         $accountStatus = Payment::find(Auth::user()->id); //check payment status
