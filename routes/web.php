@@ -36,29 +36,18 @@ Route::prefix('users')->group(function () {
   // pages
   Route::get('/', 'ParticipantController@index');
   Route::get('/dashboard', 'ParticipantController@dashboard');
-  Route::get('inamsc/video-publikasi', 'InamscController@videoPublikasi');
-  Route::get('inamsc/literature-review', 'InamscController@literatureReview');
 
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');
 
   // inamsc
+  Route::get('inamsc/video-publikasi', 'InamscController@registerVideoPublikasiPage');
+  Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
   Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
+
+
   Route::post('inamsc/simposium', 'InamscController@registerSymposium');
-
-<<<<<<< HEAD
-
-
   Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
   Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');;
-  
-=======
-  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
->>>>>>> 18e2540787f5ea23f3fc747085a3a086e58b23a1
-});
-
-// get inamsc page
-Route::prefix('inamsc')->group(function () {
-
 });

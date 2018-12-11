@@ -11,14 +11,13 @@ use App\INAMSCParticipant;
 
 class InamscController extends Controller
 {
-    public function videoPublikasi(){
-        return view('participant.videoPublikasi');
+    public function registerVideoPublikasiPage(){
+        return view('registration-forms.videoPublikasi');
     }
 
-    public function literatureReview(){
-        return view('participant.literatureReview');
+    public function registerLiteratureReviewPage(){
+        return view('registration-forms.literatureReview');
     }
-
 
     public function registerSymposiumPage() {
       return view('registration-forms.symposium');
