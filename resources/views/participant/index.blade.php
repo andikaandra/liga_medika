@@ -35,6 +35,10 @@
     text-decoration: none;
   }
 
+  .div-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
 
 </style>
 @endsection
@@ -44,9 +48,17 @@
 
   <div class="row">
 
-
-    {{-- <div class="container"> --}}
       <div class="col-md-12">
+        @if (!Auth::user()->verified)
+          <div class="alert alert-warning">
+            <p>Before you can register, please <strong>verify your email address</strong> by checking your inbox.
+              This is to make sure that we are able to communicate with you through email.
+            </p>
+            <hr>
+            <small>We might end up in your spam folder. Don't forget to check it aswell.</small>
+          </div>
+        @endif
+
         @if (Auth::user() && Auth::user()->cabang != null)
         <form id="reset" method="post" action="{{route('reset.cabang')}}">
         @csrf
@@ -62,19 +74,25 @@
             {{\Session::get('message')}}
           </div>
         @endif
-        <div class="card">
 
-          @if (Auth::user() && Auth::user()->cabang == 3)
-            @include('registration-forms.register-inamsc')
-          @elseif (Auth::user()->cabang == 1)
-            <p>Cabang 1</p>
-          @elseif (Auth::user()->cabang == 2)
-            <p>Cabang 2</p>
-          @elseif (Auth::user()->cabang == 4)
-            <p>Cabang 4</p>
+          @if (!Auth::user()->verified)
+            <div class="card div-disabled">
           @else
-            @include('registration-forms.pre-registration')
+            <div class="card">
           @endif
+          
+            @if (Auth::user() && Auth::user()->cabang == 3)
+              @include('registration-forms.register-inamsc')
+            @elseif (Auth::user()->cabang == 1)
+              <p>Cabang 1</p>
+            @elseif (Auth::user()->cabang == 2)
+              <p>Cabang 2</p>
+            @elseif (Auth::user()->cabang == 4)
+              <p>Cabang 4</p>
+            @else
+              @include('registration-forms.pre-registration')
+            @endif
+
           <br>
         </div>
       </div>
