@@ -9,4 +9,8 @@ class ParticipantController extends Controller
     public function index() {
       return view('participant.index');
     }
+
+    public function dashboard() {
+      return view('participant.dashboard');
+    }
 }

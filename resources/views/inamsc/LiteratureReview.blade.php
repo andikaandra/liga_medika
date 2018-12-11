@@ -4,11 +4,11 @@
 <div class="container">
 
         <div class="row justify-content-center">
-            <div class="col-sm-8 col-md-8 pb-2">
+            <div class="col-sm-6 col-md-6 pb-4">
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="form-group">
-                            <h2>VIDEO EDUKASI PUBLIKASI POSTER</h2>
+                            <h2>LITERATURE REVIEW & RESEARCH PUBLIC POSTER</h2>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-sm-8 col-md-8 pb-2">
+            <div class="col-sm-6 col-md-6 pb-4">
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="form-group">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-    <form id="dataPeserta" method="post" action="{{route('register.video.publikasi')}}">
+    <form id="dataPeserta" method="post" action="{{route('register.literature.review')}}">
     @csrf
     <div id="contentPanel">
         
@@ -58,12 +58,12 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class="row justify-content-center"></div>');
-            var myPanel = $('<div class="col-sm-8 col-md-8 pb-2"><div class="card border-primary" id="'+iter+'Panel"><div class="card-body"><div class="card-title" align="center">Peserta '+iter+'</div><div class="form-group"><label for="nama'+iter+'">Nama Lengkap</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">Universitas/Perguruan Tinggi</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Jurusan/Program Studi</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Kode Ambassador</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Kode Ambassador bersifat opsional</small></div></div></div></div>');
+            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-primary" id="'+iter+'Panel"><div class="card-body"><div class="card-title" align="center">Peserta '+iter+'</div><div class="form-group"><label for="nama'+iter+'">Nama Lengkap</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">Universitas/Perguruan Tinggi</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Jurusan/Program Studi</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Kode Ambassador</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Kode Ambassador bersifat opsional</small></div></div></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center"></div>');
-            var myPanel = $('<div class="col-sm-8 col-md-8 pb-2"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">File Pendukung</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">File meliputi Foto 3x4, Scan KTM, Scan KTP, CV, Surat keterangan mahasiswa aktif, Scan letter of originality</small></div></div>');
+            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">File Pendukung</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">File meliputi Foto 3x4, Scan KTM, Scan KTP, CV, Surat keterangan mahasiswa aktif, Scan letter of originality</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');   
     };
