@@ -21,7 +21,7 @@
   <div class="cabangs">
     <div class="row">
       <div class="col-md-4">
-        <a href="#">
+        <a href="{{url('users/inamsc/simposium')}}">
           <div class="cabang">
             Simposium & Workshop
           </div>

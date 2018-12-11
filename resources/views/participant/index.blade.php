@@ -52,7 +52,7 @@
         @csrf
         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
         <div class="alert alert-info">
-            Hello <strong>{{Auth::user()->name}}</strong>. You chose INAMSC in pre-registration. Please complete the next step.
+            Hello <strong>{{Auth::user()->name}}</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
             If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
         </div>
         </form>
@@ -64,14 +64,17 @@
         @endif
         <div class="card">
 
-          @if (Auth::user() && Auth::user()->cabang != null)
+          @if (Auth::user() && Auth::user()->cabang == 3)
             @include('registration-forms.register-inamsc')
-
+          @elseif (Auth::user()->cabang == 1)
+            <p>Cabang 1</p>
+          @elseif (Auth::user()->cabang == 2)
+            <p>Cabang 2</p>
+          @elseif (Auth::user()->cabang == 4)
+            <p>Cabang 4</p>
           @else
             @include('registration-forms.pre-registration')
           @endif
-
-          <p>nanti kalo udah milih cabang halaman yang muncul adalah yg dibawah!</p>
           <br>
         </div>
       </div>

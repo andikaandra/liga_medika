@@ -24,7 +24,7 @@
           <option value="3">INAMSC</option>
           <option value="2">IMARC</option>
           <option value="1">IMSSO</option>
-          <option value="5">HFGM</option>
+          <option value="4">HFGM</option>
         </select>
       </div>
       <div class="form-group">

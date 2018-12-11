@@ -47,8 +47,9 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-        return response()->json(['message' => 'User successfully registered.'], 201);
+        // return response()->json(['message' => 'User successfully registered.'], 201);
         // return view('verification');
+        return redirect('login')->with('message', '');
     }
 
     public function verify($token)
@@ -65,6 +66,7 @@ class RegisterController extends Controller
         }
         $user->verified = 1;
         $user->save();
+        
       } catch (\Exception $e) {
         return response()->json(['message' => $e->getMessage()], $e->getCode());
       }
