@@ -19,6 +19,11 @@ class InamscController extends Controller
         return view('participant.literatureReview');
     }
 
+
+    public function registerSymposiumPage() {
+      return view('registration-forms.symposium');
+    }
+
     // register current user to inamsc
     public function store(Request $request) {
       // TODO: change user_id to current logged in user

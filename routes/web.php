@@ -44,13 +44,18 @@ Route::prefix('users')->group(function () {
   Route::put('register', 'LombaController@store');
 
   // inamsc
+  Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
   Route::post('inamsc/simposium', 'InamscController@registerSymposium');
 
+<<<<<<< HEAD
 
 
   Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
   Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');;
   
+=======
+  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
+>>>>>>> 18e2540787f5ea23f3fc747085a3a086e58b23a1
 });
 
 // get inamsc page
