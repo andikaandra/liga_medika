@@ -48,7 +48,7 @@
       <div class="col-md-12">
         @if (Auth::user() && Auth::user()->cabang != null)
         <div class="alert alert-info">
-          Hello <strong>Adis</strong>. You chose INAMSC in pre-registration. Please complete the next step.
+          Hello <strong>Adis</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
           If you would like to start over, you may <a href="#">Click here to reset</a>.
         </div>
       @endif
