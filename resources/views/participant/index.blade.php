@@ -21,12 +21,13 @@
     border-radius: 3px;
     text-align: center;
     padding: 20px;
+    height: 100%;
   }
 
   .cabang:hover {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
     cursor: pointer;
-    transition: 0.5s ease-in;
+    transition: 0.3s ease-in;
     background-color: #ebedf2;
   }
 
@@ -58,14 +59,19 @@
             <small>We might end up in your spam folder. Don't forget to check it aswell.</small>
           </div>
         @endif
+    
         {{-- user already chose cabang but hasnt chose cabang spesifik --}}
         @if (Auth::user() && Auth::user()->cabang != null && !Auth::user()->cabang_spesifik)
+          <form id="reset" method="post" action="{{route('reset.cabang')}}">
+          @csrf
+          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <div class="alert alert-info">
-            Hello <strong>Adis</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
-            If you would like to start over, you may <a href="#">Click here to reset</a>.
+              Hello <strong>{{Auth::user()->name}}</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
+              If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
           </div>
+          </form>
         @else
-            {{-- user has email verified, has registered cabang and cabang spesifik, welcome message --}}
+            {{-- user has email verified, has registered cabang and cabang spesifik, this is welcome message --}}
           <div class="alert alert-info">
             Hello <strong>Adis</strong>. This is your user dashboard. You will find relevant information like payment and account status,
             submissions and many things.

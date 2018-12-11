@@ -2,10 +2,10 @@
 
 <div class="progress-section">
   <ul class="progressbar">
-     <li class="active">Choose cabang</li>
-     {{-- <li class="">Choose specif</li> --}}
-     <li>add friends</li>
-     <li>View map</li>
+      <li class="active">Choose Cabang</li>
+      <li class="active">Choose Spedific</li>
+      <li>Fill registration form & Proof of payment</li>
+      <li>Admin Verification</li>
   </ul>
 </div>
 

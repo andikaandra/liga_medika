@@ -44,6 +44,7 @@ Route::prefix('users')->group(function () {
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');
+  Route::post('/', 'LombaController@resetCabang')->name('reset.cabang');
 
   // inamsc
   Route::get('inamsc/video-publikasi', 'InamscController@registerVideoPublikasiPage');
