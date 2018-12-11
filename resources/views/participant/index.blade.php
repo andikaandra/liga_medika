@@ -96,8 +96,6 @@
 
             {{-- user has completed registration--}}
           @if (Auth::user()->cabang_spesifik)
-
-
             <div class="card-body">
               <p>hi you will find info here</p>
                 @if (Auth::user()->cabang == 3)
@@ -113,14 +111,8 @@
 
           @else
             {{-- havent registered cabang spesifik --}}
-            @if (Auth::user() && Auth::user()->cabang == 3)
-              @include('registration-forms.register-inamsc')
-            @elseif (Auth::user()->cabang == 1)
-              <p>Regis Cabang 1</p>
-            @elseif (Auth::user()->cabang == 2)
-              <p>Regis Cabang 2</p>
-            @elseif (Auth::user()->cabang == 4)
-              <p>Regis Cabang 4</p>
+            @if (Auth::user() && Auth::user()->cabang)
+              @include('registration-forms.register-spesific')
             @else
               @include('registration-forms.pre-registration')
             @endif

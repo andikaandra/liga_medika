@@ -22,16 +22,12 @@
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text">
-            <p class="mb-1 text-black">David Greymaax</p>
+            <p class="mb-1 text-black">{{Auth::user()->name}}</p>
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item" href="#">
-            <i class="mdi mdi-cached mr-2 text-success"></i>
-            Activity Log
-          </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="#" onClick="logOut()">
             <i class="mdi mdi-logout mr-2 text-primary"></i>
             Signout
           </a>

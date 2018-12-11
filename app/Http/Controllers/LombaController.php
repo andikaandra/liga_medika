@@ -33,10 +33,10 @@ class LombaController extends Controller
     $user = User::find($request->user_id)->update([
       'penanggung_jawab' => NULL,
       'cabang' => NULL,
-      'universitas' => NULL,
-      'cabang_spesifik' => NULL
+      'universitas' => NULL
+      // 'cabang_spesifik' => NULL
     ]);
-    return redirect()->back()->with('message', 'Reset Data Success!');
+    return view('participant.index')->with('message', 'Reset Data Success!');
   }
 
 

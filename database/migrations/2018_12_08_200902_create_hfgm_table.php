@@ -15,6 +15,7 @@ class CreateHfgmTable extends Migration
           $table->text('nama');
           $table->text('ktp');
           $table->integer('status_pembayaran');
+          $table->integer('status_verif')->default(0);
           $table->integer('jumlah_tiket');
           $table->integer('gelombang');
           $table->timestamps();

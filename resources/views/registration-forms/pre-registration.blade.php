@@ -1,9 +1,9 @@
 <div class="progress-section">
   <ul class="progressbar">
-      <li class="active">Choose Cabang</li>
-      <li class="">Choose Spedific</li>
-      <li>Fill registration form & Proof of payment</li>
-      <li>Admin Verification</li>
+      <li class="active">Choose cabang</li>
+      <li>Fill in self data and payment</li>
+      <li>add friends</li>
+      <li>View map</li>
   </ul>
 </div>
 

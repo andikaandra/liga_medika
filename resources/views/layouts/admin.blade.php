@@ -92,17 +92,26 @@
       </div>
     </div>
   </div>
+    <form class="logout-form" action="{{url('/logout')}}" method="post">
+        {{ csrf_field() }}
+    </form>
     <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.base.js')}}"></script>
     <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.addons.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/off-canvas.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/misc.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/dashboard.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
       $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
       });
+
+      function logOut(){
+        $(".logout-form").submit();
+      }
+
     </script>
 
 {{--     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

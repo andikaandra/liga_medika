@@ -7,18 +7,46 @@
           <span class="login-status online"></span> <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
-          <span class="font-weight-bold mb-2">David Grey. H</span>
-          <span class="text-secondary text-small">Project Manager</span>
+          <span class="font-weight-bold mb-2">{{Auth::user()->name}}</span>
+          <span class="text-secondary text-small">User</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{url('users')}}">
-        <span class="menu-title">Registration</span>
+        <span class="menu-title">
+          @if(Auth::user()->cabang_spesifik)
+            Dashboard
+          @else
+            Registration
+          @endif
+        </span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
+    @if(Auth::user()->cabang_spesifik)
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('users')}}">
+        <span class="menu-title">Announcement</span>
+        <i class="mdi mdi-bell menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('users')}}">
+        <span class="menu-title">My Data</span>
+        <i class="mdi mdi-content-save menu-icon"></i>
+      </a>
+    </li>    
+    @endif
+    @if(Auth::user()->cabang==3 && (Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('users')}}">
+        <span class="menu-title">Upload Karya</span>
+        <i class="mdi mdi-folder-upload menu-icon"></i>
+      </a>
+    </li>
+    @endif
     {{-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-title">UI Elements</span>

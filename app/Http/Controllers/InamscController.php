@@ -56,7 +56,14 @@ class InamscController extends Controller
       if (Auth::user()) {
         $user_id = Auth::user()->id;
       }
+      if (Auth::user()->cabang_spesifik) {
+        return redirect()->route('user.index');
+      }
       try {
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 2,
+        ]);
+
         // register video publikasi
         $path = $request->file('data_peserta')->store('public/inamsc/video-publikasi-participants');
 
@@ -92,7 +99,7 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         return response()->json($e->getMessage(), 500);
       }
-      return response()->json(['message' => 'success'], 201);
+      return redirect('users');
     }
 
 
@@ -101,7 +108,17 @@ class InamscController extends Controller
 
       $user_id = 1;
       $tipe_lomba = 3;
+      if (Auth::user()) {
+        $user_id = Auth::user()->id;
+      }
+      if (Auth::user()->cabang_spesifik) {
+        return redirect()->route('user.index');
+      }
       try {
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 3,
+        ]);
+
         // register literature review
         $path = $request->file('data_peserta')->store('public/inamsc/literature-review-participants');
 
@@ -125,7 +142,7 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         return response()->json($e->getMessage(), 500);
       }
-      return response()->json(['message' => 'success'], 201);
+      return redirect('users');
     }
 
     // register symposium and workshop
@@ -136,6 +153,9 @@ class InamscController extends Controller
       $tipe_lomba = 1;
       if (Auth::user()) {
         $user_id = Auth::user()->id;
+      }
+      if (Auth::user()->cabang_spesifik) {
+        return redirect()->route('user.index');
       }
       try {
 

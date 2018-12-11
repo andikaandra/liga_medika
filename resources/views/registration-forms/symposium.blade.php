@@ -15,10 +15,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-warning">
-          <p>Hello <strong>Adis</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>
           <p>Simposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
+          <form id="reset" method="post" action="{{route('reset.cabang')}}">
+          @csrf
+          <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+          <div class="alert alert-info">
+              After you click submit button you are officially choose Simposium & Workshop. If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
+          </div>
+          </form>
         <div class="card">
           <div class="progress-section">
             <ul class="progressbar">
