@@ -12,13 +12,12 @@ use App\INAMSCParticipant;
 class InamscController extends Controller
 {
     public function videoPublikasi(){
-        return view('inamsc.VideoPublikasi');
+        return view('participant.videoPublikasi');
     }
 
     public function literatureReview(){
-        return view('movies');
+        return view('participant.literatureReview');
     }
-
 
     // register current user to inamsc
     public function store(Request $request) {
@@ -44,6 +43,35 @@ class InamscController extends Controller
       $tipe_lomba = 2;
       try {
         // register video publikasi
+        $inamsc = INAMSC::create([
+          'user_id' => $user_id,
+          'type' => $tipe_lomba,
+          'file_path' => 'NULL'
+        ]);
+
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          INAMSCParticipant::create([
+            'inamsc_id' => $inamsc->id,
+            'nama' => $request->{'nama'.$i},
+            'universitas' => $request->{'univ'.$i},
+            'jurusan' => $request->{'jurusan'.$i},
+            'kode_ambassador' => $request->{'kode'.$i}
+          ]);
+        }
+      } catch (\Exception $e) {
+        return response()->json($e->getMessage(), 500);
+      }
+      return response()->json(['message' => 'success'], 201);
+    }
+
+
+    public function registerLiteratureReview(Request $request) {
+      // TODO:
+
+      $user_id = 1;
+      $tipe_lomba = 3;
+      try {
+        // register literature review
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,

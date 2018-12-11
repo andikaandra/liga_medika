@@ -35,6 +35,10 @@ Route::prefix('admin')->group(function () {
 Route::prefix('users')->group(function () {
   // pages
   Route::get('/', 'ParticipantController@index');
+  Route::get('/dashboard', 'ParticipantController@dashboard');
+  Route::get('inamsc/video-publikasi', 'InamscController@videoPublikasi');
+  Route::get('inamsc/literature-review', 'InamscController@literatureReview');
+
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');
@@ -44,11 +48,12 @@ Route::prefix('users')->group(function () {
 
 
 
-  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');;
+  Route::post('inamsc/video-publikasi', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
+  Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');;
+  
 });
 
 // get inamsc page
 Route::prefix('inamsc')->group(function () {
-  Route::get('/video-publikasi', 'InamscController@videoPublikasi');
-  Route::get('/literature-review', 'InamscController@literatureReview');
+
 });
