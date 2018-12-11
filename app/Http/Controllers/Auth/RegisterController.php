@@ -52,27 +52,5 @@ class RegisterController extends Controller
         return redirect('login')->with('message', '');
     }
 
-    public function verify($token)
-    {
-      try {
-        $user = User::where('email_token',$token)->first();
 
-        if (!$user) {
-          throw new \Exception("Page not found", 404);
-        }
-
-        if ($user->verified) {
-          return "Click here to login";
-        }
-        $user->verified = 1;
-        $user->save();
-        
-      } catch (\Exception $e) {
-        return response()->json(['message' => $e->getMessage()], $e->getCode());
-      }
-
-      return response()->json(['message' => 'Email verified.', 'user' => $user], 200);
-
-      // return view('email.email-confirmed',['user'=>$user]);
-    }
 }
