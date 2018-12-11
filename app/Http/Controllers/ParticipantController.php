@@ -9,11 +9,12 @@ use Auth;
 class ParticipantController extends Controller
 {
     public function index() {
-      $user_id = 1;
+      $cabang_id = 1;
       if (Auth::user()) {
-        $user_id = Auth::user()->id;
+        $cabang_id = Auth::user()->cabang;
       }
-      $lomba = Lomba::find($user_id) ;
+
+      $lomba = Lomba::find($cabang_id);
       return view('participant.index', ['lomba' => $lomba]);
     }
 
