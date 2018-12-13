@@ -37,12 +37,13 @@
                 </div>
               @endif
               <h3>{{$title}}</h3>
+              todo : nampilin data para peserta 1 per 1
               <table class="table table-striped table-hover">
                 <thead>
                   <th>No</th>
                   <th>Username</th>
-                  <th>KTP</th>
-                  <th>Full Name</th>
+                  <th>Participant's Data</th>
+                  <th>Wave</th>
                   <th>Payment</th>
                   <th>Action</th>
                 </thead>
@@ -51,20 +52,20 @@
                     <tr>
                       <td>{{$l->id}}</td>
                       <td>{{$l->user_id}}</td>
-                      <td><a href="{{url('admin/view/image/ktp').'/'.$l->id}}" target="_blank">KTP</a></td>
-                      <td>{{$l->nama}}</td>
+                      <td><a href="{{url('admin/file/2').'/'.$l->user_id}}" target="_blank">Download File</a></td>
+                      <td>{{$l->gelombang}}</td>
                       <td>
                         <button type="button" user-id="{{$l->user_id}}" name="button" class="btn btn-sm btn-primary view">View</button>
                       </td>
                       <td>
-                        <form method="post" action="{{route('verifikasi.simposium.acc')}}">
+                        <form method="post" action="{{route('verifikasi.edukasi.acc')}}">
                           @csrf
-                          <input type="hidden" name="symposium_id" value="{{$l->id}}">
+                          <input type="hidden" name="edukasi_id" value="{{$l->id}}">
                           <button type="submit" class="btn btn-sm btn-info acc">Acc</button>
                         </form>
-                        <form method="post" action="{{route('verifikasi.simposium.reject')}}">
+                        <form method="post" action="{{route('verifikasi.edukasi.reject')}}">
                           @csrf
-                          <input type="hidden" name="symposium_id" value="{{$l->id}}">
+                          <input type="hidden" name="edukasi_id" value="{{$l->id}}">
                           <button type="submit" class="btn btn-sm btn-danger reject">Reject</button>
                         </form>
                       </td>
@@ -120,7 +121,7 @@
 
         try {
           data = await $.ajax({
-            url: '{{url('admin/payment')}}/1/' + id
+            url: '{{url('admin/payment')}}/2/' + id
           });
         } catch (e) {
           console.log(e);
@@ -133,12 +134,6 @@
         $("#foto-bukti").attr("href", path+data.id);
 
         $("#modal1").modal('show');
-      });
-
-      $(".ktp").click(function(){
-        const id = $(this).attr('ktp-id');
-
-        $("#modal2").modal('show');
       });
 
     });

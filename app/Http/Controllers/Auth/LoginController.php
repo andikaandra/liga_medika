@@ -48,9 +48,9 @@ class LoginController extends Controller
 
       if (Auth::attempt($userdata)) {
         if (Auth::user()->role == 2) {
-          return "Admin";
+          return redirect()->route('admin.index');
         } else {
-          return "Participant";
+          return redirect()->route('user.index');
         }
       } else {
         return "Account not found";

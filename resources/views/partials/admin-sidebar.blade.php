@@ -28,8 +28,8 @@
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review & Research Public Poster</a></li>
         </ul>
       </div>
     </li>
@@ -42,8 +42,8 @@
       <div class="collapse" id="ui-basic2">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.acc')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi.acc')}}">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature.acc')}}">Literature Review & Research Public Poster</a></li>
         </ul>
       </div>
     </li>
@@ -56,8 +56,8 @@
       <div class="collapse" id="ui-basic3">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.reject')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi.reject')}}">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature.reject')}}">Literature Review & Research Public Poster</a></li>
         </ul>
       </div>
     </li>
