@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function () {
 // participant
 
 
-Route::prefix('users')->group(function () {
+Route::prefix('users')->middleware(['participant_only'])->group(function () {
   // pages
   Route::get('/', 'ParticipantController@index')->name('user.index');
   Route::get('/dashboard', 'ParticipantController@dashboard');
@@ -49,15 +49,23 @@ Route::prefix('users')->group(function () {
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');
-  Route::post('/', 'LombaController@resetCabang')->name('reset.cabang');
+  // this middleware is to make sure user doesnt execute routes while he hasnt
+  // chose a cabang
+  Route::middleware(['has_chose_cabang'])->group(function () {
 
-  // inamsc
-  Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
-  Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
-  Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
+    Route::post('/', 'LombaController@resetCabang')->name('reset.cabang');
+
+    // inamsc
+    Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
+    Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
+    Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
 
 
-  Route::post('inamsc/simposium', 'InamscController@registerSymposium');
-  Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
-  Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');;
+    Route::post('inamsc/simposium', 'InamscController@registerSymposium');
+    Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
+    Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+
+  });
+
+
 });

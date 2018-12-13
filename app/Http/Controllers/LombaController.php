@@ -36,7 +36,10 @@ class LombaController extends Controller
       'universitas' => NULL
       // 'cabang_spesifik' => NULL
     ]);
-    return view('participant.index')->with('message', 'Reset Data Success!');
+
+    return redirect('users')->with('message', 'Reset Data Success!');;
+
+    // return view('participant.index')->with('message', 'Reset Data Success!');
   }
 
 
