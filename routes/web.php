@@ -75,6 +75,8 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');
+
+
   // this middleware is to make sure user doesnt execute routes while he hasnt
   // chose a cabang
   Route::middleware(['has_chose_cabang'])->group(function () {
@@ -91,7 +93,13 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
     Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
     Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
 
+    Route::middleware(['has_verified_by_admin'])->group(function () {
+
+      Route::get('upload/karya', 'ParticipantController@uploadKarya')->name('users.upload.karya');
+    });
+    
   });
 
+  //lombanya telah disetujui
 
 });

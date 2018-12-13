@@ -60,11 +60,13 @@
                         <form method="post" action="{{route('verifikasi.simposium.acc')}}">
                           @csrf
                           <input type="hidden" name="symposium_id" value="{{$l->id}}">
+                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
                           <button type="submit" class="btn btn-sm btn-info acc">Acc</button>
                         </form>
                         <form method="post" action="{{route('verifikasi.simposium.reject')}}">
                           @csrf
                           <input type="hidden" name="symposium_id" value="{{$l->id}}">
+                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
                           <button type="submit" class="btn btn-sm btn-danger reject">Reject</button>
                         </form>
                       </td>

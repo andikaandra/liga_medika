@@ -61,11 +61,13 @@
                         <form method="post" action="{{route('verifikasi.edukasi.acc')}}">
                           @csrf
                           <input type="hidden" name="edukasi_id" value="{{$l->id}}">
+                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
                           <button type="submit" class="btn btn-sm btn-info acc">Acc</button>
                         </form>
                         <form method="post" action="{{route('verifikasi.edukasi.reject')}}">
                           @csrf
                           <input type="hidden" name="edukasi_id" value="{{$l->id}}">
+                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
                           <button type="submit" class="btn btn-sm btn-danger reject">Reject</button>
                         </form>
                       </td>

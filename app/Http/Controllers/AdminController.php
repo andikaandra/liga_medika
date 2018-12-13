@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Lomba;
+use App\User;
 use App\Symposium;
 use App\Payment;
 use App\INAMSC;
@@ -44,6 +45,10 @@ class AdminController extends Controller
         Symposium::where('id',$request->symposium_id)->update([
           'status_verif' => 1,
         ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 1,
+        ]);
         return redirect()->back()->with('message', 'Success');
     }
 
@@ -51,6 +56,10 @@ class AdminController extends Controller
     {
         Symposium::where('id',$request->symposium_id)->update([
           'status_verif' => 2,
+        ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 2,
         ]);
         return redirect()->back()->with('message', 'Success');
     }
@@ -83,6 +92,11 @@ class AdminController extends Controller
         INAMSC::where('id',$request->edukasi_id)->update([
           'status_verif' => 1,
         ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 1,
+        ]);
+
         return redirect()->back()->with('message', 'Success');
     }
 
@@ -90,6 +104,10 @@ class AdminController extends Controller
     {
         INAMSC::where('id',$request->edukasi_id)->update([
           'status_verif' => 2,
+        ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 2,
         ]);
         return redirect()->back()->with('message', 'Success');
     }
@@ -122,6 +140,10 @@ class AdminController extends Controller
         INAMSC::where('id',$request->literature_id)->update([
           'status_verif' => 1,
         ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 1,
+        ]);
         return redirect()->back()->with('message', 'Success');
     }
 
@@ -129,6 +151,10 @@ class AdminController extends Controller
     {
         INAMSC::where('id',$request->literature_id)->update([
           'status_verif' => 2,
+        ]);
+
+        User::where('id',$request->user_id)->update([
+          'lomba_verified' => 2,
         ]);
         return redirect()->back()->with('message', 'Success');
     }

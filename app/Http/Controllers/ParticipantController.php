@@ -28,4 +28,9 @@ class ParticipantController extends Controller
     public function dashboard() {
       return view('participant.dashboard');
     }
+
+    public function uploadKarya() {
+      return view('participant.upload-karya');
+    }
+
 }

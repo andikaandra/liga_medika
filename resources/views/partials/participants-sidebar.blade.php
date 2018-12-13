@@ -39,9 +39,9 @@
       </a>
     </li>    
     @endif
-    @if(Auth::user()->cabang==3 && (Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
+    @if(Auth::user()->cabang==3 && Auth::user()->lomba_verified==1 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
     <li class="nav-item">
-      <a class="nav-link" href="{{url('users')}}">
+      <a class="nav-link" href="{{route('users.upload.karya')}}">
         <span class="menu-title">Upload Karya</span>
         <i class="mdi mdi-folder-upload menu-icon"></i>
       </a>

@@ -4,16 +4,6 @@
     <a class="navbar-brand brand-logo-mini" href="{{url('users')}}"><img src="{{asset('admin-dashboard/images/logo-mini.svg')}}" alt="logo"/></a>
   </div>
   <div class="navbar-menu-wrapper d-flex align-items-stretch">
-    <div class="search-field d-none d-md-block">
-      <form class="d-flex align-items-center h-100" action="#">
-        <div class="input-group">
-          <div class="input-group-prepend bg-transparent">
-              <i class="input-group-text border-0 mdi mdi-magnify"></i>
-          </div>
-          <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
-        </div>
-      </form>
-    </div>
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -37,53 +27,6 @@
         <a class="nav-link">
           <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
         </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-          <i class="mdi mdi-email-outline"></i>
-          <span class="count-symbol bg-warning"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-          <h6 class="p-3 mb-0">Messages</h6>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <img src="{{asset('admin-dashboard/images/faces/face4.jpg')}}" alt="image" class="profile-pic">
-            </div>
-            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-              <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-              <p class="text-gray mb-0">
-                1 Minutes ago
-              </p>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <img src="{{asset('admin-dashboard/images/faces/face2.jpg')}}" alt="image" class="profile-pic">
-            </div>
-            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-              <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-              <p class="text-gray mb-0">
-                15 Minutes ago
-              </p>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <img src="{{asset('admin-dashboard/images/faces/face3.jpg')}}" alt="image" class="profile-pic">
-            </div>
-            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-              <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-              <p class="text-gray mb-0">
-                18 Minutes ago
-              </p>
-            </div>
-          </a>
-          <div class="dropdown-divider"></div>
-          <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-        </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
