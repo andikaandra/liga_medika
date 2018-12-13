@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('universitas')->nullable();
             $table->integer('cabang')->nullable();//1 imsso,2 imarc,3 inamsc, 4 hfgm
             $table->integer('cabang_spesifik')->nullable(); //1 simposium, 2 vid edukasi & pp, 3 litrev & rpp
-            $table->tinyInteger('verified')->default(0);
+            $table->tinyInteger('verified')->default(0); //verifikasi akun
+            $table->tinyInteger('lomba_verified')->default(0); //verifikasi oleh admin tentang lomba yang diikuti
             $table->string('email_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
