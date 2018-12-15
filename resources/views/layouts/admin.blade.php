@@ -6,15 +6,27 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Liga Medika | User Dashboard</title>
     <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/iconfonts/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('admin-dashboard/css/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('admin-dashboard/images/favicon.png')}}">
+    {{-- <link rel="shortcut icon" href="{{asset('admin-dashboard/images/favicon.png')}}"> --}}
     <style media="screen">
     .progressbar {
        counter-reset: step;
     }
+
+    .symposium .progressbar li {
+       list-style-type: none;
+       width: 33.33%;
+       float: left;
+       font-size: 12px;
+       position: relative;
+       text-align: center;
+       text-transform: uppercase;
+       color: #7d7d7d;
+    }
+
     .progressbar li {
        list-style-type: none;
        width: 25%;
@@ -64,6 +76,10 @@
     .progress-section{
         padding-top: 20px;
     }
+
+    .brand-logo-mini {
+      padding-left: 10px !important;
+    }
     </style>
 @yield('style')
 
@@ -95,11 +111,12 @@
         {{ csrf_field() }}
     </form>
     <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.base.js')}}"></script>
-    <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.addons.js')}}"></script>
+    {{-- <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.addons.js')}}"></script> --}}
     <script src="{{asset('admin-dashboard/js/off-canvas.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/misc.js')}}"></script>
     <script src="{{asset('admin-dashboard/js/dashboard.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{asset('js/jquery.mask.min.js')}}" charset="utf-8"></script>
     <script type="text/javascript">
       $.ajaxSetup({
         headers: {
@@ -110,6 +127,8 @@
       function logOut(){
         $(".logout-form").submit();
       }
+
+      $('.price').mask('0.000.000.000.000', {reverse: true});
 
     </script>
 

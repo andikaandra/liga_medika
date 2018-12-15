@@ -1,11 +1,12 @@
 
 
-<div class="progress-section">
+<div class="symposium progress-section">
   <ul class="progressbar">
       <li class="active">Choose cabang</li>
       <li>Fill in self data and payment</li>
-      <li>add friends</li>
-      <li>View map</li>
+      <li>Data and payment verification by Admin</li>
+
+      {{-- <li>View map</li> --}}
   </ul>
 </div>
 

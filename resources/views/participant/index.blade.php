@@ -77,7 +77,7 @@
             submissions and many things. If you see this message it means you have completed the registration process. Although our admins may still have to
             verify your payment(s).
           </div>
-        @elseif (Auth::user()->cabang_spesifik && Auth::user()->lomba_verified==1 )
+        @elseif (Auth::user()->cabang_spesifik && Auth::user()->lomba_verified==1 && Auth::user()->symposiums->status_pembayaran == 1)
             {{-- user has email verified, has registered cabang and cabang spesifik dan  diverifikasi pembayarannya, this is welcome message --}}
           <div class="alert alert-info">
             Hello <strong>{{Auth::user()->name}}</strong>. This is your user dashboard. You will find relevant information like payment and account status,
@@ -105,7 +105,13 @@
             <div class="card-body">
               <p>hi you will find info here</p>
                 @if (Auth::user()->cabang == 3)
-                  <p>Dashboard Cabang 3</p>
+                  @if (Auth::user()->cabang_spesifik == 1)
+                    <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p>
+                  @elseif (Auth::user()->cabang_spesifik == 2)
+                    <p>Dashboard video edukasi & pp, relevant information will be here. still todo</p>
+                  @elseif (Auth::user()->cabang_spesifik == 3)
+                    <p>Dashboard litrev && rpp, relevant information will be here. still todo</p>
+                  @endif
                 @elseif (Auth::user()->cabang == 1)
                   <p>Dashboard Cabang 1</p>
                 @elseif (Auth::user()->cabang == 2)
@@ -132,4 +138,10 @@
     </div>
   </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+  $("#user-home").addClass("active");
+</script>
 @endsection

@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'participant_only' => \App\Http\Middleware\ParticipantOnly::class,
         'has_chose_cabang' => \App\Http\Middleware\HasChoseCabang::class,
         'has_verified_by_admin' => \App\Http\Middleware\HasVerifiedByAdmin::class,
+        'has_chose_cabang_spesifik' => \App\Http\Middleware\HasChoseSpecificCabang::class,
     ];
 
     /**

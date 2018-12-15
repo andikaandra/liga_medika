@@ -19,6 +19,7 @@ class CreateLombaTable extends Migration
             $table->integer('jumlah_gelombang');
             $table->integer('gelombang_sekarang');
             $table->decimal('biaya', 10, 2);
+            $table->decimal('dp', 10, 2)->nullable();
             $table->integer('status_pendaftaran')->default(0);
             $table->integer('status_pengumpulan')->default(0);
             $table->integer('kuota');

@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $user = factory(App\User::class, 100)->create();
+        $user = factory(App\User::class, 50)->create();
         // lomba seeder
         // /1 imsso,2 imarc,3 inamsc,
         // 4 hfgm

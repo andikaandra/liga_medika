@@ -3,21 +3,19 @@
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
         <div class="nav-profile-image">
-          <img src="{{asset('admin-dashboard/images/faces/face1.jpg')}}" alt="profile">
+          <img src="{{asset('img/avatar.png')}}" alt="image">
           <span class="login-status online"></span> <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
           <span class="font-weight-bold mb-2">{{Auth::user()->name}}</span>
-          <span class="text-secondary text-small">User</span>
         </div>
-        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="user-home">
       <a class="nav-link" href="{{url('users')}}">
         <span class="menu-title">
           @if(Auth::user()->cabang_spesifik)
-            Dashboard
+            Home
           @else
             Registration
           @endif
@@ -26,25 +24,33 @@
       </a>
     </li>
     @if(Auth::user()->cabang_spesifik)
-    <li class="nav-item">
+    <li class="nav-item" id="user-announcement">
       <a class="nav-link" href="{{url('users')}}">
         <span class="menu-title">Announcement</span>
         <i class="mdi mdi-bell menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="user-data">
       <a class="nav-link" href="{{url('users')}}">
         <span class="menu-title">My Data</span>
         <i class="mdi mdi-content-save menu-icon"></i>
       </a>
-    </li>    
+    </li>
     @endif
-    @if(Auth::user()->cabang==3 && Auth::user()->lomba_verified==1 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
-    <li class="nav-item">
-      <a class="nav-link" href="{{route('users.upload.karya')}}">
-        <span class="menu-title">Upload Karya</span>
-        <i class="mdi mdi-folder-upload menu-icon"></i>
-      </a>
+    @if(Auth::user()->cabang==3 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
+    <li class="nav-item" id="user-files">
+      @if (Auth::user()->lomba_verified != 1)
+        <a class="nav-link disabled" href="#">
+          <span class="menu-title">Upload Files</span>
+          <i class="mdi mdi-folder-upload menu-icon"></i>
+        </a>
+      @else
+        <a class="nav-link" href="{{route('users.upload.karya')}}">
+          <span class="menu-title">Upload Files</span>
+          <i class="mdi mdi-folder-upload menu-icon"></i>
+        </a>
+      @endif
+
     </li>
     @endif
     {{-- <li class="nav-item">

@@ -126,10 +126,16 @@ return [
     |
     */
 
+
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+        // 'ktp' => [
+        //     'max' => 'Uploaded KTP file cannot exceed 1 mb.',
+        //     'mimes' => 'Uploaded KTP file has to be jpeg, jpg or png format.',
+        // ],
+        // 'bukti_pembayaran' => [
+        //   'max' => 'Uploaded KTP file cannot exceed 1 mb.',
+        //   'mimes' => 'Uploaded KTP file has to be jpeg, jpg or png format.',
+        // ]
     ],
 
     /*

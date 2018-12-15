@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('/', 'AdminController@index')->name('admin.index');
 
   //verifikasi simposium
@@ -84,20 +84,21 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
     Route::post('/', 'LombaController@resetCabang')->name('reset.cabang');
 
     // inamsc
-    Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
-    Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
-    Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
+    Route::middleware(['has_chose_cabang_spesifik'])->group(function () {
+      Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
+      Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
+      Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
 
 
-    Route::post('inamsc/simposium', 'InamscController@registerSymposium');
-    Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
-    Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+      Route::post('inamsc/simposium', 'InamscController@registerSymposium');
+      Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
+      Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+    });
 
     Route::middleware(['has_verified_by_admin'])->group(function () {
-
       Route::get('upload/karya', 'ParticipantController@uploadKarya')->name('users.upload.karya');
     });
-    
+
   });
 
   //lombanya telah disetujui

@@ -10,6 +10,9 @@ use App\INAMSC;
 use App\INAMSCParticipant;
 use Auth;
 use App\Lomba;
+use Validator;
+
+// TODO: add server side file validation
 
 class InamscController extends Controller
 {
@@ -30,42 +33,44 @@ class InamscController extends Controller
 
     // register current user to inamsc
     public function store(Request $request) {
-      // TODO: change user_id to current logged in user
-      $user_id = 1;
-      if (Auth::user()) {
-        $user_id = Auth::user()->id;
-      }
+      $user_id = Auth::user()->id;
+
       $user = User::find($user_id)->update([
         'penanggung_jawab' => $request->penanggung_jawab,
         'cabang' => $request->cabang,
         'universitas' => $request->universitas
       ]);
-      //
-      // $user = User::find($user_id);
 
       return response()->json(['message' => $user], 200);
     }
 
-
     // register video publikasi
     public function registerVideoPublikasi(Request $request) {
-      // TODO:
-
-      $user_id = 1;
       $tipe_lomba = 2;
-      if (Auth::user()) {
-        $user_id = Auth::user()->id;
-      }
-      if (Auth::user()->cabang_spesifik) {
-        return redirect()->route('user.index');
-      }
+      $user_id = Auth::user()->id;
+
       try {
+        // make sure file uploaded are within size limit and file type
+        $validator = Validator::make($request->all(), [
+            'data_peserta' => 'max:4100|mimes:zip',
+            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+        ]);
+
+        // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+      }
+
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 2,
         ]);
 
-        // register video publikasi
+        // store the participant files
         $path = $request->file('data_peserta')->store('public/inamsc/video-publikasi-participants');
+
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
@@ -93,7 +98,7 @@ class InamscController extends Controller
           'location' => str_replace("public","", $path),
           'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
           'nama_rekening' => $request->nama_rekening,
-          'jumlah' => $request->jumlah_transfer
+          'jumlah' => str_replace('.','',$request->jumlah_transfer)
         ]);
 
       } catch (\Exception $e) {
@@ -104,17 +109,23 @@ class InamscController extends Controller
 
 
     public function registerLiteratureReview(Request $request) {
-      // TODO:
-
-      $user_id = 1;
       $tipe_lomba = 3;
-      if (Auth::user()) {
-        $user_id = Auth::user()->id;
-      }
-      if (Auth::user()->cabang_spesifik) {
-        return redirect()->route('user.index');
-      }
+      $user_id = Auth::user()->id;
+
       try {
+        // make sure file uploaded are within size limit and file type
+        $validator = Validator::make($request->all(), [
+            'data_peserta' => 'max:4100|mimes:zip',
+        ]);
+
+        // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+      }
+
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 3,
         ]);
@@ -147,17 +158,33 @@ class InamscController extends Controller
 
     // register symposium and workshop
     public function registerSymposium(Request $request) {
-      // TODO: change user_id to current logged in user
-      // tipe lomba aswell
-      $user_id = 1;
       $tipe_lomba = 1;
-      if (Auth::user()) {
-        $user_id = Auth::user()->id;
-      }
-      if (Auth::user()->cabang_spesifik) {
-        return redirect()->route('user.index');
-      }
+      $user_id = Auth::user()->id;
+
+      $messages = [
+          'ktp.max' => 'Uploaded KTP file cannot exceed 1 mb.',
+          'ktp.mimes' => 'Uploaded KTP file has to be jpeg, jpg or png format.',
+          'bukti_pembayaran.max' => 'Uploaded proof of payment file cannot exceed 1 mb.',
+          'bukti_pembayaran.mimes' => 'Uploaded proof of payment file has to be jpeg, jpg or png format.',
+      ];
+
+
       try {
+
+        // make sure file uploaded are within size limit and file type
+        $validator = Validator::make($request->all(), [
+            'ktp' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+        ], $messages);
+
+        // test the validator out
+        if ($validator->fails()) {
+          // return response()->json($validator)
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+      }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 1,
@@ -185,7 +212,7 @@ class InamscController extends Controller
           'location' => str_replace("public","", $path),
           'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
           'nama_rekening' => $request->nama_rekening,
-          'jumlah' => $request->jumlah_transfer
+          'jumlah' => str_replace('.','',$request->jumlah_transfer)//because client side ada jquery mask
         ]);
         // done -> wait for admin confirmation
       } catch (\Exception $e) {
