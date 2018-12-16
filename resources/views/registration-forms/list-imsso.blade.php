@@ -1,7 +1,7 @@
   <div class="cabangs">
     <div class="row">
       <div class="col">
-         <a href="#">
+        <a href="{{url('users/imsso')}}">
           <div class="cabang">
             IMSSO
           </div>

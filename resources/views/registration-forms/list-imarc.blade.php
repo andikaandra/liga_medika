@@ -1,7 +1,7 @@
   <div class="cabangs">
     <div class="row">
       <div class="col">
-        <a href="#">
+        <a href="{{url('users/imarc')}}">
           <div class="cabang">
             IMARC
           </div>

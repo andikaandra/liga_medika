@@ -113,11 +113,11 @@
                     <p>Dashboard litrev && rpp, relevant information will be here. still todo</p>
                   @endif
                 @elseif (Auth::user()->cabang == 1)
-                  <p>Dashboard Cabang 1</p>
+                  <p>Dashboard IMSSO</p>
                 @elseif (Auth::user()->cabang == 2)
-                  <p>Dashboard Cabang 2</p>
+                  <p>Dashboard IMARC</p>
                 @elseif (Auth::user()->cabang == 4)
-                  <p>Dashboard Cabang 4</p>
+                  <p>Dashboard HFGM</p>
                 @endif
             </div>
 

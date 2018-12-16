@@ -83,16 +83,25 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
     Route::post('/', 'LombaController@resetCabang')->name('reset.cabang');
 
-    // inamsc
     Route::middleware(['has_chose_cabang_spesifik'])->group(function () {
+      // inamsc
+      Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
       Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
       Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
-      Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
 
 
       Route::post('inamsc/simposium', 'InamscController@registerSymposium');
       Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
       Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+
+      //imarc
+      Route::get('imarc', 'ImarcController@registerImarcPage');
+      Route::post('imarc', 'ImarcController@registerImarc')->name('register.imarc');
+
+      //imsso
+      Route::get('imsso', 'ImssoController@registerImssoPage');
+      Route::post('imsso', 'ImssoController@registerImsso')->name('register.imsso');
+
     });
 
     Route::middleware(['has_verified_by_admin'])->group(function () {
