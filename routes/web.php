@@ -49,6 +49,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::post('/verification/edukasi-acc', 'AdminController@edukasiAcc')->name('verifikasi.edukasi.acc');
   Route::post('/verification/edukasi-reject', 'AdminController@edukasiReject')->name('verifikasi.edukasi.reject');
 
+  Route::get('inamsc/education-video', 'InamscController@getEducationvideo');
 
   //verifikasi literaure
   Route::get('/verification/literature', 'AdminController@verifLiterature')->name('verif.literature');

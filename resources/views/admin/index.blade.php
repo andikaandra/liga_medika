@@ -78,6 +78,7 @@
                   <th>Registration status</th>
                   <th>Submission status</th>
                   <th>Price</th>
+                  <th>Down Payment</th>
                   <th>Capacity</th>
                 </thead>
                 <tbody>
@@ -97,6 +98,7 @@
                         <td id="status_pengumpulan-{{$l->id}}">Close</td>
                       @endif
                       <td id="biaya-{{$l->id}}">{{"Rp " . number_format((int)$l->biaya,2,',','.')}}</td>
+                      <td id="dp-{{$l->id}}">{{"Rp " . number_format((int)$l->dp,2,',','.')}}</td>
                       <td id="kuota-{{$l->id}}">{{$l->kuota}}</td>
                       <td>
                         <button type="button" cabang-id={{$l->id}} name="button" class="btn btn-info edit">Edit</button>
@@ -151,7 +153,12 @@
           <div class="form-group">
             <label for="">Price: </label> <br>
             <small>How much do users have to pay in the current wave?</small>
-            <input class="form-control" type="text" name="biaya" value="">
+            <input class="form-control price" type="text" name="biaya" value="">
+          </div>
+          <div class="form-group">
+            <label for="">Down Payment: </label> <br>
+            <small>How much is down payment in the current wave?</small>
+            <input class="form-control price" type="text" name="dp" value="">
           </div>
           <div class="form-group">
             <label for="">Capacity: </label>
@@ -174,6 +181,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       let lombaId;
+
       $(".edit").click(async function(){
         const id = $(this).attr('cabang-id');
 
@@ -189,11 +197,18 @@
           console.log(e);
           alert("Error")
         }
+        console.log(data)
+        $(".price").trigger("paste");
         $(".modal-title").text(data.nama);
         $("input[name='jumlah_gelombang']").val(data.jumlah_gelombang);
         $("input[name='gelombang_sekarang']").val(data.gelombang_sekarang);
         $("select[name='status_pendaftaran']").val(data.status_pendaftaran);
         $("select[name='status_pengumpulan']").val(data.status_pengumpulan);
+        if (data.dp == null) {
+          $("input[name='dp']").val(parseInt(0));
+        } else {
+          $("input[name='dp']").val(parseInt(data.dp));
+        }
         $("input[name='biaya']").val(parseInt(data.biaya));
         $("input[name='kuota']").val(data.kuota);
 
@@ -203,6 +218,7 @@
 
       $(".save").click(async function(){
         let formData = $(".lomba-form").serializeArray();
+        console.log(formData)
         try {
           await $.ajax({
             url: '{{url('admin/lombas')}}/' + lombaId,
@@ -212,6 +228,7 @@
         } catch (e) {
           alert("Error");
           console.log(e);
+          return;
         }
 
         $("#jumlah_gelombang-"+lombaId).text(formData[0].value);
@@ -230,16 +247,21 @@
           $("#status_pengumpulan-" + lombaId).text("Close");
 
         }
-        $("#biaya-" + lombaId).text(parseInt(formData[4].value));
-        $("#kuota-"+ lombaId).text(formData[5].value);
+        $("#biaya-" + lombaId).text(toRupiah((formData[4].value.replace(/\./g, ''))) + ",00");
+        $("#dp-" + lombaId).text(toRupiah((formData[5].value.replace(/\./g, ''))) + ",00");
+        $("#kuota-"+ lombaId).text(formData[6].value);
 
         $(".modal").modal('hide');
 
-        alert("success");
-
+        alertify.success("Succesfully updated data!");
       });
 
-
+      function toRupiah(angka) {
+        var rupiah = '';
+      	var angkarev = angka.toString().split('').reverse().join('');
+      	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+        return 'Rp '+rupiah.split('',rupiah.length-1).reverse().join('');
+      }
 
     });
   </script>

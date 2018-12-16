@@ -48,9 +48,15 @@ class LombaController extends Controller
   }
 
   public function updateLomba($id, Request $request) {
-    return response()->json(Lomba::find($id)->update(
-      $request->all()
-    ));
+    return response()->json(Lomba::find($id)->update([
+      'jumlah_gelombang' => $request->jumlah_gelombang,
+      'gelombang_sekarang' => $request->gelombang_sekarang,
+      'biaya' => str_replace('.','',$request->biaya),
+      'status_pendaftaran' => $request->status_pendaftaran,
+      'status_pengumpulan' => $request->status_pengumpulan,
+      'kuota' => $request->kuota,
+      'dp' => str_replace('.','',$request->dp)
+    ]));
   }
 
 }

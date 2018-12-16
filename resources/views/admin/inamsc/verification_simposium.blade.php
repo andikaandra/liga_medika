@@ -156,8 +156,8 @@
               else {
                 return "<button class='btn btn-success mr-2 accept' simposium-id='"+row.id+"' disabled>Accept</button>"
                 +"<button class='btn btn-danger mr-2 decline' simposium-id='"+row.id+"'>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' simposium-id='"+row.id+"'>Info</button>";              }
-
+                "<button class='btn btn-info mr-2 info' simposium-id='"+row.id+"'>Info</button>";
+              }
             }
           }
         ],

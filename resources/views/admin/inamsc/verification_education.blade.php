@@ -40,39 +40,15 @@
               todo : nampilin data para peserta 1 per 1
               <table class="table table-striped table-hover">
                 <thead>
-                  <th>No</th>
-                  <th>Username</th>
-                  <th>Participant's Data</th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
                   <th>Wave</th>
-                  <th>Payment</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  @foreach ($verif as $l)
-                    <tr>
-                      <td>{{$l->id}}</td>
-                      <td>{{$l->user_id}}</td>
-                      <td><a href="{{url('admin/file/2').'/'.$l->user_id}}" target="_blank">Download File</a></td>
-                      <td>{{$l->gelombang}}</td>
-                      <td>
-                        <button type="button" user-id="{{$l->user_id}}" name="button" class="btn btn-sm btn-primary view">View</button>
-                      </td>
-                      <td>
-                        <form method="post" action="{{route('verifikasi.edukasi.acc')}}">
-                          @csrf
-                          <input type="hidden" name="edukasi_id" value="{{$l->id}}">
-                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
-                          <button type="submit" class="btn btn-sm btn-info acc">Acc</button>
-                        </form>
-                        <form method="post" action="{{route('verifikasi.edukasi.reject')}}">
-                          @csrf
-                          <input type="hidden" name="edukasi_id" value="{{$l->id}}">
-                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
-                          <button type="submit" class="btn btn-sm btn-danger reject">Reject</button>
-                        </form>
-                      </td>
-                    </tr>
-                  @endforeach
+
                 </tbody>
               </table>
             </div>
@@ -93,14 +69,19 @@
       <div class="modal-body">
         <form action="#">
           <div class="form-group">
-            <label for="">Bank Account</label>
+            <label for="">Participants' files</label>
+          </div>
+          <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
+          <hr>
+          <div class="form-group">
+            <label for="">Bank Account:</label>
             <input class="form-control" type="text" name="nama_rekening" disabled>
           </div>
           <div class="form-group">
-            <label for="">Ammount</label>
+            <label for="">Amount:</label>
             <input class="form-control" type="text" name="jumlah" disabled>
           </div>
-            <a class="btn btn-primary" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
+            <a class="btn btn-info" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
         </form>
       </div>
       <div class="modal-footer">
@@ -114,29 +95,78 @@
 @section('script')
   <script type="text/javascript">
     $(document).ready(function(){
-      let userId;
-      $(".view").click(async function(){
-        const id = $(this).attr('user-id');
-        userId = id;
 
-        let data;
-
-        try {
-          data = await $.ajax({
-            url: '{{url('admin/payment')}}/2/' + id
-          });
-        } catch (e) {
-          console.log(e);
-          alert("Error");
-        }
-        path = "{{url('admin/view/image/payment').'/'}}";
-        $(".modal-title").text("");
-        $("input[name='nama_rekening']").val(data.nama_rekening);
-        $("input[name='jumlah']").val(data.jumlah);
-        $("#foto-bukti").attr("href", path+data.id);
-
-        $("#modal1").modal('show');
+      let dataTable = $(".table").DataTable({
+        responsive: true,
+        ajax: '{{url('admin/inamsc/education-video')}}',
+        columns: [
+          {data: "id"},
+          {data: "user.name"},
+          {data: "user.email"},
+          {data: "gelombang"},
+          {data: "status_verif",
+            render: function(data, type, row) {
+              if (data == -1) {
+                return "Declined";
+              }else if (data == 1){
+                return "Accepted";
+              }else{
+                return "Pending";
+              }
+            }
+          },
+          {data: null,
+            render: function(data, type, row) {
+              if (row.status_verif == -1) {
+                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"' disabled>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+              }
+              else if (row.status_verif == 0) {
+                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+              }
+              else {
+                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"' disabled>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+              }
+            }
+          }
+        ]
       });
+      $(".modal").modal('show')
+
+      $(document).on('click', '.info', function(){
+        const id = $(this).attr('inamsc-id');
+
+
+      });
+
+      // let userId;
+      // $(".view").click(async function(){
+      //   const id = $(this).attr('user-id');
+      //   userId = id;
+      //
+      //   let data;
+      //
+      //   try {
+      //     data = await $.ajax({
+      //       url: '{{url('admin/payment')}}/2/' + id
+      //     });
+      //   } catch (e) {
+      //     console.log(e);
+      //     alert("Error");
+      //   }
+      //   path = "{{url('admin/view/image/payment').'/'}}";
+      //   $(".modal-title").text("");
+      //   $("input[name='nama_rekening']").val(data.nama_rekening);
+      //   $("input[name='jumlah']").val(data.jumlah);
+      //   $("#foto-bukti").attr("href", path+data.id);
+      //
+      //   $("#modal1").modal('show');
+      // });
 
     });
   </script>

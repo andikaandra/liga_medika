@@ -21,9 +21,8 @@ class AdminController extends Controller
     //VERIFIKASI SIMPOSIUM
     public function verifSimposiumPage()
     {
-        $verif = Symposium::where('status_verif','=',0)->get();
-        $title = "Verification Symposium";
-        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
+        $title = "Verification- Symposium & Workshop";
+        return view('admin.inamsc.verification_simposium', compact('title'));
 
     }
 
@@ -69,9 +68,8 @@ class AdminController extends Controller
     //VERIFIKASI EDUCATION VIDEO
     public function verifEdukasi()
     {
-        $verif = INAMSC::where('status_verif','=',0)->where('type','=',2)->get();
-        $title = "Queued Verification Education Video Public Poster ";
-        return view('admin.verification_education', compact('verif', 'title'));
+        $title = "Verification - Education Video & Public Poster ";
+        return view('admin.inamsc.verification_education', compact('title'));
     }
 
     public function verifEdukasiAcc()

@@ -274,4 +274,8 @@ class InamscController extends Controller
 
       return response()->json(['message' => 'ok']);
     }
+
+    public function getEducationvideo() {
+      return response()->json(['data' => INAMSC::where('type', 2)->with('user:id,email,name')->get()]);
+    }
 }

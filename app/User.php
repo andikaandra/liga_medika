@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function symposiums() {
       return $this->hasMany('App\Symposium');
     }
+
+    public function inamscs() {
+      return $this->hasMany('App\INAMSC');
+    }
 }
