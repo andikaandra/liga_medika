@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 Route::get('/home', 'HomeController@index')->name('home');
 
