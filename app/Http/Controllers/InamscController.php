@@ -227,11 +227,51 @@ class InamscController extends Controller
 
     //get users who are registered to inamsc
     public function getInamsc() {
-      return response()->json(INAMSC::all());
+      return response()->json(['data' => INAMSC::all()]);
     }
 
     public function getSymposium() {
-      return response()->json(Symposium::all());
+      return response()->json(['data' => Symposium::with('user:id,email')->get()]);
+    }
 
+    public function findSimposium($id) {
+      $symposium = Symposium::find($id); //find simposium data
+      $payment = Payment::find($symposium->user_id); //get payment for user
+      return response()->json(['simposium_data' => $symposium, 'payment' => $payment]);
+    }
+
+    public function acceptSymposium($id) {
+      // look for symposium data and verify it
+      $symposium = Symposium::find($id);
+
+      // verify user aswell
+      User::find($symposium->user_id)
+      ->update([
+        'lomba_verified' => 1
+      ]);
+
+      $symposium->update([
+                'status_pembayaran' => 1,
+                'status_verif' => 1
+              ]);
+
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineSymposium($id) {
+      // look for symposium data and verify it
+      $symposium = Symposium::find($id);
+      // verify user aswell
+      User::find($symposium->user_id)
+      ->update([
+        'lomba_verified' => -1
+      ]);
+
+      $symposium->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+
+      return response()->json(['message' => 'ok']);
     }
 }

@@ -26,7 +26,7 @@
           </div>
         @endif
 
-        </div>
+        {{-- </div> --}}
 
         <div class="alert alert-warning">
           <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. Registration fees are <strong>free</strong> until you reach the final stage.

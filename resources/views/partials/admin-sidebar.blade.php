@@ -34,6 +34,20 @@
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic4" aria-expanded="false" aria-controls="ui-basic4">
+        <span class="menu-title">INAMSC</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-library-books menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic4">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium')}}">Simposium & Workshop</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review & Research Public Poster</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
         <span class="menu-title">Data verif (acc)</span>
         <i class="menu-arrow"></i>

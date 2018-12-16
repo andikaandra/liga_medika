@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('admin-dashboard/css/style.css')}}">
     {{-- <link rel="shortcut icon" href="{{asset('admin-dashboard/images/favicon.png')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/default.min.css"/>
+
     <style media="screen">
     .progressbar {
        counter-reset: step;
@@ -80,6 +84,16 @@
     .brand-logo-mini {
       padding-left: 10px !important;
     }
+
+
+    @media only screen and (max-width: 768px) {
+      .table .btn {
+        margin-bottom: 2px;
+      }
+    }
+
+
+
     </style>
 @yield('style')
 
@@ -117,6 +131,8 @@
     <script src="{{asset('admin-dashboard/js/dashboard.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{asset('js/jquery.mask.min.js')}}" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
     <script type="text/javascript">
       $.ajaxSetup({
         headers: {

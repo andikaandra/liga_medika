@@ -19,25 +19,26 @@ class AdminController extends Controller
     }
 
     //VERIFIKASI SIMPOSIUM
-    public function verifSimposium()
+    public function verifSimposiumPage()
     {
         $verif = Symposium::where('status_verif','=',0)->get();
-        $title = "Queued Verification Symposium";
-        return view('admin.verification_simposium', compact('verif', 'title'));
+        $title = "Verification Symposium";
+        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
+
     }
 
     public function verifSimposiumAcc()
     {
         $verif = Symposium::where('status_verif', 1)->get();
         $title = "Accepted Verification Symposium";
-        return view('admin.verification_simposium', compact('verif', 'title'));
+        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
     }
 
     public function verifSimposiumReject()
     {
         $verif = Symposium::where('status_verif', 2)->get();
         $title = "Rejected Verification Symposium";
-        return view('admin.verification_simposium', compact('verif', 'title'));
+        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
     }
 
     public function simposiumAcc(Request $request)

@@ -29,13 +29,17 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('/', 'AdminController@index')->name('admin.index');
 
   //verifikasi simposium
-  Route::get('/verification/simposium', 'AdminController@verifSimposium')->name('verif.simposium');
+  Route::get('/verification/simposium', 'AdminController@verifSimposiumPage')->name('verif.simposium');
   Route::get('/verification/simposium-acc', 'AdminController@verifSimposiumAcc')->name('verif.simposium.acc');
   Route::get('/verification/simposium-reject', 'AdminController@verifSimposiumReject')->name('verif.simposium.reject');
 
   Route::post('/verification/simposium-acc', 'AdminController@simposiumAcc')->name('verifikasi.simposium.acc');
   Route::post('/verification/simposium-reject', 'AdminController@simposiumReject')->name('verifikasi.simposium.reject');
 
+
+  Route::get('inamsc/simposium/{id}', 'InamscController@findSimposium');
+  Route::put('inamsc/simposium/accept/{id}', 'InamscController@acceptSymposium');
+  Route::put('inamsc/simposium/decline/{id}', 'InamscController@declineSymposium');
 
   //verifikasi edukasi
   Route::get('/verification/edukasi', 'AdminController@verifEdukasi')->name('verif.edukasi');
