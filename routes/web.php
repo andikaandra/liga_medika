@@ -95,18 +95,27 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
       Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
 
-
       Route::post('inamsc/simposium', 'InamscController@registerSymposium');
       Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
       Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+
 
       //imarc
       Route::get('imarc', 'ImarcController@registerImarcPage');
       Route::post('imarc', 'ImarcController@registerImarc')->name('register.imarc');
 
+
       //imsso
       Route::get('imsso', 'ImssoController@registerImssoPage');
       Route::post('imsso', 'ImssoController@registerImsso')->name('register.imsso');
+
+
+      //hfgm
+      Route::get('hfgm/campaign', 'HfgmController@registerCampaignPage');
+      Route::get('hfgm/concert', 'HfgmController@registerConcertPage');
+
+      Route::post('hfgm/campaign', 'HfgmController@registerCampaign')->name('register.campaign');
+      Route::post('hfgm/concert', 'HfgmController@registerConcert')->name('register.concert');
 
     });
 
