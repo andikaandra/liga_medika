@@ -15,29 +15,18 @@
 @section('style')
 <style media="screen">
 
+.dropzone {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 135, 247);
+    border-image: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
 
-  .cabang {
-    border: 1px solid #ebedf2;
-    border-radius: 3px;
-    text-align: center;
-    padding: 20px;
-    height: 100%;
-  }
-
-  .cabang:hover {
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-    cursor: pointer;
-    transition: 0.3s ease-in;
-    background-color: #ebedf2;
-  }
-
-  .cabangs a {
-    text-decoration: none;
-  }
-
-  .div-disabled {
-    pointer-events: none;
-    opacity: 0.4;
+.dropzone:hover{
+  cursor: pointer;
 }
 
 </style>
@@ -58,8 +47,24 @@
 
             <div class="card">
               <div class="card-body">
-                <p class="card-text">This page only appear if the admin has verified your payment</p>
-                TODO : form upload karya dalam bentuk?
+                <p class="card-text">
+                  todo
+                </p>
+                <form class="" action="#">
+                  <div class="form-group">
+                    <label for="">Title: </label>
+                    <input class="form-control" type="text" name="" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="">Description: </label>
+                    <textarea name="name" class="form-control" rows="8" cols="80"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="file" name="" value="">
+                  </div>
+                  <input type="submit" class="btn btn-success" name="" value="Submit">
+                </form>
+
               </div>
           <br>
         </div>
@@ -67,4 +72,18 @@
     </div>
   </div>
 
+@endsection
+
+
+@section('script')
+  <script src="{{asset('js/dropzone.js')}}"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#user-files").addClass('active');
+
+
+
+
+    });
+  </script>
 @endsection

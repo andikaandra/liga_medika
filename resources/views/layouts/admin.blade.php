@@ -82,7 +82,13 @@
     }
 
     .brand-logo-mini {
-      padding-left: 10px !important;
+      padding-left: 25px !important;
+    }
+
+    .nav-item.unclickable{
+      background-color: #e9ecef !important;
+      cursor: not-allowed !important;
+
     }
 
 

@@ -23,35 +23,56 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    @if(Auth::user()->cabang_spesifik)
-    <li class="nav-item" id="user-announcement">
-      <a class="nav-link" href="{{url('users')}}">
-        <span class="menu-title">Announcements</span>
-        <i class="mdi mdi-bell menu-icon"></i>
-      </a>
-    </li>
-    {{-- <li class="nav-item" id="user-data">
-      <a class="nav-link" href="{{url('users')}}">
-        <span class="menu-title">My Data</span>
-        <i class="mdi mdi-content-save menu-icon"></i>
-      </a>
-    </li> --}}
+    @if(Auth::user()->verified != 1)
+      <li class="nav-item unclickable" id="user-team">
+        <a class="nav-link" href="#">
+          <span class="menu-title">
+            My Team
+          </span>
+          <i class="mdi mdi-account-multiple menu-icon"></i>
+        </a>
+      </li>
+      <li class="nav-item unclickable" id="user-announcement">
+        <a class="nav-link" href="#">
+          <span class="menu-title">Announcements</span>
+          <i class="mdi mdi-bell menu-icon"></i>
+        </a>
+      </li>
+
+      @else
+        <li class="nav-item" id="user-team">
+          <a class="nav-link" href="{{url('users/participants')}}">
+            <span class="menu-title">
+              My Team
+            </span>
+            <i class="mdi mdi-account-multiple menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item" id="user-announcement">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Announcements</span>
+            <i class="mdi mdi-bell menu-icon"></i>
+          </a>
+        </li>
+
     @endif
     @if(Auth::user()->cabang==3 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
-    <li class="nav-item" id="user-files">
       @if (Auth::user()->lomba_verified != 1)
-        <a class="nav-link disabled" href="#">
-          <span class="menu-title">Upload Files</span>
-          <i class="mdi mdi-folder-upload menu-icon"></i>
-        </a>
+        <li class="nav-item unclickable" id="user-files">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Upload Files</span>
+            <i class="mdi mdi-folder-upload menu-icon"></i>
+          </a>
+        </li>
       @else
+        <li class="nav-item" id="user-files">
         <a class="nav-link" href="{{route('users.upload.karya')}}">
           <span class="menu-title">Upload Files</span>
           <i class="mdi mdi-folder-upload menu-icon"></i>
         </a>
+      </li>
       @endif
 
-    </li>
     @endif
     {{-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

@@ -77,15 +77,6 @@
               </div>
               <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
               <hr>
-              <div class="form-group">
-                <label for="">Bank Account:</label>
-                <input class="form-control" type="text" name="nama_rekening" disabled>
-              </div>
-              <div class="form-group">
-                <label for="">Amount:</label>
-                <input class="form-control price" type="text" name="jumlah" disabled>
-              </div>
-                <a class="btn btn-info" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
             </form>
           </div>
         </div>
@@ -159,11 +150,7 @@
         return;
       }
       // image path of payment proof
-      let path = '{{url('admin/view/image/payment')}}/' + data.payment.id;
-      $("#foto-bukti").attr('href', path);
-      $("input[name='nama_rekening']").val(data.payment.nama_rekening);
-      $("input[name='jumlah']").val(data.payment.jumlah);
-      path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
+      let path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
       $("#files").attr('href', path);
       $('.price').trigger('input');
 

@@ -25,6 +25,11 @@ class ParticipantController extends Controller
       return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus]);
     }
 
+    public function getParticipants() {
+      $participants = Auth::user()->inamscs;
+      return view('participant.participants', ['participants' => $participants]);
+    }
+
     public function dashboard() {
       return view('participant.dashboard');
     }

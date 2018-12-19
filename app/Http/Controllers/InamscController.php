@@ -318,8 +318,7 @@ class InamscController extends Controller
     public function findLiteratureReviewDetails($id) {
       //get education video details and payment DP proof
       $lr = INAMSC::find($id);
-      $payment = Payment::where('user_id', $lr->user_id)->where('tipe_pembayaran', 1)->first();
-      return response()->json(['location' => $lr->file_path, 'payment' => $payment, 'user_id' => $lr->user_id,
+      return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
       'participants' => $lr->participants]);
     }
 

@@ -51,6 +51,7 @@
       <div class="col-md-12">
         {{-- user hasn't verif email, tell them to check inbox --}}
         @if (!Auth::user()->verified)
+
           <div class="alert alert-warning">
             <p>Before you can register, please <strong>verify your email address</strong> by checking your inbox.
               This is to make sure that we are able to communicate with you through email.
@@ -58,10 +59,12 @@
             <hr>
             <small>We might end up in your spam folder. Don't forget to check it aswell.</small>
           </div>
+
         @endif
 
         {{-- user already chose cabang but hasnt chose cabang spesifik --}}
         @if (Auth::user() && Auth::user()->cabang != null && !Auth::user()->cabang_spesifik)
+
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
@@ -70,6 +73,7 @@
               If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
           </div>
           </form>
+
         @elseif (Auth::user()->cabang_spesifik && Auth::user()->lomba_verified!=1 )
             {{-- user has email verified, has registered cabang and cabang spesifik tapi belum diverifikasi pembayarannya, this is welcome message --}}
           <div class="alert alert-info">
@@ -77,35 +81,27 @@
             submissions and many things. If you see this message it means you have completed the registration process. Although our admins may still have to
             verify your payment(s).
           </div>
-        @elseif (Auth::user()->cabang_spesifik && Auth::user()->lomba_verified==1 && Auth::user()->symposiums->status_pembayaran == 1)
+
+        @elseif (Auth::user()->cabang_spesifik != null && Auth::user()->lomba_verified==1)
             {{-- user has email verified, has registered cabang and cabang spesifik dan  diverifikasi pembayarannya, this is welcome message --}}
           <div class="alert alert-info">
             Hello <strong>{{Auth::user()->name}}</strong>. This is your user dashboard. You will find relevant information like payment and account status,
-            submissions and many things. Congratulations you have been verified <i class="mdi mdi-verified"></i>
+            submissions and many things. You have been verified <i class="mdi mdi-verified"></i>
           </div>
 
         @endif
 
-        @if (Auth::user()->lomba_verified == -1)
-          <div class="alert alert-danger">
-              <p class="card-text">Your registration has been declined. You can contact contact our committee at: (...) for more information.</p>
-          </div>
 
-        @elseif (Auth::user()->lomba_verified == 0 && Auth::user()->cabang_spesifik)
-          <div class="alert alert-warning">
-            <p class="card-text">Your registration is being reviewed by the committe. Please be patient. You can contact our committee at: (...) for more information.</p>
-          </div>
-        @else
-          <div class="alert alert-success">
-            <p class="card-text">Your registration has been accepted by the committe. You can contact our committee at: (...) for more information.</p>
-          </div>
-        @endif
 
         {{-- notif sukses --}}
         @if (\Session::get('message'))
           <div class="alert alert-success">
             {{\Session::get('message')}}
           </div>
+        @endif
+
+        @if (Auth::user()->cabang_spesifik)
+          @include('participant.partials.account-status')
         @endif
 
           {{-- if user hasnt verified email, can't regis --}}
@@ -120,18 +116,25 @@
             <div class="card-body">
               {{-- <p>hi you will find info here</p> --}}
                 @if (Auth::user()->cabang == 3)
+
                   @if (Auth::user()->cabang_spesifik == 1)
+
                     @include('participant.partials.dashboard-symposium')
                     <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p>
+
                   @elseif (Auth::user()->cabang_spesifik == 2)
                     <p>Dashboard video edukasi & pp, relevant information will be here. still todo</p>
+
                   @elseif (Auth::user()->cabang_spesifik == 3)
-                    <p>Dashboard litrev && rpp, relevant information will be here. still todo</p>
+                    @include('participant.partials.dashboard-litrev')
                   @endif
+
                 @elseif (Auth::user()->cabang == 1)
                   <p>Dashboard IMSSO</p>
+
                 @elseif (Auth::user()->cabang == 2)
                   <p>Dashboard IMARC</p>
+
                 @elseif (Auth::user()->cabang == 4)
                   <p>Dashboard HFGM</p>
                 @endif
@@ -141,6 +144,7 @@
             {{-- havent registered cabang spesifik --}}
             @if (Auth::user() && Auth::user()->cabang)
               @include('registration-forms.register-spesific')
+
             @else
               @include('registration-forms.pre-registration')
             @endif
