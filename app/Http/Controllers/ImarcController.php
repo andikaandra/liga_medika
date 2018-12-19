@@ -69,7 +69,7 @@ class ImarcController extends Controller
           'user_id' => $user_id,
           'tipe_lomba' => $tipe_lomba,
           'location' => str_replace("public","", $path),
-          'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
+          'tipe_pembayaran' => 1, //// TODO: change tipe to DP or Lunas
           'nama_rekening' => $request->nama_rekening,
           'jumlah' => str_replace('.','',$request->jumlah_transfer)
         ]);
@@ -79,4 +79,40 @@ class ImarcController extends Controller
       }
       return redirect('users');
     }
+
+    public function getImarc() {
+      return response()->json(['data' => IMARC::with('user:id,email,name')->get()]);
+    }
+
+    public function findImarcDetails($id) {
+      $imarc = IMARC::find($id);
+      $payment = Payment::where('user_id', $imarc->user_id)->where('tipe_pembayaran', 1)->first();
+      return response()->json(['location' => $imarc->file_path, 'payment' => $payment, 'user_id' => $imarc->user_id,
+      'participants' => $imarc->participants]);
+    }
+
+    public function acceptImarc($id) {
+      $imarc = IMARC::find($id);
+      $userUpdate =   $imarc->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $imarc->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineImarc($id) {
+      $imarc = IMARC::find($id);
+      $userUpdate =   $imarc->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $imarc->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
 }

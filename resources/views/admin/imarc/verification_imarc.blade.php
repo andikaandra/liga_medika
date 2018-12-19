@@ -104,7 +104,7 @@
 
       let dataTable = $(".table").DataTable({
         responsive: true,
-        ajax: '{{url('admin/inamsc/education-video')}}',
+        ajax: '{{url('admin/imarc/imarc')}}',
         columns: [
           {data: "id"},
           {data: "user.name"},
@@ -124,19 +124,19 @@
           {data: null,
             render: function(data, type, row) {
               if (row.status_verif == -1) {
-                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"'>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"' disabled>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' imarc-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' imarc-id='"+row.id+"' disabled>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' imarc-id='"+row.id+"'>Info</button>";
               }
               else if (row.status_verif == 0) {
-                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"'>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"'>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' imarc-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' imarc-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' imarc-id='"+row.id+"'>Info</button>";
               }
               else {
-                return "<button class='btn btn-success mr-2 accept' inamsc-id='"+row.id+"' disabled>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' inamsc-id='"+row.id+"'>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' inamsc-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' imarc-id='"+row.id+"' disabled>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' imarc-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' imarc-id='"+row.id+"'>Info</button>";
               }
             }
           }
@@ -145,12 +145,12 @@
 
 
       $(document).on('click', '.info', async function(){
-        const id = $(this).attr('inamsc-id');
+        const id = $(this).attr('imarc-id');
         let data;
 
         try {
             data = await $.ajax({
-              url: '{{url('admin/inamsc/education-video')}}/' + id
+              url: '{{url('admin/imarc/imarc')}}/' + id
             });
         } catch (e) {
           alert("Ajax error");
@@ -158,11 +158,12 @@
           return;
         }
         // image path of payment proof
+        console.log(data);
         let path = '{{url('admin/view/image/payment')}}/' + data.payment.id;
         $("#foto-bukti").attr('href', path);
         $("input[name='nama_rekening']").val(data.payment.nama_rekening);
         $("input[name='jumlah']").val(parseInt(data.payment.jumlah));
-        path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
+        path = '{{url('admin/imarc/file')}}/' + data.user_id; //path for participant files
         $("#files").attr('href', path);
         $('.price').trigger('input');
 
@@ -185,10 +186,6 @@
               "<label>Department:</label>"+
             "<input class='form-control' type='text' disabled value=\""+el.jurusan+"\">"+
             "</div>"+
-              "<div class='form-group'>"+
-                "<label>Ambassador Code:</label>"+
-                "<input class='form-control' type='text' disabled value=\""+el.kode_ambassador+"\">"+
-              "</div>" +
             "</div>"
           );
 
@@ -202,7 +199,7 @@
 
 
       $(document).on('click', '.accept', function(){
-        const id = $(this).attr('inamsc-id');
+        const id = $(this).attr('imarc-id');
 
         alertify.confirm('Confirmation', 'Would you like to accept this participant?',
         async function(){
@@ -210,7 +207,7 @@
           let data;
           try {
             await $.ajax({
-              url: '{{url('admin/inamsc/education-video/accept')}}/' + id,
+              url: '{{url('admin/imarc/imarc/accept')}}/' + id,
               method: "PUT"
             });
           } catch (e) {
@@ -228,7 +225,7 @@
       });
 
       $(document).on('click', '.decline', function(){
-        const id = $(this).attr('inamsc-id');
+        const id = $(this).attr('imarc-id');
 
         alertify.confirm('Confirmation', 'Would you like to decline this participant?',
         async function(){
@@ -236,7 +233,7 @@
           let data;
           try {
             await $.ajax({
-              url: '{{url('admin/inamsc/education-video/decline')}}/' + id,
+              url: '{{url('admin/imarc/imarc/decline')}}/' + id,
               method: "PUT"
             });
           } catch (e) {

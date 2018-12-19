@@ -68,7 +68,7 @@ class ImssoController extends Controller
           'user_id' => $user_id,
           'tipe_lomba' => $tipe_lomba,
           'location' => str_replace("public","", $path),
-          'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
+          'tipe_pembayaran' => 1, //// TODO: change tipe to DP or Lunas
           'nama_rekening' => $request->nama_rekening,
           'jumlah' => str_replace('.','',$request->jumlah_transfer)
         ]);
@@ -78,4 +78,40 @@ class ImssoController extends Controller
       }
       return redirect('users');
     }
+
+    public function getImsso() {
+      return response()->json(['data' => IMSSO::with('user:id,email,name')->get()]);
+    }
+
+    public function findImssoDetails($id) {
+      $imsso = IMSSO::find($id);
+      $payment = Payment::where('user_id', $imsso->user_id)->where('tipe_pembayaran', 1)->first();
+      return response()->json(['location' => $imsso->file_path, 'payment' => $payment, 'user_id' => $imsso->user_id,
+      'participants' => $imsso->participants]);
+    }
+
+    public function acceptImsso($id) {
+      $imsso = IMSSO::find($id);
+      $userUpdate =   $imsso->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $imsso->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineImsso($id) {
+      $imsso = IMSSO::find($id);
+      $userUpdate =   $imsso->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $imsso->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
 }

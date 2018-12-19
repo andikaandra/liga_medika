@@ -53,6 +53,25 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('inamsc/literature-review/decline/{id}', 'InamscController@declineLiteratureReview');
 
 
+  //verifikasi imarc
+  Route::get('/verification/imarc', 'AdminController@verifImarcPage')->name('verif.imarc');
+
+  Route::get('imarc/imarc', 'ImarcController@getImarc');
+  Route::get('imarc/imarc/{id}', 'ImarcController@findImarcDetails');
+
+  Route::put('imarc/imarc/accept/{id}', 'ImarcController@acceptImarc');
+  Route::put('imarc/imarc/decline/{id}', 'ImarcController@declineImarc');
+
+
+  //verifikasi imsso
+  Route::get('/verification/imsso', 'AdminController@verifImssoPage')->name('verif.imsso');
+
+  Route::get('imsso/imsso', 'ImssoController@getImsso');
+  Route::get('imsso/imsso/{id}', 'ImssoController@findImssoDetails');
+
+  Route::put('imsso/imsso/accept/{id}', 'ImssoController@acceptImsso');
+  Route::put('imsso/imsso/decline/{id}', 'ImssoController@declineImsso');
+
 
   Route::get('/view/image/{type}/{id}', 'AdminController@viewUploadedFile');
   Route::get('inamsc', 'InamscController@getInamsc');
@@ -61,6 +80,8 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('lombas/{id}', 'LombaController@updateLomba');
   Route::get('payment/{type}/{id}', 'AdminController@getPayment');
   Route::get('inamsc/file/{id}', 'AdminController@getInamscFiles');
+  Route::get('imarc/file/{id}', 'AdminController@getImarcFiles');
+  Route::get('imsso/file/{id}', 'AdminController@getImssoFiles');
 });
 
 

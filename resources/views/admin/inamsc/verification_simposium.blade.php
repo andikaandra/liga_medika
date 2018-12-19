@@ -15,7 +15,7 @@
           <span class="page-title-icon bg-gradient-primary text-white mr-2">
             <i class="mdi mdi-home"></i>
           </span>
-          Dashboard
+          {{$title}}
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
@@ -36,7 +36,6 @@
                   {{\Session::get('message')}}
                 </div>
               @endif
-              <h3>{{$title}}</h3>
               <table class="table table-striped table-hover">
                 <thead>
                   <th>ID</th>
