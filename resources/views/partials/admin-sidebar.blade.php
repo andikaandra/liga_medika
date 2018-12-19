@@ -20,20 +20,6 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <span class="menu-title">Data verif (queue)</span>
-        <i class="menu-arrow"></i>
-        <i class="mdi mdi-library-books menu-icon"></i>
-      </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review & Research Public Poster</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic4" aria-expanded="false" aria-controls="ui-basic4">
         <span class="menu-title">INAMSC</span>
         <i class="menu-arrow"></i>
@@ -48,30 +34,15 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
-        <span class="menu-title">Data verif (acc)</span>
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic5" aria-expanded="false" aria-controls="ui-basic5">
+        <span class="menu-title">Submissions</span>
         <i class="menu-arrow"></i>
         <i class="mdi mdi-library-books menu-icon"></i>
       </a>
-      <div class="collapse" id="ui-basic2">
+      <div class="collapse" id="ui-basic5">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.acc')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi.acc')}}">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature.acc')}}">Literature Review & Research Public Poster</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic3">
-        <span class="menu-title">Data verif (reject)</span>
-        <i class="menu-arrow"></i>
-        <i class="mdi mdi-library-books menu-icon"></i>
-      </a>
-      <div class="collapse" id="ui-basic3">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.simposium.reject')}}">Simposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi.reject')}}">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature.reject')}}">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Education Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Literature Review & Research Public Poster</a></li>
         </ul>
       </div>
     </li>

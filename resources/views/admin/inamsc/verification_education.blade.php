@@ -58,7 +58,7 @@
     </div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="modal1">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title"></h5>
@@ -67,22 +67,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="#">
-          <div class="form-group">
-            <label for="">Participants' files</label>
+        <div class="row">
+          <div class="col-md-6 participants">
+
           </div>
-          <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
-          <hr>
-          <div class="form-group">
-            <label for="">Bank Account:</label>
-            <input class="form-control" type="text" name="nama_rekening" disabled>
+          <div class="col-md-6">
+            <form action="#">
+              <div class="form-group">
+                <label for="">Participants' files</label>
+              </div>
+              <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
+              <hr>
+              <div class="form-group">
+                <label for="">Bank Account:</label>
+                <input class="form-control" type="text" name="nama_rekening" disabled>
+              </div>
+              <div class="form-group">
+                <label for="">Amount:</label>
+                <input class="form-control price" type="text" name="jumlah" disabled>
+              </div>
+                <a class="btn btn-info" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="">Amount:</label>
-            <input class="form-control" type="text" name="jumlah" disabled>
-          </div>
-            <a class="btn btn-info" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
-        </form>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -95,6 +102,7 @@
 @section('script')
   <script type="text/javascript">
     $(document).ready(function(){
+      $('.price').mask('0.000.000.000.000', {reverse: true});
 
       let dataTable = $(".table").DataTable({
         responsive: true,
@@ -136,37 +144,116 @@
           }
         ]
       });
-      $(".modal").modal('show')
 
-      $(document).on('click', '.info', function(){
+
+      $(document).on('click', '.info', async function(){
         const id = $(this).attr('inamsc-id');
+        let data;
 
+        try {
+            data = await $.ajax({
+              url: '{{url('admin/inamsc/education-video')}}/' + id
+            });
+        } catch (e) {
+          alert("Ajax error");
+          console.log(e);
+          return;
+        }
+        // image path of payment proof
+        let path = '{{url('admin/view/image/payment')}}/' + data.payment.id;
+        $("#foto-bukti").attr('href', path);
+        $("input[name='nama_rekening']").val(data.payment.nama_rekening);
+        $("input[name='jumlah']").val(data.payment.jumlah);
+        path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
+        $("#files").attr('href', path);
+        $('.price').trigger('input');
+
+        $(".participants").html("");
+
+        data.participants.forEach(function(el, idx, arr){
+
+          $(".participants").append(
+            "<div class='participant'>"
+            + "<h5>Participant "+ parseInt(idx+1) +"</h5>"+
+              "<div class='form-group'>"+
+                "<label>Name</label>" +
+                "<input class='form-control' type='text' disabled value="+el.nama+">" +
+              "</div>"+
+            "<div class='form-group'>"+
+              "<label>University:</label>"+
+            "<input class='form-control' type='text' disabled value="+el.universitas+">"+
+            "</div>"+
+            "<div class='form-group'>"+
+              "<label>Department:</label>"+
+            "<input class='form-control' type='text' disabled value="+el.jurusan+">"+
+            "</div>"+
+              "<div class='form-group'>"+
+                "<label>Ambassador Code:</label>"+
+                "<input class='form-control' type='text' disabled value="+el.kode_ambassador+">"+
+              "</div>" +
+            "</div>"
+          );
+
+
+
+        });
+
+        $("#modal1").modal('show');
 
       });
 
-      // let userId;
-      // $(".view").click(async function(){
-      //   const id = $(this).attr('user-id');
-      //   userId = id;
-      //
-      //   let data;
-      //
-      //   try {
-      //     data = await $.ajax({
-      //       url: '{{url('admin/payment')}}/2/' + id
-      //     });
-      //   } catch (e) {
-      //     console.log(e);
-      //     alert("Error");
-      //   }
-      //   path = "{{url('admin/view/image/payment').'/'}}";
-      //   $(".modal-title").text("");
-      //   $("input[name='nama_rekening']").val(data.nama_rekening);
-      //   $("input[name='jumlah']").val(data.jumlah);
-      //   $("#foto-bukti").attr("href", path+data.id);
-      //
-      //   $("#modal1").modal('show');
-      // });
+
+      $(document).on('click', '.accept', function(){
+        const id = $(this).attr('inamsc-id');
+
+        alertify.confirm('Confirmation', 'Would you like to accept this participant?',
+        async function(){
+          // user has confirmed
+          let data;
+          try {
+            await $.ajax({
+              url: '{{url('admin/inamsc/education-video/accept')}}/' + id,
+              method: "PUT"
+            });
+          } catch (e) {
+            alert("ajaax error");
+            console.log(e);
+            return;
+          }
+          alertify.success("Participant has been accepted!");
+          dataTable.ajax.reload(null, false);
+        },
+          function(){
+
+          });
+
+      });
+
+      $(document).on('click', '.decline', function(){
+        const id = $(this).attr('inamsc-id');
+
+        alertify.confirm('Confirmation', 'Would you like to decline this participant?',
+        async function(){
+          // user has confirmed
+          let data;
+          try {
+            await $.ajax({
+              url: '{{url('admin/inamsc/education-video/decline')}}/' + id,
+              method: "PUT"
+            });
+          } catch (e) {
+            alert("ajaax error");
+            console.log(e);
+            return;
+          }
+          alertify.success("Participant has been declined!");
+          dataTable.ajax.reload(null, false);
+        },
+          function(){
+
+          });
+
+      });
 
     });
   </script>

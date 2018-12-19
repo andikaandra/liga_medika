@@ -9,5 +9,8 @@ class INAMSCParticipant extends Model
   protected $table = "inamscparticipants";
   protected $fillable = ['nama', 'inamsc_id','kode_ambassador','universitas', 'jurusan'];
 
+  public function inamsc() {
+    return $this->belongsTo('App\INAMSC');
+  }
   public $timestamps = false;
 }

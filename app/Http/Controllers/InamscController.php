@@ -96,7 +96,7 @@ class InamscController extends Controller
           'user_id' => $user_id,
           'tipe_lomba' => $tipe_lomba,
           'location' => str_replace("public","", $path),
-          'tipe_pembayaran' => 2, //// TODO: change tipe to DP or Lunas
+          'tipe_pembayaran' => 1, // Bayar DP
           'nama_rekening' => $request->nama_rekening,
           'jumlah' => str_replace('.','',$request->jumlah_transfer)
         ]);
@@ -277,5 +277,73 @@ class InamscController extends Controller
 
     public function getEducationvideo() {
       return response()->json(['data' => INAMSC::where('type', 2)->with('user:id,email,name')->get()]);
+    }
+
+    public function findEducationVideoDetails($id) {
+      //get education video details and payment DP proof
+      $educationVideo = INAMSC::find($id);
+      $payment = Payment::where('user_id', $educationVideo->user_id)->where('tipe_pembayaran', 1)->first();
+      return response()->json(['location' => $educationVideo->file_path, 'payment' => $payment, 'user_id' => $educationVideo->user_id,
+      'participants' => $educationVideo->participants]);
+    }
+
+    public function acceptEducationVideo($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineEducationVideo($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function getLiteratureReview() {
+      return response()->json(['data' => INAMSC::where('type', 3)->with('user:id,email,name')->get()]);
+    }
+
+    public function findLiteratureReviewDetails($id) {
+      //get education video details and payment DP proof
+      $lr = INAMSC::find($id);
+      $payment = Payment::where('user_id', $lr->user_id)->where('tipe_pembayaran', 1)->first();
+      return response()->json(['location' => $lr->file_path, 'payment' => $payment, 'user_id' => $lr->user_id,
+      'participants' => $lr->participants]);
+    }
+
+    public function acceptLiteratureReview($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineLiteratureReview($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
     }
 }

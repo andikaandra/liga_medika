@@ -26,147 +26,33 @@ class AdminController extends Controller
 
     }
 
-    public function verifSimposiumAcc()
-    {
-        $verif = Symposium::where('status_verif', 1)->get();
-        $title = "Accepted Verification Symposium";
-        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
-    }
-
-    public function verifSimposiumReject()
-    {
-        $verif = Symposium::where('status_verif', 2)->get();
-        $title = "Rejected Verification Symposium";
-        return view('admin.inamsc.verification_simposium', compact('verif', 'title'));
-    }
-
-    public function simposiumAcc(Request $request)
-    {
-        Symposium::where('id',$request->symposium_id)->update([
-          'status_verif' => 1,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 1,
-        ]);
-        return redirect()->back()->with('message', 'Success');
-    }
-
-    public function simposiumReject(Request $request)
-    {
-        Symposium::where('id',$request->symposium_id)->update([
-          'status_verif' => 2,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 2,
-        ]);
-        return redirect()->back()->with('message', 'Success');
-    }
-
 
     //VERIFIKASI EDUCATION VIDEO
-    public function verifEdukasi()
+    public function verifEdukasiPage()
     {
         $title = "Verification - Education Video & Public Poster ";
         return view('admin.inamsc.verification_education', compact('title'));
     }
 
-    public function verifEdukasiAcc()
+
+
+    public function verifLiteraturePage()
     {
-        $verif = INAMSC::where('status_verif', 1)->where('type','=',2)->get();
-        $title = "Accepted Verification Education Video Public Poster ";
-        return view('admin.verification_education', compact('verif', 'title'));
+        $title = "Verification Literature Review & Research Public Poster ";
+        return view('admin.inamsc.verification_literature', compact('title'));
     }
 
-    public function verifEdukasiReject()
+    public function getInamscFiles($id)
     {
-        $verif = INAMSC::where('status_verif', 2)->where('type','=',2)->get();
-        $title = "Rejected Verification Education Video Public Poster ";
-        return view('admin.verification_education', compact('verif', 'title'));
-    }
-
-    public function edukasiAcc(Request $request)
-    {
-        INAMSC::where('id',$request->edukasi_id)->update([
-          'status_verif' => 1,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 1,
-        ]);
-
-        return redirect()->back()->with('message', 'Success');
-    }
-
-    public function edukasiReject(Request $request)
-    {
-        INAMSC::where('id',$request->edukasi_id)->update([
-          'status_verif' => 2,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 2,
-        ]);
-        return redirect()->back()->with('message', 'Success');
-    }
-
-
-    //VERIFIKASI LITERATURE REVIEW
-    public function verifLiterature()
-    {
-        $verif = INAMSC::where('status_verif','=',0)->where('type','=',3)->get();
-        $title = "Queued Verification Literature Review & Research Public Poster ";
-        return view('admin.verification_literature', compact('verif', 'title'));
-    }
-
-    public function verifLiteratureAcc()
-    {
-        $verif = INAMSC::where('status_verif', 1)->where('type','=',3)->get();
-        $title = "Accepted Verification Literature Review & Research Public Poster ";
-        return view('admin.verification_literature', compact('verif', 'title'));
-    }
-
-    public function verifLiteratureReject()
-    {
-        $verif = INAMSC::where('status_verif', 2)->where('type','=',3)->get();
-        $title = "Rejected Verification Literature Review & Research Public Poster ";
-        return view('admin.verification_literature', compact('verif', 'title'));
-    }
-
-    public function literatureAcc(Request $request)
-    {
-        INAMSC::where('id',$request->literature_id)->update([
-          'status_verif' => 1,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 1,
-        ]);
-        return redirect()->back()->with('message', 'Success');
-    }
-
-    public function literatureReject(Request $request)
-    {
-        INAMSC::where('id',$request->literature_id)->update([
-          'status_verif' => 2,
-        ]);
-
-        User::where('id',$request->user_id)->update([
-          'lomba_verified' => 2,
-        ]);
-        return redirect()->back()->with('message', 'Success');
-    }
-
-
-
-    public function getFIle($type, $id)
-    {
-        $data = INAMSC::where('user_id',$id)->where('type',$type)->select('file_path')->first();
-
-        $myFile = public_path().'/storage'.$data['file_path'];
+      try {
+        $data = INAMSC::where('user_id', $id)->first();
+        $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
         $newName = time().'.zip';
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage()], $e->getCode());
+      }
+
       return response()->download($myFile, $newName, $headers);
     }
 

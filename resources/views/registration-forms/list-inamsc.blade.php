@@ -11,7 +11,7 @@
       <div class="col-md-4 col-12">
         <a href="{{url('users/inamsc/education-video')}}">
           <div class="cabang">
-            Video Edukasi & Publik Poster
+            Education Video & Public Poster
           </div>
         </a>
 
