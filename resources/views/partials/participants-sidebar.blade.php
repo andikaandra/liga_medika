@@ -26,16 +26,16 @@
     @if(Auth::user()->cabang_spesifik)
     <li class="nav-item" id="user-announcement">
       <a class="nav-link" href="{{url('users')}}">
-        <span class="menu-title">Announcement</span>
+        <span class="menu-title">Announcements</span>
         <i class="mdi mdi-bell menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" id="user-data">
+    {{-- <li class="nav-item" id="user-data">
       <a class="nav-link" href="{{url('users')}}">
         <span class="menu-title">My Data</span>
         <i class="mdi mdi-content-save menu-icon"></i>
       </a>
-    </li>
+    </li> --}}
     @endif
     @if(Auth::user()->cabang==3 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
     <li class="nav-item" id="user-files">

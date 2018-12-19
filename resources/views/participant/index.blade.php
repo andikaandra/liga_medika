@@ -86,6 +86,21 @@
 
         @endif
 
+        @if (Auth::user()->lomba_verified == -1)
+          <div class="alert alert-danger">
+              <p class="card-text">Your registration has been declined. You can contact contact our committee at: (...) for more information.</p>
+          </div>
+
+        @elseif (Auth::user()->lomba_verified == 0 && Auth::user()->cabang_spesifik)
+          <div class="alert alert-warning">
+            <p class="card-text">Your registration is being reviewed by the committe. Please be patient. You can contact our committee at: (...) for more information.</p>
+          </div>
+        @else
+          <div class="alert alert-success">
+            <p class="card-text">Your registration has been accepted by the committe. You can contact our committee at: (...) for more information.</p>
+          </div>
+        @endif
+
         {{-- notif sukses --}}
         @if (\Session::get('message'))
           <div class="alert alert-success">
@@ -103,9 +118,10 @@
             {{-- user has completed registration--}}
           @if (Auth::user()->cabang_spesifik)
             <div class="card-body">
-              <p>hi you will find info here</p>
+              {{-- <p>hi you will find info here</p> --}}
                 @if (Auth::user()->cabang == 3)
                   @if (Auth::user()->cabang_spesifik == 1)
+                    @include('participant.partials.dashboard-symposium')
                     <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p>
                   @elseif (Auth::user()->cabang_spesifik == 2)
                     <p>Dashboard video edukasi & pp, relevant information will be here. still todo</p>
@@ -130,8 +146,6 @@
             @endif
 
           @endif
-
-
           <br>
         </div>
       </div>
