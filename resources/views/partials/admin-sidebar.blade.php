@@ -34,6 +34,30 @@
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic6" aria-expanded="false" aria-controls="ui-basic6">
+        <span class="menu-title">IMARC</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-library-books menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic6">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.imarc')}}">Imarc</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic7" aria-expanded="false" aria-controls="ui-basic7">
+        <span class="menu-title">IMSSO</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-library-books menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic7">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.imsso')}}">Imsso</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic5" aria-expanded="false" aria-controls="ui-basic5">
         <span class="menu-title">Submissions</span>
         <i class="menu-arrow"></i>
