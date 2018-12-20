@@ -148,7 +148,7 @@
         return;
       }
       // image path of payment proof
-      let path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
+      let path = '{{url('admin/inamsc/file')}}/' + data.id; //path for participant files
       $("#files").attr('href', path);
       $('.price').trigger('input');
 

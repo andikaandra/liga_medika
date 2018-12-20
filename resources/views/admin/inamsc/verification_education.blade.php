@@ -162,7 +162,7 @@
         $("#foto-bukti").attr('href', path);
         $("input[name='nama_rekening']").val(data.payment.nama_rekening);
         $("input[name='jumlah']").val(parseInt(data.payment.jumlah));
-        path = '{{url('admin/inamsc/file')}}/' + data.user_id; //path for participant files
+        path = '{{url('admin/inamsc/file')}}/' + data.id; //path for participant files
         $("#files").attr('href', path);
         $('.price').trigger('input');
 

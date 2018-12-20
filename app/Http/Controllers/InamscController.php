@@ -285,7 +285,7 @@ class InamscController extends Controller
       $educationVideo = INAMSC::find($id);
       $payment = Payment::where('user_id', $educationVideo->user_id)->where('tipe_pembayaran', 1)->first();
       return response()->json(['location' => $educationVideo->file_path, 'payment' => $payment, 'user_id' => $educationVideo->user_id,
-      'participants' => $educationVideo->participants]);
+      'participants' => $educationVideo->participants, 'id' => $lr->id]);
     }
 
     public function acceptEducationVideo($id) {
@@ -320,7 +320,7 @@ class InamscController extends Controller
       //get education video details and payment DP proof
       $lr = INAMSC::find($id);
       return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
-      'participants' => $lr->participants]);
+      'participants' => $lr->participants, 'id' => $lr->id]);
     }
 
     public function acceptLiteratureReview($id) {
