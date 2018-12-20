@@ -23,15 +23,18 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    @if(Auth::user()->lomba_verified)
-      <li class="nav-item" id="user-team">
-        <a class="nav-link" href="{{url('users/participants')}}">
-          <span class="menu-title">
-            My Team
-          </span>
-          <i class="mdi mdi-account-multiple menu-icon"></i>
-        </a>
-      </li>
+    @if(Auth::user()->lomba_verified == 1)
+      @if (Auth::user()->cabang_spesifik != 1)
+        <li class="nav-item" id="user-team">
+          <a class="nav-link" href="{{url('users/participants')}}">
+            <span class="menu-title">
+              My Team
+            </span>
+            <i class="mdi mdi-account-multiple menu-icon"></i>
+          </a>
+        </li>
+      @endif
+
       <li class="nav-item" id="user-announcement">
         <a class="nav-link" href="#">
           <span class="menu-title">Announcements</span>
@@ -41,7 +44,7 @@
     @endif
 
     @if(Auth::user()->cabang==3 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
-      @if (Auth::user()->lomba_verified == 1)
+      @if (Auth::user()->lomba_verified != 1)
         <li class="nav-item unclickable" id="user-files">
           <a class="nav-link" href="#">
             <span class="menu-title">Upload Files</span>
