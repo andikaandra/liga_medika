@@ -180,7 +180,7 @@ class InamscController extends Controller
         // test the validator out
         if ($validator->fails()) {
           // return response()->json($validator)
-          return "Error";
+          // return "Error";
           return redirect()
                       ->back()
                       ->withErrors($validator)
