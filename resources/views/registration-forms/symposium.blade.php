@@ -13,9 +13,8 @@
 @section('content')
   <div class="content-wrapper">
     <div class="row">
-      <div class="col-md-12">        
-        @if ($errors->all())
-          <p>ADA ERROR</p>
+      <div class="col-md-12">
+        @if ($errors->all())          
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
             <ul>
