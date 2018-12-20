@@ -14,7 +14,10 @@
   <div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-        @if ($errors->any())
+        @php
+          print($errors);
+        @endphp
+        @if ($errors->all())
           <p>ADA ERROR</p>
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
