@@ -46,31 +46,6 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  {{-- @foreach ($verif as $l)
-                    <tr>
-                      <td>{{$l->id}}</td>
-                      <td>{{$l->user_id}}</td>
-                      <td><a href="{{url('admin/view/image/ktp').'/'.$l->id}}" target="_blank">KTP</a></td>
-                      <td>{{$l->nama}}</td>
-                      <td>
-                        <button type="button" user-id="{{$l->user_id}}" name="button" class="btn btn-sm btn-primary view">View</button>
-                      </td>
-                      <td>
-                        <form method="post" action="{{route('verifikasi.simposium.acc')}}">
-                          @csrf
-                          <input type="hidden" name="symposium_id" value="{{$l->id}}">
-                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
-                          <button type="submit" class="btn btn-sm btn-info acc">Acc</button>
-                        </form>
-                        <form method="post" action="{{route('verifikasi.simposium.reject')}}">
-                          @csrf
-                          <input type="hidden" name="symposium_id" value="{{$l->id}}">
-                          <input type="hidden" name="user_id" value="{{$l->user_id}}">
-                          <button type="submit" class="btn btn-sm btn-danger reject">Reject</button>
-                        </form>
-                      </td>
-                    </tr>
-                  @endforeach --}}
                 </tbody>
               </table>
             </div>
@@ -102,7 +77,7 @@
           </div>
           <div class="form-group">
             <label for="">Amount:</label>
-            <input class="form-control" type="text" name="jumlah" disabled>
+            <input class="form-control price" type="text" name="jumlah" disabled>
           </div>
             <a class="btn btn-info" href="" id="foto-bukti" target="_blank" role="button">Proof of Payment</a>
         </form>
@@ -119,6 +94,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
 
+      $('.price').mask('0.000.000.000.000', {reverse: true});
 
       let symposiumTable = $(".table").DataTable({
         ajax: '{{url('admin/inamsc/simposium')}}',
@@ -184,6 +160,8 @@
 
           path = '{{url("admin/view/image/ktp")}}/' + data.simposium_data.user_id;
           $("#ktp").attr('href', path);
+          $('.price').trigger('input');
+
           $("#modal1").modal('show');
       });
 
