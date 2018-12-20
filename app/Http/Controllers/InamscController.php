@@ -183,7 +183,7 @@ class InamscController extends Controller
           // return "Error";
           return redirect()
                       ->back()
-                      ->withErrors($validator)
+                      ->with('errors', 'image size and format')
                       ->withInput();
       }
 

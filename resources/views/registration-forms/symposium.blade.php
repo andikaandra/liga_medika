@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-md-12">
         @php
-          print($errors);
+          print(session()->get('errors'));
         @endphp
         @if ($errors->all())
           <p>ADA ERROR</p>
