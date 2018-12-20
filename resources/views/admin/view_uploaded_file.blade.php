@@ -17,7 +17,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6">
-        <img id="picKtp" width="100%" height="100%" src="{{asset('storage'.$path)}}" alt="">
+        <img id="picKtp" width="100%" height="100%" src="{{asset('storage').$path}}" alt="">
       </div>
     </div>
   </div>
