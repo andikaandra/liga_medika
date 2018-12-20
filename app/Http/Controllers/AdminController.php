@@ -111,10 +111,11 @@ class AdminController extends Controller
       return response()->json(Payment::where('user_id',$id)->where('tipe_lomba',$type)->first());
     }
 
-    public function viewUploadedFile($type, $id)
+    public function viewUploadedFileSimposium($type, $id)
     {
         $path='';
         $path = Symposium::find($id);
+        $user_id = $path->user_id;
         if (!$path) {
           return "Not found";
         }
@@ -122,6 +123,25 @@ class AdminController extends Controller
             $path = $path->ktp;
         }
         if ($type=="payment") {
+            $path = Payment::where('user_id', $user_id)->first();
+            $path = $path->location;
+        }
+        return view('admin.view_uploaded_file', compact('path'));
+    }
+
+    public function viewUploadedEducationAndLitrev($type, $id)
+    {
+        $path='';
+        $path = INAMSC::find($id);
+        $user_id = $path->user_id;
+        if (!$path) {
+          return "Not found";
+        }
+        if ($type=="ktp") {
+            $path = $path->ktp;
+        }
+        if ($type=="payment") {
+            $path = Payment::where('user_id', $user_id)->first();
             $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));

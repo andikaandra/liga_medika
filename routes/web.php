@@ -73,7 +73,10 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('imsso/imsso/decline/{id}', 'ImssoController@declineImsso');
 
 
-  Route::get('/view/image/{type}/{id}', 'AdminController@viewUploadedFile');
+  Route::get('/view/simposium/image/{type}/{id}', 'AdminController@viewUploadedFileSimposium');
+  Route::get('/view/image/{type}/{id}', 'AdminController@viewUploadedEducationAndLitrev');
+
+
   Route::get('inamsc', 'InamscController@getInamsc');
   Route::get('inamsc/simposium', 'InamscController@getSymposium');
   Route::get('lombas/{id}', 'LombaController@findLomba');

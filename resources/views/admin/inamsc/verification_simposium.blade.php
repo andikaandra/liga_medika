@@ -152,13 +152,13 @@
           return;
         }
         console.log(data)
-          let path = "{{url('admin/view/image/payment').'/'}}";
+          let path = "{{url('admin/view/simposium/image/payment').'/'}}";
           $(".modal-title").text("");
           $("input[name='nama_rekening']").val(data.payment.nama_rekening);
           $("input[name='jumlah']").val(data.payment.jumlah);
           $("#foto-bukti").attr("href", path + data.payment.id);
 
-          path = '{{url("admin/view/image/ktp")}}/' + data.simposium_data.id;
+          path = '{{url("admin/view/simposium/image/ktp")}}/' + data.simposium_data.id;
           $("#ktp").attr('href', path);
           $('.price').trigger('input');
 
