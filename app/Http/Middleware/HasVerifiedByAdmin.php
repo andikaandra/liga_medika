@@ -21,6 +21,6 @@ class HasVerifiedByAdmin
       if ($request->ajax()) {
         return response()->json(['message' => 'unauthorised.'], 401);
       }
-        return $next($request);
+        return redirect('users');
     }
 }
