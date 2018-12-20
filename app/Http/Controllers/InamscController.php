@@ -237,7 +237,7 @@ class InamscController extends Controller
 
     public function findSimposium($id) {
       $symposium = Symposium::find($id); //find simposium data
-      $payment = Payment::find($symposium->user_id); //get payment for user
+      $payment = Payment::where('user_id', $symposium->user_id)->first(); //get payment for user
       return response()->json(['simposium_data' => $symposium, 'payment' => $payment]);
     }
 
