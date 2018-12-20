@@ -13,10 +13,7 @@
 @section('content')
   <div class="content-wrapper">
     <div class="row">
-      <div class="col-md-12">
-        @php
-          print(session()->get('errors'));
-        @endphp
+      <div class="col-md-12">        
         @if ($errors->all())
           <p>ADA ERROR</p>
           <div class="alert alert-danger">
