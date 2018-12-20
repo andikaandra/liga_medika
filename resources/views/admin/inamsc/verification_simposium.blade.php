@@ -158,7 +158,7 @@
           $("input[name='jumlah']").val(data.payment.jumlah);
           $("#foto-bukti").attr("href", path + data.payment.id);
 
-          path = '{{url("admin/view/image/ktp")}}/' + data.simposium_data.user_id;
+          path = '{{url("admin/view/image/ktp")}}/' + data.simposium_data.id;
           $("#ktp").attr('href', path);
           $('.price').trigger('input');
 

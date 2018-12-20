@@ -115,12 +115,12 @@ class AdminController extends Controller
     {
         $path='';
         if ($type=="ktp") {
-            $path = Symposium::where('id', $id)->select('ktp')->first();
-            $path = $path['ktp'];
+            $path = Symposium::find($id);
+            $path = $path->ktp;
         }
         if ($type=="payment") {
-            $path = Payment::where('id', $id)->select('location')->first();
-            $path = $path['location'];
+            $path = Payment::find($id);
+            $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));
     }
