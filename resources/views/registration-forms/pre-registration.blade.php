@@ -29,11 +29,11 @@
       </div>
       <div class="form-group">
         <label for="">Name of Person in Charge: </label>
-        <input type="text" class="form-control" name="penanggung_jawab" value="" required>
+        <input type="text" class="form-control" name="penanggung_jawab" value="" required pattern=".*\S+.*" title="This field is required">
       </div>
       <div class="form-group">
         <label for="">University: </label>
-        <input type="text" class="form-control" name="universitas" value="" required>
+        <input type="text" class="form-control" name="universitas" value="" required pattern=".*\S+.*" title="This field is required">
       </div>
     </div>
     <input type="submit" class="btn btn-success" name="" value="Submit" required>

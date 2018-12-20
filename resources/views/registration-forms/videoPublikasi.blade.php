@@ -137,6 +137,10 @@
             temp2 = $('#univ'+i).val();
             temp3 = $('#jurusan'+i).val();
             temp4 = $('#kode'+i).val();
+            if (temp1.trim() == "" || temp2.trim() == "" || temp3.trim() == "") {
+              alert("Cannot be empty!");
+              return;
+            }
             data.push([temp1, temp2, temp3, temp4]);
         }
         console.log(data);

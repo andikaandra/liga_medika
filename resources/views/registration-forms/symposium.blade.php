@@ -14,7 +14,7 @@
   <div class="content-wrapper">
     <div class="row">
       <div class="col-md-12">
-        @if ($errors->all())          
+        @if ($errors->all())
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
             <ul>
@@ -67,7 +67,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Student name: </label>
-                    <input type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
+                    <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
                   </div>
                   <div class="form-group">
                     <label for="">Scan KTP/ KTM</label>
@@ -78,7 +78,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Account Sender's name: </label>
-                    <input type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value="">
+                    <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value="">
                   </div>
                   <div class="form-group">
                     <label for="">Amount: </label>

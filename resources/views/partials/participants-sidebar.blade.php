@@ -39,9 +39,9 @@
         </a>
       </li>
     @endif
-    
+
     @if(Auth::user()->cabang==3 &&(Auth::user()->cabang_spesifik==2 || Auth::user()->cabang_spesifik==3))
-      @if (Auth::user()->lomba_verified != 1)
+      @if (Auth::user()->lomba_verified == 1)
         <li class="nav-item unclickable" id="user-files">
           <a class="nav-link" href="#">
             <span class="menu-title">Upload Files</span>
