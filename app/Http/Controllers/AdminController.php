@@ -114,12 +114,14 @@ class AdminController extends Controller
     public function viewUploadedFile($type, $id)
     {
         $path='';
+        $path = Symposium::find($id);
+        if (!$path) {
+          return "Not found";
+        }
         if ($type=="ktp") {
-            $path = Symposium::find($id);
             $path = $path->ktp;
         }
         if ($type=="payment") {
-            $path = Payment::find($id);
             $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));
