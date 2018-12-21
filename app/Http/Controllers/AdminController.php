@@ -130,13 +130,11 @@ class AdminController extends Controller
     }
 
     public function viewUploadedEducationAndLitrev($type, $id)
-    {      
+    {
         if ($type=="payment") {
             $path = Payment::find($id);
             $path = $path->location;
         }
-
-        return $path;
         return view('admin.view_uploaded_file', compact('path'));
     }
 
