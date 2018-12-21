@@ -187,7 +187,7 @@
                     <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td align="center">
-                          <div>
+                          <div style="color: white">
                             <a href="{{url("email/verify")."/$email_token"}}" class="button button--blue">Verify Email</a>
                           </div>
                         </td>
