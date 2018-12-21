@@ -86,7 +86,7 @@
     }
 
     .nav-item.unclickable{
-      background-color: #e9ecef !important;
+      background-color: rgba(0,0,0,0.4) !important;
       cursor: not-allowed !important;
 
     }

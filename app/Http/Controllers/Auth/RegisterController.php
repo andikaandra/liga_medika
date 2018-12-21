@@ -49,7 +49,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
         // return response()->json(['message' => 'User successfully registered.'], 201);
         // return view('verification');
-        return redirect('login')->with('message', '');
+        return redirect('login')->with('success', 'Account registration succesful!');
     }
 
 

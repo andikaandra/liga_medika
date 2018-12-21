@@ -10,7 +10,11 @@
               <p>Account not found. Please re-enter your credentials.</p>
             </div>
           @endif
-
+          @if (Session::has('success'))
+            <div class="alert alert-success">
+              <p>{{Session::get('message')}}</p>
+            </div>
+          @endif
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

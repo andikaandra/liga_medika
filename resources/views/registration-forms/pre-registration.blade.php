@@ -1,7 +1,7 @@
 <div class="progress-section">
   <ul class="progressbar">
       <li class="active">Choose competition/ event</li>
-      <li>Fill in self data and payment</li>
+      <li class="">Fill in self data and payment</li>
       <li>Data verification by Admin</li>
       <li>Upload Files*</li>
   </ul>
