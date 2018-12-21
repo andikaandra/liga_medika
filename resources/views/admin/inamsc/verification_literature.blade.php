@@ -161,19 +161,19 @@
           + "<h5>Participant "+ parseInt(idx+1) +"</h5>"+
             "<div class='form-group'>"+
               "<label>Name</label>" +
-              "<input class='form-control' type='text' disabled value="+el.nama+">" +
+              "<input class='form-control' type='text' disabled value=\""+el.nama+"\">" +
             "</div>"+
           "<div class='form-group'>"+
             "<label>University:</label>"+
-          "<input class='form-control' type='text' disabled value="+el.universitas+">"+
+          "<input class='form-control' type='text' disabled value=\""+el.universitas+"\">"+
           "</div>"+
           "<div class='form-group'>"+
             "<label>Department:</label>"+
-          "<input class='form-control' type='text' disabled value="+el.jurusan+">"+
+          "<input class='form-control' type='text' disabled value=\""+el.jurusan+"\">"+
           "</div>"+
             "<div class='form-group'>"+
               "<label>Ambassador Code:</label>"+
-              "<input class='form-control' type='text' disabled value="+el.kode_ambassador+">"+
+              "<input class='form-control' type='text' disabled value=\""+el.kode_ambassador+"\">"+
             "</div>" +
           "</div>"
         );

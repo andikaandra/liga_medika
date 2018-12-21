@@ -67,7 +67,7 @@ class AdminController extends Controller
     public function getInamscFiles($id)
     {
       try {
-        $data = INAMSC::where('user_id', $id)->first();
+        $data = INAMSC::find($id);
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
         $newName = time().'.zip';
@@ -123,7 +123,7 @@ class AdminController extends Controller
             $path = $path->ktp;
         }
         if ($type=="payment") {
-            $path = Payment::where('user_id', $user_id)->first();
+            $path = Payment::find($id);
             $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));
@@ -141,7 +141,7 @@ class AdminController extends Controller
             $path = $path->ktp;
         }
         if ($type=="payment") {
-            $path = Payment::where('user_id', $user_id)->first();
+            $path = Payment::find($id);
             $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));
