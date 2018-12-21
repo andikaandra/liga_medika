@@ -144,6 +144,8 @@ class AdminController extends Controller
             $path = Payment::find($id);
             $path = $path->location;
         }
+
+        return $path;
         return view('admin.view_uploaded_file', compact('path'));
     }
 
