@@ -53,7 +53,7 @@ class LoginController extends Controller
           return redirect()->route('user.index');
         }
       } else {
-        return "Account not found";
+        return redirect('login')->with('message', "Account not found");
       }
 
     }
