@@ -22,9 +22,9 @@
         <label for="">Competition/ event: </label>
         <select class="form-control" name="cabang" required>
           <option value="3">INAMSC</option>
-          <option value="2">IMARC</option>
-          <option value="1">IMSSO</option>
-          <option value="4">HFGM</option>
+          <option value="2" disabled>IMARC</option>
+          <option value="1" disabled>IMSSO</option>
+          <option value="4" disabled>HFGM</option>
         </select>
       </div>
       <div class="form-group">
