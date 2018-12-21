@@ -79,6 +79,7 @@
 
     .progress-section{
         padding-top: 20px;
+        opacity: 0.9 !important;
     }
 
     .brand-logo-mini {

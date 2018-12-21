@@ -12,7 +12,7 @@
           @endif
           @if (Session::has('success'))
             <div class="alert alert-success">
-              <p>{{Session::get('message')}}</p>
+              <p>Account resgistration succesful.</p>
             </div>
           @endif
             <div class="card">
