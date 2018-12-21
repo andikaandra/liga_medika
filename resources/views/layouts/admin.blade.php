@@ -91,6 +91,10 @@
 
     }
 
+    .nav-profile-text{
+      font-size: 12px !important;
+    }
+
 
     @media only screen and (max-width: 768px) {
       .table .btn {
