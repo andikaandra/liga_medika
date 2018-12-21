@@ -101,6 +101,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $('.price').mask('0.000.000.000.000', {reverse: true});
+      $("#admin-imsso").addClass("active");
 
       let dataTable = $(".table").DataTable({
         responsive: true,

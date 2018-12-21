@@ -46,7 +46,7 @@
         <div class="card">
           <div class="symposium progress-section">
             <ul class="progressbar">
-               <li class="active">Choose cabang</li>
+              <li class="active">Choose sub competition</li>
                <li class="active">Fill in self data and payment</li>
                <li>Data and payment verification by Admin</li>
                {{-- <li>View map</li> --}}

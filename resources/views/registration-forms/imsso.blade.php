@@ -45,7 +45,7 @@
         <div class="card">
           <div class="progress-section">
             <ul class="progressbar">
-               <li class="active">Choose cabang</li>
+              <li class="active">Choose sub competition</li>
                <li class="active">Fill in self data and payment</li>
                <li>Data verification by Admin</li>
             </ul>

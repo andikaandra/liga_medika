@@ -12,13 +12,13 @@
         </div>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="admin-home">
       <a class="nav-link" href="{{url('admin')}}">
         <span class="menu-title">Home</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="admin-inamsc">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic4" aria-expanded="false" aria-controls="ui-basic4">
         <span class="menu-title">INAMSC</span>
         <i class="menu-arrow"></i>
@@ -32,7 +32,7 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="admin-imarc">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic6" aria-expanded="false" aria-controls="ui-basic6">
         <span class="menu-title">IMARC</span>
         <i class="menu-arrow"></i>
@@ -44,7 +44,7 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="admin-imsso">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic7" aria-expanded="false" aria-controls="ui-basic7">
         <span class="menu-title">IMSSO</span>
         <i class="menu-arrow"></i>
@@ -56,7 +56,7 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="admin-submissions">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic5" aria-expanded="false" aria-controls="ui-basic5">
         <span class="menu-title">Submissions</span>
         <i class="menu-arrow"></i>

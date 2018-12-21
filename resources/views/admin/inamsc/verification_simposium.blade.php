@@ -93,7 +93,7 @@
 @section('script')
   <script type="text/javascript">
     $(document).ready(function(){
-
+      $("#admin-inamsc").addClass("active");
       $('.price').mask('0.000.000.000.000', {reverse: true});
 
       let symposiumTable = $(".table").DataTable({

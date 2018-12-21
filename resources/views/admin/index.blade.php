@@ -70,43 +70,45 @@
           <div class="card">
             <div class="card-body">
               <h3>Competitions and events management</h3>
-              <table class="table table-striped table-hover">
-                <thead>
-                  <th>Name</th>
-                  <th>Number of waves</th>
-                  <th>Current wave</th>
-                  <th>Registration status</th>
-                  <th>Submission status</th>
-                  <th>Price</th>
-                  <th>Down Payment</th>
-                  <th>Capacity</th>
-                </thead>
-                <tbody>
-                  @foreach ($lombas as $l)
-                    <tr id="{{$l->id}}">
-                      <td id="nama-{{$l->id}}">{{$l->nama}}</td>
-                      <td id="jumlah_gelombang-{{$l->id}}">{{$l->jumlah_gelombang}}</td>
-                      <td id="gelombang_sekarang-{{$l->id}}">{{$l->gelombang_sekarang}}</td>
-                      @if ($l->status_pendaftaran)
-                        <td id="status_pendaftaran-{{$l->id}}">Open</td>
-                      @else
-                        <td id="status_pendaftaran-{{$l->id}}">Close</td>
-                      @endif
-                      @if ($l->status_pengumpulan)
-                        <td id="status_pengumpulan-{{$l->id}}">Open</td>
-                      @else
-                        <td id="status_pengumpulan-{{$l->id}}">Close</td>
-                      @endif
-                      <td id="biaya-{{$l->id}}">{{"Rp " . number_format((int)$l->biaya,2,',','.')}}</td>
-                      <td id="dp-{{$l->id}}">{{"Rp " . number_format((int)$l->dp,2,',','.')}}</td>
-                      <td id="kuota-{{$l->id}}">{{$l->kuota}}</td>
-                      <td>
-                        <button type="button" cabang-id={{$l->id}} name="button" class="btn btn-info edit">Edit</button>
-                      </td>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <th>Name</th>
+                    <th>Number of waves</th>
+                    <th>Current wave</th>
+                    <th>Registration status</th>
+                    <th>Submission status</th>
+                    <th>Price</th>
+                    <th>Down Payment</th>
+                    <th>Capacity</th>
+                  </thead>
+                  <tbody>
+                    @foreach ($lombas as $l)
+                      <tr id="{{$l->id}}">
+                        <td id="nama-{{$l->id}}">{{$l->nama}}</td>
+                        <td id="jumlah_gelombang-{{$l->id}}">{{$l->jumlah_gelombang}}</td>
+                        <td id="gelombang_sekarang-{{$l->id}}">{{$l->gelombang_sekarang}}</td>
+                        @if ($l->status_pendaftaran)
+                          <td id="status_pendaftaran-{{$l->id}}">Open</td>
+                        @else
+                          <td id="status_pendaftaran-{{$l->id}}">Close</td>
+                        @endif
+                        @if ($l->status_pengumpulan)
+                          <td id="status_pengumpulan-{{$l->id}}">Open</td>
+                        @else
+                          <td id="status_pengumpulan-{{$l->id}}">Close</td>
+                        @endif
+                        <td id="biaya-{{$l->id}}">{{"Rp " . number_format((int)$l->biaya,2,',','.')}}</td>
+                        <td id="dp-{{$l->id}}">{{"Rp " . number_format((int)$l->dp,2,',','.')}}</td>
+                        <td id="kuota-{{$l->id}}">{{$l->kuota}}</td>
+                        <td>
+                          <button type="button" cabang-id={{$l->id}} name="button" class="btn btn-info edit">Edit</button>
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -180,6 +182,7 @@
 @section('script')
   <script type="text/javascript">
     $(document).ready(function(){
+      $("#admin-home").addClass("active");
       let lombaId;
 
       $(".edit").click(async function(){

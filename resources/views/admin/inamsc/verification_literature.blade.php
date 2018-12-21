@@ -92,6 +92,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('.price').mask('0.000.000.000.000', {reverse: true});
+    $("#admin-inamsc").addClass("active");
 
     let dataTable = $(".table").DataTable({
       responsive: true,
