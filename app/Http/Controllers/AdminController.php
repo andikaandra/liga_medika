@@ -130,16 +130,7 @@ class AdminController extends Controller
     }
 
     public function viewUploadedEducationAndLitrev($type, $id)
-    {
-        $path='';
-        $path = INAMSC::find($id);
-        $user_id = $path->user_id;
-        if (!$path) {
-          return "Not found";
-        }
-        if ($type=="ktp") {
-            $path = $path->ktp;
-        }
+    {      
         if ($type=="payment") {
             $path = Payment::find($id);
             $path = $path->location;
