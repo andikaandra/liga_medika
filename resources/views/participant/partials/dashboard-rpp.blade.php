@@ -11,10 +11,10 @@
     </div>
     <div class="form-group">
       <label for="">Event/ competition: </label>
-      <input type="text" disabled class="form-control" name="" value="INAMSC - Literature Review">
+      <input type="text" disabled class="form-control" name="" value="INAMSC - Research Public Poster">
     </div>
     <div class="form-group">
-
+      
     </div>
   </form>
 </div>
