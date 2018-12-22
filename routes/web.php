@@ -37,20 +37,38 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
   //verifikasi edukasi
   Route::get('/verification/edukasi', 'AdminController@verifEdukasiPage')->name('verif.edukasi');
-
   Route::get('inamsc/education-video', 'InamscController@getEducationvideo');
   Route::get('inamsc/education-video/{id}', 'InamscController@findEducationVideoDetails');
 
   Route::put('inamsc/education-video/accept/{id}', 'InamscController@acceptEducationVideo');
   Route::put('inamsc/education-video/decline/{id}', 'InamscController@declineEducationVideo');
 
-  //verifikasi literaure
+
+  //verifikasi poster
+  Route::get('/verification/publication', 'AdminController@verifPublicationPosterPage')->name('verif.publication');
+  Route::get('inamsc/publication-poster', 'InamscController@getPublicationPoster');
+  Route::get('inamsc/publication-poster/{id}', 'InamscController@findPublicationPosterDetails');
+
+  Route::put('inamsc/publication-poster/accept/{id}', 'InamscController@acceptPublicationPoster');
+  Route::put('inamsc/publication-poster/decline/{id}', 'InamscController@declinePublicationPoster');
+
+
+  //verifikasi literature
   Route::get('/verification/literature', 'AdminController@verifLiteraturePage')->name('verif.literature');
   Route::get('inamsc/literature-review', 'InamscController@getLiteratureReview');
   Route::get('inamsc/literature-review/{id}', 'InamscController@findLiteratureReviewDetails');
 
   Route::put('inamsc/literature-review/accept/{id}', 'InamscController@acceptLiteratureReview');
   Route::put('inamsc/literature-review/decline/{id}', 'InamscController@declineLiteratureReview');
+
+
+  //verifikasi research
+  Route::get('/verification/research', 'AdminController@verifResearchPage')->name('verif.research');
+  Route::get('inamsc/research-poster', 'InamscController@getResearch');
+  Route::get('inamsc/research-poster/{id}', 'InamscController@findResearchDetails');
+
+  Route::put('inamsc/research-poster/accept/{id}', 'InamscController@acceptResearch');
+  Route::put('inamsc/research-poster/decline/{id}', 'InamscController@declineResearch');
 
 
   //verifikasi imarc
@@ -111,12 +129,15 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       // inamsc
       Route::get('inamsc/simposium', 'InamscController@registerSymposiumPage');
       Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
+      Route::get('inamsc/poster-publication', 'InamscController@registerPosterPublicationPage');
       Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
+      Route::get('inamsc/research-public-poster', 'InamscController@registerResearchPosterPage');
 
       Route::post('inamsc/simposium', 'InamscController@registerSymposium');
       Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
+      Route::post('inamsc/poster-publication', 'InamscController@registerPosterPublication')->name('register.poster.publication');
       Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
-
+      Route::post('inamsc/research-public-poster', 'InamscController@registerResearchPoster')->name('register.research.poster');
 
       //imarc
       Route::get('imarc', 'ImarcController@registerImarcPage');

@@ -28,25 +28,38 @@ class AdminController extends Controller
     //VERIFIKASI SIMPOSIUM
     public function verifSimposiumPage()
     {
-        $title = "Verification - Symposium & Workshop";
+        $title = "Verification - Symposium & Workshop ";
         return view('admin.inamsc.verification_simposium', compact('title'));
 
     }
 
-
     //VERIFIKASI EDUCATION VIDEO
     public function verifEdukasiPage()
     {
-        $title = "Verification - Education Video & Public Poster ";
+        $title = "Verification - Education Video ";
         return view('admin.inamsc.verification_education', compact('title'));
+    }
+
+    //VERIFIKASI PUBLIKASI POSTER
+    public function verifPublicationPosterPage()
+    {
+        $title = "Verification - Publication Poster ";
+        return view('admin.inamsc.verification_publication_poster', compact('title'));
     }
 
 
     //VERIFIKASI LITERATURE
     public function verifLiteraturePage()
     {
-        $title = "Verification - Literature Review & Research Public Poster ";
+        $title = "Verification - Literature Review ";
         return view('admin.inamsc.verification_literature', compact('title'));
+    }
+
+    //VERIFIKASI RESEARCH POSTER
+    public function verifResearchPage()
+    {
+        $title = "Verification - Research Public Poster ";
+        return view('admin.inamsc.verification_research_poster', compact('title'));
     }
 
 

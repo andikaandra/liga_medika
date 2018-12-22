@@ -32,9 +32,9 @@
 
         <div class="alert alert-warning">
           <?php // TODO: Change cost to DP cost ?>
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Education Video & Public Poster is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Education Video is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>Education Video Public Poster wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>Education Video wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -56,7 +56,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Education Video & Public Poster
+                Education Video
               </h3>
             </div>
             <hr>

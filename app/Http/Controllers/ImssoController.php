@@ -20,7 +20,7 @@ class ImssoController extends Controller
     }
 
     public function registerImsso(Request $request) {
-      $tipe_lomba = 5;
+      $tipe_lomba = 7;
       $user_id = Auth::user()->id;
 
       try {

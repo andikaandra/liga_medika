@@ -31,7 +31,7 @@
         <div class="alert alert-warning">
           <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. Registration fees are <strong>free</strong> until you reach the final stage.
           <hr>
-          <p>Literature Review wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>Research Public Poster wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -53,7 +53,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Literature Review
+                Research Public Poster
               </h3>
             </div>
             <hr>
@@ -73,7 +73,7 @@
                 {{-- </div>
             </div> --}}
 
-        <form id="dataPeserta" method="post" enctype="multipart/form-data" action="{{route('register.literature.review')}}">
+        <form id="dataPeserta" method="post" enctype="multipart/form-data" action="{{route('register.research.poster')}}">
         @csrf
         <div id="contentPanel">
 
