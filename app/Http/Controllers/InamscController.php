@@ -62,7 +62,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:4100|mimes:zip',
+            'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
         ]);
 
@@ -125,7 +125,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:4100|mimes:zip',
+            'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
         ]);
 
@@ -187,7 +187,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:4100|mimes:zip',
+            'data_peserta' => 'max:6100|mimes:zip',
         ]);
 
         // test the validator out
@@ -235,7 +235,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:4100|mimes:zip',
+            'data_peserta' => 'max:6100|mimes:zip',
         ]);
 
         // test the validator out
