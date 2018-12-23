@@ -74,7 +74,7 @@
                     <input type="text" class="price form-control" placeholder="Ammount of tickets you will buy?" class="form-control" name="jumlah" value="">
                   </div>
                   <div class="form-group">
-                    <label for="">Scan KTP/ KTM</label>
+                    <label for="">Scan Student ID card/ KTP</label>
                     <br><input type="file" name="ktp" accept="image/*" value=""><br>
                     <small class="form-text text-muted">Max size 1 mb</small>
                   </div>

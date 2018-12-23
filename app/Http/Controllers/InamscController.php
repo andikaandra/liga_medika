@@ -17,31 +17,29 @@ use Validator;
 class InamscController extends Controller
 {
     public function registerVideoPublikasiPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(2);
         return view('registration-forms.videoPublikasi', compact('lomba'));
     }
 
     public function registerPosterPublicationPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(3);
         return view('registration-forms.posterPublication', compact('lomba'));
     }
 
     public function registerLiteratureReviewPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(4);
         return view('registration-forms.literatureReview', compact('lomba'));
     }
 
     public function registerResearchPosterPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(5);
         return view('registration-forms.researchPoster', compact('lomba'));
     }
 
     public function registerSymposiumPage() {
-      $lomba = Lomba::where('nama', 'INAMSC')->first();
+      $lomba = Lomba::find(1);
       return view('registration-forms.symposium', ['lomba' => $lomba]);
     }
-
-
 
     // register current user to inamsc
     public function store(Request $request) {
@@ -357,10 +355,10 @@ class InamscController extends Controller
       return response()->json(['data' => Symposium::with('user:id,email')->get()]);
     }
 
-    public function findSimposium($id) {
-      $symposium = Symposium::find($id); //find simposium data
+    public function findsymposium($id) {
+      $symposium = Symposium::find($id); //find symposium data
       $payment = Payment::where('user_id', $symposium->user_id)->first(); //get payment for user
-      return response()->json(['simposium_data' => $symposium, 'payment' => $payment]);
+      return response()->json(['symposium_data' => $symposium, 'payment' => $payment]);
     }
 
     public function acceptSymposium($id) {

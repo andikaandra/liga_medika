@@ -32,9 +32,9 @@
 
         <div class="alert alert-warning">
           <?php // TODO: Change cost to DP cost ?>
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Publication Poster is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Poster Publication is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>Publication Poster wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>Poster Publication wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -56,7 +56,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Publication Poster
+                Poster Publication
               </h3>
             </div>
             <hr>
@@ -109,7 +109,7 @@
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan KTM, Scan KTP, CV, Active status letter as student from University, Scan letter of originality. (Compressed as .zip file). Max size 4 mb</small></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV, Active status letter as student from University, Scan letter of originality. (Compressed as .zip file). Max size 4 mb</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
 

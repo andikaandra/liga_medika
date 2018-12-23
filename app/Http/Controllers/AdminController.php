@@ -25,11 +25,11 @@ class AdminController extends Controller
         return view('admin.index', compact('lombas','total_imsso_imarc', 'total_inamsc', 'total_hfgm'));
     }
 
-    //VERIFIKASI SIMPOSIUM
-    public function verifSimposiumPage()
+    //VERIFIKASI symposium
+    public function verifsymposiumPage()
     {
         $title = "Verification - Symposium & Workshop ";
-        return view('admin.inamsc.verification_simposium', compact('title'));
+        return view('admin.inamsc.verification_symposium', compact('title'));
 
     }
 
@@ -43,7 +43,7 @@ class AdminController extends Controller
     //VERIFIKASI PUBLIKASI POSTER
     public function verifPublicationPosterPage()
     {
-        $title = "Verification - Publication Poster ";
+        $title = "Verification - Poster Publication ";
         return view('admin.inamsc.verification_publication_poster', compact('title'));
     }
 
@@ -124,7 +124,7 @@ class AdminController extends Controller
       return response()->json(Payment::where('user_id',$id)->where('tipe_lomba',$type)->first());
     }
 
-    public function viewUploadedFileSimposium($type, $id)
+    public function viewUploadedFilesymposium($type, $id)
     {
         $path='';
         $path = Symposium::find($id);
