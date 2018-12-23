@@ -19,7 +19,7 @@ class AdminController extends Controller
     {
         $total_imsso_imarc = IMARC::count();
         $total_imsso_imarc += IMSSO::count();
-        $total_inamsc = INAMSC::count();
+        $total_inamsc = INAMSC::count() + Symposium::count();
         $total_hfgm = HFGM::count();
         $lombas = Lomba::all();
         return view('admin.index', compact('lombas','total_imsso_imarc', 'total_inamsc', 'total_hfgm'));
