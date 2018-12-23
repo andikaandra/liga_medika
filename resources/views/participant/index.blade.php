@@ -118,15 +118,18 @@
                 @if (Auth::user()->cabang == 3)
 
                   @if (Auth::user()->cabang_spesifik == 1)
-
                     @include('participant.partials.dashboard-symposium')
                     <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p>
-
                   @elseif (Auth::user()->cabang_spesifik == 2)
-                    <p>Dashboard video edukasi & pp, relevant information will be here. still todo</p>
-
+                    @include('participant.partials.dashboard-video-edukasi')
+                    <p>Dashboard video edukasi, relevant information will be here. still todo</p>
                   @elseif (Auth::user()->cabang_spesifik == 3)
+                    @include('participant.partials.dashboard-publikasi-poster')
+                    <p>Dashboard video publikasi video, relevant information will be here. still todo</p>
+                  @elseif (Auth::user()->cabang_spesifik == 4)
                     @include('participant.partials.dashboard-litrev')
+                  @elseif (Auth::user()->cabang_spesifik == 5)
+                    @include('participant.partials.dashboard-rpp')
                   @endif
 
                 @elseif (Auth::user()->cabang == 1)

@@ -32,9 +32,9 @@
         @endif
 
         <div class="alert alert-info">
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Simposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register symposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>Simposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>symposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -56,7 +56,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Register Simposium & Workshop
+                Register symposium & Workshop
               </h3>
             </div>
             <p>Please fill in the following fields</p>
@@ -70,7 +70,7 @@
                     <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
                   </div>
                   <div class="form-group">
-                    <label for="">Scan KTP/ KTM</label>
+                    <label for="">Scan Student ID card/ KTP</label>
                     <br><input type="file" name="ktp" accept="image/*" value=""><br>
                     <small class="form-text text-muted">Max size 1 mb</small>
                   </div>

@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label for="">Event/ competition: </label>
-      <input type="text" disabled class="form-control" name="" value="INAMSC - symposium & Workshop">
+      <input type="text" disabled class="form-control" name="" value="INAMSC - Education Video">
     </div>
     <div class="form-group">
 

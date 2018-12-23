@@ -25,28 +25,41 @@ class AdminController extends Controller
         return view('admin.index', compact('lombas','total_imsso_imarc', 'total_inamsc', 'total_hfgm'));
     }
 
-    //VERIFIKASI SIMPOSIUM
-    public function verifSimposiumPage()
+    //VERIFIKASI symposium
+    public function verifsymposiumPage()
     {
-        $title = "Verification - Symposium & Workshop";
-        return view('admin.inamsc.verification_simposium', compact('title'));
+        $title = "Verification - Symposium & Workshop ";
+        return view('admin.inamsc.verification_symposium', compact('title'));
 
     }
-
 
     //VERIFIKASI EDUCATION VIDEO
     public function verifEdukasiPage()
     {
-        $title = "Verification - Education Video & Public Poster ";
+        $title = "Verification - Education Video ";
         return view('admin.inamsc.verification_education', compact('title'));
+    }
+
+    //VERIFIKASI PUBLIKASI POSTER
+    public function verifPublicationPosterPage()
+    {
+        $title = "Verification - Poster Publication ";
+        return view('admin.inamsc.verification_publication_poster', compact('title'));
     }
 
 
     //VERIFIKASI LITERATURE
     public function verifLiteraturePage()
     {
-        $title = "Verification - Literature Review & Research Public Poster ";
+        $title = "Verification - Literature Review ";
         return view('admin.inamsc.verification_literature', compact('title'));
+    }
+
+    //VERIFIKASI RESEARCH POSTER
+    public function verifResearchPage()
+    {
+        $title = "Verification - Research Public Poster ";
+        return view('admin.inamsc.verification_research_poster', compact('title'));
     }
 
 
@@ -111,7 +124,7 @@ class AdminController extends Controller
       return response()->json(Payment::where('user_id',$id)->where('tipe_lomba',$type)->first());
     }
 
-    public function viewUploadedFileSimposium($type, $id)
+    public function viewUploadedFilesymposium($type, $id)
     {
         $path='';
         $path = Symposium::find($id);

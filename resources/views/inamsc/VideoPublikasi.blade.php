@@ -28,7 +28,7 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                            </select>                            
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
     <form id="dataPeserta" method="post" action="{{route('register.video.publikasi')}}">
     @csrf
     <div id="contentPanel">
-        
+
     </div>
     <br>
     <br>
@@ -49,7 +49,7 @@
                 <button type="submit" class="btn btn-danger btn-block" id="submit">Submit&emsp;<i class="fas fa-paper-plane"></i></i></button>
             </form>
         </div>
-    </div>    
+    </div>
 </div>
 @endsection
 
@@ -63,9 +63,9 @@
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center"></div>');
-            var myPanel = $('<div class="col-sm-8 col-md-8 pb-2"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">File Pendukung</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">File meliputi Foto 3x4, Scan KTM, Scan KTP, CV, Surat keterangan mahasiswa aktif, Scan letter of originality</small></div></div>');
+            var myPanel = $('<div class="col-sm-8 col-md-8 pb-2"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">File Pendukung</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">File meliputi Foto 3x4, Scan Student ID card, Scan ID card, CV, Surat keterangan mahasiswa aktif, Scan letter of originality</small></div></div>');
             myPanel.appendTo(myCol);
-            myCol.appendTo('#contentPanel');   
+            myCol.appendTo('#contentPanel');
     };
 
     $('#jumlahPeserta').on('change', function() {

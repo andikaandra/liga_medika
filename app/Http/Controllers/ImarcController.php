@@ -19,9 +19,8 @@ class ImarcController extends Controller
         return view('registration-forms.imarc', compact('lomba'));
     }
 
-    
     public function registerImarc(Request $request) {
-      $tipe_lomba = 4;
+      $tipe_lomba = 6;
       $user_id = Auth::user()->id;
 
       try {

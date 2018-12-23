@@ -97,7 +97,7 @@
       $('.price').mask('0.000.000.000.000', {reverse: true});
 
       let symposiumTable = $(".table").DataTable({
-        ajax: '{{url('admin/inamsc/simposium')}}',
+        ajax: '{{url('admin/inamsc/symposium')}}',
         columns: [
           {data: 'id'},
           {data: 'nama'},
@@ -119,19 +119,19 @@
           {data: null,
             render: function(data, type, row) {
               if (row.status_verif == -1) {
-                return "<button class='btn btn-success mr-2 accept' simposium-id='"+row.id+"'>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' simposium-id='"+row.id+"' disabled>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' simposium-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' symposium-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' symposium-id='"+row.id+"' disabled>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' symposium-id='"+row.id+"'>Info</button>";
               }
               else if (row.status_verif == 0) {
-                return "<button class='btn btn-success mr-2 accept' simposium-id='"+row.id+"'>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' simposium-id='"+row.id+"'>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' simposium-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' symposium-id='"+row.id+"'>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' symposium-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' symposium-id='"+row.id+"'>Info</button>";
               }
               else {
-                return "<button class='btn btn-success mr-2 accept' simposium-id='"+row.id+"' disabled>Accept</button>"
-                +"<button class='btn btn-danger mr-2 decline' simposium-id='"+row.id+"'>Decline</button>" +
-                "<button class='btn btn-info mr-2 info' simposium-id='"+row.id+"'>Info</button>";
+                return "<button class='btn btn-success mr-2 accept' symposium-id='"+row.id+"' disabled>Accept</button>"
+                +"<button class='btn btn-danger mr-2 decline' symposium-id='"+row.id+"'>Decline</button>" +
+                "<button class='btn btn-info mr-2 info' symposium-id='"+row.id+"'>Info</button>";
               }
             }
           }
@@ -140,25 +140,24 @@
       });
 
       $(document).on('click', '.info', async function(){
-        const id = $(this).attr('simposium-id');
+        const id = $(this).attr('symposium-id');
         let data;
         try {
           data = await $.ajax({
-            url: '{{url('admin/inamsc/simposium')}}/' + id
+            url: '{{url('admin/inamsc/symposium')}}/' + id
           });
         } catch (e) {
           alert("Ajax error");
           console.log(e);
           return;
         }
-        console.log(data)
-          let path = "{{url('admin/view/simposium/image/payment').'/'}}";
+          let path = "{{url('admin/view/symposium/image/payment').'/'}}";
           $(".modal-title").text("");
           $("input[name='nama_rekening']").val(data.payment.nama_rekening);
           $("input[name='jumlah']").val(data.payment.jumlah);
           $("#foto-bukti").attr("href", path + data.payment.id);
 
-          path = '{{url("admin/view/simposium/image/ktp")}}/' + data.simposium_data.id;
+          path = '{{url("admin/view/symposium/image/ktp")}}/' + data.symposium_data.id;
           $("#ktp").attr('href', path);
           $('.price').trigger('input');
 
@@ -166,14 +165,14 @@
       });
 
       $(document).on('click', '.accept', function(){
-        const id = $(this).attr('simposium-id');
+        const id = $(this).attr('symposium-id');
         alertify.confirm('Confirmation', 'Would you like to accept this participant?',
         async function(){
           // user has confirmed
           let data;
           try {
             await $.ajax({
-              url: '{{url('admin/inamsc/simposium/accept')}}/' + id,
+              url: '{{url('admin/inamsc/symposium/accept')}}/' + id,
               method: "PUT"
             });
           } catch (e) {
@@ -190,14 +189,14 @@
       });
 
       $(document).on('click', '.decline', function(){
-        const id = $(this).attr('simposium-id');
+        const id = $(this).attr('symposium-id');
         alertify.confirm('Confirmation', 'Would you like to decline this participant?',
         async function(){
           // user has confirmed
           let data;
           try {
             await $.ajax({
-              url: '{{url('admin/inamsc/simposium/decline')}}/' + id,
+              url: '{{url('admin/inamsc/symposium/decline')}}/' + id,
               method: "PUT"
             });
           } catch (e) {

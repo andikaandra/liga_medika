@@ -17,17 +17,27 @@ use Validator;
 class InamscController extends Controller
 {
     public function registerVideoPublikasiPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(2);
         return view('registration-forms.videoPublikasi', compact('lomba'));
     }
 
+    public function registerPosterPublicationPage(){
+        $lomba = Lomba::find(3);
+        return view('registration-forms.posterPublication', compact('lomba'));
+    }
+
     public function registerLiteratureReviewPage(){
-        $lomba = Lomba::where('nama', 'INAMSC')->first();
+        $lomba = Lomba::find(4);
         return view('registration-forms.literatureReview', compact('lomba'));
     }
 
+    public function registerResearchPosterPage(){
+        $lomba = Lomba::find(5);
+        return view('registration-forms.researchPoster', compact('lomba'));
+    }
+
     public function registerSymposiumPage() {
-      $lomba = Lomba::where('nama', 'INAMSC')->first();
+      $lomba = Lomba::find(1);
       return view('registration-forms.symposium', ['lomba' => $lomba]);
     }
 
@@ -107,9 +117,71 @@ class InamscController extends Controller
       return redirect('users');
     }
 
+    // register publikasi poster
+    public function registerPosterPublication(Request $request) {
+      $tipe_lomba = 3;
+      $user_id = Auth::user()->id;
+
+      try {
+        // make sure file uploaded are within size limit and file type
+        $validator = Validator::make($request->all(), [
+            'data_peserta' => 'max:4100|mimes:zip',
+            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+        ]);
+
+        // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+      }
+
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 3,
+        ]);
+
+        // store the participant files
+        $path = $request->file('data_peserta')->store('public/inamsc/poster-publikasi-participants');
+
+
+        $inamsc = INAMSC::create([
+          'user_id' => $user_id,
+          'type' => $tipe_lomba,
+          'file_path' => str_replace("public","", $path),
+          'gelombang' => $request->gelombang,
+          'status_pembayaran' => 1 //1 dp, 2 lunas
+        ]);
+
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          INAMSCParticipant::create([
+            'inamsc_id' => $inamsc->id,
+            'nama' => $request->{'nama'.$i},
+            'universitas' => $request->{'univ'.$i},
+            'jurusan' => $request->{'jurusan'.$i},
+            'kode_ambassador' => $request->{'kode'.$i}
+          ]);
+        }
+
+        $path = $request->file('bukti_pembayaran')->store('public/poster-publikasi-payments');
+        // upload payment details
+        Payment::create([
+          'user_id' => $user_id,
+          'tipe_lomba' => $tipe_lomba,
+          'location' => str_replace("public","", $path),
+          'tipe_pembayaran' => 1, // Bayar DP
+          'nama_rekening' => $request->nama_rekening,
+          'jumlah' => str_replace('.','',$request->jumlah_transfer)
+        ]);
+
+      } catch (\Exception $e) {
+        return response()->json($e->getMessage(), 500);
+      }
+      return redirect('users');
+    }
 
     public function registerLiteratureReview(Request $request) {
-      $tipe_lomba = 3;
+      $tipe_lomba = 4;
       $user_id = Auth::user()->id;
 
       try {
@@ -127,11 +199,59 @@ class InamscController extends Controller
       }
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 3,
+          'cabang_spesifik' => 4,
         ]);
 
         // register literature review
         $path = $request->file('data_peserta')->store('public/inamsc/literature-review-participants');
+
+        $inamsc = INAMSC::create([
+          'user_id' => $user_id,
+          'type' => $tipe_lomba,
+          'file_path' => str_replace("public","", $path),
+          'gelombang' => $request->gelombang
+        ]);
+
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          INAMSCParticipant::create([
+            'inamsc_id' => $inamsc->id,
+            'nama' => $request->{'nama'.$i},
+            'universitas' => $request->{'univ'.$i},
+            'jurusan' => $request->{'jurusan'.$i},
+            'kode_ambassador' => $request->{'kode'.$i}
+          ]);
+        }
+
+      } catch (\Exception $e) {
+        return response()->json($e->getMessage(), 500);
+      }
+      return redirect('users');
+    }
+
+    public function registerResearchPoster(Request $request) {
+      $tipe_lomba = 5;
+      $user_id = Auth::user()->id;
+
+      try {
+        // make sure file uploaded are within size limit and file type
+        $validator = Validator::make($request->all(), [
+            'data_peserta' => 'max:4100|mimes:zip',
+        ]);
+
+        // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+      }
+
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 5,
+        ]);
+
+        // register literature review
+        $path = $request->file('data_peserta')->store('public/inamsc/research-poster-participants');
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
@@ -235,10 +355,10 @@ class InamscController extends Controller
       return response()->json(['data' => Symposium::with('user:id,email')->get()]);
     }
 
-    public function findSimposium($id) {
-      $symposium = Symposium::find($id); //find simposium data
+    public function findsymposium($id) {
+      $symposium = Symposium::find($id); //find symposium data
       $payment = Payment::where('user_id', $symposium->user_id)->first(); //get payment for user
-      return response()->json(['simposium_data' => $symposium, 'payment' => $payment]);
+      return response()->json(['symposium_data' => $symposium, 'payment' => $payment]);
     }
 
     public function acceptSymposium($id) {
@@ -255,7 +375,6 @@ class InamscController extends Controller
                 'status_pembayaran' => 1,
                 'status_verif' => 1
               ]);
-
       return response()->json(['message' => 'ok']);
     }
 
@@ -312,8 +431,45 @@ class InamscController extends Controller
       return response()->json(['message' => 'ok']);
     }
 
-    public function getLiteratureReview() {
+
+    public function getPublicationPoster() {
       return response()->json(['data' => INAMSC::where('type', 3)->with('user:id,email,name')->get()]);
+    }
+
+    public function findPublicationPosterDetails($id) {
+      $publicationPoster = INAMSC::find($id);
+      $payment = Payment::where('user_id', $publicationPoster->user_id)->where('tipe_pembayaran', 1)->first();
+      return response()->json(['location' => $publicationPoster->file_path, 'payment' => $payment, 'user_id' => $publicationPoster->user_id,
+      'participants' => $publicationPoster->participants, 'id' => $publicationPoster->id]);
+    }
+
+    public function acceptPublicationPoster($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declinePublicationPoster($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+
+    public function getLiteratureReview() {
+      return response()->json(['data' => INAMSC::where('type', 4)->with('user:id,email,name')->get()]);
     }
 
     public function findLiteratureReviewDetails($id) {
@@ -336,6 +492,40 @@ class InamscController extends Controller
     }
 
     public function declineLiteratureReview($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => -1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function getResearch() {
+      return response()->json(['data' => INAMSC::where('type', 5)->with('user:id,email,name')->get()]);
+    }
+
+    public function findResearchDetails($id) {
+      $lr = INAMSC::find($id);
+      return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
+      'participants' => $lr->participants, 'id' => $lr->id]);
+    }
+
+    public function acceptResearch($id) {
+      $inamsc = INAMSC::find($id);
+      $userUpdate =   $inamsc->user->update([
+          'lomba_verified' => 1
+        ]);
+      $inamscUpdate = $inamsc->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineResearch($id) {
       $inamsc = INAMSC::find($id);
       $userUpdate =   $inamsc->user->update([
           'lomba_verified' => -1

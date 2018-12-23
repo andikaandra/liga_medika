@@ -25,7 +25,7 @@ class HfgmController extends Controller
 
     
     public function registerCampaign(Request $request) {
-      $tipe_lomba = 6;
+      $tipe_lomba = 8;
       $user_id = Auth::user()->id;
 
       try {
@@ -81,7 +81,7 @@ class HfgmController extends Controller
     }
 
     public function registerConcert(Request $request) {
-      $tipe_lomba = 7;
+      $tipe_lomba = 9;
       $user_id = Auth::user()->id;
 
       try {
