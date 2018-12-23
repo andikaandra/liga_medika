@@ -31,7 +31,7 @@ class VerificationController extends Controller
         }
 
         if ($user->verified) {
-          return "Click here to login";
+          return redirect('/login');
         }
         $user->verified = 1;
         $user->save();
@@ -40,7 +40,8 @@ class VerificationController extends Controller
         return response()->json(['message' => $e->getMessage()], $e->getCode());
       }
 
-      return response()->json(['message' => 'Email verified.', 'user' => $user], 200);
+      return redirect('/login')->with('verified',  'Your account has been successfully verified!');
+      // return response()->json(['message' => 'Email verified.', 'user' => $user], 200);
 
       // return view('email.email-confirmed',['user'=>$user]);
     }

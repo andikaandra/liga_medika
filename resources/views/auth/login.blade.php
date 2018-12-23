@@ -15,6 +15,11 @@
               <p>Account resgistration succesful.</p>
             </div>
           @endif
+          @if (Session::has('verified'))
+            <div class="alert alert-success">
+              <p>{{Session::get('verified')}}</p>
+            </div>
+          @endif
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
