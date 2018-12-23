@@ -35,7 +35,7 @@
                 <i class="mdi mdi-chart-line mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">{{$total_imsso_imarc}} Teams</h2>
-              <h6 class="card-text">Increased by 60%</h6>
+              {{-- <h6 class="card-text">Increased by 60%</h6> --}}
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
                 <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">{{$total_inamsc}} Teams</h2>
-              <h6 class="card-text">Decreased by 10%</h6>
+              {{-- <h6 class="card-text">Decreased by 10%</h6> --}}
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
                 <i class="mdi mdi-diamond mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">{{$total_hfgm}} Teams</h2>
-              <h6 class="card-text">Increased by 5%</h6>
+              {{-- <h6 class="card-text">Increased by 5%</h6> --}}
             </div>
           </div>
         </div>
