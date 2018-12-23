@@ -8,7 +8,7 @@
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="form-group">
-                            <h2>LITERATURE REVIEW & RESEARCH PUBLIC POSTER</h2>
+                            <h2>LITERATURE REVIEW & Research Paper</h2>
                         </div>
                     </div>
                 </div>

@@ -18,14 +18,14 @@
       <div class="col-md-4 col-12 mb-2">
         <a href="{{url('users/inamsc/education-video')}}">
           <div class="cabang">
-            Education Video
+            Educational Video
           </div>
         </a>
       </div>
       <div class="col-md-4 col-12 mb-2">
         <a href="{{url('users/inamsc/poster-publication')}}">
           <div class="cabang">
-            Poster Publication
+            Public Poster
           </div>
         </a>
       </div>
@@ -37,9 +37,9 @@
         </a>
       </div>
       <div class="col-md-4 col-12 mb-2">
-        <a href="{{url('users/inamsc/research-public-poster')}}">
+        <a href="{{url('users/inamsc/research-paper')}}">
           <div class="cabang">
-            Research Public Poster
+            Research Paper
           </div>
         </a>
       </div>

@@ -33,17 +33,17 @@ class AdminController extends Controller
 
     }
 
-    //VERIFIKASI EDUCATION VIDEO
+    //VERIFIKASI Educational Video
     public function verifEdukasiPage()
     {
-        $title = "Verification - Education Video ";
+        $title = "Verification - Educational Video ";
         return view('admin.inamsc.verification_education', compact('title'));
     }
 
     //VERIFIKASI PUBLIKASI POSTER
     public function verifPublicationPosterPage()
     {
-        $title = "Verification - Poster Publication ";
+        $title = "Verification - Public Poster ";
         return view('admin.inamsc.verification_publication_poster', compact('title'));
     }
 
@@ -58,7 +58,7 @@ class AdminController extends Controller
     //VERIFIKASI RESEARCH POSTER
     public function verifResearchPage()
     {
-        $title = "Verification - Research Public Poster ";
+        $title = "Verification - Research Paper";
         return view('admin.inamsc.verification_research_poster', compact('title'));
     }
 

@@ -19,7 +19,7 @@
             <strong>Failed to submit: </strong>
             <ul>
               @if ($errors->has('data_peserta'))
-                <li>Uploaded participant files cannot exceed 4 mb and has to be a zip format.</li>
+                <li>Uploaded participant files cannot exceed 6 mb and has to be a zip format.</li>
               @endif
               @if ($errors->has('bukti_pembayaran'))
                 <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
@@ -32,9 +32,9 @@
 
         <div class="alert alert-warning">
           <?php // TODO: Change cost to DP cost ?>
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Poster Publication is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Public Poster is <strong>Rp {{ number_format($lomba->dp + Auth::user()->id + 000 ,2,',','.')}}</strong> (down payment). This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>Poster Publication wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>Public Poster wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -56,7 +56,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Poster Publication
+                Public Poster
               </h3>
             </div>
             <hr>
@@ -109,7 +109,7 @@
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV, Active status letter as student from University, Scan letter of originality. (Compressed as .zip file). Max size 4 mb</small></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV, Active status letter as student from University, Scan letter of originality. (Compressed as .zip file). Max size 6 mb</small><a href="{{url('users/inamsc/files')}}">Download file templates</a></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
 
