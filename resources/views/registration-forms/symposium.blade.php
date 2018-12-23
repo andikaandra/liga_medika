@@ -32,9 +32,9 @@
         @endif
 
         <div class="alert alert-info">
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register symposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Symposium & Workshop is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>symposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>Symposium & Workshop wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -56,7 +56,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                Register symposium & Workshop
+                Register Symposium & Workshop
               </h3>
             </div>
             <p>Please fill in the following fields</p>

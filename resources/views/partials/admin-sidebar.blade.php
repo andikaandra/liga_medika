@@ -26,7 +26,7 @@
       </a>
       <div class="collapse" id="ui-basic4">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.symposium')}}">symposium & Workshop</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.symposium')}}">Symposium & Workshop</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Educational Video</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.publication')}}">Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review</a></li>
