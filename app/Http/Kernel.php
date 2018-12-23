@@ -66,6 +66,11 @@ class Kernel extends HttpKernel
         'has_chose_cabang' => \App\Http\Middleware\HasChoseCabang::class,
         'has_verified_by_admin' => \App\Http\Middleware\HasVerifiedByAdmin::class,
         'has_chose_cabang_spesifik' => \App\Http\Middleware\HasChoseSpecificCabang::class,
+        'inamsc_symposium_has_enough_quota' => \App\Http\Middleware\InamscSymposiumEnoughQuota::class,
+        'inamsc_video_has_enough_quota' => \App\Http\Middleware\InamscVideoEnoughQuota::class,
+        'inamsc_publication_has_enough_quota' => \App\Http\Middleware\InamscPublicationEnoughQuota::class,
+        'inamsc_literature_has_enough_quota' => \App\Http\Middleware\InamscLiteratureEnoughQuota::class,
+        'inamsc_research_has_enough_quota' => \App\Http\Middleware\InamscResearchEnoughQuota::class,
     ];
 
     /**

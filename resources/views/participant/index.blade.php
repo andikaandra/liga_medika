@@ -147,7 +147,6 @@
             {{-- havent registered cabang spesifik --}}
             @if (Auth::user() && Auth::user()->cabang)
               @include('registration-forms.register-spesific')
-
             @else
               @include('registration-forms.pre-registration')
             @endif

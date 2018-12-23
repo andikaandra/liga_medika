@@ -124,20 +124,37 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
     Route::middleware(['has_chose_cabang_spesifik'])->group(function () {
       // inamsc
-      Route::get('inamsc/symposium', 'InamscController@registerSymposiumPage');
-      Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
-      Route::get('inamsc/poster-publication', 'InamscController@registerPosterPublicationPage');
-      Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
-      Route::get('inamsc/research-paper', 'InamscController@registerResearchPosterPage');
+      Route::middleware(['inamsc_symposium_has_enough_quota'])->group(function () {
+        Route::get('inamsc/symposium', 'InamscController@registerSymposiumPage');
+        Route::post('inamsc/symposium', 'InamscController@registerSymposium');
+      });
+
+      Route::middleware(['inamsc_video_has_enough_quota'])->group(function () {
+        Route::get('inamsc/education-video', 'InamscController@registerVideoPublikasiPage');
+        Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
+      });
+
+      Route::middleware(['inamsc_publication_has_enough_quota'])->group(function () {
+        Route::get('inamsc/poster-publication', 'InamscController@registerPosterPublicationPage');
+        Route::post('inamsc/poster-publication', 'InamscController@registerPosterPublication')->name('register.poster.publication');
+
+      });
+
+      Route::middleware(['inamsc_literature_has_enough_quota'])->group(function () {
+        Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
+        Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
+
+      });
+
+      Route::middleware(['inamsc_research_has_enough_quota'])->group(function () {
+        Route::get('inamsc/research-paper', 'InamscController@registerResearchPosterPage');
+        Route::post('inamsc/research-paper', 'InamscController@registerResearchPoster')->name('register.research.poster');
+
+      });
+
 
       Route::get('inamsc/literature-review/files', 'InamscController@downloadLitrevFiles');
       Route::get('inamsc/files', 'InamscController@downloadTemplates');
-
-      Route::post('inamsc/symposium', 'InamscController@registerSymposium');
-      Route::post('inamsc/education-video', 'InamscController@registerVideoPublikasi')->name('register.video.publikasi');
-      Route::post('inamsc/poster-publication', 'InamscController@registerPosterPublication')->name('register.poster.publication');
-      Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
-      Route::post('inamsc/research-paper', 'InamscController@registerResearchPoster')->name('register.research.poster');
 
       //imarc
       Route::get('imarc', 'ImarcController@registerImarcPage');

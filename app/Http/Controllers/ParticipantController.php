@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Lomba;
 use Auth;
 use App\Payment;
+use App\Symposium;
+use App\INAMSC;
 
 class ParticipantController extends Controller
 {
@@ -15,14 +17,25 @@ class ParticipantController extends Controller
         $cabang_id = Auth::user()->cabang;
       }
       $accountStatus = null;
+
+      $pendaftarLomba= array();
+      
       // check if user has registered cabang spesifik
       if (Auth::user()->cabang_spesifik) {
         $accountStatus = Payment::find(Auth::user()->id); //check payment status
+        array_push($pendaftarLomba, 0, 0, 0, 0, 0); //kalo udah milih cabang spesifik, gaperlu cek kuotanya, biar nggak berat
+      }
+      else{
+        //belum milih cabang spesifik, ngecek kuota
+        array_push($pendaftarLomba, Symposium::count(), INAMSC::where('type',2)->count(), INAMSC::where('type',3)->count(), INAMSC::where('type',4)->count(), INAMSC::where('type',5)->count());      
       }
 
       $lomba = Lomba::find($cabang_id);
 
-      return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus]);
+      //cek status buka dan cek kuota
+      $listLomba = Lomba::all();
+
+      return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus, 'listLomba' => $listLomba, 'pendaftarLomba' => $pendaftarLomba]);
     }
 
     public function getParticipants() {
@@ -35,7 +48,12 @@ class ParticipantController extends Controller
     }
 
     public function uploadKarya() {
-      return view('participant.upload-karya');
+      $cabang_id = Auth::user()->cabang;
+      if ($cabang_id==3) {
+        $cabang_spesifik = Auth::user()->cabang_spesifik;
+        $dataLomba=Lomba::find($cabang_spesifik);;
+      }
+      return view('participant.upload-karya', compact('dataLomba'));
     }
 
 }

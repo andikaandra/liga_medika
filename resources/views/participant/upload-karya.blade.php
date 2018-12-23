@@ -44,8 +44,14 @@
             {{\Session::get('message')}}
           </div>
         @endif
-
-            <div class="card">
+        @if ($dataLomba->status_pengumpulan==0)
+          <div class="alert alert-danger">
+            You cant submit your work for a while!
+          </div>
+          <div class="card" style="pointer-events: none; opacity: 0.4;">
+        @else
+          <div class="card">
+        @endif
               <div class="card-body">
                 <p class="card-text">
                   todo
