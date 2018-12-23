@@ -161,7 +161,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
     Route::middleware(['has_verified_by_admin'])->group(function () {
       Route::get('uploads', 'ParticipantController@uploadKarya')->name('users.upload.karya');
       Route::get('participants', 'ParticipantController@getParticipants');
-
+      Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
     });
 
   });

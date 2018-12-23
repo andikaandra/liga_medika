@@ -12,7 +12,7 @@ use Auth;
 use App\Lomba;
 use Validator;
 use Storage;
-// TODO: add server side file validation
+use App\Submission;
 
 class InamscController extends Controller
 {
@@ -543,5 +543,36 @@ class InamscController extends Controller
 
     public function downloadTemplates() {
       return response()->download(storage_path("app/public/committee-files/templates.zip"));
+    }
+
+    public function uploadSubmission(Request $request) {
+      // check if its an uploaded link or file
+      if ($request->cabang_spesifik != 2) {
+          // make sure file uploaded are within size limit and file type
+          $validator = Validator::make($request->all(), [
+              'file_path' => 'max:4100|mimes:zip',
+          ]);
+
+          // test the validator out
+          if ($validator->fails()) {
+            return redirect()
+                        ->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $path = $request->file('file_path')->store('public/inamsc/karya-submissions');
+        $path = str_replace("public","", $path);
+      }else {
+        $path = $request->file_path;
+      }
+
+      Submission::create([
+        'inamsc_id' => Auth::user()->inamscs[0]->id,
+        'title' => $request->title,
+        'file_path' => $path
+      ]);
+
+      return redirect('users/uploads')->with('message', 'Successfully uploaded!');
     }
 }

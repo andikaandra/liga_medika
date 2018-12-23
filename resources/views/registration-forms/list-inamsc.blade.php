@@ -39,7 +39,7 @@
       <div class="col-md-4 col-12 mb-2">
         <a href="{{url('users/inamsc/research-paper')}}">
           <div class="cabang">
-            Research Paper
+            Research Paper & Poster
           </div>
         </a>
       </div>
