@@ -48,12 +48,21 @@ class ParticipantController extends Controller
     }
 
     public function uploadKarya() {
-      $cabang_id = Auth::user()->cabang;
-      if ($cabang_id==3) {
-        $cabang_spesifik = Auth::user()->cabang_spesifik;
-        $dataLomba=Lomba::find($cabang_spesifik);;
+      // get status of uploads
+      $lomba = Lomba::find(Auth::user()->cabang_spesifik);
+      $allowed = $lomba->status_pengumpulan;
+      $wave = $lomba->gelombang_sekarang;
+
+      $cabang_spesifik = Auth::user()->cabang_spesifik;
+      $dataLomba=Lomba::find($cabang_spesifik);;
+
+      $uploaded = Auth::user()->inamscs[0]->submissions;
+      if ($uploaded->count()) {
+        $uploaded = $uploaded[0];
       }
-      return view('participant.upload-karya', compact('dataLomba'));
+
+      return view('participant.upload-karya', compact('allowed', 'wave', 'uploaded', 'dataLomba'));
+
     }
 
 }

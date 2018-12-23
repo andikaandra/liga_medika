@@ -122,10 +122,10 @@
                     {{-- <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p> --}}
                   @elseif (Auth::user()->cabang_spesifik == 2)
                     @include('participant.partials.dashboard-video-edukasi')
-                    <p>Dashboard video edukasi, relevant information will be here. still todo</p>
+                    {{-- <p>Dashboard video edukasi, relevant information will be here. still todo</p> --}}
                   @elseif (Auth::user()->cabang_spesifik == 3)
                     @include('participant.partials.dashboard-publikasi-poster')
-                    <p>Dashboard video publikasi video, relevant information will be here. still todo</p>
+                    {{-- <p>Dashboard video publikasi video, relevant information will be here. still todo</p> --}}
                   @elseif (Auth::user()->cabang_spesifik == 4)
                     @include('participant.partials.dashboard-litrev')
                   @elseif (Auth::user()->cabang_spesifik == 5)

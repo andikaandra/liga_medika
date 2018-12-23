@@ -56,7 +56,7 @@
         <a href="{{url('users/inamsc/research-paper')}}">
           <div class="cabang">
         @endif
-            Research Paper
+            Research Paper & Poster
           </div>
         </a>
       </div>
