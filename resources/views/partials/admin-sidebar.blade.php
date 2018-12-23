@@ -27,10 +27,10 @@
       <div class="collapse" id="ui-basic4">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.symposium')}}">symposium & Workshop</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Education Video</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.publication')}}">Poster Publication</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.edukasi')}}">Educational Video</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.publication')}}">Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.research')}}"> Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.research')}}"> Research Paper</a></li>
         </ul>
       </div>
     </li>
@@ -66,8 +66,8 @@
       </a>
       <div class="collapse" id="ui-basic5">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="#">Education Video Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Literature Review & Research Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Educational Video Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Literature Review & Research Paper</a></li>
         </ul>
       </div>
     </li>

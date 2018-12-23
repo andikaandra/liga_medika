@@ -42,12 +42,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Lomba::create([
-          'nama' => 'Education Video', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+          'nama' => 'Educational Video', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
           'status_pendaftaran' => 1, 'status_pengumpulan' => 1, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
 
         Lomba::create([
-          'nama' => 'Poster Publication', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+          'nama' => 'Public Poster', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
           'status_pendaftaran' => 1, 'status_pengumpulan' => 1, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
 
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Lomba::create([
-          'nama' => 'Research Public Poster', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+          'nama' => 'Research Paper', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
           'status_pendaftaran' => 1, 'status_pengumpulan' => 1, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
     }

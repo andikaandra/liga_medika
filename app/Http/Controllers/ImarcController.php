@@ -13,7 +13,7 @@ use Validator;
 
 class ImarcController extends Controller
 {
-	
+
     public function registerImarcPage(){
         $lomba = Lomba::where('nama', 'IMARC')->first();
         return view('registration-forms.imarc', compact('lomba'));
@@ -26,7 +26,7 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:4100|mimes:zip',
+            'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
         ]);
 

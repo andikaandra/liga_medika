@@ -11,7 +11,7 @@ use App\INAMSCParticipant;
 use Auth;
 use App\Lomba;
 use Validator;
-
+use Storage;
 // TODO: add server side file validation
 
 class InamscController extends Controller
@@ -400,7 +400,7 @@ class InamscController extends Controller
     }
 
     public function findEducationVideoDetails($id) {
-      //get education video details and payment DP proof
+      //get Educational Video details and payment DP proof
       $educationVideo = INAMSC::find($id);
       $payment = Payment::where('user_id', $educationVideo->user_id)->where('tipe_pembayaran', 1)->first();
       return response()->json(['location' => $educationVideo->file_path, 'payment' => $payment, 'user_id' => $educationVideo->user_id,
@@ -473,7 +473,7 @@ class InamscController extends Controller
     }
 
     public function findLiteratureReviewDetails($id) {
-      //get education video details and payment DP proof
+      //get Educational Video details and payment DP proof
       $lr = INAMSC::find($id);
       return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
       'participants' => $lr->participants, 'id' => $lr->id]);
@@ -535,5 +535,13 @@ class InamscController extends Controller
         'status_verif' => -1
       ]);
       return response()->json(['message' => 'ok']);
+    }
+
+    public function downloadLitrevFiles() {
+      return response()->download(storage_path("app/public/committee-files/litrev.zip"));
+    }
+
+    public function downloadTemplates() {
+      return response()->download(storage_path("app/public/committee-files/templates.zip"));
     }
 }

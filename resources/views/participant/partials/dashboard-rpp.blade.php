@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label for="">Event/ competition: </label>
-      <input type="text" disabled class="form-control" name="" value="INAMSC - Research Public Poster">
+      <input type="text" disabled class="form-control" name="" value="INAMSC - Research Paper">
     </div>
     <div class="form-group">
       
