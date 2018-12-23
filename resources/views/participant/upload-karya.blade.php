@@ -34,7 +34,22 @@
 
 @section('content')
 <div class="content-wrapper">
-
+  <div class="page-header">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-primary text-white mr-2">
+        <i class="mdi mdi-home"></i>
+      </span>
+      Submissions
+    </h3>
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">
+          <span></span>Overview
+          <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
   <div class="row">
 
       <div class="col-md-12">
@@ -45,25 +60,80 @@
           </div>
         @endif
 
+        @if ($errors->all())
+          <div class="alert alert-danger">
+            <strong>Failed to submit: </strong>
+            <ul>
+              @if ($errors->has('file_path'))
+                <li>Uploaded file file cannot exceed 4 mb.</li>
+                <li>Uploaded file has to be zip format.</li>
+              @endif
+            </ul>
+
+          </div>
+        @endif
+
             <div class="card">
               <div class="card-body">
-                <p class="card-text">
-                  todo
-                </p>
-                <form class="" action="#">
-                  <div class="form-group">
-                    <label for="">Title: </label>
-                    <input class="form-control" type="text" name="" value="">
+                {{print($errors)}}
+                {{-- check if users is allowed to upload --}}
+                @if ($allowed)
+                  {{-- check if already uploaded --}}
+                  @if ($uploaded->count())
+                    {{-- link submission --}}
+                    @if (Auth::user()->cabang_spesifik == 2)
+                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}", with this provided <a target="_blank" href="{{Auth::user()->inamscs[0]->submissions[0]->file_path}}">link</a>.</p>
+                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    @else
+                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
+                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    @endif
+                  @else
+                    <form class="" action="{{url('users/inamsc/submissions')}}" method="post" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                      <div class="form-group">
+                        <label for="">Title: </label>
+                        <input class="form-control" type="text" name="title" value="" required pattern=".*\S+.*" placeholder="What is the title of your submission?">
+                      </div>
+
+                      {{-- educational video uploads youtube link  --}}
+                      @if (Auth::user()->cabang_spesifik == 2)
+                        <div class="form-group">
+                          <label for="">Link for video: </label>
+                          <input type="text" name="file_path" value="" class="form-control" required pattern=".*\S+.*" placeholder="Fill in the link of your submission">
+                          <small class="text-muted">Please fill in the <strong>complete</strong> link. E.g. http://www.youtube.com/watch?v=-wtIMTCHWuI</small>
+                        </div>
+                      @else
+                        <div class="form-group">
+                          <label for="">File to be submitted: </label> <br>
+                          <input type="file" name="file_path" value="" accept="application/zip" required>
+                          <small class="form-text text-muted">Please zip your file(s). Max size 4 mb</small>
+                        </div>
+                      @endif
+                      <input type="hidden" name="cabang_spesifik" value="{{Auth::user()->cabang_spesifik}}">
+                      <input type="submit" class="btn btn-success" name="" value="Submit">
+                    </form>
+                  @endif
+
+                @else
+                  @if ($uploaded->count())
+
+                    @if (Auth::user()->cabang_spesifik == 2)
+                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}", with this provided <a target="_blank" href="{{Auth::user()->inamscs[0]->submissions[0]->file_path}}">link</a>.</p>
+                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    @else
+                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
+                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    @endif
+
+                  @else
+                  <div class="alert alert-danger">
+                    <p>Sorry, submissions for wave: {{$wave}} is not open.</p>
                   </div>
-                  <div class="form-group">
-                    <label for="">Description: </label>
-                    <textarea name="name" class="form-control" rows="8" cols="80"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <input type="file" name="" value="">
-                  </div>
-                  <input type="submit" class="btn btn-success" name="" value="Submit">
-                </form>
+                  @endif
+
+                @endif
+
 
               </div>
           <br>

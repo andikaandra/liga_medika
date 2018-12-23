@@ -35,7 +35,17 @@ class ParticipantController extends Controller
     }
 
     public function uploadKarya() {
-      return view('participant.upload-karya');
+      // get status of uploads
+      $lomba = Lomba::find(Auth::user()->cabang_spesifik);
+      $allowed = $lomba->status_pengumpulan;
+      $wave = $lomba->gelombang_sekarang;
+
+      $uploaded = Auth::user()->inamscs[0]->submissions;
+      if ($uploaded->count()) {
+        $uploaded = $uploaded[0];
+      }
+
+      return view('participant.upload-karya', compact('allowed', 'wave', 'uploaded'));
     }
 
 }
