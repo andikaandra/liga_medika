@@ -75,7 +75,6 @@
 
             <div class="card">
               <div class="card-body">
-                {{print($errors)}}
                 {{-- check if users is allowed to upload --}}
                 @if ($allowed)
                   {{-- check if already uploaded --}}
