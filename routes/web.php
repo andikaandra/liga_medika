@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 // admin
