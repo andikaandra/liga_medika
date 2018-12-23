@@ -11,7 +11,6 @@ class LombaController extends Controller
 {
   // register cabang
   public function store(Request $request) {
-    // TODO: change user_id to current logged in user
     $user_id = 1;
     if (Auth::user()) {
       $user_id = Auth::user()->id;

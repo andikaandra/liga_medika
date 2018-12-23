@@ -119,7 +119,7 @@
 
                   @if (Auth::user()->cabang_spesifik == 1)
                     @include('participant.partials.dashboard-symposium')
-                    <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p>
+                    {{-- <p>Dashboard Symposium & Workshop, relevant information will be here. still todo</p> --}}
                   @elseif (Auth::user()->cabang_spesifik == 2)
                     @include('participant.partials.dashboard-video-edukasi')
                     <p>Dashboard video edukasi, relevant information will be here. still todo</p>
