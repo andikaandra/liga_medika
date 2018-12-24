@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             'email_token' => base64_encode('admin'.($i+1).'@gmail.com'),
             'password' => bcrypt('ligmedku2019'),
             'remember_token' => str_random(10),
-            'verified' => 1
+            'verified' => 1,
+            'role' => 2
           ]);
         }
 
