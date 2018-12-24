@@ -113,7 +113,8 @@
                         <div class="form-group">
                           <label for="">File to be submitted: </label> <br>
                           <input type="file" name="file_path" value="" accept="application/zip" required>
-                          <small class="form-text text-muted">Please zip your file(s). Max size 4 mb</small>
+                          <small class="form-text text-muted">Please zip your file(s) contains your work and letter of originallity. Max size 6 mb</small>
+                          <small class="form-text text-muted">You can download letter of originallity template <a href="{{url('users/download/letter-of-originallity')}}">here</a></small>
                         </div>
                       @endif
                       <input type="hidden" name="cabang_spesifik" value="{{Auth::user()->cabang_spesifik}}">

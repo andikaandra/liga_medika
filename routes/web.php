@@ -179,6 +179,8 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('uploads', 'ParticipantController@uploadKarya')->name('users.upload.karya');
       Route::get('participants', 'ParticipantController@getParticipants');
       Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
+      Route::get('download/letter-of-originallity', 'ParticipantController@getLetterOfOriginality');
+
     });
 
   });

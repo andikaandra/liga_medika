@@ -545,7 +545,7 @@ class InamscController extends Controller
       if ($request->cabang_spesifik != 2) {
           // make sure file uploaded are within size limit and file type
           $validator = Validator::make($request->all(), [
-              'file_path' => 'max:4100|mimes:zip',
+              'file_path' => 'max:6100|mimes:zip',
           ]);
 
           // test the validator out
