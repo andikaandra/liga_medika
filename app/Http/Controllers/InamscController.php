@@ -74,6 +74,21 @@ class InamscController extends Controller
                       ->withInput();
         }
 
+        $rules = [];
+
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 2,
         ]);
@@ -134,7 +149,22 @@ class InamscController extends Controller
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      }
+        }
+
+        $rules = [];
+
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 3,
@@ -183,17 +213,20 @@ class InamscController extends Controller
 
       try {
         // make sure file uploaded are within size limit and file type
-        $validator = Validator::make($request->all(), [
-            // 'data_peserta' => 'max:6100|mimes:zip',
-        ]);
+        $rules = [];
 
-        // test the validator out
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
         if ($validator->fails()) {
           return redirect()
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      }
+        }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 4,
@@ -231,17 +264,20 @@ class InamscController extends Controller
 
       try {
         // make sure file uploaded are within size limit and file type
-        $validator = Validator::make($request->all(), [
-            // 'data_peserta' => 'max:6100|mimes:zip',
-        ]);
+        $rules = [];
 
-        // test the validator out
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
         if ($validator->fails()) {
           return redirect()
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      }
+        }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 5,
@@ -300,7 +336,7 @@ class InamscController extends Controller
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      }
+       }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 1,

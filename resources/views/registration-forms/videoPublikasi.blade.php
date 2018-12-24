@@ -18,12 +18,15 @@
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
             <ul>
-              @if ($errors->has('data_peserta'))
-                <li>Uploaded participant files cannot exceed 6 mb and has to be a zip format.</li>
-              @endif
               @if ($errors->has('bukti_pembayaran'))
                 <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
                 <li>Uploaded proof of payment file has to be jpeg, jpg or png format.</li>
+              @elseif(count($errors)>1)
+                <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
+                <li>Uploaded proof of payment file has to be jpeg, jpg or png format.</li>
+                <li>Uploaded participant files cannot exceed 3 mb and has to be a zip format.</li>
+              @else
+                <li>Uploaded participant files cannot exceed 3 mb and has to be a zip format.</li>
               @endif
             </ul>
 
