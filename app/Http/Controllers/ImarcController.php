@@ -48,6 +48,7 @@ class ImarcController extends Controller
 
         $imarc = IMARC::create([
           'user_id' => $user_id,
+          'event_type' => $request->event_type,
           'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas

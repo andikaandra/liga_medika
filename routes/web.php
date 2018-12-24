@@ -143,7 +143,6 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::middleware(['inamsc_literature_has_enough_quota'])->group(function () {
         Route::get('inamsc/literature-review', 'InamscController@registerLiteratureReviewPage');
         Route::post('inamsc/literature-review', 'InamscController@registerLiteratureReview')->name('register.literature.review');
-
       });
 
       Route::middleware(['inamsc_research_has_enough_quota'])->group(function () {

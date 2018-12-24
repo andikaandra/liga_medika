@@ -48,6 +48,7 @@ class ImssoController extends Controller
 
         $imsso = IMSSO::create([
           'user_id' => $user_id,
+          'sport_type' => $request->sport_type,
           'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas

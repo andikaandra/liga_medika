@@ -41,6 +41,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Type</th>
                   <th>Wave</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -110,6 +111,7 @@
           {data: "id"},
           {data: "user.name"},
           {data: "user.email"},
+          {data: "event_type"},
           {data: "gelombang"},
           {data: "status_verif",
             render: function(data, type, row) {

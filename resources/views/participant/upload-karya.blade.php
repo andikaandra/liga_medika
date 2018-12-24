@@ -107,7 +107,7 @@
                         <div class="form-group">
                           <label for="">Link for video: </label>
                           <input type="text" name="file_path" value="" class="form-control" required pattern=".*\S+.*" placeholder="Fill in the link of your submission">
-                          <small class="text-muted">Please fill in the <strong>complete</strong> link. E.g. http://www.youtube.com/watch?v=-wtIMTCHWuI</small>
+                          <small class="text-muted">Please fill in the <strong>complete</strong> link. E.g. http://www.youtube.com/watch?v=-wtIMTCHWuI or https://www.google.com/intl/in/drive</small>
                         </div>
                       @else
                         <div class="form-group">

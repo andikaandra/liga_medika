@@ -69,7 +69,17 @@
           @csrf
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <div class="alert alert-info">
-              Hello <strong>{{Auth::user()->name}}</strong>. You chose {{$lomba->nama}} in pre-registration. Please complete the next step.
+              Hello <strong>{{Auth::user()->name}}</strong>. You chose 
+              @if($lomba->id==1)
+                IMSSO
+              @elseif($lomba->id==2)
+                IMARC
+              @elseif($lomba->id==3)
+                INAMSC
+              @else
+                HFGM
+              @endif
+              in pre-registration. Please complete the next step.
               If you would like to start over, you may <a href="#" onclick="$('#reset').submit(); return false;" id="submit">Click here to reset</a>.
           </div>
           </form>

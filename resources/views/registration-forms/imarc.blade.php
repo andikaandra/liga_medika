@@ -107,6 +107,11 @@
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center my-5"></div>');
+            var myPanel = $('<div class="col-md-12"><div class="form-group"><label for="">Event Type</label><select class="custom-select" id="event_type" name="event_type"><option value="Photography" selected>Photography</option><option value="Traditional_Dance">Traditional Dance</option><option value="Vocal_Group">Vocal Group</option><option value="Band">Band</option></select></div></div>');
+            myPanel.appendTo(myCol);
+            myCol.appendTo('#contentPanel');
+
+            var myCol = $('<div class="row justify-content-center my-5"></div>');
             var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, Letter of Agreement. (Compressed as .zip file). Max size 6 mb</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
