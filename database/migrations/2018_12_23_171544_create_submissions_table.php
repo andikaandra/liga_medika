@@ -18,6 +18,7 @@ class CreateSubmissionsTable extends Migration
             $table->unsignedInteger('inamsc_id');
             $table->text('title');
             $table->text('file_path');
+            $table->text('letter_of_originality_path')->nullable();
             $table->timestamps();
         });
     }

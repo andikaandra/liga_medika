@@ -81,9 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Liga Medika
+                    Liga Medika 2019
                 </div>
-                <p>to do</p>
+                {{-- <p>to do</p> --}}
                 {{-- <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

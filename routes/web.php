@@ -101,6 +101,16 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('inamsc/file/{id}', 'AdminController@getInamscFiles');
   Route::get('imarc/file/{id}', 'AdminController@getImarcFiles');
   Route::get('imsso/file/{id}', 'AdminController@getImssoFiles');
+
+  Route::get('inamscs/{type}', 'InamscController@getInamscSubmissions');
+  Route::get('inamsc/submissions/{id}', 'InamscController@findInamscSubmissions');
+  Route::get('inamscs/submissions/educational-videos', 'AdminController@submissionsEducationalVideosPage');
+  Route::get('letter-of-originality/{id}', 'InamscController@downloadLetterOfOriginality');
+
+  Route::get('inamscs/submissions/literature-review', 'AdminController@literatureReviewPage');
+  Route::get('inamscs/submissions/research-paper', 'AdminController@rppPage');
+  Route::get('inamscs/submissions/public-poster', 'AdminController@publicPosterPage');
+  Route::get('inamscs/{id}/download/submissions', 'InamscController@downloadSubmissions');
 });
 
 
@@ -179,7 +189,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('uploads', 'ParticipantController@uploadKarya')->name('users.upload.karya');
       Route::get('participants', 'ParticipantController@getParticipants');
       Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
-      Route::get('download/letter-of-originallity', 'ParticipantController@getLetterOfOriginality');
+      Route::get('download/letter-of-originality', 'ParticipantController@getLetterOfOriginality');
 
     });
 

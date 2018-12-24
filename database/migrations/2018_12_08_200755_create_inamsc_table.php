@@ -17,6 +17,7 @@ class CreateInamscTable extends Migration
             $table->integer('status_lolos')->default(0);
             $table->integer('status_verif')->default(0);
             $table->integer('gelombang');
+            $table->text('letter_of_originality_path')->nullable();
             $table->timestamps();
         });
     }

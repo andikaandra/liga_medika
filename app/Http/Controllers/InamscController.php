@@ -248,6 +248,7 @@ class InamscController extends Controller
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
+            'kode_ambassador' => $request->{'kode'.$i},
             'file_path' => str_replace("public","", $path),
           ]);
         }
@@ -297,6 +298,7 @@ class InamscController extends Controller
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
+            'kode_ambassador' => $request->{'kode'.$i},
             'file_path' => str_replace("public","", $path),
           ]);
         }
@@ -595,7 +597,25 @@ class InamscController extends Controller
         $path = $request->file('file_path')->store('public/inamsc/karya-submissions');
         $path = str_replace("public","", $path);
       }else {
+
+        $validator = Validator::make($request->all(), [
+            'letter_of_originality_path' => 'max:3500|mimes:zip',
+        ]);
+        // get letter of originality for education video
+        $lop = $request->file('letter_of_originality_path')->store('public/inamsc/education-video');
+        $lop = str_replace("public","", $lop);
+
+        // video link
         $path = $request->file_path;
+
+        Submission::create([
+          'inamsc_id' => Auth::user()->inamscs[0]->id,
+          'title' => $request->title,
+          'file_path' => $path,
+          'letter_of_originality_path' => $lop
+        ]);
+
+        return redirect('users/uploads')->with('message', 'Successfully uploaded!');
       }
 
       Submission::create([
@@ -605,5 +625,33 @@ class InamscController extends Controller
       ]);
 
       return redirect('users/uploads')->with('message', 'Successfully uploaded!');
+    }
+
+    public function getInamscSubmissions($type) {
+      // get educational videos data that has submission
+      $videos = User::where('cabang_spesifik', $type)
+                ->whereHas('inamscs.submissions')->with('inamscs.submissions')->get();
+
+      return response()->json(['data' => $videos]);
+    }
+
+    public function findInamscSubmissions($id) {
+      return response()->json(Submission::find($id));
+    }
+
+    public function downloadLetterOfOriginality($id) {
+      $path = Submission::find($id);
+      $myFile = public_path().'/storage'.$path->letter_of_originality_path;
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      $newName = str_slug($path->title).'.zip';
+      return response()->download(storage_path("app/public". $path->letter_of_originality_path, $newName, $headers));
+    }
+
+    public function downloadSubmissions($id) {
+      $path = Submission::find($id);
+      $myFile = public_path().'/storage'.$path->file_path;
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      $newName = str_slug($path->title).'.zip';
+      return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
     }
 }

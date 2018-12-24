@@ -70,7 +70,7 @@
         </li>
         <li class="nav-item" id="user-files">
         <a class="nav-link" href="{{route('users.upload.karya')}}">
-          <span class="menu-title">Upload Files</span>
+          <span class="menu-title">Submissions</span>
           <i class="mdi mdi-folder-upload menu-icon"></i>
         </a>
       </li>

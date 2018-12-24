@@ -66,10 +66,10 @@
       </a>
       <div class="collapse" id="ui-basic5">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="#">Educational Video</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Public Poster</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Literature Review</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#"> Research Paper</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/educational-videos')}}">Educational Video</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/public-poster')}}">Public Poster</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/literature-review')}}">Literature Review</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/research-paper')}}"> Research Paper</a></li>
         </ul>
       </div>
     </li>

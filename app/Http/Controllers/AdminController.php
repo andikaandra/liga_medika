@@ -86,7 +86,7 @@ class AdminController extends Controller
         $data = INAMSCParticipant::find($id);
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-        $newName = time().'.zip';
+        $newName = str_slug($data->nama).'.zip';
       } catch (\Exception $e) {
         return response()->json(['message' => $e->getMessage()], $e->getCode());
       }
@@ -100,7 +100,7 @@ class AdminController extends Controller
         $data = IMARC::where('user_id', $id)->first();
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-        $newName = time().'.zip';
+        $newName = str_slug($data->nama).'.zip';
       } catch (\Exception $e) {
         return response()->json(['message' => $e->getMessage()], $e->getCode());
       }
@@ -114,7 +114,7 @@ class AdminController extends Controller
         $data = IMSSO::where('user_id', $id)->first();
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-        $newName = time().'.zip';
+        $newName = str_slug($data->nama).'.zip';
       } catch (\Exception $e) {
         return response()->json(['message' => $e->getMessage()], $e->getCode());
       }
@@ -153,6 +153,21 @@ class AdminController extends Controller
             $path = $path->location;
         }
         return view('admin.view_uploaded_file', compact('path'));
+    }
+
+    public function submissionsEducationalVideosPage() {
+      return view('admin.inamsc.submissions_education');
+    }
+
+    public function literatureReviewPage() {
+      return view('admin.inamsc.submissions_literature');
+    }
+    public function rppPage() {
+      return view('admin.inamsc.submissions_research_poster');
+    }
+
+    public function publicPosterPage() {
+      return view('admin.inamsc.submissions_publication_poster');
     }
 
 }

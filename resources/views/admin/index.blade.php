@@ -15,7 +15,7 @@
           <span class="page-title-icon bg-gradient-primary text-white mr-2">
             <i class="mdi mdi-home"></i>
           </span>
-          Dashboard
+          Home
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">

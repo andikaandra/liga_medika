@@ -46,6 +46,25 @@
 @section('content')
 <div class="content-wrapper">
 
+  @if (Auth::user()->cabang_spesifik)
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+          <i class="mdi mdi-home"></i>
+        </span>
+        Home
+      </h3>
+      <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">
+            <span></span>Overview
+            <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  @endif
+
   <div class="row">
 
       <div class="col-md-12">
@@ -69,7 +88,7 @@
           @csrf
           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
           <div class="alert alert-info">
-              Hello <strong>{{Auth::user()->name}}</strong>. You chose 
+              Hello <strong>{{Auth::user()->name}}</strong>. You chose
               @if($lomba->id==1)
                 IMSSO
               @elseif($lomba->id==2)
