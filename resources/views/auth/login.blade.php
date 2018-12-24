@@ -12,7 +12,7 @@
           @endif
           @if (Session::has('success'))
             <div class="alert alert-success">
-              <p>Account resgistration succesful.</p>
+              <p>Account registration succesful.</p>
             </div>
           @endif
           @if (Session::has('verified'))
