@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Lomba;
+use App\User;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,7 +12,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $user = factory(App\User::class, 50)->create();
+      // participant seeder
+        $user = factory(App\User::class, 10)->create();
+
+        // admin seeder
+        for ($i=0; $i < 3; $i++) {
+          User::create([
+            'name' => 'Admin'.($i+1),
+            'email' => 'admin'.($i+1).'@gmail.com',
+            'email_token' => base64_encode($faker->unique()->safeEmail),
+            'password' => bcrypt('ligmedku2019'),
+            'remember_token' => str_random(10),
+            'verified' => 1
+          ]);
+        }
+
+
         // lomba seeder
         // /1 imsso,2 imarc,3 inamsc,
         // 4 hfgm
