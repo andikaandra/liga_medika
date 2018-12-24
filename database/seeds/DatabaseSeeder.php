@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
           User::create([
             'name' => 'Admin'.($i+1),
             'email' => 'admin'.($i+1).'@gmail.com',
-            'email_token' => base64_encode($faker->unique()->safeEmail),
+            'email_token' => base64_encode('admin'.($i+1).'@gmail.com'),
             'password' => bcrypt('ligmedku2019'),
             'remember_token' => str_random(10),
             'verified' => 1
