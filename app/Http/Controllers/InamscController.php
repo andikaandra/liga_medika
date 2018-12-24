@@ -62,7 +62,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
+            // 'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
         ]);
 
@@ -72,31 +72,30 @@ class InamscController extends Controller
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      }
+        }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 2,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/inamsc/video-publikasi-participants');
 
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          $path = $request->file('data_peserta'.$i)->store('public/inamsc/video-publikasi-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'kode_ambassador' => $request->{'kode'.$i}
+            'kode_ambassador' => $request->{'kode'.$i},
+            'file_path' => str_replace("public","", $path),
           ]);
         }
 
@@ -125,7 +124,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
+            // 'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
         ]);
 
@@ -141,25 +140,23 @@ class InamscController extends Controller
           'cabang_spesifik' => 3,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/inamsc/poster-publikasi-participants');
-
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          $path = $request->file('data_peserta'.$i)->store('public/inamsc/poster-publikasi-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'kode_ambassador' => $request->{'kode'.$i}
+            'kode_ambassador' => $request->{'kode'.$i},
+            'file_path' => str_replace("public","", $path),
           ]);
         }
 
@@ -187,7 +184,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
+            // 'data_peserta' => 'max:6100|mimes:zip',
         ]);
 
         // test the validator out
@@ -203,22 +200,22 @@ class InamscController extends Controller
         ]);
 
         // register literature review
-        $path = $request->file('data_peserta')->store('public/inamsc/literature-review-participants');
+
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => str_replace("public","", $path),
-          'gelombang' => $request->gelombang
+          'gelombang' => $request->gelombang,
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          $path = $request->file('data_peserta'.$i)->store('public/inamsc/literature-review-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'kode_ambassador' => $request->{'kode'.$i}
+            'file_path' => str_replace("public","", $path),
           ]);
         }
 
@@ -235,7 +232,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
+            // 'data_peserta' => 'max:6100|mimes:zip',
         ]);
 
         // test the validator out
@@ -251,22 +248,20 @@ class InamscController extends Controller
         ]);
 
         // register literature review
-        $path = $request->file('data_peserta')->store('public/inamsc/research-poster-participants');
-
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
           'type' => $tipe_lomba,
-          'file_path' => str_replace("public","", $path),
-          'gelombang' => $request->gelombang
+          'gelombang' => $request->gelombang,
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          $path = $request->file('data_peserta'.$i)->store('public/inamsc/research-poster-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'kode_ambassador' => $request->{'kode'.$i}
+            'file_path' => str_replace("public","", $path),
           ]);
         }
 
@@ -403,7 +398,7 @@ class InamscController extends Controller
       //get Educational Video details and payment DP proof
       $educationVideo = INAMSC::find($id);
       $payment = Payment::where('user_id', $educationVideo->user_id)->where('tipe_pembayaran', 1)->first();
-      return response()->json(['location' => $educationVideo->file_path, 'payment' => $payment, 'user_id' => $educationVideo->user_id,
+      return response()->json(['payment' => $payment, 'user_id' => $educationVideo->user_id,
       'participants' => $educationVideo->participants, 'id' => $educationVideo->id]);
     }
 
@@ -439,7 +434,7 @@ class InamscController extends Controller
     public function findPublicationPosterDetails($id) {
       $publicationPoster = INAMSC::find($id);
       $payment = Payment::where('user_id', $publicationPoster->user_id)->where('tipe_pembayaran', 1)->first();
-      return response()->json(['location' => $publicationPoster->file_path, 'payment' => $payment, 'user_id' => $publicationPoster->user_id,
+      return response()->json(['payment' => $payment, 'user_id' => $publicationPoster->user_id,
       'participants' => $publicationPoster->participants, 'id' => $publicationPoster->id]);
     }
 
@@ -475,7 +470,7 @@ class InamscController extends Controller
     public function findLiteratureReviewDetails($id) {
       //get Educational Video details and payment DP proof
       $lr = INAMSC::find($id);
-      return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
+      return response()->json(['user_id' => $lr->user_id,
       'participants' => $lr->participants, 'id' => $lr->id]);
     }
 
@@ -509,7 +504,7 @@ class InamscController extends Controller
 
     public function findResearchDetails($id) {
       $lr = INAMSC::find($id);
-      return response()->json(['location' => $lr->file_path, 'user_id' => $lr->user_id,
+      return response()->json(['user_id' => $lr->user_id,
       'participants' => $lr->participants, 'id' => $lr->id]);
     }
 

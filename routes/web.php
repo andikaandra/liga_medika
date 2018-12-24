@@ -97,6 +97,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('lombas/{id}', 'LombaController@findLomba');
   Route::put('lombas/{id}', 'LombaController@updateLomba');
   Route::get('payment/{type}/{id}', 'AdminController@getPayment');
+
   Route::get('inamsc/file/{id}', 'AdminController@getInamscFiles');
   Route::get('imarc/file/{id}', 'AdminController@getImarcFiles');
   Route::get('imsso/file/{id}', 'AdminController@getImssoFiles');

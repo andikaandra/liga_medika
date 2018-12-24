@@ -151,6 +151,7 @@
           console.log(e);
           return;
         }
+        console.log(data);
           let path = "{{url('admin/view/symposium/image/payment').'/'}}";
           $(".modal-title").text("");
           $("input[name='nama_rekening']").val(data.payment.nama_rekening);

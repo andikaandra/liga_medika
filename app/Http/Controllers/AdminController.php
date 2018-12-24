@@ -8,6 +8,9 @@ use App\Lomba;
 use App\User;
 use App\Symposium;
 use App\Payment;
+use App\INAMSCParticipant;
+use App\IMARCParticipant;
+use App\IMSSOParticipant;
 use App\INAMSC;
 use App\IMARC;
 use App\IMSSO;
@@ -80,7 +83,7 @@ class AdminController extends Controller
     public function getInamscFiles($id)
     {
       try {
-        $data = INAMSC::find($id);
+        $data = INAMSCParticipant::find($id);
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
         $newName = time().'.zip';
@@ -126,13 +129,14 @@ class AdminController extends Controller
 
     public function viewUploadedFilesymposium($type, $id)
     {
-        $path='';
-        $path = Symposium::find($id);
-        $user_id = $path->user_id;
-        if (!$path) {
-          return "Not found";
-        }
+        // $path='';
+        // $path = Symposium::find($id);
+        // $user_id = $path->user_id;
+        // if (!$path) {
+        //   return "Not found";
+        // }
         if ($type=="ktp") {
+            $path = Symposium::find($id);
             $path = $path->ktp;
         }
         if ($type=="payment") {

@@ -55,7 +55,7 @@
     </div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="modal1">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title"></h5>
@@ -65,17 +65,8 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6 participants">
+          <div class="col-md-12 participants">
 
-          </div>
-          <div class="col-md-6">
-            <form action="#">
-              <div class="form-group">
-                <label for="">Participants' files</label>
-              </div>
-              <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
-              <hr>
-            </form>
           </div>
         </div>
       </div>
@@ -149,8 +140,6 @@
         return;
       }
       // image path of payment proof
-      let path = '{{url('admin/inamsc/file')}}/' + data.id; //path for participant files
-      $("#files").attr('href', path);
       $('.price').trigger('input');
 
       $(".participants").html("");
@@ -176,6 +165,10 @@
               "<label>Ambassador Code:</label>"+
               "<input class='form-control' type='text' disabled value=\""+el.kode_ambassador+"\">"+
             "</div>" +
+              "<div class='form-group'>"+
+                "<label>Participant's File:</label><br>"+
+                '<a class="btn btn-sm btn-info" href="{{url('admin/inamsc/file')}}/'+el.id+'" id="files" target="_blank" role="button">Check</a>'+
+              "</div>" +
           "</div>"
         );
 

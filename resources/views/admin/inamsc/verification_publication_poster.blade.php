@@ -71,10 +71,6 @@
           </div>
           <div class="col-md-6">
             <form action="#">
-              <div class="form-group">
-                <label for="">Participants' files</label>
-              </div>
-              <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
               <hr>
               <div class="form-group">
                 <label for="">Bank Account:</label>
@@ -158,13 +154,12 @@
           console.log(e);
           return;
         }
+        console.log(data);
         // image path of payment proof
         let path = '{{url('admin/view/image/payment')}}/' + data.payment.id;
         $("#foto-bukti").attr('href', path);
         $("input[name='nama_rekening']").val(data.payment.nama_rekening);
         $("input[name='jumlah']").val(parseInt(data.payment.jumlah));
-        path = '{{url('admin/inamsc/file')}}/' + data.id; //path for participant files
-        $("#files").attr('href', path);
         $('.price').trigger('input');
 
         $(".participants").html("");
@@ -189,6 +184,10 @@
               "<div class='form-group'>"+
                 "<label>Ambassador Code:</label>"+
                 "<input class='form-control' type='text' disabled value=\""+el.kode_ambassador+"\">"+
+              "</div>" +
+              "<div class='form-group'>"+
+                "<label>Participant's File:</label><br>"+
+                '<a class="btn btn-sm btn-info" href="{{url('admin/inamsc/file')}}/'+el.id+'" id="files" target="_blank" role="button">Check</a>'+
               "</div>" +
             "</div>"
           );
