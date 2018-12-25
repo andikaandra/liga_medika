@@ -606,8 +606,9 @@ class InamscController extends Controller
         $lop = str_replace("public","", $lop);
 
         // video link
-        $path = $request->file_path;
-
+        // $path = $request->file_path;
+        $path = "";
+        
         Submission::create([
           'inamsc_id' => Auth::user()->inamscs[0]->id,
           'title' => $request->title,

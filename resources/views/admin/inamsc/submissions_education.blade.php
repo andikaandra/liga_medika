@@ -70,10 +70,10 @@
                 <label for="">Title:</label>
                 <input type="text" class="form-control" id="title" disabled name="" value="">
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="">Video link:</label><br>
                 <a target="_blank" class="btn btn-info" href="#" id="video-link">Click here</a>
-              </div>
+              </div> --}}
               <div class="form-group">
                 <label for="">Letter of Originality:</label><br>
                 <a target="_blank" class="btn btn-info" href="" id="loo" target="_blank" role="button">Letter of Originality</a>
@@ -125,8 +125,8 @@
           console.log(e);
           return;
         }
-        let path = data.file_path;
-        $("#video-link").attr('href', path);
+        let path;
+        // $("#video-link").attr('href', path);
         path = '{{url('admin/letter-of-originality')}}/' + data.id;
         $("#loo").attr('href', path);
         $("#title").val(data.title);
