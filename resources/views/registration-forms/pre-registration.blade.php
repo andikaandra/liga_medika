@@ -21,10 +21,26 @@
       <div class="form-group">
         <label for="">Competition/ event: </label>
         <select class="form-control" name="cabang" required>
+          @if($listLomba[0]->status_pendaftaran==0 && $listLomba[1]->status_pendaftaran==0 && $listLomba[2]->status_pendaftaran==0 && $listLomba[3]->status_pendaftaran==0 && $listLomba[4]->status_pendaftaran==0)
+          <option value="3" disabled>INAMSC</option>
+          @else
           <option value="3">INAMSC</option>
+          @endif
+          @if($listLomba[6]->status_pendaftaran==0)
           <option value="2" disabled>IMARC</option>
+          @else
+          <option value="2">IMARC</option>
+          @endif
+          @if($listLomba[5]->status_pendaftaran==0)
           <option value="1" disabled>IMSSO</option>
+          @else
+          <option value="1">IMSSO</option>
+          @endif
+          @if($listLomba[7]->status_pendaftaran==0 && $listLomba[8]->status_pendaftaran==0)
           <option value="4" disabled>HFGM</option>
+          @else
+          <option value="4">HFGM</option>
+          @endif
         </select>
       </div>
       <div class="form-group">

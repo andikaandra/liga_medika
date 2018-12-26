@@ -80,12 +80,22 @@ class DatabaseSeeder extends Seeder
 
         Lomba::create([
           'id' => 6, 'nama' => 'IMSSO', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
-          'status_pendaftaran' => 1, 'status_pengumpulan' => 1, 'kuota' => rand(50, 150), 'dp' => 150000
+          'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
 
         Lomba::create([
           'id' => 7, 'nama' => 'IMARC', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
-          'status_pendaftaran' => 1, 'status_pengumpulan' => 1, 'kuota' => rand(50, 150), 'dp' => 150000
+          'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
+        ]);
+
+        Lomba::create([
+          'id' => 8, 'nama' => 'Campaign', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+          'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
+        ]);
+
+        Lomba::create([
+          'id' => 9, 'nama' => 'Concert', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+          'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
     }
 }
