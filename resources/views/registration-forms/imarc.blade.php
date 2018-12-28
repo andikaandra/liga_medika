@@ -107,7 +107,7 @@
             myCol.appendTo('#contentPanel');
         }
             var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div class="form-group"><label for="">Event Type</label><select class="custom-select" id="event_type" name="event_type"><option value="Photography" selected>Photography</option><option value="Traditional_Dance">Traditional Dance</option><option value="Vocal_Group">Vocal Group</option><option value="Band">Band</option></select></div></div>');
+            var myPanel = $('<div class="col-md-12"><div class="form-group"><label for="">Event Type</label><select class="custom-select" id="event_type" name="event_type"><option value="Photography" selected>Photography</option><option value="Traditional Dance">Traditional Dance</option><option value="Vocal Group">Vocal Group</option><option value="Band">Band</option></select></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
 
