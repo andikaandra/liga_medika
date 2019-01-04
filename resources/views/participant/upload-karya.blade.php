@@ -100,6 +100,17 @@
                       <div class="form-group">
                         <label for="">Title: </label>
                         <input class="form-control" type="text" name="title" value="" required pattern=".*\S+.*" placeholder="What is the title of your submission?">
+                        <small class="form-text text-muted">Example : 
+                          @if(Auth::user()->cabang_spesifik == 2)
+                            Videdu_First Creator Name_Title of Video
+                          @elseif(Auth::user()->cabang_spesifik == 3)
+                            Pubpos_First Author Name_Title of Poster
+                          @elseif(Auth::user()->cabang_spesifik == 4)
+                            Litrev_First Author Name_University_Title of Paper
+                          @elseif(Auth::user()->cabang_spesifik == 5)
+                            RPP_Code of Cluster_First Author Name_Title of Abstract
+                          @endif
+                        </small>
                       </div>
 
                       {{-- educational video uploads youtube link  --}}
