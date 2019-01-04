@@ -106,7 +106,7 @@
 
       let dataTable = $(".table").DataTable({
         responsive: true,
-        ajax: '{{url('admin/imsso/imsso')}}',
+        ajax: '{{url('admin/imsso/women-basketball')}}',
         columns: [
           {data: "id"},
           {data: "user.name"},

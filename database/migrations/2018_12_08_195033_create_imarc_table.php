@@ -11,7 +11,7 @@ class CreateImarcTable extends Migration
         Schema::create('imarc', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->text('event_type');
+            $table->integer('event_type');
             $table->text('file_path');
             $table->text('link_travel_plan')->nullable();
             $table->integer('status_pembayaran')->nullable();

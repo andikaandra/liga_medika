@@ -67,17 +67,47 @@ class AdminController extends Controller
 
 
     //VERIFIKASI IMARC
-    public function verifImarcPage()
+    public function verifImarcPhotographyPage()
     {
-        $title = "Verification - IMARC ";
-        return view('admin.imarc.verification_imarc', compact('title'));
+        $title = "Verification - IMARC Photography ";
+        return view('admin.imarc.verification_photography', compact('title'));
+    }
+
+    public function verifImarcDancePage()
+    {
+        $title = "Verification - IMARC Traditional Dance ";
+        return view('admin.imarc.verification_dance', compact('title'));
+    }
+
+    public function verifImarcVocalPage()
+    {
+        $title = "Verification - IMARC Vocal Group ";
+        return view('admin.imarc.verification_vocal', compact('title'));
+    }
+
+    public function verifImarcBandPage()
+    {
+        $title = "Verification - IMARC Band ";
+        return view('admin.imarc.verification_band', compact('title'));
     }
 
     //VERIFIKASI IMSSO
-    public function verifImssoPage()
+    public function verifImssoMenBasketballPage()
     {
-        $title = "Verification - IMSSO ";
-        return view('admin.imsso.verification_imsso', compact('title'));
+        $title = "Verification - IMSSO Men Basketball ";
+        return view('admin.imsso.verification_men_basketball', compact('title'));
+    }
+
+    public function verifImssoWomenBasketballPage()
+    {
+        $title = "Verification - IMSSO Women Basketball";
+        return view('admin.imsso.verification_women_basketball', compact('title'));
+    }
+
+    public function verifImssoMenFutsalPage()
+    {
+        $title = "Verification - IMSSO Men Futsal";
+        return view('admin.imsso.verification_men_futsal', compact('title'));
     }
 
     public function getInamscFiles($id)

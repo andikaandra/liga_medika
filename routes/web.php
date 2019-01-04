@@ -69,9 +69,15 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
   //verifikasi imarc
-  Route::get('/verification/imarc', 'AdminController@verifImarcPage')->name('verif.imarc');
+  Route::get('/verification/photography', 'AdminController@verifImarcPhotographyPage')->name('verif.photography');
+  Route::get('/verification/dance', 'AdminController@verifImarcDancePage')->name('verif.traditional.dance');
+  Route::get('/verification/vocal-group', 'AdminController@verifImarcVocalPage')->name('verif.vocal-group');
+  Route::get('/verification/band', 'AdminController@verifImarcBandPage')->name('verif.band');
 
-  Route::get('imarc/imarc', 'ImarcController@getImarc');
+  Route::get('imarc/photography', 'ImarcController@getPhotography');
+  Route::get('imarc/dance', 'ImarcController@getDance');
+  Route::get('imarc/vocal', 'ImarcController@getVocal');
+  Route::get('imarc/band', 'ImarcController@getBand');
   Route::get('imarc/imarc/{id}', 'ImarcController@findImarcDetails');
 
   Route::put('imarc/imarc/accept/{id}', 'ImarcController@acceptImarc');
@@ -79,9 +85,13 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
   //verifikasi imsso
-  Route::get('/verification/imsso', 'AdminController@verifImssoPage')->name('verif.imsso');
+  Route::get('/verification/men-basketball', 'AdminController@verifImssoMenBasketballPage')->name('verif.men.basketball');
+  Route::get('/verification/women-basketball', 'AdminController@verifImssoWomenBasketballPage')->name('verif.women.basketball');
+  Route::get('/verification/men-futsal', 'AdminController@verifImssoMenFutsalPage')->name('verif.men.futsal');
 
-  Route::get('imsso/imsso', 'ImssoController@getImsso');
+  Route::get('imsso/men-basketball', 'ImssoController@getMenBasketball');
+  Route::get('imsso/women-basketball', 'ImssoController@getWomenBasketball');
+  Route::get('imsso/men-futsal', 'ImssoController@getMenFutsal');
   Route::get('imsso/imsso/{id}', 'ImssoController@findImssoDetails');
 
   Route::put('imsso/imsso/accept/{id}', 'ImssoController@acceptImsso');
@@ -167,14 +177,27 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('inamsc/files', 'InamscController@downloadTemplates');
 
       //imarc
-      Route::get('imarc', 'ImarcController@registerImarcPage');
-      Route::post('imarc', 'ImarcController@registerImarc')->name('register.imarc');
+      Route::get('imarc/photography', 'ImarcController@registerImarcPhotographyPage');
+      Route::post('imarc/photography', 'ImarcController@registerImarcPhotography')->name('register.imarc.photography');
 
+      Route::get('imarc/traditional-dance', 'ImarcController@registerImarcDancePage');
+      Route::post('imarc/traditional-dance', 'ImarcController@registerImarcDance')->name('register.imarc.traditional.dance');
+
+      Route::get('imarc/vocal-group', 'ImarcController@registerImarcVocalPage');
+      Route::post('imarc/vocal-group', 'ImarcController@registerImarcVocal')->name('register.imarc.vocal.group');
+
+      Route::get('imarc/band', 'ImarcController@registerImarcBandPage');
+      Route::post('imarc/band', 'ImarcController@registerImarcBand')->name('register.imarc.band');
 
       //imsso
-      Route::get('imsso', 'ImssoController@registerImssoPage');
-      Route::post('imsso', 'ImssoController@registerImsso')->name('register.imsso');
+      Route::get('imsso/men-basketball', 'ImssoController@registerImssoMenBasketballPage');
+      Route::post('imsso/men-basketball', 'ImssoController@registerImssoMenBasketball')->name('register.imsso.men.basketball');
 
+      Route::get('imsso/women-basketball', 'ImssoController@registerImssoWomenBasketballPage');
+      Route::post('imsso/women-basketball', 'ImssoController@registerImssoWomenBasketball')->name('register.imsso.women.basketball');
+
+      Route::get('imsso/men-futsal', 'ImssoController@registerImssoMenFutsalPage');
+      Route::post('imsso/men-futsal', 'ImssoController@registerImssoMenFutsal')->name('register.imsso.men.futsal');
 
       //hfgm
       Route::get('hfgm/campaign', 'HfgmController@registerCampaignPage');
