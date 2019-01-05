@@ -31,9 +31,9 @@
         @endif
 
         <div class="alert alert-warning">
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMSSO is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMARC - Vocal Group is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <hr>
-          <p>IMSSO wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>IMARC - Vocal Group wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -54,7 +54,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                IMSSO
+                IMARC - Vocal Group
               </h3>
             </div>
             <hr>
@@ -74,7 +74,7 @@
                 </div> --}}
             </div>
 
-        <form id="dataPeserta" method="post" enctype="multipart/form-data" action="{{route('register.imsso')}}">
+        <form id="dataPeserta" method="post" enctype="multipart/form-data" action="{{route('register.imarc.vocal.group')}}">
         @csrf
         <div id="contentPanel">
 
@@ -106,13 +106,9 @@
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }
-            var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div class="form-group"><label for="">Sports Type</label><select class="custom-select" id="sport_type" name="sport_type"><option value="Men Basketball" selected>Men Basketball</option><option value="Women Basketball">Women Basketball</option><option value="Men Futsal">Men Futsal</option></select></div></div>');
-            myPanel.appendTo(myCol);
-            myCol.appendTo('#contentPanel');
 
             var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, Active status letter as student from University, Letter of Agreement, Medical SOP Statement, Insurance Card. (Compressed as .zip file). Max size 6 mb</small></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, Letter of Agreement. (Compressed as .zip file). Max size 6 mb</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
 

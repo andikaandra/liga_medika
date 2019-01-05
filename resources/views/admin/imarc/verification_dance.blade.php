@@ -106,7 +106,7 @@
 
       let dataTable = $(".table").DataTable({
         responsive: true,
-        ajax: '{{url('admin/imarc/imarc')}}',
+        ajax: '{{url('admin/imarc/dance')}}',
         columns: [
           {data: "id"},
           {data: "user.name"},

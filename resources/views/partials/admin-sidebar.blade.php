@@ -42,7 +42,10 @@
       </a>
       <div class="collapse" id="ui-basic6">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.imarc')}}">Imarc</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.photography')}}">Photography</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.traditional.dance')}}">Traditional Dance</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.vocal-group')}}">Vocal Group</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.band')}}">Band</a></li>
         </ul>
       </div>
     </li>
@@ -54,7 +57,9 @@
       </a>
       <div class="collapse" id="ui-basic7">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.imsso')}}">Imsso</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.men.basketball')}}">Men Basketball</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.women.basketball')}}">Women Basketball</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.men.futsal')}}">Men Fustal</a></li>
         </ul>
       </div>
     </li>
