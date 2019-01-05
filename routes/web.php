@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
-
+Route::get('inamsc/guidelines', 'InamscController@downloadGuidelines');
 
 // admin
 Route::prefix('admin')->middleware(['admin_only'])->group(function () {

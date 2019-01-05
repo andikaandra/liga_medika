@@ -655,4 +655,10 @@ class InamscController extends Controller
       $newName = str_slug($path->title).'.zip';
       return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
     }
+
+    public function downloadGuidelines() {
+      $myFile = storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf");
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      return response()->download(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
+    }
 }
