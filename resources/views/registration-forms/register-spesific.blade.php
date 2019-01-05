@@ -14,7 +14,7 @@
 <div class="card-body">
   <div class="page-header">
     <h3 class="page-title">
-      Register {{$lomba->nama}}
+      {{-- Register {{$lomba->nama}} --}}
     </h3>
   </div>
   <p>Please choose a sub competition/ event you would like to register</p>
