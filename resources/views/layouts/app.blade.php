@@ -59,6 +59,31 @@
                                     <strong>Read Guidelines</strong></a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown3" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                IMARC <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="{{url('#')}}">Photography</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Traditional Dance</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Vocal Group</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Band</a>                                
+                            </div>
+                        </li>
+                            
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown4" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                IMSSO <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown4">
+                                <a class="dropdown-item" href="{{url('#')}}">Men Basketball</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Women Basketball</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Men Futsal</a>
+                            </div>
+                        </li>
                     </ul>
 
                             
