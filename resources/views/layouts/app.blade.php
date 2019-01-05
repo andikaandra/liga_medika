@@ -50,10 +50,18 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">Read Guidelines</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Educational Video</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Literature Review</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Public Poster</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Research Paper</a>
+                                <a class="dropdown-item" href="{{url('#')}}">Symposium & Workshop</a>
+                                <a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">
+                                    <strong>Read Guidelines</strong></a>
                             </div>
                         </li>
                     </ul>
+
+                            
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
