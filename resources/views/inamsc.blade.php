@@ -109,8 +109,11 @@
 	<section id="inamsc-info">
 		<div class="container">
 			<div class="row">
-				<a class="btn btn-info mr-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
-				<a href="{{url('register')}}" class="btn btn-inamsc">Register INAMSC</a>
+				<div class="col-lg-12">
+					<a class="btn btn-info mr-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
+					<a href="{{url('register')}}" class="btn btn-inamsc">Register INAMSC</a>
+				</div>	
+							
 			</div>
 		</div>
 	</section>

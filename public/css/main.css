@@ -2663,7 +2663,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
-  background-color: #fff;
+  background-color: #eff0f1;
+  margin-top: 50px;
 }
 
 .footer-area h6 {
