@@ -51,7 +51,7 @@
                                 other, and broaden their network. With the theme of Psychiatry, we wish to raise awareness
                                 on Mental Health in prevention, diagnosis, and therapy. --}}
                         </p>
-                    <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a>
+                        <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br>
                         <a href="#" class="text-uppercase primary-btn">Info</a>
                     </div>
                   </div>
