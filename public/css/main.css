@@ -3547,6 +3547,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media only screen and (max-width: 480px) {
   .mobile {
-    padding-top: 20px;
+    padding-top: 80px;
   }
 }
