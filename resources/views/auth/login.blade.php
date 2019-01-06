@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
+<br><br><br><br><br><br><br>
 <div class="container">
-
     <div class="row justify-content-center">
         <div class="col-md-8">
           @if (Session::has('message'))
@@ -73,6 +73,8 @@
                                     {{ __('Login') }}
                                 </button>
 
+                            <a href="{{url('register')}}">Don't have an account? Register here</a>
+
                                 {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
@@ -86,4 +88,17 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function(){
+
+        let $header = $("#header");
+        $header.css('background-color', 'black');
+
+
+    });
+</script>
+
 @endsection
