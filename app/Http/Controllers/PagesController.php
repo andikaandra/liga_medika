@@ -9,4 +9,8 @@ class PagesController extends Controller
     public function index() {
         return view('index');
     }
+
+    public function inamsc() {
+        return view('inamsc');
+    }
 }

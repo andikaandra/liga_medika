@@ -15,6 +15,7 @@ Auth::routes();
 Route::post('login', 'Auth\LoginController@doLogin');
 
 Route::get('/', 'PagesController@index');
+Route::get('inamsc', 'PagesController@inamsc');
 
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');

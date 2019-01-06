@@ -13,8 +13,9 @@
                 <p class="pt-20 pb-20 text-white" style="font-size:16px">
                         Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
                 </p>
-                <h3 class="pb-20 text-white">This year's theme is: Psychiatry</h3>
-                <h6 class="text-white pb-20">Registration for INAMSC - wave 1 is Open!</h6>
+                <h3 class="text-white pb-10">This year's theme is: Psychiatry</h3>
+                <h4 class="text-white pb-20"><i>"Kenali Jiwa"</i></h4>
+                <h1 class="text-inamsc pb-20" id="typed"></h1>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
   
             </div>											
@@ -39,20 +40,13 @@
                   <div class="overlay">
                     <div class="text">
                         <p>
-                                INAMSC (Indonesian International (Bio)Medical Students’ Congress) 2019 is a science
-                                subprogram of Liga Medika 2019. INAMSC is the biggest scientific event held by medical
-                                students in Indonesia. 
-                                
-                                {{-- INAMSC 2019 is going to be held in Faculty of Medicine University
-                                of Indonesia, Jakarta in Thursday- Sunday, 25 th – 28 th April 2019. 
-                                This event consists of
-                                symposium, workshop, and competitions held for national and international participants.
-                                INAMSC provides a unique opportunity for students to enrich their knowledge, meet each
-                                other, and broaden their network. With the theme of Psychiatry, we wish to raise awareness
-                                on Mental Health in prevention, diagnosis, and therapy. --}}
+                            INAMSC (Indonesian International (Bio)Medical Students’ Congress) 2019 is a science
+                            subprogram of Liga Medika 2019. INAMSC is the biggest scientific event held by medical
+                            students in Indonesia. 
+            
                         </p>
                         <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br>
-                        <a href="#" class="text-uppercase primary-btn">Info</a>
+                    <a href="{{url('inamsc')}}" class="text-uppercase primary-btn">Info</a>
                     </div>
                   </div>
                 </div>							
@@ -123,7 +117,14 @@
 
 @section('script')
 <script>
-
+ var typed2 = new Typed('#typed', {
+    strings: ['Registration for INAMSC is now Open!'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    fadeOut: true,
+    loop: true
+  });
+    
 </script>    
         
 

@@ -22,6 +22,10 @@
     
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
+
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+
         <!--
         CSS
         ============================================= -->
@@ -51,7 +55,7 @@
                           <ul>
                               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>                            
+                            <li><a target="_blank" href="https://www.instagram.com/ligamedika/?hl=id"><i class="fa fa-instagram"></i></a></li>                            
                           </ul>
                       </div>			  			
                   </div>
@@ -61,14 +65,15 @@
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
+                        <img src="img/logo.jpg" alt="" title="" style="width: 60px; margin-top: -5px"  />
                         Liga Medika 2019
                     </a>
-                    {{-- <a href="index.html"><img src="img/logo.png" alt="" title="" /></a> --}}
+                    
                   </div>
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
                     <li class="menu-active"><a href="{{url('/')}}">Home</a></li>
-                    <li class="menu-has-children"><a href="">INAMSC</a>
+                    <li class="menu-has-children"><a href="#">INAMSC</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{url('#')}}">Educational Video</a></li>
                             <li><a class="dropdown-item" href="{{url('#')}}">Literature Review</a></li>
@@ -79,7 +84,7 @@
                                 <strong>Read Guidelines</strong></a></li>
                         </ul>
                       </li>	
-                      <li class="menu-has-children"><a href="">IMARC</a>
+                      <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{url('#')}}">Photography</a></li>
                           <li><a class="dropdown-item" href="{{url('#')}}">Traditional Dance</a></li>
@@ -88,7 +93,7 @@
                         </ul>
                       </li>	
 
-                      <li class="menu-has-children"><a href="">IMSSO</a>
+                      <li class="menu-has-children"><a href="#">IMSSO</a>
                         <ul>
                           <li><a class="dropdown-item" href="{{url('#')}}">Men Basketball</a></li>
                           <li><a class="dropdown-item" href="{{url('#')}}">Women Basketball</a></li>
@@ -125,7 +130,7 @@
         <footer class="footer-area section-gap">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <div class="single-footer-widget">
                             <h6>Address</h6>
                             <p style="font-weight: bold">
@@ -166,10 +171,14 @@
                             <div class="footer-social d-flex align-items-center">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/ligamedika/?hl=id" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
-                    </div>							
+                    </div>	
+                    
+                    <div class="col-md-4">
+                     <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px">
+                    </div>
                 </div>
             </div>
         </footer>	

@@ -2538,8 +2538,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
+.single-events {
+  border: solid 1px#802513;
+  padding: 15px;
+  border-radius: 3px;
+}
+
 .upcoming-event-area .event-left .single-events {
   margin-bottom: 50px;
+
 }
 
 .upcoming-event-area .event-left .single-events h4 {
@@ -3475,7 +3482,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 ################
 */
 
-
+/* user defined CSS */
 .menu-active a {
   color: #F1B739;
   font-weight: bold;
@@ -3483,6 +3490,59 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .single-service strong {
   font-weight: bold;
+}
+
+
+.banner-area-inamsc {
+  background: url(../img/bg-red.jpg) center;
+  background-size: cover;
+}
+
+.banner-area-inamsc .overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.single-events.inamsc:hover {
+  background-color:#802513;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.single-events.inamsc:hover > h4 {
+  color: white;
+  transition: 0.5s ease-in;
+}
+
+.single-events p {
+  font-size: 16px;
+}
+
+.btn-inamsc {
+  background-color: #802513;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-inamsc:hover {
+  color: white;
+  background-color: #732111;
+}
+
+.text-inamsc {
+  color: #732111;
+}
+
+.typed-cursor {
+  display: none;
+}
+
+#typed {  
+    text-shadow:
+      -1px -1px 0 #ffff,
+      1px -1px 0 #ffff,
+      -1px 1px 0 #ffff,
+      1px 1px 0 #ffff;
 }
 
 @media only screen and (max-width: 480px) {
