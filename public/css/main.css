@@ -3545,11 +3545,14 @@ body.mobile-nav-active #mobile-nav-toggle {
       1px 1px 0 #ffff;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {  
   .mobile {
     padding-top: 80px;
   }
   #header {
     margin-bottom: 70px !important;
+  }
+  #home {
+    padding-bottom: 100px;
   }
 }
