@@ -124,6 +124,8 @@
     fadeOut: true,
     loop: true
   });
+
+  $("#nav-home").addClass("menu-active");
     
 </script>    
         

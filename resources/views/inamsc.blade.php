@@ -121,3 +121,10 @@
 
 	
 @endsection
+
+
+@section('script')
+	<script>
+		$("#nav-inamsc").addClass("menu-active");
+	</script>
+@endsection

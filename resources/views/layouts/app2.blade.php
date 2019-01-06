@@ -82,8 +82,8 @@
                   </div>
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                    <li class="menu-active"><a href="{{url('/')}}">Home</a></li>
-                    <li class="menu-has-children"><a href="#">INAMSC</a>
+                    <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
+                    <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{url('inamsc')}}">Educational Video</a></li>
                             <li><a class="dropdown-item" href="{{url('inamsc')}}">Literature Review</a></li>
