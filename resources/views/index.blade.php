@@ -119,7 +119,7 @@
 <script>
  var typed2 = new Typed('#typed', {
     strings: ['Registration for INAMSC is now Open!'],
-    typeSpeed: 100,
+    typeSpeed: 50,
     backSpeed: 100,
     fadeOut: true,
     loop: true
