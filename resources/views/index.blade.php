@@ -5,7 +5,7 @@
 <section class="banner-area relative mobile" id="home">
     <div class="overlay overlay-bg"></div>	
     <div class="container">        
-        <div class="row fullscreen d-flex align-items-center justify-content-center">    
+        <div class="row fullscreen d-flex align-items-center justify-content-center" id="home2">    
             <div class="banner-content col-lg-12 mobile">                
                 <h1 class="text-white">
                     Liga Medika 2019			
