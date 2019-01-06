@@ -3485,8 +3485,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .mobile {
-    padding-top: 100px;
+    padding-top: 20px;
   }
 }
