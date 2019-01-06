@@ -6,7 +6,7 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/fav.png">
     <!-- Author Meta -->
-    <meta name="author" content="codepixer">
+    <meta name="author" content="Software Silo">
     <!-- Meta Description -->
     <meta name="description" content="Liga Medika 2019, Universitas Indonesia">
     <!-- Meta Keyword -->
