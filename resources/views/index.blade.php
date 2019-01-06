@@ -15,7 +15,7 @@
                 </p>
                 <h3 class="text-white pb-10">This year's theme is: Psychiatry</h3>
                 <h4 class="text-white pb-20"><i>"Kenali Jiwa"</i></h4>
-                <h1 class="text-inamsc pb-20" id="typed"></h1>
+                <h2 class="text-inamsc pb-20" id="typed"></h1>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
   
             </div>											
