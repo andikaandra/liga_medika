@@ -15,6 +15,7 @@ use App\INAMSC;
 use App\IMARC;
 use App\IMSSO;
 use App\HFGM;
+use App\Jobs\SendVerificationEmail;
 
 class AdminController extends Controller
 {
@@ -198,6 +199,14 @@ class AdminController extends Controller
 
     public function publicPosterPage() {
       return view('admin.inamsc.submissions_publication_poster');
+    }
+
+    public function resendEmails() {
+        $users = User::where('verified', 0)->get();
+        foreach ($users as $u) {            
+            dispatch(new SendVerificationEmail($u));
+        }
+        // return 
     }
 
 }
