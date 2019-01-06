@@ -167,6 +167,11 @@
                             <p>
                                 No VI, Jl. Salemba Raya, RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
                             </p>
+                            <hr>
+                            <p>
+                                    Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424
+                            </p>
+                            <hr>
                             <p class="footer-text">
                                 
                                 Copyright Liga Medika &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
