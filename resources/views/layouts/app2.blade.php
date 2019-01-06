@@ -75,11 +75,11 @@
                     <li class="menu-active"><a href="{{url('/')}}">Home</a></li>
                     <li class="menu-has-children"><a href="#">INAMSC</a>
                         <ul>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Educational Video</a></li>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Literature Review</a></li>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Public Poster</a></li>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Research Paper</a></li>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Symposium & Workshop</a></li>
+                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Educational Video</a></li>
+                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Literature Review</a></li>
+                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Public Poster</a></li>
+                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Research Paper</a></li>
+                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Symposium & Workshop</a></li>
                             <li><a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">
                                 <strong>Read Guidelines</strong></a></li>
                         </ul>

@@ -3549,4 +3549,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   .mobile {
     padding-top: 80px;
   }
+  #header {
+    margin-bottom: 10px;
+  }
 }
