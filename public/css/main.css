@@ -3550,6 +3550,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-top: 80px;
   }
   #header {
-    margin-bottom: 10px;
+    margin-bottom: 30px !important;
   }
 }
