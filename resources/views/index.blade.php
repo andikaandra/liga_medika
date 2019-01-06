@@ -2,11 +2,11 @@
 
 @section('content')
     <!-- start banner Area -->
-<section class="banner-area relative" id="home">
+<section class="banner-area relative mobile" id="home">
     <div class="overlay overlay-bg"></div>	
-    <div class="container">
-        <div class="row fullscreen d-flex align-items-center justify-content-center">
-            <div class="banner-content col-lg-12">                
+    <div class="container">        
+        <div class="row fullscreen d-flex align-items-center justify-content-center">    
+            <div class="banner-content col-lg-12 mobile">                
                 <h1 class="text-white">
                     Liga Medika 2019			
                 </h1>
@@ -16,6 +16,7 @@
                 <h3 class="pb-20 text-white">This year's theme is: Psychiatry</h3>
                 <h6 class="text-white pb-20">Registration for INAMSC - wave 1 is Open!</h6>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
+  
             </div>											
         </div>
     </div>					
@@ -119,6 +120,14 @@
         </div>
     </div>	
 </section>
+
+@section('script')
+<script>
+
+</script>    
+        
+
+@endsection
 <!-- End service Area -->
 
 {{-- TODO: --}}

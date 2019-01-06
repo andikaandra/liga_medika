@@ -192,6 +192,7 @@
         <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			
         <script src="{{asset('js/parallax.min.js')}}"></script>		        
         <script src="{{asset('js/main.js')}}"></script>	
+        <script src="{{asset('js/typed.min.js')}}"></script>	
 
         @yield('script')
     </body>
