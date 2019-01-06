@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- start banner Area -->
-<section class="banner-area relative mobile" id="home" style="padding-bottom: 30px">
+<section class="banner-area relative mobile" id="home" style="padding-bottom: 100px">
     <div class="overlay overlay-bg"></div>	
     <div class="container">        
         <div class="row fullscreen d-flex align-items-center justify-content-center">    
