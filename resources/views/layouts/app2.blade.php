@@ -103,8 +103,26 @@
                     <li><a href="#">HFGM</a></li>          
                     <li><a href="#">About</a></li>
                       <li><a href="#">Gallery</a></li>
-                      <li><a href="#">Events</a></li>                      
-                    <li><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
+                      <li><a href="#">Events</a></li>    
+                    @guest
+                  
+                        <li><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
+                    @else
+
+                    <li>
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                            <strong>{{ __('Logout') }}</strong>
+                         </a>
+
+                    </li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                        </form>
+                    @endguest
+
                     </ul>
                   </nav><!-- #nav-menu-container -->		    		
                 </div>
