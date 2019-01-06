@@ -3537,6 +3537,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: none;
 }
 
+#home2 {
+  min-height: 100vh;
+}
+
+.flex-fill {
+  /* flex:1 1 auto; */
+}
+
 #typed {  
     text-shadow:
       -1px -1px 0 #ffff,
@@ -3547,10 +3555,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media only screen and (max-width: 480px) {  
   .mobile {
-    padding-top: 100px;
-  }
-  #header {
-    margin-bottom: 70px !important;
+    padding-top: 150px;
   }
   #home {
     padding-bottom: 100px;
