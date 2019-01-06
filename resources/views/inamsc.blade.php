@@ -81,7 +81,7 @@
 						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							Competition for making scientific paper from the study of several previous literature studies with the theme of mental health which was opened for health and biomedical students at national and international levels. 
-							inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially.
+							
 						</p>
 						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 						<img class="img-fluid" src="img/u4.jpg" alt="">
