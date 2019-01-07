@@ -120,6 +120,11 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('inamscs/submissions/research-paper', 'AdminController@rppPage');
   Route::get('inamscs/submissions/public-poster', 'AdminController@publicPosterPage');
   Route::get('inamscs/{id}/download/submissions', 'InamscController@downloadSubmissions');
+
+  Route::get('account', 'AdminController@getAccountPage');
+  Route::get('account/data', 'AdminController@getAccount');
+  Route::get('account/data/{id}', 'AdminController@getAccountSingle');
+  Route::put('account/accept/{id}', 'AdminController@acceptAccount');
 });
 
 
