@@ -130,6 +130,9 @@
     });
 
     $("#dataPeserta").submit(e => {
+      if ($('#jumlahPeserta').val()==0) {
+        e.preventDefault();
+      }
         $('#daftarPeserta').val($('#jumlahPeserta').val());
     });
 
