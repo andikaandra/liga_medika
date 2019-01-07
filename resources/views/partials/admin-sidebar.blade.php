@@ -78,6 +78,12 @@
         </ul>
       </div>
     </li>
+    <li class="nav-item" id="admin-account">
+      <a class="nav-link" href="{{url('admin/account')}}">
+        <span class="menu-title">Account</span>
+        <i class="mdi mdi-account-settings-variant menu-icon"></i>
+      </a>
+    </li>
 {{--     <li class="nav-item">
       <a class="nav-link" href="pages/icons/mdi.html">
         <span class="menu-title">Icons</span>

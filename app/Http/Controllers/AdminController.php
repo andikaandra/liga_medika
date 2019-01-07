@@ -203,10 +203,31 @@ class AdminController extends Controller
 
     public function resendEmails() {
         $users = User::where('verified', 0)->get();
-        foreach ($users as $u) {            
+        foreach ($users as $u) {
             dispatch(new SendVerificationEmail($u));
         }
         // return 
     }
 
+    public function getAccountPage()
+    {
+        $title = "Account Management";
+        return view('admin.account.management', compact('title'));
+    }
+
+    public function getAccount()
+    {
+      return response()->json(['data' => USER::where('role',1)->get()]);
+    }
+
+    public function acceptAccount($id) {
+      $user = USER::find($id);
+      $user->update(['verified' => 1]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function getAccountSingle($id) {
+      $user = USER::find($id);
+      return response()->json(['user' => $user]);
+    }
 }
