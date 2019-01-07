@@ -146,7 +146,10 @@
     });
 
     $("#dataPeserta").submit(e => {
-        $('#daftarPeserta').val($('#jumlahPeserta').val());
+      if ($('#jumlahPeserta').val()==0) {
+        e.preventDefault();
+      }
+      $('#daftarPeserta').val($('#jumlahPeserta').val());
     });
 
 </script>
