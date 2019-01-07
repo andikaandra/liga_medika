@@ -3593,7 +3593,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-top: 150px;
   }
   #home {
-    /* padding-bottom: 100px; */
+    padding-bottom: 50px;
   }
   #home #theme{
     font-size: 40px !important;
