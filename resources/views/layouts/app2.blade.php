@@ -46,7 +46,7 @@
         <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.defaault.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
@@ -103,22 +103,22 @@
                       </li>	 --}}
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
-                            <li><a class="dropdown-item" href="{{url('#')}}">Photography</a></li>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Traditional Dance</a></li>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Vocal Group</a></li>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Band</a></li>
+                            <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
                         </ul>
                       </li>	
 
                       <li class="menu-has-children"><a href="#">IMSSO</a>
                         <ul>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Men Basketball</a></li>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Women Basketball</a></li>
-                          <li><a class="dropdown-item" href="{{url('#')}}">Men Futsal</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Women Basketball</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
                         </ul>
                       </li>	
-                    <li><a href="#">HFGM</a></li>                              
-                      <li><a href="#">Gallery</a></li>
+                    <li><a class="under-construction" href="#">HFGM</a></li>                              
+                      <li><a class="under-construction" href="#">Gallery</a></li>
                       {{-- <li><a href="#">Events</a></li>     --}}
                     @guest
                   
@@ -226,7 +226,13 @@
         <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>			
-       
+        <script>
+                
+                $(".under-construction").click(function(){
+                    console.log("i")
+                    alert("We're sorry, this page is still under construction!");
+                });
+            </script>
        
         {{-- TODO: --}}
        
@@ -245,6 +251,9 @@
         {{-- <script src="{{asset('js/parallax.min.js')}}"></script>		         --}}
         <script src="{{asset('js/main.js')}}"></script>	
         {{-- <script src="{{asset('js/typed.min.js')}}"></script>	 --}}
+
+
+
 
         @yield('script')
     </body>
