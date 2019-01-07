@@ -1973,7 +1973,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
   }
   #header #logo img {
-    max-height: 40px;
+    /* max-height: 40px; */
   }
 }
 
@@ -2309,7 +2309,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area .overlay-bg {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(63, 63, 63, 0.5);
 }
 
 .banner-content {
@@ -2374,7 +2374,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .single-service {
   padding: 30px;
   text-align: center;
-  background-color: #f9f9ff;
+  background-color: #FCECCB;
 }
 
 .single-service .lnr, .single-service .fa {
@@ -2460,7 +2460,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .exibition-area {
-  background-color: #f9f9ff;
+  /* background-color: #f9f9ff; */
 }
 
 .exibition-area .owl-dots {
@@ -2474,11 +2474,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   backface-visibility: hidden;
 }
 
-.exibition-area .owl-dot {
+.owl-dot {
   height: 10px;
   width: 10px;
   display: inline-block;
-  background: rgba(127, 127, 127, 0.5);
+  background-color: rgba(127, 127, 127, 0.5) !important;
   margin-left: 5px;
   margin-right: 5px;
   -webkit-transition: all 0.3s ease 0s;
@@ -2492,7 +2492,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background: #F1B739;
+  background: #F1B739 !important;
 }
 
 .single-exibition .tags {
@@ -2636,7 +2636,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .gallery-area {
-  background-color: #04091e;
+  background-color: #164161;
 }
 
 .gallery-area #grid-container {
@@ -2663,8 +2663,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
-  background-color: #eff0f1;
-  margin-top: 50px;
+  background-color: #FCECCB;
+  /* margin-top: 50px; */
 }
 
 .footer-area h6 {
@@ -3493,14 +3493,31 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: bold;
 }
 
+.service-area {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
 
 .banner-area-inamsc {
   background: url(../img/bg-red.jpg) center;
   background-size: cover;
 }
 
+
 .banner-area-inamsc .overlay {
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+.banner-area-inamsc-social-programme {
+  background: url(../img/jkt-monas.jpg) center;
+  background-size: cover;
+  background-position-y: 0px;
+}
+
+
+.banner-area-inamsc-social-programme .overlay {
+  background-color: rgba(128, 37, 19, 0.1);
 }
 
 .single-events.inamsc:hover {
@@ -3558,14 +3575,42 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-top: 50px;
 }
 
-@media only screen and (max-width: 480px) {  
+.uppercase {
+  text-transform: uppercase;
+}
+
+.ligmed {
+  background-color: #F1B739;
+  color: white;
+}
+
+.ligmed-dark {
+  background-color: #DC911C;
+}
+
+@media only screen and (max-width: 1200px) {  
   .mobile {
     padding-top: 150px;
   }
   #home {
     padding-bottom: 100px;
   }
+  #home #theme{
+    font-size: 40px !important;
+  }
+  #home #tagline{
+    font-size: 32px !important;
+  }
   #home2 {
     padding-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {  
+  .inamsc-mobile .about {
+    font-size: 16px !important;
+    /* justify-content: left !important; */
+    text-align: justify !important;
+    padding: 15px;
   }
 }

@@ -23,12 +23,12 @@ $(document).ready(function(){
     //     }
     // });
 
-    // $('.single-gallery').magnificPopup({
-    //     type: 'image',
-    //     gallery:{
-    //     enabled:true
-    //     }
-    // });
+    $('.single-gallery').magnificPopup({
+        type: 'image',
+        gallery:{
+        enabled:true
+        }
+    });
 
     // $('.recent-project').magnificPopup({
     //     type: 'image',
@@ -161,10 +161,14 @@ $(document).ready(function(){
 
   // Header scroll class
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 50) {
+    if ($(this).scrollTop() > 20) {
       $('#header').addClass('header-scrolled');
+      $("#logo-white").show();
+      $("#logo-black").css('display', 'none');
     } else {
       $('#header').removeClass('header-scrolled');
+      $("#logo-white").css('display', 'none');
+      $("#logo-black").show();
     }
   })
 
@@ -203,16 +207,16 @@ $(document).ready(function(){
   //  Gallery 
 
 
-    // var parameters = {
-    //       gridContainer: '#grid-container',
-    //       gridItems: '.grid-item',
-    //       gutter: 15,
-    //       enableImagesLoaded: true
-    //     };
-    //     var grid = new justifiedGrid(parameters);
-    // $('body').imagesLoaded( function() {
-    //    grid.initGrid();
-    // });
+    var parameters = {
+          gridContainer: '#grid-container',
+          gridItems: '.grid-item',
+          gutter: 15,
+          enableImagesLoaded: true
+        };
+        var grid = new justifiedGrid(parameters);
+    $('body').imagesLoaded( function() {
+       grid.initGrid();
+    });
        
 
 

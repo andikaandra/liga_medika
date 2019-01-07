@@ -45,12 +45,15 @@
         <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.theme.defaault.min.css')}}">
+
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
         
         @yield('style')
     </head>
-    <body class="animated fadeIn">
+    <body class="">
 
           <header id="header" id="home">
               <div class="container header-top">
@@ -75,7 +78,8 @@
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img src="img/logo.jpg" alt="" title="" style="width: 60px; margin-top: -5px"  />
+                        <img id="logo-white" src="{{asset('img/logo.jpg')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black')}}.jpg" alt="" title="" style="width: 60px; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -83,7 +87,10 @@
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
-                    <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
+                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
+                    <li id="nav-inamsc-social-programme"><a href="{{url('inamsc-social-programme')}}">INAMSC SOCIAL PROGRAMME</a></li>
+
+                    {{-- <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{url('inamsc')}}">Educational Video</a></li>
                             <li><a class="dropdown-item" href="{{url('inamsc')}}">Literature Review</a></li>
@@ -93,7 +100,7 @@
                             <li><a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">
                                 <strong>Read Guidelines</strong></a></li>
                         </ul>
-                      </li>	
+                      </li>	 --}}
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
                             <li><a class="dropdown-item" href="{{url('#')}}">Photography</a></li>
@@ -110,13 +117,12 @@
                           <li><a class="dropdown-item" href="{{url('#')}}">Men Futsal</a></li>
                         </ul>
                       </li>	
-                    <li><a href="#">HFGM</a></li>          
-                    <li><a href="#">About</a></li>
+                    <li><a href="#">HFGM</a></li>                              
                       <li><a href="#">Gallery</a></li>
-                      <li><a href="#">Events</a></li>    
+                      {{-- <li><a href="#">Events</a></li>     --}}
                     @guest
                   
-                        <li><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
+                        <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
                     @else
 
                     <li>
@@ -147,9 +153,9 @@
           
                                 
 
-
+          <div class="animated fadeIn">
           @yield('content')
-
+        </div>
 
         
         
@@ -220,21 +226,25 @@
         <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>			
+       
+       
         {{-- TODO: --}}
+       
+       
         {{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script> --}}
-        <script src="{{asset('js/easing.min.js')}}"></script>			
-        <script src="{{asset('js/hoverIntent.js')}}"></script>
+        {{-- <script src="{{asset('js/easing.min.js')}}"></script>			 --}}
+        {{-- <script src="{{asset('js/hoverIntent.js')}}"></script> --}}
         <script src="{{asset('js/superfish.min.js')}}"></script>	
-        <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+        {{-- <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script> --}}
         <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>	
         <script src="{{asset('js/owl.carousel.min.js')}}"></script>	
         <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
         <script src="{{asset('js/justified.min.js')}}"></script>					
-        <script src="{{asset('js/jquery.sticky.js')}}"></script>
-        <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			
-        <script src="{{asset('js/parallax.min.js')}}"></script>		        
+        {{-- <script src="{{asset('js/jquery.sticky.js')}}"></script> --}}
+        {{-- <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			 --}}
+        {{-- <script src="{{asset('js/parallax.min.js')}}"></script>		         --}}
         <script src="{{asset('js/main.js')}}"></script>	
-        <script src="{{asset('js/typed.min.js')}}"></script>	
+        {{-- <script src="{{asset('js/typed.min.js')}}"></script>	 --}}
 
         @yield('script')
     </body>

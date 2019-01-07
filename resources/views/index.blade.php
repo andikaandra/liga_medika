@@ -1,5 +1,22 @@
 @extends('layouts.app2')
 
+@section('style')
+    <style>
+        .single-service {
+            height: 340px !important;
+        }
+
+        @media only screen and (max-width: 1200px) {  
+
+            #typed {
+            height: 74px;
+            margin-bottom: 10px;
+            }
+
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- start banner Area -->
 <section class="banner-area relative mobile" id="home">
@@ -13,9 +30,13 @@
                 <p class="pt-20 pb-20 text-white" style="font-size:16px">
                         Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
                 </p>
-                <h3 class="text-white pb-10">This year's theme is: Psychiatry</h3>
-                <h4 class="text-white pb-20"><i>"Kenali Jiwa"</i></h4>
-                <h2 class="text-inamsc pb-20" id="typed"></h1>
+                <h3 class="text-white pb-10">This year's theme</h3>
+                <h3 class="text-white pb-10 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
+                <h3 class="text-white pb-20">with our tagline</h3>
+                <h3 class="text-white pb-20 uppercase" style="font-size: 48px" id="tagline"><i>#KenaliJiwa</i></h3>
+                <h2 class="text-inamsc pb-20" id="typed">
+                    
+                </h2>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
   
             </div>											
@@ -25,107 +46,179 @@
 <!-- End banner Area -->	
 
 <!-- Start service Area -->
-<section class="service-area pt-100" id="about">
+<section class="exibition-area service-area pt-100" id="about">
     <div class="container">
+            <div class="row d-flex justify-content-center">
+                    <div class="menu-content pb-60 col-lg-10">
+                        <div class="title text-center">
+                            <h2 class="mb-10">Events</h2>                            
+                        </div>
+                    </div>
+                </div>	
         <div class="row">
-            <div class="col-lg-3">
-                <div class="single-service">
-                  <span class="lnr lnr-pencil"></span>
-                  <h4>INAMSC</h4>
-                  <p>
-                    <strong>First Wave Submission:</strong><br> 23 rd December 2018 – 20 th January
-                    2019 <br>
-                    <strong>Second Wave Submission:</strong> <br> 21 st January 2019 – 17 th February 2019
-                  </p>						 	
-                  <div class="overlay">
-                    <div class="text">
-                        <p>
-                            INAMSC (Indonesian International (Bio)Medical Students’ Congress) 2019 is a science
-                            subprogram of Liga Medika 2019. INAMSC is the biggest scientific event held by medical
-                            students in Indonesia. 
-            
-                        </p>
-                        <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br>
-                    <a href="{{url('inamsc')}}" class="text-uppercase primary-btn">Info</a>
+            <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="single-service">
+                            <span class="lnr lnr-pencil"></span>
+                            <h4>INAMSC</h4>
+                            <p>
+                            <strong>First Wave Submission:</strong><br> 23 rd December 2018 – 20 th January
+                            2019 <br>
+                            <strong>Second Wave Submission:</strong> <br> 21 st January 2019 – 17 th February 2019
+                            </p>						 	
+                            <div class="overlay">
+                            <div class="text">
+                                <p>
+                                    INAMSC (Indonesian international (bio)medical student's congress) is the biggest scientific event and competition for biomedic students in indonesia. INAMSC is open not only for national participants, but INAMSC is also open for international participants.
+                                </p>
+                                <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br>
+                            <a href="{{url('inamsc')}}" class="text-uppercase primary-btn">Info</a>
+                            </div>
+                            </div>
+                        </div>							
                     </div>
-                  </div>
-                </div>							
+                    <div class="item">
+                        <div class="single-service">                  
+                            <span class="fa fa-paint-brush"></span>
+                            <h4>IMARC</h4>
+                            <p>
+                            <i>Hover for info</i>
+                            </p>						 	
+                            <div class="overlay">
+                            <div class="text">
+                                <p>
+                                        IMARC (INdonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
+                                </p>
+                                <a href="#" class="text-uppercase primary-btn">Info</a>
+                            </div>
+                            </div>
+                        </div>							
+                    </div>            
+                    <div class="item">
+                        <div class="single-service">
+                            <span class="fa fa-futbol-o"></span>
+                            <h4>IMSSO</h4>
+                            <p>
+                                <i>Hover for info</i>
+                            </p>						 	
+                            <div class="overlay">
+                            <div class="text">
+                                <p>
+                                        IMSSO is a renowned sports competition aimed for medicine and dental medicine university students in Indonesia. This year we have basketball and futsal.
+                                </p>
+                                <a href="#" class="text-uppercase primary-btn">Info</a>
+                            </div>
+                            </div>
+                        </div>							
+                    </div>			
+                    <div class="item">
+                        <div class="single-service">
+                                <span class="lnr lnr-music-note"></span>
+                            <h4>HFGM</h4>
+                            <p>
+                                <i>Hover for info</i>
+                            </p>						 	
+                            <div class="overlay">
+                            <div class="text">
+                                <p>
+                                    HFGM is a celebrated event comprised of health campaign activites to raise the awareness about the mental health, and the final event including a concert and exhibition
+                                </p>
+                                <a href="#" class="text-uppercase primary-btn">Info</a>
+                            </div>
+                            </div>
+                        </div>							
+                    </div>
+
+                    <div class="item">
+                        <div class="single-service">
+                                <span class="fa fa-building-o"></span>
+                            <h4>INAMSC SOCIAL PROGRAMME</h4>
+                            <p>
+                                <i>Hover for info</i>
+                            </p>						 	
+                            <div class="overlay">
+                            <div class="text">
+                                <p>
+                                    Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
+                                </p>
+                                <a href="#" class="text-uppercase primary-btn">Info</a>
+                            </div>
+                            </div>
+                        </div>							
+                    </div>
+
+
             </div>
-            <div class="col-lg-3">
-                <div class="single-service">                  
-                  <span class="fa fa-paint-brush"></span>
-                  <h4>IMARC</h4>
-                  <p>
-                      Coming Soon
-                      {{-- Mon - Fri: 10.00am to 05.00pm
-                    Sat: 12.00pm to 03.00 pm
-                    Sunday Closed --}}
-                  </p>						 	
-                  <div class="overlay">
-                    <div class="text">
-                        <p>
-                            {{-- Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features.that we use in life --}}
-                        </p>
-                        <a href="#" class="text-uppercase primary-btn">Info</a>
-                    </div>
-                  </div>
-                </div>							
-            </div>            
-            <div class="col-lg-3">
-                <div class="single-service">
-                  <span class="fa fa-futbol-o"></span>
-                  <h4>IMSSO</h4>
-                  <p>
-                        Coming Soon
-                  {{--    Mon - Fri: 10.00am to 05.00pm
-                    Sat: 12.00pm to 03.00 pm
-                    Sunday Closed --}}
-                  </p>						 	
-                  <div class="overlay">
-                    <div class="text">
-                        <p>
-                            {{-- Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features.that we use in life --}}
-                        </p>
-                        <a href="#" class="text-uppercase primary-btn">Info</a>
-                    </div>
-                  </div>
-                </div>							
-            </div>			
-            <div class="col-lg-3">
-                <div class="single-service">
-                        <span class="lnr lnr-music-note"></span>
-                    <h4>HFGM</h4>
-                    <p>
-                            Coming Soon
-                        {{-- Mon - Fri: 10.00am to 05.00pm
-                    Sat: 12.00pm to 03.00 pm
-                    Sunday Closed --}}
-                    </p>						 	
-                    <div class="overlay">
-                    <div class="text">
-                        <p>
-                            {{-- Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features that we use in life Here, I focus on a range of items and features.that we use in life --}}
-                        </p>
-                        <a href="#" class="text-uppercase primary-btn">Info</a>
-                    </div>
-                    </div>
-                </div>							
-            </div>										
+
+            										
         </div>
     </div>	
 </section>
 
+
+<section class="gallery-area section-gap" id="gallery">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h2 class="mb-10 text-white">Our Exhibition Gallery</h2>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.</p> --}}
+                    </div>
+                </div>
+            </div>						
+            <div id="grid-container" class="row">
+                <a class="single-gallery" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
+
+                <a class="single-gallery" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/rpp.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/workshop.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/hfgm/hfgm2.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm2.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm3.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+            </div>	
+        </div>	
+    </section>
+
 @section('script')
+<script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
 <script>
- var typed2 = new Typed('#typed', {
-    strings: ['Registration for INAMSC is now Open!'],
-    typeSpeed: 50,
-    backSpeed: 100,
-    fadeOut: true,
-    loop: true
-  });
+  var app = document.getElementById('typed');
+
+    var typewriter = new Typewriter(app, {
+        loop: true,
+        strings: ['Registration for INAMSC is now Open!'],
+        autoStart: true,
+    });
 
   $("#nav-home").addClass("menu-active");
+
+  $('.owl-carousel').owlCarousel({
+    items:4,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:1000,
+    autoplayHoverPause:true,
+    responsive: {
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:3,
+            nav:false
+        }, 
+        1000: {
+            items: 3
+        }
+    },
+    dots: true
+});
     
 </script>    
         
@@ -359,7 +452,7 @@
             </div>
         </div>					
         <div class="row">
-            <div class="col-lg-3 col-md-6 single-blog">
+            <div class="item col-md-6 single-blog">
                 <div class="thumb">
                     <img class="img-fluid" src="img/b1.jpg" alt="">								
                 </div>
@@ -374,7 +467,7 @@
                     <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
                 </div>									
             </div>
-            <div class="col-lg-3 col-md-6 single-blog">
+            <div class="item col-md-6 single-blog">
                 <div class="thumb">
                     <img class="img-fluid" src="img/b2.jpg" alt="">								
                 </div>
@@ -389,7 +482,7 @@
                     <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
                 </div>									
             </div>
-            <div class="col-lg-3 col-md-6 single-blog">
+            <div class="item col-md-6 single-blog">
                 <div class="thumb">
                     <img class="img-fluid" src="img/b3.jpg" alt="">								
                 </div>
@@ -404,7 +497,7 @@
                     <p><span class="lnr lnr-bubble"></span> 02 Comments</p>
                 </div>									
             </div>
-            <div class="col-lg-3 col-md-6 single-blog">
+            <div class="item col-md-6 single-blog">
                 <div class="thumb">
                     <img class="img-fluid" src="img/b4.jpg" alt="">								
                 </div>

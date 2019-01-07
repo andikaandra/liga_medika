@@ -1,5 +1,11 @@
 @extends('layouts.app2')
-
+@section('style')
+    <style>
+        body {
+            background-color: #164161;
+        }
+    </style>
+@endsection
 @section('content')
 <br><br><br><br><br><br><br>
 <div class="container">
@@ -20,7 +26,7 @@
               <p>{{Session::get('verified')}}</p>
             </div>
           @endif
-            <div class="card">
+            <div class="card ligmed mb-5">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -96,6 +102,8 @@
 
         let $header = $("#header");
         $header.css('background-color', 'black');
+
+		$("#nav-login").addClass("menu-active");
 
 
     });
