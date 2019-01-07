@@ -28,7 +28,7 @@
                     Liga Medika 2019			
                 </h1>
                 <p class="pt-20 pb-20 text-white" style="font-size:16px">
-                        Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
+                    Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
                 </p>
                 <h3 class="text-white pb-10">This year's theme</h3>
                 <h3 class="text-white pb-10 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
