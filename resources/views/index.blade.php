@@ -9,7 +9,7 @@
         @media only screen and (max-width: 1200px) {  
 
             #typed {
-            height: 90px;
+            height: 95px;
             margin-bottom: 10px;
             }
 

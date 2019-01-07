@@ -3602,7 +3602,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 32px !important;
   }
   #home2 {
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
   }
 }
 
