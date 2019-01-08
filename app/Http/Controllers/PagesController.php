@@ -17,4 +17,8 @@ class PagesController extends Controller
     public function inamscSocialProgramme() {
         return view('social-programme');
     }
+
+    public function gallery() {
+        return view('gallery');
+    }
 }

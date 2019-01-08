@@ -4,13 +4,17 @@
     <style>
         .single-service {
             height: 340px !important;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .about-us-banner, .theme-banner {
             width: 100%;
             border-bottom: solid 1px #f1b739;
             margin-bottom: 20px;
+        }
+
+        .exibition-area, .gallery-area {
+            border-bottom: solid 4px #f1b739;
         }
 
         .theme-banner {
@@ -68,6 +72,13 @@
 
 <section class="exibition-area service-area pt-100" id="about">
         <div class="container">
+        <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-10">
+                    <div class="title text-center">
+                        <h2 class="mb-10">Events</h2>                            
+                    </div>
+                </div>
+            </div>	
             <div class="row">
                 <div class="col-lg-6">
                     <div class="single-service">
@@ -113,7 +124,7 @@
                         <div class="overlay">
                         <div class="text">
                             <p>
-                                    IMARC (INdonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
+                                    IMARC (Indonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
                             </p>
                             <a href="#" class="text-uppercase primary-btn">Info</a>
                         </div>
@@ -138,7 +149,7 @@
                                                         
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                                <p class="text-justify">
                                         IMSSO is a renowned sports competition aimed for medicine and dental medicine university students in Indonesia. This year we have basketball and futsal.
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -160,7 +171,7 @@
                                                     
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                                <p class="text-justify">
                                     HFGM is a celebrated event comprised of health campaign activites to raise the awareness about the mental health, and the final event including a concert and exhibition
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -194,6 +205,49 @@
                         </div>	
                 </div>
                                             
+        </div>	
+    </section>
+
+
+
+<section class="gallery-area section-gap" id="gallery">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h2 class="mb-10 text-white">Our Exhibition Gallery</h2>
+                    </div>
+                </div>
+            </div>						
+            <div id="grid-container" class="row">
+                <a class="single-gallery" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
+
+                <a class="single-gallery" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>
+{{--                 
+                <a class="single-gallery" href="img/ligmed/inamsc/rpp.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a> --}}
+{{--                 
+                <a class="single-gallery" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>
+                <a class="single-gallery" href="img/ligmed/inamsc/workshop.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop.JPG')}}"></a> --}}
+
+                <a class="single-gallery" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
+                {{-- <a class="single-gallery" href="img/ligmed/hfgm/hfgm2.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm2.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm3.jpg')}}"></a> --}}
+
+                <a class="single-gallery" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+
+                {{-- <a class="single-gallery" href="img/ligmed/imsso/imsso1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso1.jpg')}}"></a> --}}
+
+                <a class="single-gallery" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
+
+                <a class="single-gallery" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
+
+                {{-- <a class="single-gallery" href="img/ligmed/imarc/imarc2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc2.jpg')}}"></a> --}}
+
+                <a href="{{url('gallery')}}" style="color:white; font-size: 16px">See more photos</a>
+            </div>	
         </div>	
     </section>
     
@@ -592,32 +646,6 @@
         </section> --}}
 
 
-{{-- <section class="gallery-area section-gap" id="gallery">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-70 col-lg-8">
-                    <div class="title text-center">
-                        <h2 class="mb-10 text-white">Our Exhibition Gallery</h2>
-                    </div>
-                </div>
-            </div>						
-            <div id="grid-container" class="row">
-                <a class="single-gallery" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
-
-                <a class="single-gallery" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/rpp.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/workshop.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
-                <a class="single-gallery" href="img/ligmed/hfgm/hfgm2.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm2.jpg')}}"></a>
-                <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm3.jpg')}}"></a>
-                <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
-            </div>	
-        </div>	
-    </section> --}}
 
     @endsection
 

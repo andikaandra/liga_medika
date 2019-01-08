@@ -45,7 +45,7 @@
         <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}"> --}}
         {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
@@ -78,8 +78,8 @@
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img id="logo-white" src="{{asset('img/logo.jpg')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
-                        <img id="logo-black" src="{{asset('img/logo-black')}}.jpg" alt="" title="" style="width: 60px; margin-top: -5px;"  />
+                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="width: 60px; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -90,17 +90,6 @@
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
                     <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
 
-                    {{-- <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
-                        <ul>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Educational Video</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Literature Review</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Public Poster</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Research Paper</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Symposium & Workshop</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">
-                                <strong>Read Guidelines</strong></a></li>
-                        </ul>
-                      </li>	 --}}
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
                             <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
@@ -118,13 +107,17 @@
                         </ul>
                       </li>	
                     <li><a class="under-construction" href="#">HFGM</a></li>                              
-                      <li><a class="under-construction" href="#">Gallery</a></li>
-                      {{-- <li><a href="#">Events</a></li>     --}}
+                    <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     @guest
                   
                         <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
                     @else
-
+                      @if (Auth::user()->role == 1)
+                        <li id="nav-dashboard"><a href="{{url('users')}}">Dashboard</a></li>      
+                      @else
+                        <li id="nav-dashboard"><a href="{{url('admin')}}">Dashboard</a></li>      
+                      @endif
+                    
                     <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -170,16 +163,16 @@
                             <p style="font-weight: bold">
                                 Faculty of Medicine University Indonesia
                             </p>
-                            <p>
+                            <p class="text-justify">
                                 No VI, Jl. Salemba Raya, RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
                             </p>
                             <hr>
-                            <p>
-                                    Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424
+                            <p class="text-justify">
+                                Rumpun Ilmu Kesehatan, Universitas Indonesia, Beji, Kota Depok, Jawa Barat - 16424
+                                {{-- Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424 --}}
                             </p>
                             <hr>
                             <p class="footer-text">
-                                
                                 Copyright Liga Medika &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
                                 Handcrafted & Nurtured with huge <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
 
@@ -206,7 +199,7 @@
                     <div class="col-md-4 social-widget">
                         <div class="single-footer-widget">
                             <h6>Follow Us</h6>
-                            <p>Let us be social - Get our latest updates</p>
+                            <p class="text-justify">Let us be social - Get our latest updates</p>
                             <div class="footer-social d-flex align-items-center">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -216,7 +209,8 @@
                     </div>	
                     
                     <div class="col-md-4">
-                     <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px">
+{{--                      <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px"> --}}
+                     <img src="{{asset('img/logo-fk-ui.jpg')}}" alt="" style="width: 100%">
                     </div>
                 </div>
             </div>
