@@ -3623,3 +3623,9 @@ body.mobile-nav-active #mobile-nav-toggle {
     text-align: justify !important;
   }
 }
+
+.banner-area#gallery {
+  background: url(../img/u3.jpg) center;
+  background-size: cover;
+
+}

@@ -4,7 +4,7 @@
 @section('content')
 	
 <!-- start banner Area -->
-<section class="banner-area relative" id="home">	
+<section class="banner-area relative" id="gallery">	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
