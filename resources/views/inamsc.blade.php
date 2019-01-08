@@ -120,6 +120,26 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+
+					<div class="single-events inamsc last wow slideInUp">
+						<h4>Symposium and Workshop</h4>
+						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
+						<p>
+							The symposium consists of three continual sessions, meanwhile, workshop consists of three parallel sessions. Participants are encouraged to actively participate at the end of every session. Then, participants are facilitated to implement their knowledge from Symposium sessions in Workshop sessions. The workshop allows participants to learn and enhance their case-based clinical skill. All knowledge given in Symposium and Workshop is relevant especially for biomedical student and general practitioner.
+						</p>				
+						<div id="last">
+								<img class="img-fluid" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}" alt="symposium and workshop"
+								style="width: 50%;">
+									
+						</div>		
+						
+					</div>	
+				</div>
+		
+			</div>
 			
 		</div>
 
