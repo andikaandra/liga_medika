@@ -3629,3 +3629,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
 
 }
+
+.footer-social {
+    font-size: 22px;  
+}

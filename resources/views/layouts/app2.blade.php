@@ -67,7 +67,7 @@
                       <div class="col-6 top-head-right">
                           <ul>
                               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://twitter.com/liga_medika" target="_blank"><i class="fa fa-twitter"></i></a></li>
                             <li><a target="_blank" href="https://www.instagram.com/ligamedika/?hl=id"><i class="fa fa-instagram"></i></a></li>                            
                           </ul>
                       </div>			  			
@@ -202,7 +202,7 @@
                             <p class="text-justify">Let us be social - Get our latest updates</p>
                             <div class="footer-social d-flex align-items-center">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="https://twitter.com/liga_medika" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/ligamedika/?hl=id" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>

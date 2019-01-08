@@ -224,7 +224,7 @@
                 <div class="menu-content pb-70 col-lg-8">
                     <div class="title text-center">
                         <h2 class="mb-10 text-white">Last Year's Euphoria</h2>
-                        <a href="https://www.instagram.com/ligamedika/?hl=id" target="_blank" style="font-size: 20px"><i class="fa fa-instagram"></i> : @liga_medika</a>
+                        {{-- <a href="https://www.instagram.com/ligamedika/?hl=id" target="_blank" style="font-size: 20px"><i class="fa fa-instagram"></i> : @liga_medika</a> --}}
 
                     </div>
                 </div>
