@@ -8,11 +8,20 @@
 		justify-content: center;
 	}
 
+	.international, .national {
+		margin-bottom: 20px;
+	}
+
+	.single-events {
+		margon-bottom: 10px;
+	}
+
 
 	@media only screen and (max-width: 768px) {  
 		#last img {
 		width: 100% !important;
 	}
+
 	}
 </style>	
 @endsection
@@ -30,7 +39,7 @@
 				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc')}}"> INAMSC</a></p>
 				<p class="text-white about mb-3" style="font-size: 18px">
 					INAMSC (Indonesian International (Bio)Medical Students’ Congress) 2019 is the seventh annual scientific subprogram of Liga Medika 2019. INAMSC is the biggest scientific event held by medical students in Indonesia. INAMSC 2019 is going to be held in Faculty of Medicine University of Indonesia, Jakarta in Thursday- Sunday, 25th – 28th April 2019. As the biggest scientific platform in Indonesia intended for international and national medical and biomedical students, INAMSC offers the opportunity for students majoring in medical and biomedical sciences all across the globe to engage in scientific discussions and to exchange knowledge. Research enthusiasts around the world are welcomed to participate in this event. 
-					This year INAMSC 2019 theme is <strong style="font-weight: 800; font-size: 18px; background-color: white;color: #802513; padding: 2px">Psychiatry</strong>
+					This year INAMSC 2019 theme is <strong style="font-weight: 1000; font-size: 18px; ; padding: 2px">Psychiatry</strong>
 					With the theme of Psychiatry, we wish to raise awareness on Mental Health prevention, diagnosis, and therapy. 
 					INAMSC 2019 consists of four competitions, symposium workshop, and social program.
 				</p>
@@ -50,66 +59,107 @@
 					<div class="title text-center">
 						<h1 class="mb-10">The competitions held in INAMSC
 								2019 are:</h1>
-						{{-- <p>Who are in extremely love with eco friendly system.</p> --}}
+						
 					</div>
 				</div>
-			</div>						
-			<div class="row">
+			</div>		
+			<div class="international">
+				<h2 class="mb-10">International Competitions</h2>
+
+				<div class="row">
+					<div class="col-lg-6 ">
+							<div class="single-events inamsc">
+								<h4>Literature Review</h4>
+								<small><strong>International Competition</strong></small>
+								<p>
+									Literature Review Competition is an international competition, part of INAMSC 2019, a student conference held by Faculty of Medicine, University of Indonesia. The aim of the competition is to promote understanding in recent medical innovations and discoveries, as reviewing recent studies is the basis of a new breakthrough in science. Therefore, we encourage biomedical students from all over the world to submit their work(s). This year's literature review theme is 'Current Updates on Neuropsychiatric Diseases and Neurobehavioral Medicine'.
+								</p>
+								<img class="img-fluid" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}" alt="literature review" style="margin-bottom: 24px">								
+							</div>																			
+						</div>
+	
+						<div class="col-lg-6">
+							<div class="single-events inamsc">
+								<h4>Research Paper and Poster</h4>
+								<small><strong>International Competition</strong></small>
+								<p>
+									Research paper and poster (RPP) competition is an international competition, part of INAMSC 2019, a student conference held by Faculty of Medicine, University of Indonesia. This competition intended for young researchers from health and/or biomedical science-related fields to submit their original research paper. The aims of this competition are to appreciate the importance of research as the fundamental aspect of medical development and facilitate young researchers to present their researches and to exchange knowledge with other participants.
+								</p>
+								<img class="img-fluid" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}" alt="">
+
+							</div>	
+						</div>
+				</div>
+			</div>
+			
+			<div class="national">
+				<h2 class="mb-10">National Competitions</h2>
+
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="single-events inamsc">
+							<h4>Public Poster</h4>
+							<small><strong>National Competition</strong></small>
+							<p>
+								Public Poster is a national competition that is part of INAMSC Liga Medika 2019. Public posters as one of the art forms that can be enjoyed by the community. The aims of this competition are to present creative and different ways of promotive and preventive effort to support the government and the community for better Indonesian health.
+							</p>
+							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}" alt="">
+						</div>
+								
+					</div>
+					<div class="col-lg-6">
+						<div class="single-events inamsc">
+								
+							<h4>Educational Video</h4>
+							<small><strong>National Competition</strong></small>
+							<p>
+								Educational video is a new national competition branch that is part of INAMSC Liga Medika 2019. Educational video as one of the art forms that can be enjoyed by the community. The aims of this competition are to present creative and different ways of promotive and preventive effort to support the government and the community for better Indonesian health.
+							</p>
+							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/edvid.JPG')}}" alt="educational video">
+						</div>				
+					</div>
+				</div>
+			</div>
+			
+
+				
+			{{-- <div class="row">
 				<div class="col-lg-6 event-left">
 					<div class="single-events inamsc">
 					<img class="img-fluid" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}" alt="literature review">
 						<h4>Literature Review</h4>
 						<small><strong>International Competition</strong></small>
-						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							Literature Review Competition is an international competition, part of INAMSC 2019, a student conference held by Faculty of Medicine, University of Indonesia. The aim of the competition is to promote understanding in recent medical innovations and discoveries, as reviewing recent studies is the basis of a new breakthrough in science. Therefore, we encourage biomedical students from all over the world to submit their work(s). This year's literature review theme is 'Current Updates on Neuropsychiatric Diseases and Neurobehavioral Medicine'.
 						</p>
-						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 					</div>
 					<div class="single-events inamsc">
 						<img class="img-fluid" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}" alt="">
 						<h4>Research Paper and Poster</h4>
 						<small><strong>International Competition</strong></small>
-						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							Research paper and poster (RPP) competition is an international competition, part of INAMSC 2019, a student conference held by Faculty of Medicine, University of Indonesia. This competition intended for young researchers from health and/or biomedical science-related fields to submit their original research paper. The aims of this competition are to appreciate the importance of research as the fundamental aspect of medical development and facilitate young researchers to present their researches and to exchange knowledge with other participants.
 						</p>
-						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 					</div>	
-
-					{{-- <div class="single-events inamsc">
-						<h4>Social Program</h4>
-						
-						<p>
-							A relaxed schedule to showcase the wonders of Jakarta's culture and monuments for Liga Medika's participants. It will be
-							held on the last day of Liga Medika 2019.
-						</p>						
-						<img class="img-fluid" src="img/u2.jpg" alt="" style="   display: block;
-						margin: 0 auto;"> 
-						
-					</div>		 --}}
 											
 				</div>
+				
 				<div class="col-lg-6 event-right">
 					<div class="single-events inamsc">
 						<h4>Public Poster</h4>
 						<small><strong>National Competition</strong></small>
-						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							Public Poster is a national competition that is part of INAMSC Liga Medika 2019. Public posters as one of the art forms that can be enjoyed by the community. The aims of this competition are to present creative and different ways of promotive and preventive effort to support the government and the community for better Indonesian health.
 						</p>
-						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 						<img class="img-fluid" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}" alt="">
 					</div>
 					<div class="single-events inamsc">
 						
 						<h4>Educational Video</h4>
 						<small><strong>National Competition</strong></small>
-						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							Educational video is a new national competition branch that is part of INAMSC Liga Medika 2019. Educational video as one of the art forms that can be enjoyed by the community. The aims of this competition are to present creative and different ways of promotive and preventive effort to support the government and the community for better Indonesian health.
 						</p>
-						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 						<img class="img-fluid" src="{{asset('img/ligmed/inamsc/edvid.JPG')}}" alt="educational video">
 					</div>														
 				</div>
@@ -117,7 +167,6 @@
 
 					<div class="single-events inamsc last">
 						<h4>Symposium and Workshop</h4>
-						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p>
 							The symposium consists of three continual sessions, meanwhile, workshop consists of three parallel sessions. Participants are encouraged to actively participate at the end of every session. Then, participants are facilitated to implement their knowledge from Symposium sessions in Workshop sessions. The workshop allows participants to learn and enhance their case-based clinical skill. All knowledge given in Symposium and Workshop is relevant especially for biomedical student and general practitioner.
 						</p>				
@@ -131,7 +180,7 @@
 				</div>
 
 		
-			</div>
+			</div> --}}
 		</div>
 
 	</section>

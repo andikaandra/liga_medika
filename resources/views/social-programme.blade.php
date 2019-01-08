@@ -19,7 +19,7 @@
 @endsection
 @section('content')
 	<!-- start banner Area -->
-<section class="banner-area-inamsc-social-programme relative" id="home">	
+<section class="banner-area-social-programme relative" id="home">	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
@@ -27,7 +27,7 @@
 					<h1 class="text-white">
 						INAMSC Social Programme
 					</h1>	
-				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc-social-programme')}}"> INAMSC Social Programme</a></p>
+				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('social-programme')}}"> INAMSC Social Programme</a></p>
 				<p class="text-white about" style="font-size: 18px">
 						Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
 				</p>
@@ -68,6 +68,6 @@
 
 @section('script')
 	<script>
-		$("#nav-inamsc-social-programme").addClass("menu-active");
+		$("#nav-social-programme").addClass("menu-active");
 	</script>
 @endsection

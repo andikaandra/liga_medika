@@ -15,6 +15,6 @@ class PagesController extends Controller
     }
 
     public function inamscSocialProgramme() {
-        return view('inamsc-social-programme');
+        return view('social-programme');
     }
 }

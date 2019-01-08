@@ -46,7 +46,7 @@
         <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
@@ -88,7 +88,7 @@
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li id="nav-inamsc-social-programme"><a href="{{url('inamsc-social-programme')}}">INAMSC SOCIAL PROGRAMME</a></li>
+                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
 
                     {{-- <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
                         <ul>
