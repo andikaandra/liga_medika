@@ -89,7 +89,7 @@
             </div>	
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="single-service">
+                    <div class="single-service wow slideInLeft">
                         <span class="lnr lnr-pencil"></span>
                         <h4>INAMSC</h4>
                         
@@ -117,7 +117,7 @@
                     </div>							
                 </div>
                 <div class="col-lg-6">
-                    <div class="single-service">                  
+                    <div class="single-service wow slideInRight">                  
                         <span class="fa fa-paint-brush"></span>
                         <h4>IMARC</h4>
                         <p>
@@ -143,7 +143,7 @@
                 <div class="row">
             
                     <div class="col-lg-6">
-                        <div class="single-service">
+                        <div class="single-service wow slideInLeft">
                             <span class="fa fa-futbol-o"></span>
                             <h4>IMSSO</h4>
                             <p>
@@ -166,7 +166,7 @@
                         </div>						
                     </div>	
                     <div class="col-lg-6">
-                        <div class="single-service">
+                        <div class="single-service wow slideInRight">
                                 <span class="lnr lnr-music-note"></span>
                             <h4>HFGM</h4>
                             <p>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="row justify-content-md-center">
                     <div class="col-lg-6">
-                            <div class="single-service">
+                            <div class="single-service wow slideInUp">
                                     <span class="fa fa-building-o"></span>
                                 <h4>SOCIAL PROGRAMME</h4>
                                 <p>
@@ -227,7 +227,7 @@
                     </div>
                 </div>
             </div>						
-            <div id="grid-container" class="row">
+            <div id="grid-container" class="wow fadeIn" class="row">
                 <a class="single-gallery" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
                 <a class="single-gallery" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
 
