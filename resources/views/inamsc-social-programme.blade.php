@@ -28,7 +28,7 @@
 						INAMSC Social Programme
 					</h1>	
 				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc-social-programme')}}"> INAMSC Social Programme</a></p>
-				<p class="text-white about" style="font-size: 18px">
+				<p class="text-white about text-justify" style="font-size: 18px">
 						Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
 				</p>
 				</div>											

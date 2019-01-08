@@ -170,16 +170,16 @@
                             <p style="font-weight: bold">
                                 Faculty of Medicine University Indonesia
                             </p>
-                            <p>
+                            <p class="text-justify">
                                 No VI, Jl. Salemba Raya, RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
                             </p>
                             <hr>
-                            <p>
-                                    Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424
+                            <p class="text-justify">
+                                Rumpun Ilmu Kesehatan, Universitas Indonesia, Beji, Kota Depok, Jawa Barat - 16424
+                                {{-- Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424 --}}
                             </p>
                             <hr>
                             <p class="footer-text">
-                                
                                 Copyright Liga Medika &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
                                 Handcrafted & Nurtured with huge <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
 
@@ -206,7 +206,7 @@
                     <div class="col-md-4 social-widget">
                         <div class="single-footer-widget">
                             <h6>Follow Us</h6>
-                            <p>Let us be social - Get our latest updates</p>
+                            <p class="text-justify">Let us be social - Get our latest updates</p>
                             <div class="footer-social d-flex align-items-center">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -216,7 +216,8 @@
                     </div>	
                     
                     <div class="col-md-4">
-                     <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px">
+{{--                      <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px"> --}}
+                     <img src="{{asset('img/logo-fk-ui.jpg')}}" alt="" style="width: 100%">
                     </div>
                 </div>
             </div>

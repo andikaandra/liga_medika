@@ -34,8 +34,9 @@
                 <h3 class="text-white pb-10 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
                 <h3 class="text-white pb-20">with our tagline</h3>
                 <h3 class="text-white pb-20 uppercase" style="font-size: 48px" id="tagline"><i>#KenaliJiwa</i></h3>
-                <h2 class="text-inamsc pb-20" id="typed">
-                    
+{{--                 <h2 class="text-inamsc pb-20"> --}}
+                <h2 class=" pb-20">
+                    Registration for INAMSC is now Open!
                 </h2>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
   
@@ -68,7 +69,7 @@
                             </p>						 	
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                            <p class="text-justify">
                                     INAMSC (Indonesian international (bio)medical student's congress) is the biggest scientific event and competition for biomedic students in indonesia. INAMSC is open not only for national participants, but INAMSC is also open for international participants.
                                 </p>
                                 <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br>
@@ -86,8 +87,8 @@
                             </p>						 	
                             <div class="overlay">
                             <div class="text">
-                                <p>
-                                        IMARC (INdonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
+                                <p class="text-justify">
+                                        IMARC (Indonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
                             </div>
@@ -103,7 +104,7 @@
                             </p>						 	
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                                <p class="text-justify">
                                         IMSSO is a renowned sports competition aimed for medicine and dental medicine university students in Indonesia. This year we have basketball and futsal.
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -120,7 +121,7 @@
                             </p>						 	
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                                <p class="text-justify">
                                     HFGM is a celebrated event comprised of health campaign activites to raise the awareness about the mental health, and the final event including a concert and exhibition
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -138,7 +139,7 @@
                             </p>						 	
                             <div class="overlay">
                             <div class="text">
-                                <p>
+                                <p class="text-justify">
                                     Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -180,6 +181,11 @@
                 <a class="single-gallery" href="img/ligmed/hfgm/hfgm2.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm2.jpg')}}"></a>
                 <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm3.jpg')}}"></a>
                 <a class="single-gallery" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/imsso/imsso1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso1.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
+                <a class="single-gallery" href="img/ligmed/imarc/imarc2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc2.jpg')}}"></a>
+
             </div>	
         </div>	
     </section>
