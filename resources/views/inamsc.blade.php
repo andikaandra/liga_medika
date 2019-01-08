@@ -55,7 +55,7 @@
 				</div>
 			</div>						
 			<div class="row">
-				<div class="col-lg-6 event-left">
+				<div class="col-lg-6 event-left wow slideInLeft">
 					<div class="single-events inamsc">
 					<img class="img-fluid" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}" alt="literature review">
 						<h4>Literature Review</h4>
@@ -66,7 +66,7 @@
 						</p>
 						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 					</div>
-					<div class="single-events inamsc">
+					<div class="single-events inamsc wow slideInLeft">
 						<img class="img-fluid" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}" alt="">
 						<h4>Research Paper and Poster</h4>
 						<small><strong>International Competition</strong></small>
@@ -90,7 +90,7 @@
 					</div>		 --}}
 											
 				</div>
-				<div class="col-lg-6 event-right">
+				<div class="col-lg-6 event-right wow slideInRight">
 					<div class="single-events inamsc">
 						<h4>Public Poster</h4>
 						<small><strong>National Competition</strong></small>
@@ -101,7 +101,7 @@
 						{{-- <a href="#" class="primary-btn text-uppercase">View Details</a> --}}
 						<img class="img-fluid" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}" alt="">
 					</div>
-					<div class="single-events inamsc">
+					<div class="single-events inamsc wow slideInRight">
 						
 						<h4>Educational Video</h4>
 						<small><strong>National Competition</strong></small>
@@ -115,7 +115,7 @@
 				</div>
 				<div class="col-lg-12">
 
-					<div class="single-events inamsc last">
+					<div class="single-events inamsc last wow slideInUp">
 						<h4>Symposium and Workshop</h4>
 						{{-- <h6><span>21st February</span> at Central government museum</h6> --}}
 						<p class="text-justify">

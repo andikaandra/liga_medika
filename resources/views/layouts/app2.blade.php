@@ -49,7 +49,7 @@
         <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
+        <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
     </head>
@@ -124,8 +124,13 @@
                   
                         <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
                     @else
+                        @if(Auth::user()->role==1)
+                            <a href="{{ url('users') }}"><strong>Dashboard</strong></a>
+                        @else
+                            <a href="{{ url('admin') }}"><strong>Dashboard</strong></a>
+                        @endif
 
-                    <li>
+{{--                     <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
@@ -136,7 +141,7 @@
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
-                        </form>
+                        </form> --}}
                     @endguest
 
                     </ul>
@@ -251,6 +256,10 @@
         {{-- <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			 --}}
         {{-- <script src="{{asset('js/parallax.min.js')}}"></script>		         --}}
         <script src="{{asset('js/main.js')}}"></script>	
+        <script src="{{asset('wow/dist/wow.min.js')}}"></script>
+        <script>
+            new WOW().init();
+        </script>
         {{-- <script src="{{asset('js/typed.min.js')}}"></script>	 --}}
 
 
