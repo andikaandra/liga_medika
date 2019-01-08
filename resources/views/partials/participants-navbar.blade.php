@@ -10,6 +10,11 @@
           <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
         </a>
       </li>
+      <li class="nav-item d-none d-lg-block full-screen-link">
+        <a class="nav-link" href="{{url('/')}}">
+          <i class="mdi mdi-home" id="fullscreen-button"></i>Home
+        </a>
+      </li>
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <div class="nav-profile-img">

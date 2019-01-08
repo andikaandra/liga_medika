@@ -13,7 +13,7 @@
 	}
 
 	.single-events {
-		margon-bottom: 10px;
+		margin-bottom: 10px;
 	}
 
 
@@ -68,7 +68,7 @@
 
 				<div class="row">
 					<div class="col-lg-6 ">
-							<div class="single-events inamsc">
+							<div class="single-events inamsc wow slideInLeft">
 								<h4>Literature Review</h4>
 								<small><strong>International Competition</strong></small>
 								<p>
@@ -79,7 +79,7 @@
 						</div>
 	
 						<div class="col-lg-6">
-							<div class="single-events inamsc">
+							<div class="single-events inamsc wow slideInRight">
 								<h4>Research Paper and Poster</h4>
 								<small><strong>International Competition</strong></small>
 								<p>
@@ -97,7 +97,7 @@
 
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="single-events inamsc">
+						<div class="single-events inamsc wow slideInLeft">
 							<h4>Public Poster</h4>
 							<small><strong>National Competition</strong></small>
 							<p>
@@ -108,7 +108,7 @@
 								
 					</div>
 					<div class="col-lg-6">
-						<div class="single-events inamsc">
+						<div class="single-events inamsc wow slideInRight">
 								
 							<h4>Educational Video</h4>
 							<small><strong>National Competition</strong></small>

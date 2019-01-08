@@ -21,6 +21,14 @@
             padding-bottom: 20px;
         }
 
+        .image-hover {
+            opacity: 0.6;
+        }
+
+        .image-hover:hover {
+            opacity: 1;
+        }
+
         @media only screen and (max-width: 1200px) {  
 
             #typed {

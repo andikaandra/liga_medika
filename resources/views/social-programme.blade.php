@@ -10,12 +10,20 @@
 		padding: 0;
 	}
 
-	.overlay-inamsc {
-		background-color: rgba(0, 0, 0, 0.7);
-		height: 100%;
-		padding: 120px 0;
-	}
-</style>
+		.overlay-inamsc {
+			background-color: rgba(0, 0, 0, 0.7);
+			height: 100%;
+			padding: 120px 0;
+		}
+
+        .image-hover {
+            opacity: 0.6;
+        }
+
+        .image-hover:hover {
+            opacity: 1;
+        }
+	</style>
 @endsection
 @section('content')
 	<!-- start banner Area -->
@@ -49,10 +57,11 @@
 				</div>
 			</div>						
 			<div id="grid-container" class="row">
-				<a class="single-gallery" href="img/ligmed/city-tour/IMG_7279.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7279.JPG')}}"></a>
-				<a class="single-gallery" href="img/ligmed/city-tour/IMG_7941.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7941.JPG')}}"></a>
-				<a class="single-gallery" href="img/ligmed/city-tour/IMG_7392.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7392.JPG')}}"></a>
-				<a class="single-gallery" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}"></a>		
+				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7279.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7279.JPG')}}"></a>
+				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7941.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7941.JPG')}}"></a>
+				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7392.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7392.JPG')}}"></a>
+				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}"></a>
+		
 			</div>	
 		</div>	
 	</div>

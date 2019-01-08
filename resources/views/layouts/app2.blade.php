@@ -49,7 +49,7 @@
         {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
+        <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
     </head>
@@ -129,7 +129,7 @@
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
-                        </form>
+                        </form> --}}
                     @endguest
 
                     </ul>
@@ -244,6 +244,10 @@
         {{-- <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			 --}}
         {{-- <script src="{{asset('js/parallax.min.js')}}"></script>		         --}}
         <script src="{{asset('js/main.js')}}"></script>	
+        <script src="{{asset('wow/dist/wow.min.js')}}"></script>
+        <script>
+            new WOW().init();
+        </script>
         {{-- <script src="{{asset('js/typed.min.js')}}"></script>	 --}}
 
 
