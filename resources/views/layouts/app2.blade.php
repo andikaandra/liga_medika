@@ -75,7 +75,7 @@
               </div>
               <hr>
             <div class="container">
-                <div class="row align-items-center justify-content-between d-flex">
+                <div class="row align-items-center justify-content-between d-flex" style="position: relative;">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
                         <img id="logo-white" src="{{asset('img/logo.jpg')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
