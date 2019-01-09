@@ -59,15 +59,15 @@
                 
                 <div class="theme-banner">
                     <h3 class="text-white pb-10">This year's theme</h3>
-                    <h3 class="text-white pb-10 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
+                    <h3 class="text-white pb-50 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
                     <h3 class="text-white pb-20">with our tagline</h3>
                     <h3 class="text-white pb-20 uppercase" style="font-size: 48px" id="tagline"><i>#KenaliJiwa</i></h3>
-                    <h2 class="text-inamsc pb-20" id="typed">
-                        Registration for INAMSC is now Open!
-                    </h2>
-                    <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
+                    
                 </div>
-                
+                <h2 class="text-inamsc pb-20" id="typed">
+                    Registration for INAMSC is now Open!
+                </h2>
+                <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
                 
   
             </div>											
