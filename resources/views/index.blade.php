@@ -59,7 +59,9 @@
                 
                 <div class="theme-banner">
                     <h3 class="text-white pb-10">This year's theme</h3>
-                    <h3 class="text-white pb-50 uppercase" id="theme" style="font-size: 72px;">Psychiatry</h3>
+                    <h3 class="text-white pb-50 uppercase" id="theme" style="font-size: 72px;">Psychiatry                    
+                        <img src="{{asset('img/logo.png')}}" alt="" style="width: 64px; padding-bottom: 22px">
+                    </h3>
                     <h3 class="text-white pb-20">with our tagline</h3>
                     <h3 class="text-white pb-20 uppercase" style="font-size: 48px" id="tagline"><i>#KenaliJiwa</i></h3>                    
                 </div>
