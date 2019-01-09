@@ -122,6 +122,10 @@
 			</div>
 
 			<div class="row">
+				<div class="title text-center">
+					<h1 class="mb-10">Additional Event</h1>
+					
+				</div>
 				<div class="col-lg-12">
 
 					<div class="single-events inamsc last wow slideInUp">

@@ -48,7 +48,7 @@
         {{-- <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}"> --}}
         {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
-        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.1">
         <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')

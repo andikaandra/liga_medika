@@ -52,6 +52,7 @@
                     <h1 class="text-white">
                         Liga Medika 2019			
                     </h1>
+                    <h3 class="text-white pb-10">About us</h3>
                     <p class="pt-20 pb-20 text-white justify" style="font-size:16px;">
                         Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
                     </p>
@@ -204,7 +205,7 @@
                                 <div class="overlay">
                                 <div class="text">
                                     <p>
-                                        Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
+                                        Social Programme is an additional event of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
                                     </p>
                                     <a href="{{url('social-programme')}}" class="text-uppercase primary-btn">Info</a>
                                 </div>
