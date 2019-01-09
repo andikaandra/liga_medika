@@ -3633,3 +3633,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 .footer-social {
     font-size: 22px;  
 }
+
+
+.image-hover {
+  opacity: 0.6;
+}
+
+.image-hover:hover {
+  opacity: 1;
+}

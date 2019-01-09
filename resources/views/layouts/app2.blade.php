@@ -36,20 +36,15 @@
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
 
-        <!--
-        CSS
-        ============================================= -->
-        <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
-        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-        <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-        <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
-        <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        {{-- <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}"> --}}
-        {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
-        <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.1">
-        <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.1">
+    <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
     </head>
@@ -60,8 +55,6 @@
                   <div class="row">
                       <div class="col-6 top-head-left">
                           <ul>
-                              {{-- <li><a href="#">Visit Us</a></li>
-                              <li><a href="#">Buy Ticket</a></li> --}}
                           </ul>
                       </div>
                       <div class="col-6 top-head-right">
@@ -88,25 +81,25 @@
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
+                    <li class="menu-has-children"><a href="#">IMARC</a>
+                    <ul>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
+                    </ul>
+                    </li>	
+
+                    <li class="menu-has-children"><a href="#">IMSSO</a>
+                    <ul>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Women Basketball</a></li>
+                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
+                    </ul>
+                    </li>	
+                    <li><a class="under-construction" href="#">HFGM</a></li>     
                     <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
-
-                      <li class="menu-has-children"><a href="#">IMARC</a>
-                        <ul>
-                            <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
-                        </ul>
-                      </li>	
-
-                      <li class="menu-has-children"><a href="#">IMSSO</a>
-                        <ul>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Women Basketball</a></li>
-                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
-                        </ul>
-                      </li>	
-                    <li><a class="under-construction" href="#">HFGM</a></li>                              
+                         
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     @guest
                   
@@ -178,24 +171,7 @@
 
                             </p>
                         </div>
-                    </div>
-                    {{-- <div class="col-lg-5  col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h6>Newsletter</h6>`
-                            <p>Stay update with our latest</p>
-                            <div class="" id="mc_embed_signup">
-                                <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                                    <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                                        <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                                        <div style="position: absolute; left: -5000px;">
-                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                        </div>
-
-                                    <div class="info"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>						 --}}
+                    </div>	 --}}
                     <div class="col-md-4 social-widget">
                         <div class="single-footer-widget">
                             <h6>Follow Us</h6>
@@ -209,7 +185,6 @@
                     </div>	
                     
                     <div class="col-md-4">
-{{--                      <img src="{{asset('img/logo-bem-fk-ui.jpg')}}" alt="" style="width: 350px"> --}}
                      <img src="{{asset('img/logo-fk-ui.jpg')}}" alt="" style="width: 100%">
                     </div>
                 </div>
@@ -223,35 +198,20 @@
         <script>
                 
                 $(".under-construction").click(function(){
-                    console.log("i")
                     alert("We're sorry, this page is still under construction!");
                 });
             </script>
        
-        {{-- TODO: --}}
-       
-       
-        {{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script> --}}
-        {{-- <script src="{{asset('js/easing.min.js')}}"></script>			 --}}
-        {{-- <script src="{{asset('js/hoverIntent.js')}}"></script> --}}
         <script src="{{asset('js/superfish.min.js')}}"></script>	
-        {{-- <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script> --}}
         <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>	
         <script src="{{asset('js/owl.carousel.min.js')}}"></script>	
         <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
-        <script src="{{asset('js/justified.min.js')}}"></script>					
-        {{-- <script src="{{asset('js/jquery.sticky.js')}}"></script> --}}
-        {{-- <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>			 --}}
-        {{-- <script src="{{asset('js/parallax.min.js')}}"></script>		         --}}
+        <script src="{{asset('js/justified.min.js')}}"></script>	
         <script src="{{asset('js/main.js')}}"></script>	
         <script src="{{asset('wow/dist/wow.min.js')}}"></script>
         <script>
             new WOW().init();
         </script>
-        {{-- <script src="{{asset('js/typed.min.js')}}"></script>	 --}}
-
-
-
 
         @yield('script')
     </body>

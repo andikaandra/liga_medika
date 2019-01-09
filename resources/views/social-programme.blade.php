@@ -16,13 +16,6 @@
 			padding: 120px 0;
 		}
 
-        .image-hover {
-            opacity: 0.6;
-        }
-
-        .image-hover:hover {
-            opacity: 1;
-        }
 	</style>
 @endsection
 @section('content')
