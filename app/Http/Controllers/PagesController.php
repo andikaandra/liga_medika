@@ -14,6 +14,10 @@ class PagesController extends Controller
         return view('inamsc');
     }
 
+    public function imarc() {
+        return view('imarc');
+    }
+
     public function inamscSocialProgramme() {
         return view('social-programme');
     }

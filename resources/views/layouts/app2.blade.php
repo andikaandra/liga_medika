@@ -81,15 +81,7 @@
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li class="menu-has-children"><a href="#">IMARC</a>
-                    <ul>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
-                    </ul>
-                    </li>	
-
+                    <li id="nav-imarc"><a href="{{url('imarc')}}" >IMARC</a></li>
                     <li class="menu-has-children"><a href="#">IMSSO</a>
                     <ul>
                         <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>

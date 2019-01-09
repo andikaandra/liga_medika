@@ -2380,6 +2380,48 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-color: #EE2427;
 }
 
+.imarc-btn {
+  background-color: #EE2427;
+  line-height: 36px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.imarc-btn:focus {
+  outline: none;
+}
+
+.imarc-btn span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  right: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.imarc-btn:hover {
+  color: #EE2427;
+  background-color: transparent;
+  border-color: #EE2427;
+}
+
 .overlay {
   position: absolute;
   left: 0;
