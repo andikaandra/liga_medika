@@ -1940,6 +1940,7 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
+  border-bottom: solid 2px #f1b739;
 }
 
 @media (max-width: 673px) {
@@ -2309,7 +2310,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area .overlay-bg {
-  background-color: rgba(63, 63, 63, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .banner-content {
