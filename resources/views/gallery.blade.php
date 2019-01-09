@@ -22,7 +22,7 @@
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
 					<h2 class="text-white">
-						Art Gallery				
+						Gallery				
 					</h2>	
 				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('gallery')}}"> Gallery</a></p>
 				</div>											

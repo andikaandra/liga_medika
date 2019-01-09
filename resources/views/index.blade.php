@@ -58,16 +58,16 @@
                 </div>
                 <div class="theme-banner">
                     <h5 class="text-white pb-20">This year's theme</h5>
-                    <h5 class="text-white pb-20 uppercase" id="theme" style="font-size: 48px;">Psychiatry 
-                        <img src="{{asset('img/logo.png')}}" alt="" style="width: 52px; padding-bottom: 22px">
+                    <h5 class="text-white pb-50 uppercase" id="theme" style="font-size: 48px;">Psychiatry 
+                        <img src="{{asset('img/logo.png')}}" alt="" style="width: 52px; margin-bottom: 16px">
                     </h5>
                     <h5 class="text-white pb-20">with our tagline</h5>
-                    <h5 class="text-white pb-20 uppercase" style="font-size: 36px" id="tagline"><i>#KenaliJiwa</i></h5>
-                    <h4 class="text-inamsc pb-20" style="text-shadow: -1px -1px 0 #ffff, 1px -1px 0 #ffff, -1px 1px 0 #ffff, 1px 1px 0 #ffff;">
-                        Registration for INAMSC is now Open!
-                    </h4>
-                    <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
+                    <h5 class="text-white pb-20 uppercase" style="font-size: 36px" id="tagline"><i>#KenaliJiwa</i></h5>                    
                 </div>
+                <h4 class="text-inamsc pb-20" style="text-shadow: -1px -1px 0 #ffff, 1px -1px 0 #ffff, -1px 1px 0 #ffff, 1px 1px 0 #ffff;">
+                    Registration for INAMSC is now Open!
+                </h4>
+                <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
             </div>                                          
         </div>
     </div>                  
@@ -237,7 +237,7 @@
                                 <div class="overlay">
                                 <div class="text">
                                     <p>
-                                        Social Programme is an additional program of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
+                                        Social Programme is an additional event of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
                                     </p>
                                     <a href="{{url('social-programme')}}" class="text-uppercase primary-btn">Info</a>
                                 </div>

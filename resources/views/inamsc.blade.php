@@ -127,6 +127,8 @@
 				</div>
 			</div>
 
+			<h2 class="mb-10">Additional Event</h2>
+
 			<div class="row">
 				<div class="col-lg-12">
 

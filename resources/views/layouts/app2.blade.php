@@ -87,8 +87,7 @@
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
-                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
+                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>                    
 
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
@@ -106,7 +105,8 @@
                           <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
                         </ul>
                       </li>	
-                    <li><a class="under-construction" href="#">HFGM</a></li>                              
+                    <li><a class="under-construction" href="#">HFGM</a></li>  
+                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>                            
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     @guest
                   
