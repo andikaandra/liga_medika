@@ -75,11 +75,11 @@
               </div>
               <hr>
             <div class="container">
-                <div class="row align-items-center justify-content-between d-flex">
+                <div class="row align-items-center justify-content-between d-flex" style="position: relative;">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
-                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="width: 60px; margin-top: -5px;"  />
+                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -87,8 +87,7 @@
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
-                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
+                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>                    
 
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
@@ -106,7 +105,8 @@
                           <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
                         </ul>
                       </li>	
-                    <li><a class="under-construction" href="#">HFGM</a></li>                              
+                    <li><a class="under-construction" href="#">HFGM</a></li>  
+                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>                            
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     @guest
                   
@@ -146,9 +146,9 @@
           
                                 
 
-          <div class="animated fadeIn">
-          @yield('content')
-        </div>
+            <div class="animated fadeIn">
+                @yield('content')
+            </div>
 
         
         

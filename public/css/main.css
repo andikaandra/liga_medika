@@ -1934,13 +1934,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .top-head-right ul li:hover a {
-  color: #F1B739;
+  color: #88d200;
 }
 
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
-  border-bottom: solid 2px #f1b739;
 }
 
 @media (max-width: 673px) {
@@ -1961,7 +1960,7 @@ h1, h2, h3, h4, h5, h6 {
 #header #logo h1 a, #header #logo h1 a:hover {
   color: #fff;
   padding-left: 10px;
-  border-left: 4px solid #F1B739;
+  border-left: 4px solid #88d200;
 }
 
 #header #logo img {
@@ -1974,10 +1973,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
   }
   #header #logo img {
-    /* max-height: 40px; */
+    max-height: 40px;
   }
 }
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -3574,7 +3572,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #home {
-  padding-top: 50px;
+/*  padding-top: 50px;*/
 }
 
 .uppercase {
