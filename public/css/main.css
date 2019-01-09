@@ -2305,7 +2305,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background: url(../img/bg-brown.jpg) center;
+  background: url(../img/bg-banner.jpg);
   background-size: cover;
   border-bottom: solid 4px #f1b739;
 }
