@@ -78,8 +78,8 @@
                 <div class="row align-items-center justify-content-between d-flex" style="position: relative;">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
-                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="width: 60px; margin-top: -5px;"  />
+                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -146,9 +146,9 @@
           
                                 
 
-          <div class="animated fadeIn">
-          @yield('content')
-        </div>
+            <div class="animated fadeIn">
+                @yield('content')
+            </div>
 
         
         

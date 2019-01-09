@@ -43,11 +43,39 @@
 @section('content')
     <!-- start banner Area -->
 <section class="banner-area relative mobile" id="home">
+    <div class="overlay overlay-bg"></div>  
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-center" id="home2">
+            <div class="banner-content col-lg-12 pt-5 mobile">
+                <div class="about-us-banner">
+                    <h2 class="text-white">Liga Medika 2019</h2>
+                    <p class="pt-20 pb-20 text-white justify d-md-block d-lg-none" style="font-size:16px;">
+                        Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year.
+                    </p>
+                    <p class="pt-20 pb-20 text-white justify d-none d-md-none d-lg-block" style="font-size:16px;">
+                        Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
+                    </p>
+                </div>
+                <div class="theme-banner">
+                    <h5 class="text-white pb-20">This year's theme</h5>
+                    <h5 class="text-white pb-20 uppercase" id="theme" style="font-size: 48px;">Psychiatry</h5>
+                    <h5 class="text-white pb-20">with our tagline</h5>
+                    <h5 class="text-white pb-20 uppercase" style="font-size: 36px" id="tagline"><i>#KenaliJiwa</i></h5>
+                    <h4 class="text-inamsc pb-20" style="text-shadow: -1px -1px 0 #ffff, 1px -1px 0 #ffff, -1px 1px 0 #ffff, 1px 1px 0 #ffff;">
+                        Registration for INAMSC is now Open!
+                    </h4>
+                    <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
+                </div>
+            </div>                                          
+        </div>
+    </div>                  
+</section>
+
+{{-- <section class="banner-area relative mobile" id="home">
     <div class="overlay overlay-bg"></div>	
     <div class="container">        
-        <div class="row flex-fill d-flex align-items-center justify-content-center" id="home2">    
-            <div class="banner-content col-lg-12 mobile">   
-
+        <div class="row flex-fill d-flex align-items-center justify-content-center" id="home2">
+            <div class="banner-content col-lg-12 mobile">
                 <div class="about-us-banner">
                     <h1 class="text-white">
                         Liga Medika 2019			
@@ -73,7 +101,7 @@
             </div>											
         </div>
     </div>					
-</section>
+</section> --}}
 <!-- End banner Area -->	
 
 
@@ -157,7 +185,7 @@
                                                         
                             <div class="overlay">
                             <div class="text">
-                                <p class="text-justify">
+                                <p>
                                         IMSSO is a renowned sports competition aimed for medicine and dental medicine university students in Indonesia. This year we have basketball and futsal.
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
@@ -179,7 +207,7 @@
                                                     
                             <div class="overlay">
                             <div class="text">
-                                <p class="text-justify">
+                                <p>
                                     HFGM is a celebrated event comprised of health campaign activites to raise the awareness about the mental health, and the final event including a concert and exhibition
                                 </p>
                                 <a href="#" class="text-uppercase primary-btn">Info</a>
