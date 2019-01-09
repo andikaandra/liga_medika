@@ -2460,6 +2460,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .single-service {
   padding: 30px;
   text-align: center;
+/*  background-image: linear-gradient(to right, #FCECCB , #FEC535);*/
   background-color: #FCECCB;
 }
 

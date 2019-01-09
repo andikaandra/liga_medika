@@ -127,7 +127,7 @@
             </div>							
         </div>
         <div class="col-lg-6">
-            <div class="single-service wow slideInRight">                  
+            <div class="single-service wow slideInRight">
                 <span class="fa fa-paint-brush"></span>
                 <h4>IMARC</h4>
                 <p>
