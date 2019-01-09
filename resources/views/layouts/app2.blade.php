@@ -171,7 +171,7 @@
 
                             </p>
                         </div>
-                    </div>	 --}}
+                    </div>	
                     <div class="col-md-4 social-widget">
                         <div class="single-footer-widget">
                             <h6>Follow Us</h6>
