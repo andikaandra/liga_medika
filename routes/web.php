@@ -16,7 +16,8 @@ Route::post('login', 'Auth\LoginController@doLogin');
 
 Route::get('/', 'PagesController@index');
 Route::get('inamsc', 'PagesController@inamsc');
-Route::get('inamsc-social-programme', 'PagesController@inamscSocialProgramme');
+Route::get('social-programme', 'PagesController@inamscSocialProgramme');
+Route::get('gallery', 'PagesController@gallery');
 
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');

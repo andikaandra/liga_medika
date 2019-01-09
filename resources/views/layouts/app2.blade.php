@@ -45,8 +45,8 @@
         <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}"> --}}
+        {{-- <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}"> --}}
 
         <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
@@ -67,7 +67,7 @@
                       <div class="col-6 top-head-right">
                           <ul>
                               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://twitter.com/liga_medika" target="_blank"><i class="fa fa-twitter"></i></a></li>
                             <li><a target="_blank" href="https://www.instagram.com/ligamedika/?hl=id"><i class="fa fa-instagram"></i></a></li>                            
                           </ul>
                       </div>			  			
@@ -78,8 +78,8 @@
                 <div class="row align-items-center justify-content-between d-flex" style="position: relative;">
                   <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img id="logo-white" src="{{asset('img/logo.jpg')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
-                        <img id="logo-black" src="{{asset('img/logo-black')}}.jpg" alt="" title="" style="width: 60px; margin-top: -5px;"  />
+                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="width: 60px; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -88,19 +88,8 @@
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li id="nav-inamsc-social-programme"><a href="{{url('inamsc-social-programme')}}">INAMSC SOCIAL PROGRAMME</a></li>
+                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
 
-                    {{-- <li class="menu-has-children" id="nav-inamsc"><a href="#">INAMSC</a>
-                        <ul>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Educational Video</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Literature Review</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Public Poster</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Research Paper</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc')}}">Symposium & Workshop</a></li>
-                            <li><a class="dropdown-item" href="{{url('inamsc/guidelines')}}" target="_blank">
-                                <strong>Read Guidelines</strong></a></li>
-                        </ul>
-                      </li>	 --}}
                       <li class="menu-has-children"><a href="#">IMARC</a>
                         <ul>
                             <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
@@ -118,19 +107,18 @@
                         </ul>
                       </li>	
                     <li><a class="under-construction" href="#">HFGM</a></li>                              
-                      <li><a class="under-construction" href="#">Gallery</a></li>
-                      {{-- <li><a href="#">Events</a></li>     --}}
+                    <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     @guest
                   
                         <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
                     @else
-                        @if(Auth::user()->role==1)
-                            <a href="{{ url('users') }}"><strong>Dashboard</strong></a>
-                        @else
-                            <a href="{{ url('admin') }}"><strong>Dashboard</strong></a>
-                        @endif
-
-{{--                     <li>
+                      @if (Auth::user()->role == 1)
+                        <li id="nav-dashboard"><a href="{{url('users')}}">Dashboard</a></li>      
+                      @else
+                        <li id="nav-dashboard"><a href="{{url('admin')}}">Dashboard</a></li>      
+                      @endif
+                    
+                    <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
@@ -214,7 +202,7 @@
                             <p class="text-justify">Let us be social - Get our latest updates</p>
                             <div class="footer-social d-flex align-items-center">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="https://twitter.com/liga_medika" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/ligamedika/?hl=id" target="_blank"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>

@@ -87,9 +87,6 @@
 <script>
     $(document).ready(function(){
 
-        let $header = $("#header");
-        $header.css('background-color', 'black');
-
 
     });
 </script>

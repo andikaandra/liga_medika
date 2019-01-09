@@ -1940,6 +1940,7 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
+  border-bottom: solid 2px #f1b739;
 }
 
 @media (max-width: 673px) {
@@ -2306,14 +2307,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 .banner-area {
   background: url(../img/bg-brown.jpg) center;
   background-size: cover;
+  border-bottom: solid 4px #f1b739;
 }
 
 .banner-area .overlay-bg {
-  background-color: rgba(63, 63, 63, 0.5);
+  background-color: rgba(63, 63, 63, 0.4);
 }
 
 .banner-content {
-  margin-top: -90px;
+  /* margin-top: -90px; */
   text-align: center;
 }
 
@@ -2401,7 +2403,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 340px;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -2429,7 +2431,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-bottom: 30px;
   }
   .single-service .overlay {
-    height: 88%;
+    height: 100%;
   }
 }
 
@@ -3509,14 +3511,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-.banner-area-inamsc-social-programme {
+.banner-area-social-programme {
   background: url(../img/jkt-monas.jpg) center;
   background-size: cover;
   background-position-y: 0px;
 }
 
 
-.banner-area-inamsc-social-programme .overlay {
+.banner-area-social-programme .overlay {
   background-color: rgba(128, 37, 19, 0.1);
 }
 
@@ -3594,7 +3596,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media only screen and (max-width: 1200px) {  
   .mobile {
-    padding-top: 150px;
+    padding-top: 70px;
   }
   #home {
     padding-bottom: 50px;
@@ -3613,8 +3615,21 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media only screen and (max-width: 768px) {  
   .inamsc-mobile .about {
     font-size: 16px !important;
-    /* justify-content: left !important; */
     text-align: justify !important;
     padding: 15px;
   }
+
+  #home2 .justify{
+    text-align: justify !important;
+  }
+}
+
+.banner-area#gallery {
+  background: url(../img/u3.jpg) center;
+  background-size: cover;
+
+}
+
+.footer-social {
+    font-size: 22px;  
 }
