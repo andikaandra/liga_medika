@@ -2562,13 +2562,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.quote-left h1 {
+.quote-left h1, .quote-right h1 {
   font-size: 30px;
   text-align: right;
-  font-weight: 100;
+  font-weight: 100 !important;
 }
 
-.quote-left h1 span {
+.quote-left h1 span, .quote-right h1 span {
   font-weight: 600;
 }
 

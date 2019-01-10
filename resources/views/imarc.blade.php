@@ -78,35 +78,36 @@
 				</div>
 				<hr>
 				
-				<div class="row my-5 wow slideInRight">
-					<div class="col-lg-5 quote-left">
-						<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc5.jpg')}}" alt="fotografi" style="width: 100%;">
-					</div>
-					<div class="col-lg-7 quote-right">
-						<h1 class="text-info mb-3">Fotografi</h1>
+				<div class="row my-5 wow slideInRight">					
+					<div class="col-lg-7 quote-left">
+							<h1 class="text-info mb-3">Fotografi</h1>
 						<p class="justify text-justify">
 							Cabang Fotografi akan diadakan bersamaan dengan HFGM Closing Ceremony. Hasil foto dari peserta akan disajikan dalam bentuk pameran foto dan dipamerkan bersamaan dengan acara HFGM dan penutupan dari HFGM. Dalam lomba foto akan ada tambahan mata acara lain berupa photo rally untuk para peserta HFGM. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, dan III)
 						</p>
 					</div>
+					<div class="col-lg-5 quote-right">
+							<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc5.jpg')}}" alt="fotografi" style="width: 100%;">
+						</div>
 				</div>
 				<hr>
 			</div>
 
 			<div class="kesehatan">
 					<h2 class="mb-10">Mahasiswa Kesehatan</h2>
-				<div class="row my-5 wow slideInRight">
-					<div class="col-lg-7 quote-left">
+				<div class="row my-5 wow slideInLeft">
+
+						<div class="col-lg-5 quote-left">
+								<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc3.jpg')}}" alt="vocal group" style="width: 100%;">
+							</div>
+					<div class="col-lg-7 quote-right">
 						<h1 class="text-info mb-3" style="font-weight: bold; font-size: 36px">Vocal Group</h1>
 						<p class="justify text-justify">
 							Cabang Vocal Group akan diadakan pada hari Sabtu. Acara pada cabang ini adalah kompetisi vocal group. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, III)
 						</p>
 					</div>
-					<div class="col-lg-5 quote-right">
-						<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc3.jpg')}}" alt="vocal group" style="width: 100%;">
-					</div>
 				</div>
 				<hr>
-				<div class="row my-5 wow slideInLeft">
+				<div class="row my-5 wow slideInRight">
 					<div class="col-lg-7 quote-left">
 						<h1 class="text-info mb-3" style="font-weight: bold; font-size: 36px">Tari Tradisional</h1>
 						<p class="justify text-justify">
@@ -114,7 +115,7 @@
 						</p>
 					</div>
 					<div class="col-lg-5 quote-right">
-						<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc3.jpg')}}" alt="tari tradisional" style="width: 100%;">
+						<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc2.jpg')}}" alt="tari tradisional" style="width: 100%;">
 					</div>
 				</div>		
 			</div>
