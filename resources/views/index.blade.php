@@ -284,7 +284,7 @@
             <div class="img-container">
                     <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
                     <div class="text-block">                        
-                        <p>Workshop & Symposium/p>
+                        <p>Workshop & Symposium</p>
                     </div>
             </div>
             <div class="img-container">
