@@ -56,6 +56,12 @@
             /* width: 100%; */
         }
 
+        hr.yellow {
+            color: #fff;
+            border-top: none !important;
+            border-bottom: solid 1px #f1b739 !important;
+        }
+
     </style>
 @endsection
 
@@ -90,7 +96,7 @@
         <div class="row justify-content-center">
             <h2 class="font-weight-bold">About Us</h2>
         </div>
-        <hr>
+        <hr class="yellow">
         <div class="row mt-5">
             <div class="col-lg-5 quote-left">
                     <h1 class="">This year's theme</h1>
@@ -116,7 +122,7 @@
             </div>
         </div>
     </div>  
-    <hr>
+    <hr class="yellow">
     <div class="row mt-5">
         <div class="col-lg-6">
             <div class="single-service wow slideInLeft">
@@ -253,7 +259,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="yellow">
         <div id="grid-container" class="row mt-5">
             <div class="img-container">
                     <a class="single-gallery image-hover wow flipInX" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>                                
