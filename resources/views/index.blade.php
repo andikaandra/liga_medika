@@ -270,7 +270,7 @@
             
 
             <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
                     <div class="text-block">                        
                         <p>Research Paper & Poster</p>
                     </div>
@@ -282,15 +282,15 @@
                     </div>
             </div>
             <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>        
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>        
                     <div class="text-block">                        
-                        <p>Public Poster</p>
+                        <p>Symposium</p>
                     </div>
             </div>
             <div class="img-container">
                     <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
                     <div class="text-block">                        
-                        <p>Workshop & Symposium</p>
+                        <p>Workshop</p>
                     </div>
             </div>
             <div class="img-container">
