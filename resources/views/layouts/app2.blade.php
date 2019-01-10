@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<head> 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131788430-1"></script>
     <script>
@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.2">
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
@@ -199,10 +201,14 @@
         <script src="{{asset('js/owl.carousel.min.js')}}"></script>	
         <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
         <script src="{{asset('js/justified.min.js')}}"></script>	
+        <script src="{{asset('owl/dist/owl.carousel.min.js')}}"></script>
         <script src="{{asset('js/main.js')}}"></script>	
         <script src="{{asset('wow/dist/wow.min.js')}}"></script>
         <script>
             new WOW().init();
+            $(document).ready(function(){
+              $(".owl-carousel").owlCarousel();
+            });
         </script>
 
         @yield('script')

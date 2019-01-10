@@ -41,7 +41,7 @@
 					IMARC (Indonesian Medical Arts Competition) merupakan kompetisi seni tingkat nasional yang tergabung dalam rangkaian acara Liga Medika 2019. Tahun ini, IMARC terdiri dari empat cabang untuk dilombakan, yaitu Tari Tradisional, Vocal Group, Band, dan Fotografi dan akan diadakan pada tanggal 27-28 April 2019. Seperti namanya, IMARC bertujuan untuk memfasilitasi minat dan bakat mahasiswa kesehatan di seluruh Indonesia dalam bidang seni. IMARC juga memiliki harapan untuk dapat meningkatkan kesadaran masyarakat akan  kesehatan jiwa melalui bidang seni dengan dibukanya beberapa cabang kepada mahasiswa umum, yaitu cabang Band dan cabang Fotografi.
 				</p>
 {{-- 				<a class="guideline-btn mr-3 mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a> --}}
-				<a href="{{url('register')}}" class="imarc-btn">Register IMARC</a>							
+				<a href="{{url('register')}}" class="imarc-btn">Register IMARC</a>
 			</div>
 		</div>
 		</div>
@@ -105,6 +105,9 @@
 	            <div class="col-lg-5 quote-right">
 					<img class="img-fluid" src="{{asset('img/ligmed/imarc/imarc3.jpg')}}" alt="tari tradisional" style="width: 100%;">
 	            </div>
+	        </div>
+	        <div class="row my-5 wow slideInUp justify-content-center slow">
+				<a href="{{url('register')}}" class="imarc-btn">Register NOW</a>
 	        </div>
 		</div>
 	</section>

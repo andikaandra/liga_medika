@@ -3713,18 +3713,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: none;
   color: #fff;
   background-image: linear-gradient(to right, #24EEEB , #E412F7);
-  -webkit-transition: all 0.8s ease 0s;
-  -moz-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  -webkit-transition: background-image 1.5.0s;
+  -moz-transition: background-image 1.5.0s;
+  -o-transition: background-image 1.5.0s;
+  transition: background-image 1.5.0s;
 }
 
 .submit-btn:hover{
-  background: #24EEEB;
-  -webkit-transition: all 0.8s ease 0s;
-  -moz-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+  background-image: linear-gradient(to right, #24EEEB , #24EEEB);
 }
 
 .ligmed {
