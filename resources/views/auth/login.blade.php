@@ -4,6 +4,10 @@
         body {
             background-color: #164161;
         }
+
+        label {
+            color: #000;
+        }
     </style>
 @endsection
 @section('content')
@@ -26,8 +30,8 @@
               <p>{{Session::get('verified')}}</p>
             </div>
           @endif
-            <div class="card ligmed mb-5">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card ligmed mb-5" style="border: none;">
+                <div class="card-header text-center" style="background-image: linear-gradient(to right, #F1B739 , #7C501F);"><h2 style="color: #fff">{{ __('Login') }}</h2></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -75,7 +79,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn submit-btn">
                                     {{ __('Login') }}
                                 </button>
 

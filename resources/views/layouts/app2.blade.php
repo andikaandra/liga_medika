@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<head> 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131788430-1"></script>
     <script>
@@ -12,9 +12,7 @@
     </script>
 
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <!-- Author Meta -->
     <meta name="author" content="Software Silo">
     <!-- Meta Description -->
@@ -43,7 +41,9 @@
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.1">
+    <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.3">
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
@@ -81,15 +81,7 @@
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
-                    <li class="menu-has-children"><a href="#">IMARC</a>
-                    <ul>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
-                    </ul>
-                    </li>	
-
+                    <li id="nav-imarc"><a href="{{url('imarc')}}" >IMARC</a></li>
                     <li class="menu-has-children"><a href="#">IMSSO</a>
                     <ul>
                         <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
@@ -207,10 +199,14 @@
         <script src="{{asset('js/owl.carousel.min.js')}}"></script>	
         <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
         <script src="{{asset('js/justified.min.js')}}"></script>	
+        <script src="{{asset('owl/dist/owl.carousel.min.js')}}"></script>
         <script src="{{asset('js/main.js')}}"></script>	
         <script src="{{asset('wow/dist/wow.min.js')}}"></script>
         <script>
             new WOW().init();
+            $(document).ready(function(){
+              $(".owl-carousel").owlCarousel();
+            });
         </script>
 
         @yield('script')
