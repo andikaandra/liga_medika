@@ -270,9 +270,9 @@
             
 
             <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
                     <div class="text-block">                        
-                        <p>Literature Review</p>
+                        <p>Research Paper & Poster</p>
                     </div>
             </div>
             <div class="img-container">
