@@ -259,3 +259,5 @@
 [2018-12-24 17:57:14][17] Processed:  App\Jobs\SendVerificationEmail
 [2018-12-25 01:34:19][1] Processing: App\Jobs\SendVerificationEmail
 [2018-12-25 01:34:22][1] Processed:  App\Jobs\SendVerificationEmail
+[2019-01-10 17:35:13][1] Processing: App\Jobs\SendVerificationEmail
+[2019-01-10 17:35:17][1] Processed:  App\Jobs\SendVerificationEmail
