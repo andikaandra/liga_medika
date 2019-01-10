@@ -2381,7 +2381,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .imarc-btn {
-  background-color: #EE2427;
+  background-color: #295F51;
   line-height: 36px;
   padding-left: 40px;
   padding-right: 40px;
@@ -2417,9 +2417,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .imarc-btn:hover {
-  color: #EE2427;
+  color: #295F51;
   background-color: transparent;
-  border-color: #EE2427;
+  border-color: #295F51;
 }
 
 .overlay {
@@ -2792,7 +2792,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
-/*  background-color: #FCECCB;*/
+ background-color: #fff;
   /* margin-top: 50px; */
 }
 
@@ -3638,6 +3638,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
+
+.banner-area-imarc {
+  background: url(../img/imarc-bg.jpg) center;
+  background-size: cover;
+}
+
+
+.banner-area-imarc .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .banner-area-social-programme {
   background: url(../img/jkt-monas.jpg) center;
   background-size: cover;
@@ -3702,7 +3713,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #home {
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .uppercase {
@@ -3712,7 +3723,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .submit-btn{
   border: none;
   color: #fff;
-  background-image: linear-gradient(to right, #24EEEB , #E412F7);
+  background-image: linear-gradient(to right, #F1B739 , #7C501F);
   -webkit-transition: background-image 1.5.0s;
   -moz-transition: background-image 1.5.0s;
   -o-transition: background-image 1.5.0s;
@@ -3720,7 +3731,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .submit-btn:hover{
-  background-image: linear-gradient(to right, #24EEEB , #24EEEB);
+  background-image: linear-gradient(to right, #DC911C , #DC911C);
 }
 
 .ligmed {
@@ -3737,7 +3748,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media only screen and (max-width: 1200px) {  
-  .mobile {
+  /* .mobile {
     padding-top: 70px;
   }
   #home {
@@ -3751,7 +3762,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
   #home2 {
     padding-bottom: 50px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 768px) {  

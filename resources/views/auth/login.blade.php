@@ -4,6 +4,10 @@
         body {
             background-color: #164161;
         }
+
+        label {
+            color: #000;
+        }
     </style>
 @endsection
 @section('content')
@@ -27,7 +31,7 @@
             </div>
           @endif
             <div class="card ligmed mb-5" style="border: none;">
-                <div class="card-header text-center" style="background-image: linear-gradient(to right, #24EEEB , #E412F7);"><h2 style="color: #fff">{{ __('Login') }}</h2></div>
+                <div class="card-header text-center" style="background-image: linear-gradient(to right, #F1B739 , #7C501F);"><h2 style="color: #fff">{{ __('Login') }}</h2></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
