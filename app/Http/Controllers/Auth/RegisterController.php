@@ -39,7 +39,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'email_token' => base64_encode($data['email']).base64_encode('ligamedika2019yahud'),
+            'email_token' => base64_encode($data['email'].'ligamedika2019yahud'),
         ]);
     }
 
