@@ -26,6 +26,7 @@
                 <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
                 <li>Uploaded proof of payment file has to be jpeg, jpg or png format.</li>
               @endif
+              <li>Don't leave any fields empty (except marked as optional).</li>
             </ul>
 
           </div>
@@ -87,7 +88,7 @@
                   <div class="form-group">
                     <label for="">Scan proof of payment receipt: </label>
                     <br><input type="file" name="bukti_pembayaran" accept="image/*" value=""><br>
-                    <small class="form-text text-muted">Max size 1 mb</small>
+                    <small class="form-text text-muted">Max size 1 mb. Images only.</small>
                   </div>
                 </div>
               </div>

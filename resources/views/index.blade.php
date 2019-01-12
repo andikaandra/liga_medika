@@ -37,6 +37,31 @@
             }
 
         }
+
+        .image-overlay {
+            margin-bottom: -30px;
+        }
+        .img-container {
+            position: relative;
+        }
+
+        .text-block {
+            position: absolute;
+            /* bottom: 20px;
+            right: 20px; */
+            /* background-color: black; */
+            color: white;            
+            bottom: 0;
+            margin-left: 15px;
+            /* width: 100%; */
+        }
+
+        hr.yellow {
+            color: #fff;
+            border-top: none !important;
+            border-bottom: solid 1px #f1b739 !important;
+        }
+
     </style>
 @endsection
 
@@ -66,12 +91,12 @@
 </section>
 <!-- End banner Area -->	
 
-<section class="quote-area section-gap">
+<section class="quote-area section-gap wow slideInUp">
     <div class="container">             
         <div class="row justify-content-center">
             <h2 class="font-weight-bold">About Us</h2>
         </div>
-        <hr>
+        <hr class="yellow">
         <div class="row mt-5">
             <div class="col-lg-5 quote-left">
                     <h1 class="">This year's theme</h1>
@@ -97,7 +122,7 @@
             </div>
         </div>
     </div>  
-    <hr>
+    <hr class="yellow">
     <div class="row mt-5">
         <div class="col-lg-6">
             <div class="single-service wow slideInLeft">
@@ -234,21 +259,70 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="yellow">
         <div id="grid-container" class="row mt-5">
-            <a class="single-gallery image-hover wow flipInX" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
+            <div class="img-container">
+                    <a class="single-gallery image-hover wow flipInX" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>                                
+                    <div class="text-block">                        
+                        <p>Literature Review</p>
+                    </div>
+            </div>
+            
 
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>
-
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
-              
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
-
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
+                    <div class="text-block">                        
+                        <p>Research Paper & Poster</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>            
+                    <div class="text-block">                        
+                        <p>Public Poster</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>        
+                    <div class="text-block">                        
+                        <p>Symposium</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
+                    <div class="text-block">                        
+                        <p>Workshop</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+                    <div class="text-block">                        
+                        <p>HFGM</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    
             <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
 
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
+            
+                    <div class="text-block">                        
+                        <p>IMSSO</p>
+                    </div>
+            </div>
+            <div class="img-container">
+                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
+                    <div class="text-block">                        
+                        <p>IMARC</p>
+                    </div>
+            </div>
+            
+            
+
+            
+
+            
+              
+            
+
 
             <a href="{{url('gallery')}}" style="color:white; font-size: 16px">See more photos</a>
         </div>	

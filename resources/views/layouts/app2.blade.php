@@ -12,9 +12,7 @@
     </script>
 
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <!-- Author Meta -->
     <meta name="author" content="Software Silo">
     <!-- Meta Description -->
@@ -45,7 +43,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('owl/dist/assets/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.2">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.4">
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
@@ -68,7 +66,7 @@
                       </div>			  			
                   </div>
               </div>
-              <hr>
+            <hr>
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
@@ -105,7 +103,7 @@
                     </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
-                        </form> --}}
+                        </form>
                     @endguest
                     </ul>
                   </nav><!-- #nav-menu-container -->		    		
