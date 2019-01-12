@@ -21,6 +21,7 @@
             <strong>Failed to submit: </strong>
             <ul>
               <li>Uploaded files cannot exceed 3 mb and has to be a zip format.</li>
+              <li>Don't leave any fields empty (except marked as optional).</li>
             </ul>
           </div>
         @endif
