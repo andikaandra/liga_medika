@@ -84,61 +84,38 @@
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
                     <li id="nav-imarc"><a href="{{url('imarc')}}" >IMARC</a></li>
-                    <li class="menu-has-children"><a href="#">IMSSO</a>
-                    <ul>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Women Basketball</a></li>
-                        <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
-                    </ul>
-                    </li>	
-                    <li><a class="under-construction" href="#">HFGM</a></li>     
+                    <li id="nav-imsso"><a href="{{url('imsso')}}" >IMSSO</a></li>
+                    <li id="nav-hfgm"><a href="{{url('hfgm')}}" >HFGM</a></li>
                     <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
-                         
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
-                    @guest
-                  
-                        <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>                                	          
+                    @guest                  
+                        <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>
                     @else
                       @if (Auth::user()->role == 1)
                         <li id="nav-dashboard"><a href="{{url('users')}}">Dashboard</a></li>      
                       @else
                         <li id="nav-dashboard"><a href="{{url('admin')}}">Dashboard</a></li>      
                       @endif
-                    
                     <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                             <strong>{{ __('Logout') }}</strong>
                          </a>
-
                     </li>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                         </form> --}}
                     @endguest
-
                     </ul>
                   </nav><!-- #nav-menu-container -->		    		
                 </div>
             </div>
           </header><!-- #header -->
 
-
-          
-                                
-          
-          
-          
-                                
-
           <div class="animated fadeIn">
           @yield('content')
         </div>
-
-        
-        
 
         <!-- start footer Area -->		
         <footer class="footer-area section-gap">
@@ -190,11 +167,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>			
         <script>
-                
-                $(".under-construction").click(function(){
-                    alert("We're sorry, this page is still under construction!");
-                });
-            </script>
+            $(".under-construction").click(function(){
+                alert("We're sorry, this page is still under construction!");
+            });
+        </script>
        
         <script src="{{asset('js/superfish.min.js')}}"></script>	
         <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>	

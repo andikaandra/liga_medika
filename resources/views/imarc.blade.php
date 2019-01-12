@@ -90,7 +90,7 @@
 	            <div class="col-lg-7 quote-right">
 	                <h1 class="text-info mb-3">Band</h1>
 	                <p class="justify text-justify">
-						Cabang Band akan diadakan pada hari Minggu, sebelum HFGM Closing Ceremony. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang merupakan pilihan dari para peserta. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang beserta fasilitas distribusi musik digital serta tampil di acara closing Liga Medika (memperebutkan juara I, II, III)
+						Cabang Band akan diadakan pada hari Minggu, sebelum HFGM Closing Ceremony. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang sesuai dengan tema yang telah ditentukan. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang beserta fasilitas distribusi musik digital serta tampil di acara closing Liga Medika (memperebutkan juara I, II, III).
 	                </p>
 	            </div>
 	        </div>
