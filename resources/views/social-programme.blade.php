@@ -36,6 +36,33 @@
 			</div>
 		</div>
 	</section>
+
+
+
+	<section class="upcoming-event-area section-gap" id="events">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="menu-content pb-60 col-lg-10">
+						<div class="title text-center mb-10">
+							<h1>Social Programme event:</h1>
+							<hr>		
+						</div>
+					</div>
+				</div>
+				<div class="row my-5 wow slideInLeft">
+					<div class="col-lg-5 quote-left">
+						<img class="img-fluid" src="{{asset('img/ligmed/city-tour/IMG_7279.JPG')}}" alt="city tour" style="width: 100%;">
+					</div>
+					<div class="col-lg-7 quote-right">
+						<h1 class="text-info mb-3">City Tour</h1>
+						<p class="justify text-justify">
+							City Tour Liga Medika adalah sebuah acara yang bertujuan mengenalkan keindahan kota Jakarta kepada para peserta. Tahun ini, acara kami membawakan sebuah konsep baru yaitu "Social Act" dimana para peserta tidak hanya akan mengunjungi tempat-tempat wisata namun juga berkesempatan berkenalan dengan anak-anak dari sebuah yayasan yang bergerak di bidang kesehatan jiwa. City Tour Liga Medika 2019 akan membawa peserta ke Museum Kebangkitan Nasional, Galeri Nasional, dan Monumen Nasional. Tentunya, acara ini menjanjikan kenangan tak terlupakan bagi peserta yang mengikuti Liga Medika 2019.
+						</p>
+					</div>
+				</div>
+				<hr>
+							
+			</div>
 	
 
 	<section class="gallery-area section-gap" id="gallery">

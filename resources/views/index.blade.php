@@ -78,10 +78,6 @@
                         Liga Medika 2019			
                     </h1>
                 </div>  
-
-{{--                 <h2 class="text-inamsc pb-20" id="typed">
-                    Registration for INAMSC is now Open!
-                </h2> --}}
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
                 
   
@@ -106,7 +102,7 @@
             </div>
             <div class="col-lg-7 quote-right">
                 <p class="justify">
-                        Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
+                    Liga Medika is the biggest event held by the students of Faculty of Medicine University Indonesia. Liga Medika was held for the first time in 2006 and still held annually until this year. Liga Medika consists of scientific competitions, arts competitions, and sports competition. We also want to raise public awareness about our theme with our campaign project and held a concert as the closing ceremony.
                 </p>
             </div>
         </div>
@@ -134,12 +130,7 @@
                     2019 <br>
                     <strong>Second Wave Submission:</strong> <br> 21 st January 2019 – 17 th February 2019
                 </p>	
-
-                {{-- <div class="contacts" style="float: left">
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i> ____		<br>
-                    <i class="fa fa-envelope" aria-hidden="true"></i> ____		
-                </div> --}}
-                
+                                
                 <div class="overlay">
                 <div class="text">
                     <p>
@@ -158,12 +149,7 @@
                 <p>
                 <i>Hover for info</i>
                 </p>				
-
-                {{-- <div class="contacts" style="float: left">
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i> ____		<br>
-                    <i class="fa fa-envelope" aria-hidden="true"></i> ____		
-                </div> --}}
-                                 
+                                             
                 <div class="overlay">
                 <div class="text">
                     <p>
@@ -184,12 +170,7 @@
                     <p>
                         <i>Hover for info</i>
                     </p>	
-                    
-                    {{-- <div class="contacts" style="float: left">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i> ____		<br>
-                        <i class="fa fa-envelope" aria-hidden="true"></i> ____		
-                    </div> --}}
-                                                
+                                                                                        
                     <div class="overlay">
                     <div class="text">
                         <p class="text-justify">
@@ -206,11 +187,7 @@
                     <h4>HFGM</h4>
                     <p>
                         <i>Hover for info</i>
-                    </p>		
-                    {{-- <div class="contacts" style="float: left">
-                            <i class="fa fa-whatsapp" aria-hidden="true"></i> ____		<br>
-                            <i class="fa fa-envelope" aria-hidden="true"></i> ____		
-                        </div> --}}
+                    </p>		                    
                                             
                     <div class="overlay">
                     <div class="text">
@@ -231,11 +208,7 @@
                         <p>
                             <i>Hover for info</i>
                         </p>				
-                        {{-- <div class="contacts" style="float: left">
-                                <i class="fa fa-whatsapp" aria-hidden="true"></i> ____		<br>
-                                <i class="fa fa-envelope" aria-hidden="true"></i> ____		
-                            </div> --}}
-                                            
+                                                                    
                         <div class="overlay">
                         <div class="text">
                             <p>

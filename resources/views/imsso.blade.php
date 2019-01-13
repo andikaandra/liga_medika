@@ -28,7 +28,7 @@
 
 @section('content')
 	<!-- start banner Area -->
-<section class="banner-area-inamsc relative" id="home">	
+<section class="banner-area-imsso relative" id="home">	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
@@ -41,7 +41,7 @@
 					Indonesian Medical Student Sports Olympiad (IMSSO) IMSSO merupakan kompetisi olahraga tingkat nasional yang terdiri dari 3 cabang untuk dilombakan, yaitu Basket Putra, Basket Putri dan Futsal Putra dengan sasaran mahasiswa Kedokteran dan Kedokteran Gigi se-Indonesia. Acara akan berlangsung selama 8 hari.
 				</p>
 {{-- 				<a class="guideline-btn mr-3 mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a> --}}
-				<a href="{{url('register')}}" class="imarc-btn">Register IMSSO</a>
+				<a href="{{url('register')}}" class="imsso-btn">Register IMSSO</a>
 			</div>
 		</div>
 		</div>
@@ -79,7 +79,7 @@
 	                </p>
 	            </div>
 	            <div class="col-lg-5 quote-right">
-					<img class="img-fluid" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}" alt="basket putri" style="width: 100%;">
+					<img class="img-fluid" src="{{asset('img/ligmed/imsso/basket-pi.JPG')}}" alt="basket putri" style="width: 100%;">
 	            </div>
 	        </div>
 	        <hr>
@@ -95,7 +95,7 @@
 	            </div>
 	        </div>
 	        <div class="row my-5 wow slideInUp justify-content-center slow">
-				<a href="{{url('register')}}" class="imarc-btn">Register NOW</a>
+				<a href="{{url('register')}}" class="imsso-btn">Register NOW</a>
 	        </div>
 		</div>
 	</section>

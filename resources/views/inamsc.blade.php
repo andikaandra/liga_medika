@@ -43,7 +43,7 @@
 					With the theme of Psychiatry, we wish to raise awareness on Mental Health prevention, diagnosis, and therapy. 
 					INAMSC 2019 consists of four competitions, symposium workshop, and social program.
 				</p>
-				<a class="guideline-btn mr-3 mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
+				<a class="guideline-btn mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
 				<a href="{{url('register')}}" class="inamsc-btn">Register INAMSC</a>							
 			</div>
 		</div>
