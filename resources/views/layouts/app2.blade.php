@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					        
-    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.5">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.6">
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
