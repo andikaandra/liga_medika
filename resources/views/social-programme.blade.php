@@ -62,29 +62,55 @@
 				</div>
 							
 			</div>
-	
-{{-- 
-	<section class="gallery-area section-gap" id="gallery">
-		<div class="overlay-inamsc">
+	</section>
+
+
+	<section class="upcoming-event-area" id="events" style="padding-top: 120px">
 		<div class="container">
 			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-							<h2 class="mb-10 text-white">Last Year's Euphoria</h2>
-	
+				<div class="menu-content pb-60 col-lg-10">
+					<div class="title text-center mb-10">
+						<h2>Places of Interests:</h2>
+						<hr>		
 					</div>
 				</div>
-			</div>						
-			<div id="grid-container" class="row">
-				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7279.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7279.JPG')}}"></a>
-				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7941.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7941.JPG')}}"></a>
-				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7392.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7392.JPG')}}"></a>
-				<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}"></a>
-		
-			</div>	
-		</div>	
-	</div>
-	</section> --}}
+			</div>
+			<div class="row my-5 wow slideInLeft">
+				<div class="col-lg-5 quote-left">
+					<img class="img-fluid" src="{{asset('img/ligmed/city-tour/museum.jpg')}}" alt="city tour" style="width: 100%;">
+				</div>
+				<div class="col-lg-7 quote-right">
+					<h1 class="text-info mb-3">Museum Kebangkitan Nasional</h1>
+					<p class="justify text-justify">
+						Museum of National Awakening atau yang sering disebut sebagai Museum Kebangkitan Nasional merupakan gedung yang dibangun sebagai monumen dari tempat lahir dan berkembangnya kesadaran nasional serta ditemukannya organisasi pergerakan yang dikenal sebagai Boedi Oetomo. Dahulu, bangunan ini merupakan sekolah kedokteran yang didirikan Belanda dengan nama Sekolah Dokter Bumiputra atau disebut STOVIA yang merupakan singkatan dari School tot Opleiding van Inlandsche Artsen.</p>
+				</div>
+			</div>
+<hr>
+			<div class="row my-5 wow slideInRight">
+				<div class="col-lg-7 quote-left">
+					<h1 class="text-info mb-3">Galeri Nasional Indonesia</h1>
+					<p class="justify text-justify">
+						Galeri Nasional Indonesia atau yang sering disingkat menjadi GALNAS adalah suatu lembaga museum dan pusat dari kegiatan seni rupa yang ada di Indonesia dengan tujuan untuk melindungi, memanfaatkan, dan mengembangkan koleksi seni rupa sebagai sebuah sarana edukasi-kultural, rekreasi, dan sebagai media untuk meningkatkan kreativitas dan juga apresiasi terhadap seni.</p>
+				</div>
+				<div class="col-lg-5 quote-right">
+					<img class="img-fluid" src="{{asset('img/ligmed/city-tour/gaalnas.jpg')}}" alt="city tour" style="width: 100%;">
+				</div>
+			</div>
+<hr>
+			<div class="row my-5 wow slideInLeft">
+				<div class="col-lg-5 quote-left">
+					<img class="img-fluid" src="{{asset('img/ligmed/city-tour/monas.jpg')}}" alt="city tour" style="width: 100%;">
+				</div>
+				<div class="col-lg-7 quote-right">
+					<h1 class="text-info mb-3">Monumen Nasional</h1>
+					<p class="justify text-justify">
+						Monas yang merupakan singkatan dari Monumen Nasional ialah monumen peringatan dengan tinggi 132 meter yang didirikan guna mengenang perjuangan dan perlawanan dari rakyat Indonesia dalam memperebutkan kemerdekaan dari pemerintahan kolonial Hindia Belanda. Pembangunan monas dimulai dari tanggal 17 Agustus 1961 dan selesai pada tanggal 12 Juli 2075 pada pemerintahan Soekarno. Di atas tugu terdapat lidah api yang dilapisi lembaran emas yang menggambarkan semangat perjuangan rakyat Indonesia yang berapi-api.
+					</p>
+				</div>
+			</div>
+						
+		</div>
+</section>
 
 	
 	
