@@ -90,7 +90,7 @@
 						</p>
 					</div>
 					<div class="col-lg-5 quote-right">
-							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}" alt="research paper and poster" style="width: 100%;">
+							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}?v=1.0.7" alt="research paper and poster" style="width: 100%;">
 						</div>
 				</div>
 				<hr>
