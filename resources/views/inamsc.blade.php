@@ -129,7 +129,7 @@
 			<div class="row my-5 wow slideInLeft">
 
 					<div class="col-lg-5 quote-left">
-							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}" alt="public poster" style="width: 100%;">
+							<img class="img-fluid" src="{{asset('img/ligmed/inamsc/symposium.JPG')}}" alt="public poster" style="width: 100%;">
 						</div>
 				<div class="col-lg-7 quote-right">
 					<h1 class="text-info mb-3" style="font-weight: bold; font-size: 36px">Symposium and Workshop</h1>

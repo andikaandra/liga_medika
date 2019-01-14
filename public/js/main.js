@@ -161,8 +161,9 @@ $(document).ready(function(){
           enableImagesLoaded: true
         };
         var grid = new justifiedGrid(parameters);
+        
     $('body').imagesLoaded( function() {
-       grid.initGrid();
+       grid.initGrid();             
     });
        
 

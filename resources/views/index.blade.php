@@ -135,7 +135,7 @@
                                 
                 <div class="overlay">
                 <div class="text">
-                    <p>
+                    <p class="text-justify">
                         INAMSC (Indonesian international (bio)medical student's congress) is the biggest scientific event and competition for biomedic students in indonesia. INAMSC is open not only for national participants, but INAMSC is also open for international participants.
                     </p>
                     <a href="{{url('inamsc/guidelines')}}" target="_blank" class="mb-1"><strong>Read Guidelines</strong></a> <br> <br>
@@ -154,7 +154,7 @@
                                              
                 <div class="overlay">
                 <div class="text">
-                    <p>
+                    <p class="text-justify">
                         IMARC (Indonesian Medical Art Competition) is a reputable medical arts competition the biggest kind  in Indonesia, comprised of traditional dance & vocal group for health science faculty students and band & photography for students from any kind of faculty
                     </p>
                     <a href="{{url('imarc')}}" class="text-uppercase primary-btn">Info</a>
@@ -213,8 +213,8 @@
                                                                     
                         <div class="overlay">
                         <div class="text">
-                            <p>
-                                Social Programme is an additional event of INAMSC 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
+                            <p class="text-justify">
+                                Social Programme is an additional program of Liga Medika 2019. The aims of this event are to facilitate the participants to get to know more about other participants and also to introduce some of Indonesia culture and iconic place in Jakarta. This program consist of two main events which is Indonesian Medical Education Research and Institute (IMERI) museum and lab tour, and Jakarta city tour.
                             </p>
                             <a href="{{url('social-programme')}}" class="text-uppercase primary-btn">Info</a>
                         </div>
@@ -235,72 +235,52 @@
             </div>
         </div>
         <hr class="yellow">
+        
         <div id="grid-container" class="row mt-5">
+                
             <div class="img-container">
-                    <a class="single-gallery image-hover wow flipInX" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>                                
-                    <div class="text-block">                        
-                        <p>INAMSC</p>
-                    </div>
+                <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
+                <div class="text-block">                        
+                <p>INAMSC</p>
+                </div>
             </div>
-            
 
             <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
-                    <div class="text-block">                        
-                        <p>INAMSC</p>
-                    </div>
-            </div>
-            <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>            
-                    <div class="text-block">                        
-                        <p>INAMSC</p>                  
-                      </div>
-            </div>
-            <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>        
-                    <div class="text-block">                        
-                        <p>INAMSC</p>                   
-                     </div>
-            </div>
-            <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
-                    <div class="text-block">                        
-                        <p>INAMSC</p>
-                    </div>
-            </div>
-            <div class="img-container">
-                    <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
-                    <div class="text-block">                        
-                        <p>HFGM</p>
-                    </div>
+                <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+                <div class="text-block">                        
+                <p>HFGM</p>
+                </div>
             </div>
             <div class="img-container">
                     
-            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
-
-            
-                    <div class="text-block">                        
-                        <p>IMSSO</p>
-                    </div>
+            <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>        
+                <div class="text-block">                        
+                <p>IMSSO</p>
+                </div>
             </div>
+
+
+
             <div class="img-container">
                     <a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
                     <div class="text-block">                        
-                        <p>IMARC</p>
-                    </div>
-            </div>
+                    <p>IMARC</p>
+                     </div>
+                </div>
+    
+                <div class="img-container">
+                    <a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}" style="max-width: 277.854px; max-height: 184.076px"></a>
+                    <div class="text-block">                        
+                    <p>Social Programme</p>
+                </div>
+            </div>              
+        </div>
             
-            
-
-            
-
-            
-              
-            
-
-
+        
+    
+        <div class="row" style="padding: 25px">            
             <a href="{{url('gallery')}}" style="color:white; font-size: 16px">See more photos</a>
-        </div>	
+        </div>
     </div>	
 </section>
 @endsection
