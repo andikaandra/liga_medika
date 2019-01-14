@@ -39,7 +39,7 @@
 
 
 
-	<section class="upcoming-event-area section-gap" id="events">
+	<section class="upcoming-event-area" id="events" style="padding-top: 120px">
 			<div class="container">
 				<div class="row d-flex justify-content-center">
 					<div class="menu-content pb-60 col-lg-10">

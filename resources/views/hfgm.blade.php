@@ -53,12 +53,12 @@
 	<!-- End banner Area -->	
 	
 	<!-- Start upcoming-event Area -->
-	<section class="upcoming-event-area section-gap" id="events">
+	<section class="upcoming-event-area section-gap" id="events" >
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">
 					<div class="title text-center mb-10">
-						<h1>The competitions and events held in HFGM 2019 are:</h1>
+						<h1>The events held in HFGM 2019 are:</h1>
 						<hr>		
 					</div>
 				</div>

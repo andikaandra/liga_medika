@@ -1,5 +1,14 @@
 @extends('layouts.app2')
 
+@section('style')
+	<style>
+	.banner-area {
+
+	border-bottom: none !important;
+	}
+		
+	</style>
+@endsection
 
 @section('content')
 	

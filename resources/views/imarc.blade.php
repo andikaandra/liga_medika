@@ -32,7 +32,7 @@
 
 @section('content')
 	<!-- start banner Area -->
-<section class="banner-area-imarc relative" id="home">	
+<section class="banner-area-imarc relative" id="home" >	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
@@ -53,7 +53,7 @@
 	<!-- End banner Area -->	
 	
 	<!-- Start upcoming-event Area -->
-	<section class="upcoming-event-area section-gap" id="events">
+	<section class="upcoming-event-area section-gap" id="events" >
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">

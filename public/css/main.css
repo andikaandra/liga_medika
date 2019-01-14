@@ -2531,7 +2531,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-content h1 {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 700;
   line-height: 1em;
   margin-top: 20px;
@@ -2561,7 +2561,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 414px) {
   .banner-content h1 {
-    font-size: 32px;
+    font-size: 42px;
   }
 }
 
@@ -2874,7 +2874,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
- background-color: #fff;
+ background-color: #FCECCB;
   /* margin-top: 50px; */
 }
 
@@ -3711,24 +3711,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 .banner-area-inamsc {
-  background: url(../img/bg-red.jpg) center;
+  background: url(../img/ligmed/inamsc/bg-inamsc.jpeg) center;
   background-size: cover;
 }
 
 
 .banner-area-inamsc .overlay {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(59, 33, 33, 0.6);
 }
 
 
 .banner-area-imarc {
-  background: url(../img/imarc-bg.jpg) center;
+  background: url(../img/ligmed/imarc/bg-imarc.jpeg) center;
   background-size: cover;
 }
 
 
 .banner-area-imarc .overlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(21, 51, 35, 0.65);
 }
 
 
@@ -3753,25 +3753,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 .banner-area-hfgm {
-  background: url(../img/ligmed/hfgm/bg-hfgm.jpg) center;
+  background: url(../img/ligmed/hfgm/bg-hfgm.jpeg) center;
   background-size: cover;
 }
 
 
 .banner-area-hfgm .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 
 .banner-area-social-programme {
-  background: url(../img/jkt-monas.jpg) center;
+  background: url(../img/ligmed/city-tour/social-bg.jpg) center;
   background-size: cover;
-  background-position-y: 0px;
+  background-position-y: -30px;
 }
 
 
 .banner-area-social-programme .overlay {
-  background-color: rgba(128, 37, 19, 0.1);
+  background-color: rgba(121, 58, 45, 0.3);
 }
 
 .single-events.inamsc:hover {  
