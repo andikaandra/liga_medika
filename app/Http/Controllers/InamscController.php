@@ -59,6 +59,9 @@ class InamscController extends Controller
     public function registerVideoPublikasi(Request $request) {
       $tipe_lomba = 2;
       $user_id = Auth::user()->id;
+      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        return redirect()->back();
+      }
 
       try {
         // make sure file uploaded are within size limit and file type
@@ -142,7 +145,9 @@ class InamscController extends Controller
     public function registerPosterPublication(Request $request) {
       $tipe_lomba = 3;
       $user_id = Auth::user()->id;
-
+      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        return redirect()->back();
+      }
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
