@@ -32,7 +32,7 @@
 
 @section('content')
 	<!-- start banner Area -->
-<section class="banner-area-imarc relative" id="home">	
+<section class="banner-area-imarc relative" id="home" >	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
@@ -53,7 +53,7 @@
 	<!-- End banner Area -->	
 	
 	<!-- Start upcoming-event Area -->
-	<section class="upcoming-event-area section-gap" id="events">
+	<section class="upcoming-event-area section-gap" id="events" >
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">
@@ -72,7 +72,7 @@
 					<div class="col-lg-7 quote-right">
 						<h1 class="text-info mb-3">Band</h1>
 						<p class="justify text-justify">
-							Cabang Band akan diadakan pada hari Minggu, 28 April 2019, sebelum HFGM Closing Ceremony. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang merupakan pilihan dari para peserta. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang beserta fasilitas distribusi musik digital serta tampil di acara closing Liga Medika (memperebutkan juara I, II, III)
+							Cabang Band akan diadakan pada hari Minggu sebelum HFGM Closing Ceremony. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang merupakan pilihan dari para peserta. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang beserta fasilitas distribusi musik digital serta tampil di acara closing Liga Medika (memperebutkan juara I, II, III)
 						</p>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 					<div class="col-lg-7 quote-right">
 						<h1 class="text-info mb-3" style="font-weight: bold; font-size: 36px">Vocal Group</h1>
 						<p class="justify text-justify">
-							Cabang Vocal Group akan diadakan pada hari Minggu, 29 April 2019. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang sesuai dengan tema yang telah ditentukan. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, III).
+							Cabang Vocal Group akan diadakan pada hari Minggu. Peserta akan diminta untuk membawakan dua lagu, lagu wajib yang sudah ditentukan panitia dan lagu bebas yang sesuai dengan tema yang telah ditentukan. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, III).
 						</p>
 					</div>
 				</div>
@@ -111,7 +111,7 @@
 					<div class="col-lg-7 quote-left">
 						<h1 class="text-info mb-3" style="font-weight: bold; font-size: 36px">Tari Tradisional</h1>
 						<p class="justify text-justify">
-							Cabang Tari Tradisional akan diadakan pada hari Sabtu, 27 April 2019. Terdapat dua mata acara pada cabang ini, yaitu lomba tari tradisional dan workshop tari tradisional bagi para peserta lomba. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, III)
+							Cabang Tari Tradisional akan diadakan pada hari Sabtu. Terdapat dua mata acara pada cabang ini, yaitu lomba tari tradisional dan workshop tari tradisional bagi para peserta lomba. Pemenang dari cabang ini akan mendapatkan hadiah berupa uang (memperebutkan juara I, II, III)
 						</p>
 					</div>
 					<div class="col-lg-5 quote-right">
@@ -119,8 +119,6 @@
 					</div>
 				</div>		
 			</div>
-	        
-	   
 	        <div class="row my-5 wow slideInUp justify-content-center slow">
 				<a href="{{url('register')}}" class="imarc-btn">Register NOW</a>
 	        </div>

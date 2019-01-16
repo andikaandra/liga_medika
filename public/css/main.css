@@ -1,4 +1,5 @@
-/*--------------------------- Color variations ----------------------*/
+/* Software Silo */
+/*--------------------------- Liga Medika 2019 Color variations ----------------------*/
 /* Medium Layout: 1280px */
 /* Tablet Layout: 768px */
 /* Mobile Layout: 320px */
@@ -1972,10 +1973,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   #header #logo h1 {
     font-size: 28px;
-  }
-  #header #logo img {
-    /* max-height: 40px; */
-  }
+  }  
 }
 
 /*--------------------------------------------------------------
@@ -2297,7 +2295,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .guideline-btn {
-  background-color: #30F4E4;
+  background-color: #20d6c7;
   line-height: 36px;
   padding-left: 40px;
   padding-right: 40px;
@@ -2333,9 +2331,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .guideline-btn:hover {
-  color: #30F4E4;
+  color: #20d6c7;
   background-color: transparent;
-  border-color: #30F4E4;
+  border-color: #20d6c7;
 }
 
 .inamsc-btn {
@@ -2422,6 +2420,93 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-color: #295F51;
 }
 
+
+.hfgm-btn {
+  background-color: #66284F;
+  line-height: 36px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.hfgm-btn:focus {
+  outline: none;
+}
+
+.hfgm-btn span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  right: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.hfgm-btn:hover {
+  color: #66284F;
+  background-color: transparent;
+  border-color: #66284F;
+}
+
+.imsso-btn {
+  background-color: #F1B739;
+  line-height: 36px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.imsso-btn:focus {
+  outline: none;
+}
+
+.imsso-btn span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  right: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.imsso-btn:hover {
+  color: #F1B739;
+  background-color: transparent;
+  border-color: #F1B739;
+}
+
+
+
 .overlay {
   position: absolute;
   left: 0;
@@ -2446,7 +2531,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-content h1 {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 700;
   line-height: 1em;
   margin-top: 20px;
@@ -2476,7 +2561,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 414px) {
   .banner-content h1 {
-    font-size: 32px;
+    font-size: 42px;
   }
 }
 
@@ -2588,9 +2673,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.exibition-area {
-  /* background-color: #f9f9ff; */
-}
 
 .exibition-area .owl-dots {
   text-align: center;
@@ -2792,7 +2874,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
- background-color: #fff;
+ background-color: #FCECCB;
   /* margin-top: 50px; */
 }
 
@@ -3629,39 +3711,70 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 .banner-area-inamsc {
-  background: url(../img/bg-red.jpg) center;
+  background: url(../img/ligmed/inamsc/bg-inamsc.jpeg) center;
   background-size: cover;
 }
 
 
 .banner-area-inamsc .overlay {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(59, 33, 33, 0.8);
 }
 
 
 .banner-area-imarc {
-  background: url(../img/imarc-bg.jpg) center;
+  background: url(../img/ligmed/imarc/bg-imarc.jpeg) center;
   background-size: cover;
 }
 
 
 .banner-area-imarc .overlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(21, 51, 35, 0.65);
 }
 
-.banner-area-social-programme {
-  background: url(../img/jkt-monas.jpg) center;
+
+.banner-area-imsso .overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+
+.banner-area-imsso {
+  background: url(../img/ligmed/imsso/bg-imsso.jpg) center;
   background-size: cover;
-  background-position-y: 0px;
+}
+
+
+.banner-area-imsso .overlay {
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+.banner-area-hfgm .overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+
+.banner-area-hfgm {
+  background: url(../img/ligmed/hfgm/bg-hfgm.jpeg) center;
+  background-size: cover;
+}
+
+
+.banner-area-hfgm .overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+
+.banner-area-social-programme {
+  background: url(../img/ligmed/city-tour/social-bg.jpg) center;
+  background-size: cover;
+  background-position-y: -30px;
 }
 
 
 .banner-area-social-programme .overlay {
-  background-color: rgba(128, 37, 19, 0.1);
+  background-color: rgba(121, 58, 45, 0.3);
 }
 
-.single-events.inamsc:hover {
-  background-color:;
+.single-events.inamsc:hover {  
   background-image: linear-gradient(to bottom right, #B01818, #A71BA9);
   color: white;
   cursor: pointer;
@@ -3700,9 +3813,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   min-height: 100vh;
 }
 
-.flex-fill {
-  /* flex:1 1 auto; */
-}
 
 #typed {  
     text-shadow:
@@ -3712,9 +3822,6 @@ body.mobile-nav-active #mobile-nav-toggle {
       1px 1px 0 #ffff;
 }
 
-#home {
-  /* padding-top: 50px; */
-}
 
 .uppercase {
   text-transform: uppercase;

@@ -17,6 +17,8 @@ Route::post('login', 'Auth\LoginController@doLogin');
 Route::get('/', 'PagesController@index');
 Route::get('inamsc', 'PagesController@inamsc');
 Route::get('imarc', 'PagesController@imarc');
+Route::get('imsso', 'PagesController@imsso');
+Route::get('hfgm', 'PagesController@hfgm');
 Route::get('social-programme', 'PagesController@inamscSocialProgramme');
 Route::get('gallery', 'PagesController@gallery');
 

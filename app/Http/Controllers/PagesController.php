@@ -18,6 +18,14 @@ class PagesController extends Controller
         return view('imarc');
     }
 
+    public function imsso() {
+        return view('imsso');
+    }
+
+    public function hfgm() {
+        return view('hfgm');
+    }
+
     public function inamscSocialProgramme() {
         return view('social-programme');
     }

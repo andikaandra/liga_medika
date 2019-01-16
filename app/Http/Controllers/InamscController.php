@@ -65,8 +65,7 @@ class InamscController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            // 'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
         ]);
 
         // test the validator out
@@ -80,7 +79,10 @@ class InamscController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'required';
+            $rules['univ'.$i] = 'required';
+            $rules['jurusan'.$i] = 'required';
         }
 
         $validator = Validator::make($request->all(), $rules);
@@ -106,6 +108,7 @@ class InamscController extends Controller
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          
           $path = $request->file('data_peserta'.$i)->store('public/inamsc/video-publikasi-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
@@ -145,11 +148,13 @@ class InamscController extends Controller
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
             // 'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'gelombang' => 'required'
         ]);
 
         // test the validator out
         if ($validator->fails()) {
+          // return response()->json($validator);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -159,7 +164,10 @@ class InamscController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'required';
+            $rules['univ'.$i] = 'required';
+            $rules['jurusan'.$i] = 'required';
         }
 
         $validator = Validator::make($request->all(), $rules);
@@ -174,7 +182,7 @@ class InamscController extends Controller
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 3,
         ]);
-
+          
 
         $inamsc = INAMSC::create([
           'user_id' => $user_id,
@@ -183,7 +191,7 @@ class InamscController extends Controller
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
-        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {          
           $path = $request->file('data_peserta'.$i)->store('public/inamsc/poster-publikasi-participants');
           INAMSCParticipant::create([
             'inamsc_id' => $inamsc->id,
@@ -221,7 +229,10 @@ class InamscController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'required';
+            $rules['univ'.$i] = 'required';
+            $rules['jurusan'.$i] = 'required';
         }
 
         $validator = Validator::make($request->all(), $rules);
@@ -273,7 +284,10 @@ class InamscController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'max:3100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'required';
+            $rules['univ'.$i] = 'required';
+            $rules['jurusan'.$i] = 'required';
         }
 
         $validator = Validator::make($request->all(), $rules);
@@ -324,15 +338,20 @@ class InamscController extends Controller
           'ktp.mimes' => 'Uploaded KTP file has to be jpeg, jpg or png format.',
           'bukti_pembayaran.max' => 'Uploaded proof of payment file cannot exceed 1 mb.',
           'bukti_pembayaran.mimes' => 'Uploaded proof of payment file has to be jpeg, jpg or png format.',
+          'nama.required' => 'Please fill in name field.',
+          'nama_rekening.required' => 'Please fill in account sender.',
+          'jumlah_transfer' => 'Please fill in amount.'
       ];
-
 
       try {
 
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'ktp' => 'max:1100|mimes:jpeg,jpg,png',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'ktp' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama' => 'required',
+            'nama_rekening' => 'required',
+            'jumlah_transfer' => 'required'
         ], $messages);
 
         // test the validator out
@@ -345,12 +364,26 @@ class InamscController extends Controller
                       ->withInput();
        }
 
+       $validator = Validator::make(
+          $request->all(), ['nama' => 'required',
+          'gelombang' => 'required',
+          'nama_rekening' => 'required']
+      );
+
+      if ($validator->fails()) {
+        return redirect()
+                    ->back()
+                    ->withErrors($validator)
+                    ->withInput();
+      }
+
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 1,
         ]);
 
         $path = $request->file('ktp')->store('public/identifications');
 
+      
         // register symposium
         Symposium::create([
           'user_id' => $user_id,

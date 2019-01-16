@@ -1,5 +1,14 @@
 @extends('layouts.app2')
 
+@section('style')
+	<style>
+	.banner-area {
+
+	border-bottom: none !important;
+	}
+		
+	</style>
+@endsection
 
 @section('content')
 	
@@ -49,7 +58,11 @@
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/imarc/imarc2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc2.jpg')}}"></a>
-
+					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7279.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7279.JPG')}}"></a>
+					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7941.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7941.JPG')}}"></a>
+					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7392.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7392.JPG')}}"></a>
+					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}"></a>
+			
 				</div>	
 			</div>	
 		</section>

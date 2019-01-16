@@ -28,6 +28,7 @@
               @else
                 <li>Uploaded participant files cannot exceed 3 mb and has to be a zip format.</li>
               @endif
+              <li>Don't leave any fields empty (except marked as optional).</li>              
             </ul>
 
           </div>
@@ -112,7 +113,7 @@
         }
 
             var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center">Payments</div><div class="form-group"><label for="">Account Sender\'s name </label><input type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value=""></div><div class="form-group"><label for="">Amount </label><input type="text" placeholder="How much did you transfer? e.g. 150.003" class="price form-control" name="jumlah_transfer" value=""></div><div class="form-group"><label for="">Scan payment proof (down payment)</label><br><input type="file" id="file" name="bukti_pembayaran" accept="image/*" required><small  class="form-text text-muted">Max size 1 mb</small></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center">Payments</div><div class="form-group"><label for="">Account Sender\'s name </label><input type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value=""></div><div class="form-group"><label for="">Amount </label><input type="text" placeholder="How much did you transfer? e.g. 150.003" class="price form-control" name="jumlah_transfer" value=""></div><div class="form-group"><label for="">Scan payment proof (down payment)</label><br><input type="file" id="file" name="bukti_pembayaran" accept="image/*" required><small  class="form-text text-muted">Max size 1 mb. Images only.</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
             $('.price').mask('0.000.000.000.000', {reverse: true});
