@@ -13,6 +13,7 @@ use App\Lomba;
 use Validator;
 use Storage;
 use App\Submission;
+use Log;
 
 class InamscController extends Controller
 {
@@ -129,7 +130,10 @@ class InamscController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Video - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return "Registration unsuccessful. Please contact commitee.";
+        // return response()->json($e->getMessage(), 500);
       }
       return redirect('users');
     }
@@ -210,7 +214,10 @@ class InamscController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Poster publication - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return "Registration unsuccessful. Please contact commitee.";
+        // return response()->json($e->getMessage(), 500);
       }
       return redirect('users');
     }
@@ -265,7 +272,10 @@ class InamscController extends Controller
         }
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Litrev - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);        return "Registration unsuccessful. Please contact commitee.";
+
+        // return response()->json($e->getMessage(), 500);
       }
       return redirect('users');
     }
@@ -318,7 +328,11 @@ class InamscController extends Controller
         }
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'RPP - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return "Registration unsuccessful. Please contact commitee.";
+
+        // return response()->json($e->getMessage(), 500);
       }
       return redirect('users');
     }
@@ -403,7 +417,11 @@ class InamscController extends Controller
         ]);
         // done -> wait for admin confirmation
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Symposium - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return "Registration unsuccessful. Please contact commitee.";
+
+        // return response()->json($e->getMessage(), 500);
       }
 
       return redirect('users');
@@ -616,7 +634,8 @@ class InamscController extends Controller
       if ($request->cabang_spesifik != 2) {
           // make sure file uploaded are within size limit and file type
           $validator = Validator::make($request->all(), [
-              'file_path' => 'max:6100|mimes:zip',
+              'file_path' => 'required|max:6100|mimes:zip',
+              'title' => 'required'
           ]);
 
           // test the validator out
@@ -632,8 +651,19 @@ class InamscController extends Controller
       }else {
 
         $validator = Validator::make($request->all(), [
-            'letter_of_originality_path' => 'max:3500|mimes:zip',
+            'letter_of_originality_path' => 'required|max:3500|mimes:zip',
+            'title' => 'required'
         ]);
+
+        // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+       }
+
+
         // get letter of originality for education video
         $lop = $request->file('letter_of_originality_path')->store('public/inamsc/education-video');
         $lop = str_replace("public","", $lop);
