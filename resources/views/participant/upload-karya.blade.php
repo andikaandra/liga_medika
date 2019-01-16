@@ -116,12 +116,9 @@
                       {{-- educational video uploads youtube link  --}}
                       @if (Auth::user()->cabang_spesifik == 2)
                         <div class="form-group">
-                          {{-- <label for="">Link for video: </label>
-                          <input type="text" name="file_path" value="" class="form-control" required pattern=".*\S+.*" placeholder="Fill in the link of your submission">
-                          <small class="text-muted">Please fill in the <strong>complete</strong> link. E.g. http://www.youtube.com/watch?v=-wtIMTCHWuI or https://www.google.com/intl/in/drive</small>
-                          <br><br><label for="">Letter of originality: </label> <br>
-                          <input type="file" name="letter_of_originality_path" value="" accept="application/zip" required> --}}
+
                           <p>Please email your abstract (word file) and video to inamsc2019@gmail.com</p>
+                          <p>Subject name: Videdu_First Creator Name_Title of Video</p>
                           <label for="">Letter of originality: </label> <br>
                           <input type="file" name="letter_of_originality_path" value="" accept="application/zip" required>
                           <small class="form-text text-muted">You can download letter of originality template <a href="{{url('users/download/letter-of-originality')}}">here</a>. Max size 3 mb.</small>
