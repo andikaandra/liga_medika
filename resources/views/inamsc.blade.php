@@ -48,7 +48,11 @@
 					INAMSC 2019 consists of four competitions, symposium workshop, and social program.
 				</p>
 				<a class="guideline-btn mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
-				<a href="{{url('register')}}" class="inamsc-btn">Register INAMSC</a>							
+				<a href="{{url('register')}}" class="inamsc-btn mb-3">Register INAMSC</a>		
+				<br>
+				
+				<p style="color: white">Download CV Format, Letter of Originality Template, Abstract and Preliminary Guideline INAMSC 2019</p><a href="{{url('users/inamsc/literature-review/files')}}" target="_blank" class="btn btn-warning">Download Here</a>
+
 			</div>
 		</div>
 		</div>
