@@ -41,9 +41,14 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -51,30 +56,50 @@ class ImarcController extends Controller
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      	}
+        }
+        
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 1,
+          'cabang_spesifik' => 9,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imarc/photography-participants');
 
 
         $imarc = IMARC::create([
           'user_id' => $user_id,
           'event_type' => 1,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+          $path = $request->file('data_peserta' . $i)->store('public/imarc/photography-participants');
+
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
+
           ]);
         }
 
@@ -102,9 +127,14 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -114,28 +144,45 @@ class ImarcController extends Controller
                       ->withInput();
         }
 
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 2,
+          'cabang_spesifik' => 10,
         ]);
-
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imarc/dance-participants');
-
-
+      
         $imarc = IMARC::create([
           'user_id' => $user_id,
-          'event_type' => 2,
-          'file_path' => str_replace("public","", $path),
+          'event_type' => 2,          
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+        $path = $request->file('data_peserta' . $i)->store('public/imarc/dance-participants');
+
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
           ]);
         }
 
@@ -163,9 +210,14 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -175,28 +227,47 @@ class ImarcController extends Controller
                       ->withInput();
         }
 
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 3,
+          'cabang_spesifik' => 11,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imarc/vocal-participants');
-
-
+  
         $imarc = IMARC::create([
           'user_id' => $user_id,
           'event_type' => 3,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+          $path = $request->file('data_peserta' . $i)->store('public/imarc/vocal-participants');
+          
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
+
           ]);
         }
 
@@ -224,9 +295,14 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -236,28 +312,47 @@ class ImarcController extends Controller
                       ->withInput();
         }
 
-        $user = User::find($user_id)->update([
-          'cabang_spesifik' => 4,
-        ]);
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imarc/band-participants');
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
+
+        $user = User::find($user_id)->update([
+          'cabang_spesifik' => 12,
+        ]);
 
 
         $imarc = IMARC::create([
           'user_id' => $user_id,
           'event_type' => 4,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+          $path = $request->file('data_peserta' . $i)->store('public/imarc/band-participants');
+
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
           ]);
         }
 
@@ -297,7 +392,7 @@ class ImarcController extends Controller
     public function findImarcDetails($id) {
       $imarc = IMARC::find($id);
       $payment = Payment::where('user_id', $imarc->user_id)->where('tipe_pembayaran', 1)->first();
-      return response()->json(['location' => $imarc->file_path, 'payment' => $payment, 'user_id' => $imarc->user_id,
+      return response()->json(['payment' => $payment, 'user_id' => $imarc->user_id,
       'participants' => $imarc->participants]);
     }
 

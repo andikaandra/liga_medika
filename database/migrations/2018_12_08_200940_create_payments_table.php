@@ -15,7 +15,7 @@ class CreatePaymentsTable extends Migration
             $table->text('location');
             $table->integer('tipe_pembayaran');
             $table->text('nama_rekening');
-            $table->decimal('jumlah', 10, 2);
+            $table->decimal('jumlah', 15, 2);
             $table->timestamps();
         });
     }

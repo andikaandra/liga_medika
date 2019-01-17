@@ -33,9 +33,7 @@ class ImssoController extends Controller
       $tipe_lomba = 6;
       $user_id = Auth::user()->id;
       
-      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
-        return redirect()->back();
-      }
+
 
       try {
         // make sure file uploaded are within size limit and file type
@@ -78,7 +76,7 @@ class ImssoController extends Controller
         }
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 1,
+          'cabang_spesifik' => 8,
         ]);
 
         $imsso = IMSSO::create([
@@ -162,7 +160,7 @@ class ImssoController extends Controller
 
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 2,
+          'cabang_spesifik' => 7,
         ]);
 
         
@@ -214,6 +212,10 @@ class ImssoController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
+
         // test the validator out
         if ($validator->fails()) {
           return redirect()
@@ -243,7 +245,7 @@ class ImssoController extends Controller
         }
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 3,
+          'cabang_spesifik' => 8,
         ]);
 
       

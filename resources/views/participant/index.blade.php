@@ -162,10 +162,12 @@
                   @endif
 
                 @elseif (Auth::user()->cabang == 1)
-                  <p>Dashboard IMSSO</p>
+                  
+                 @include('participant.partials.dashboard-imsso')
 
                 @elseif (Auth::user()->cabang == 2)
-                  <p>Dashboard IMARC</p>
+                 @include('participant.partials.dashboard-imarc')
+
 
                 @elseif (Auth::user()->cabang == 4)
                   <p>Dashboard HFGM</p>

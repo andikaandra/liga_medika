@@ -128,7 +128,7 @@ class AdminController extends Controller
    public function getImarcFiles($id)
     {
       try {
-        $data = IMARC::where('user_id', $id)->first();
+        $data = IMARCParticipant::find($id);
         $myFile = public_path().'/storage'.$data->file_path;
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
         $newName = str_slug($data->nama).'.zip';

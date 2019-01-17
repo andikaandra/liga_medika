@@ -18,13 +18,10 @@
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
             <ul>
-              @if ($errors->has('data_peserta'))
-                <li>Uploaded participant files cannot exceed 6 mb and has to be a zip format.</li>
-              @endif
-              @if ($errors->has('bukti_pembayaran'))
                 <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
                 <li>Uploaded proof of payment file has to be jpeg, jpg or png format.</li>
-              @endif
+                <li>Uploaded participant files cannot exceed 3 mb and has to be a zip format.</li>
+                <li>Don't leave any fields empty (except marked as optional).</li>   
             </ul>
 
           </div>
@@ -102,20 +99,17 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class=""></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta'+iter+'" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, Active status letter as student from University, Letter of Agreement, Medical SOP Statement, Insurance Card. (Compressed as .zip file). Max size 3 mb.</small><a href="#">Download file templates</a></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }
 
-            var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, Letter of Agreement. (Compressed as .zip file). Max size 6 mb</small></div></div>');
+ 
+        var myCol = $('<div class="row justify-content-center my-5"></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center">Payments</div><div class="form-group"><label for="">Account Sender\'s name </label><input type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value=""></div><div class="form-group"><label for="">Amount </label><input type="text" placeholder="How much did you transfer? e.g. 150.003" class="price form-control" name="jumlah_transfer" value=""></div><div class="form-group"><label for="">Scan payment proof (down payment)</label><br><input type="file" id="file" name="bukti_pembayaran" accept="image/*" required><small  class="form-text text-muted">Max size 1 mb. Images only.</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
-
-            var myCol = $('<div class="row justify-content-center my-5"></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center">Payments</div><div class="form-group"><label for="">Account Sender\'s name </label><input type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" value=""></div><div class="form-group"><label for="">Amount </label><input type="text" maxlength="10" placeholder="How much did you transfer? e.g. 150.003" class="price form-control" name="jumlah_transfer" value=""></div><div class="form-group"><label for="">Scan payment receipt </label><br><input type="file" id="file" name="bukti_pembayaran" accept="image/*" required><small  class="form-text text-muted">Max size 1 mb</small></div></div>');
-            myPanel.appendTo(myCol);
-            myCol.appendTo('#contentPanel');
+            $('.price').mask('0.000.000.000.000', {reverse: true});
     };
 
     $('#jumlahPeserta').on('change', function() {
