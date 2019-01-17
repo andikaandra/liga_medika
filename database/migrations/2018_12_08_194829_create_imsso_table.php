@@ -13,7 +13,6 @@ class CreateImssoTable extends Migration
           $table->unsignedInteger('user_id');
           $table->text('link_travel_plan')->nullable();
           $table->integer('sport_type');
-          $table->text('file_path');
           $table->integer('status_pembayaran')->nullable();
           $table->integer('status_lolos')->default(0);
           $table->integer('status_verif')->default(0);

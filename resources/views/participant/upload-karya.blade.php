@@ -88,7 +88,7 @@
                   @if ($uploaded->count())
                     {{-- link submission --}}
                     @if (Auth::user()->cabang_spesifik == 2)
-                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}", with this provided <a target="_blank" href="{{Auth::user()->inamscs[0]->submissions[0]->file_path}}">link</a>.</p>
+                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}" and its Letter of Originality.</p>
                       <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
                     @else
                       <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
@@ -121,7 +121,7 @@
                           <p>Subject name: Videdu_First Creator Name_Title of Video</p>
                           <label for="">Letter of originality: </label> <br>
                           <input type="file" name="letter_of_originality_path" value="" accept="application/zip" required>
-                          <small class="form-text text-muted">You can download letter of originality template <a href="{{url('users/download/letter-of-originality')}}">here</a>. Max size 3 mb.</small>
+                          <small class="form-text text-muted">Please zip your file. You can download letter of originality template <a href="{{url('users/download/letter-of-originality')}}">here</a>. Max size 3 mb.</small>
                         </div>
                       @else
                         <div class="form-group">

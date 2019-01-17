@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class IMARCParticipant extends Model
 {
     protected $table ="imarcparticipants";
-    protected $fillable = ['nama', 'imarc_id', 'universitas', 'jurusan'];
+    protected $fillable = ['nama', 'imarc_id', 'universitas', 'jurusan', 'file_path'];
 
 	  public function imarc() {
 	    return $this->belongsTo('App\IMARC');

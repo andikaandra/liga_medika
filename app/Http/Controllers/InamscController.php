@@ -59,15 +59,19 @@ class InamscController extends Controller
     public function registerVideoPublikasi(Request $request) {
       $tipe_lomba = 2;
       $user_id = Auth::user()->id;
-      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
-        return redirect()->back();
-      }
+  
 
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
             'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -145,16 +149,21 @@ class InamscController extends Controller
     public function registerPosterPublication(Request $request) {
       $tipe_lomba = 3;
       $user_id = Auth::user()->id;
-      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
-        return redirect()->back();
-      }
+
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
             // 'data_peserta' => 'max:6100|mimes:zip',
             'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
-            'gelombang' => 'required'
+            'gelombang' => 'required',
+            'nama_rekening' => 'required',
+            'jumlah_transfer' => 'required'
         ]);
+
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {

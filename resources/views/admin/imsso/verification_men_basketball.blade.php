@@ -73,11 +73,6 @@
           <div class="col-md-6">
             <form action="#">
               <div class="form-group">
-                <label for="">Participants' files</label>
-              </div>
-              <a class="btn btn-info" href="" id="files" target="_blank" role="button">Check</a>
-              <hr>
-              <div class="form-group">
                 <label for="">Bank Account:</label>
                 <input class="form-control" type="text" name="nama_rekening" disabled>
               </div>
@@ -166,8 +161,7 @@
         $("#foto-bukti").attr('href', path);
         $("input[name='nama_rekening']").val(data.payment.nama_rekening);
         $("input[name='jumlah']").val(parseInt(data.payment.jumlah));
-        path = '{{url('admin/imsso/file')}}/' + data.user_id; //path for participant files
-        $("#files").attr('href', path);
+        
         $('.price').trigger('input');
 
         $(".participants").html("");
@@ -189,6 +183,10 @@
               "<label>Department:</label>"+
             "<input class='form-control' type='text' disabled value=\""+el.jurusan+"\">"+
             "</div>"+
+            "<div class='form-group'>"+
+                "<label>Participant's File:</label><br>"+
+                '<a class="btn btn-sm btn-info" href="{{url('admin/imsso/file')}}/'+el.id+'" id="files" target="_blank" role="button">Check</a>'+
+              "</div>" +
             "</div>"
           );
 

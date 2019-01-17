@@ -32,13 +32,23 @@ class ImssoController extends Controller
     public function registerImssoMenBasketball(Request $request) {
       $tipe_lomba = 6;
       $user_id = Auth::user()->id;
+      
+      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        return redirect()->back();
+      }
 
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -46,30 +56,47 @@ class ImssoController extends Controller
                       ->back()
                       ->withErrors($validator)
                       ->withInput();
-      	}
+        }
+        
+
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
 
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 1,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imsso/men-basketball-participants');
-
-
         $imsso = IMSSO::create([
           'user_id' => $user_id,
           'sport_type' => 1,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          $path = $request->file('data_peserta' . $i)->store('public/imsso/men-basketball-participants');
+
           IMSSOParticipant::create([
             'imsso_id' => $imsso->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
           ]);
         }
 
@@ -97,9 +124,14 @@ class ImssoController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
+
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+          return redirect()->back();
+        }
 
         // test the validator out
         if ($validator->fails()) {
@@ -109,28 +141,47 @@ class ImssoController extends Controller
                       ->withInput();
         }
 
+
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
+
         $user = User::find($user_id)->update([
           'cabang_spesifik' => 2,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imsso/women-basketball-participants');
-
-
+        
         $imsso = IMSSO::create([
           'user_id' => $user_id,
           'sport_type' => 2,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+          $path = $request->file('data_peserta' . $i)->store('public/imsso/women-basketball-participants');
           IMSSOParticipant::create([
             'imsso_id' => $imsso->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
           ]);
         }
 
@@ -158,11 +209,32 @@ class ImssoController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'data_peserta' => 'max:6100|mimes:zip',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'nama_rekening' => 'bail|required',
+            'jumlah_transfer' => 'bail|required'
         ]);
 
         // test the validator out
+        if ($validator->fails()) {
+          return redirect()
+                      ->back()
+                      ->withErrors($validator)
+                      ->withInput();
+        }
+
+
+
+        $rules = [];
+        
+        for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['nama'.$i] = 'bail|required';
+            $rules['univ'.$i] = 'bail|required';
+            $rules['jurusan'.$i] = 'bail|required';
+        }
+
+        $validator = Validator::make($request->all(), $rules);
+
         if ($validator->fails()) {
           return redirect()
                       ->back()
@@ -174,24 +246,24 @@ class ImssoController extends Controller
           'cabang_spesifik' => 3,
         ]);
 
-        // store the participant files
-        $path = $request->file('data_peserta')->store('public/imsso/men-futsal-participants');
-
-
+      
         $imsso = IMSSO::create([
           'user_id' => $user_id,
           'sport_type' => 3,
-          'file_path' => str_replace("public","", $path),
           'gelombang' => $request->gelombang,
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+          // store the participant files
+          $path = $request->file('data_peserta' . $i)->store('public/imsso/men-futsal-participants');
+          
           IMSSOParticipant::create([
             'imsso_id' => $imsso->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
-            'jurusan' => $request->{'jurusan'.$i}
+            'jurusan' => $request->{'jurusan'.$i},
+            'file_path' => str_replace("public","", $path)
           ]);
         }
 
@@ -228,7 +300,7 @@ class ImssoController extends Controller
     public function findImssoDetails($id) {
       $imsso = IMSSO::find($id);
       $payment = Payment::where('user_id', $imsso->user_id)->where('tipe_pembayaran', 1)->first();
-      return response()->json(['location' => $imsso->file_path, 'payment' => $payment, 'user_id' => $imsso->user_id,
+      return response()->json(['payment' => $payment, 'user_id' => $imsso->user_id,
       'participants' => $imsso->participants]);
     }
 

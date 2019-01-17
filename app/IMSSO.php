@@ -8,7 +8,7 @@ class IMSSO extends Model
 {
   protected $table = "imsso";
   protected $fillable = ['user_id', 'link_travel_plan', 'status_pembayaran', 'status_lolos', 'gelombang',
-  'status_verif' , 'sport_type', 'file_path'];
+  'status_verif' , 'sport_type'];
 
     public function user() {
       return $this->belongsTo('App\User');

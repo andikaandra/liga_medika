@@ -14,6 +14,8 @@ class CreateImarcparticipantsTable extends Migration
             $table->text('nama');
             $table->text('universitas');
             $table->text('jurusan');
+            $table->text('file_path');
+
             // $table->timestamps();
         });
     }
