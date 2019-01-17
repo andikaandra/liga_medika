@@ -10,6 +10,7 @@ use App\IMARCParticipant;
 use Auth;
 use App\Lomba;
 use Validator;
+use Log;
 
 class ImarcController extends Controller
 {
@@ -115,7 +116,9 @@ class ImarcController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Photography - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -198,7 +201,9 @@ class ImarcController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Traditional Dance - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -283,7 +288,9 @@ class ImarcController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Vocal group - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -368,7 +375,9 @@ class ImarcController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Band - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }

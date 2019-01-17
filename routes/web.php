@@ -136,7 +136,11 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 // participant
 
 
+
 Route::prefix('users')->middleware(['participant_only'])->group(function () {
+  // error route
+  Route::get('error/37585526-1ef0-43fb-b41b-d9995f6f90b1', 'InamscController@registrationUnsuccessfull')->name('regis.error');
+
   // pages
   Route::get('/', 'ParticipantController@index')->name('user.index');
   Route::get('/dashboard', 'ParticipantController@dashboard');

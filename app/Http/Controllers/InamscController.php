@@ -139,8 +139,7 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         $message = 'Video - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
-        return "Registration unsuccessful. Please contact commitee.";
-        // return response()->json($e->getMessage(), 500);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -230,8 +229,8 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         $message = 'Poster publication - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
-        return "Registration unsuccessful. Please contact commitee.";
-        // return response()->json($e->getMessage(), 500);
+        return redirect()->route('regis.error');
+
       }
       return redirect('users');
     }
@@ -287,9 +286,9 @@ class InamscController extends Controller
 
       } catch (\Exception $e) {
         $message = 'Litrev - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
-        Log::emergency($message);        return "Registration unsuccessful. Please contact commitee.";
+        Log::emergency($message);        
+        return redirect()->route('regis.error');
 
-        // return response()->json($e->getMessage(), 500);
       }
       return redirect('users');
     }
@@ -344,9 +343,7 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         $message = 'RPP - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
-        return "Registration unsuccessful. Please contact commitee.";
-
-        // return response()->json($e->getMessage(), 500);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -433,14 +430,10 @@ class InamscController extends Controller
       } catch (\Exception $e) {
         $message = 'Symposium - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
-        return "Registration unsuccessful. Please contact commitee.";
-
-        // return response()->json($e->getMessage(), 500);
+        return redirect()->route('regis.error');
       }
 
       return redirect('users');
-
-      // return response()->json(['message' => 'success'], 201);
 
     }
 
@@ -737,5 +730,9 @@ class InamscController extends Controller
       $myFile = storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf");
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
       return response()->download(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
+    }
+    
+    public function registrationUnsuccessfull() {
+      return "Registration unsuccessful. Please contact commitee.";
     }
 }

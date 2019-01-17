@@ -7,7 +7,6 @@ use Log;
 class PagesController extends Controller
 {
     public function index() {
-        // Log::emergency("Test");
         return view('index');
     }
 

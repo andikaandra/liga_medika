@@ -11,6 +11,7 @@ use App\IMSSOParticipant;
 use Auth;
 use App\Lomba;
 use Validator;
+use Log;
 
 class ImssoController extends Controller
 {
@@ -33,8 +34,6 @@ class ImssoController extends Controller
       $tipe_lomba = 6;
       $user_id = Auth::user()->id;
       
-
-
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
@@ -43,7 +42,7 @@ class ImssoController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-
+        // make sure jumlah_transfer doesnt exceced max decimal capacity
         if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
           return redirect()->back();
         }
@@ -59,6 +58,7 @@ class ImssoController extends Controller
 
         $rules = [];
         
+        // rules for each peserta
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
             $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
             $rules['nama'.$i] = 'bail|required';
@@ -86,7 +86,9 @@ class ImssoController extends Controller
           'status_pembayaran' => 1 //1 dp, 2 lunas
         ]);
 
+        // create instance of participants
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+
           $path = $request->file('data_peserta' . $i)->store('public/imsso/men-basketball-participants');
 
           IMSSOParticipant::create([
@@ -110,7 +112,9 @@ class ImssoController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Men basketball - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -138,7 +142,6 @@ class ImssoController extends Controller
                       ->withErrors($validator)
                       ->withInput();
         }
-
 
         $rules = [];
         
@@ -195,7 +198,9 @@ class ImssoController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Women basketball - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
@@ -281,7 +286,9 @@ class ImssoController extends Controller
         ]);
 
       } catch (\Exception $e) {
-        return response()->json($e->getMessage(), 500);
+        $message = 'Men futsal - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return redirect()->route('regis.error');
       }
       return redirect('users');
     }
