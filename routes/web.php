@@ -133,6 +133,11 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 });
 
 
+
+      Route::get('users/inamsc/literature-review/files', 'InamscController@downloadLitrevFiles');
+
+
+
 // participant
 
 
@@ -182,7 +187,6 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       });
 
 
-      Route::get('inamsc/literature-review/files', 'InamscController@downloadLitrevFiles');
       Route::get('inamsc/files', 'InamscController@downloadTemplates');
 
       //imarc
