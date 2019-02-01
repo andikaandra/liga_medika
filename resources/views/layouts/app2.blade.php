@@ -49,6 +49,13 @@
             p {
                 font-size: 16px !important;
             }
+            .heart {
+                animation: beat .25s infinite alternate;
+	            transform-origin: center;
+            }
+            @keyframes beat{
+                to { transform: scale(1.2); }
+            }
         </style>
     </head>
     <body>
@@ -141,7 +148,7 @@
                         <hr>
                         <p class="footer-text">
                             Copyright Liga Medika &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
-                            Handcrafted & Nurtured with huge <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
+                            Handcrafted & Nurtured with huge <i class="fa fa-heart-o heart" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
 
                         </p>
                     </div>
