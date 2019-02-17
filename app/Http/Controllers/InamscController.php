@@ -244,7 +244,7 @@ class InamscController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'bail|required|max:5100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
             $rules['nama'.$i] = 'required';
             $rules['univ'.$i] = 'required';
             $rules['jurusan'.$i] = 'required';
