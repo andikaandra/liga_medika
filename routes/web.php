@@ -83,6 +83,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('imarc/vocal', 'ImarcController@getVocal');
   Route::get('imarc/band', 'ImarcController@getBand');
   Route::get('imarc/imarc/{id}', 'ImarcController@findImarcDetails');
+  
 
   Route::put('imarc/imarc/accept/{id}', 'ImarcController@acceptImarc');
   Route::put('imarc/imarc/decline/{id}', 'ImarcController@declineImarc');
@@ -117,14 +118,23 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('imsso/file/{id}', 'AdminController@getImssoFiles');
 
   Route::get('inamscs/{type}', 'InamscController@getInamscSubmissions');
+  Route::get('imarcs/{type}', 'ImarcController@getImarcSubmissions');
+
   Route::get('inamsc/submissions/{id}', 'InamscController@findInamscSubmissions');
+  Route::get('imarc/submissions/{id}', 'ImarcController@findImarcSubmissions');
+
   Route::get('inamscs/submissions/educational-videos', 'AdminController@submissionsEducationalVideosPage');
   Route::get('letter-of-originality/{id}', 'InamscController@downloadLetterOfOriginality');
 
   Route::get('inamscs/submissions/literature-review', 'AdminController@literatureReviewPage');
   Route::get('inamscs/submissions/research-paper', 'AdminController@rppPage');
   Route::get('inamscs/submissions/public-poster', 'AdminController@publicPosterPage');
+
+  Route::get('imarcs/submissions/photography', 'AdminController@photographyPage');
+
+  
   Route::get('inamscs/{id}/download/submissions', 'InamscController@downloadSubmissions');
+  Route::get('imarcs/{id}/download/submissions', 'ImarcController@downloadSubmissions');
 
   Route::get('account', 'AdminController@getAccountPage');
   Route::get('account/data', 'AdminController@getAccount');
@@ -229,6 +239,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('uploads', 'ParticipantController@uploadKarya')->name('users.upload.karya');
       Route::get('participants', 'ParticipantController@getParticipants');
       Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
+      Route::post('imarc/submissions', 'ImarcController@uploadSubmission');
       Route::get('download/letter-of-originality', 'ParticipantController@getLetterOfOriginality');
 
     });

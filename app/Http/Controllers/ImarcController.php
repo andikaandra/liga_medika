@@ -11,6 +11,7 @@ use Auth;
 use App\Lomba;
 use Validator;
 use Log;
+use App\Submission;
 
 class ImarcController extends Controller
 {
@@ -427,6 +428,64 @@ class ImarcController extends Controller
         'status_verif' => -1
       ]);
       return response()->json(['message' => 'ok']);
+    }
+
+    public function uploadSubmission(Request $request) {
+
+      // return Auth::user()->imarcs[0]->id;
+
+      // make sure file uploaded are within size limit and file type
+      $validator = Validator::make($request->all(), [
+          'file_path' => 'required|max:6100|mimes:zip',
+          'quill_contents' => 'required'
+      ]);
+
+      // test the validator out
+      if ($validator->fails()) {
+        return redirect()
+                    ->back()
+                    ->withErrors($validator)
+                    ->withInput();
+      }
+
+      try {
+        $path = $request->file('file_path')->store('public/imarc/karya-submissions');
+        $path = str_replace("public","", $path);
+      
+  
+        Submission::create([
+          'inamsc_id' => Auth::user()->imarcs[0]->id,
+          'title' => $request->quill_contents,
+          'file_path' => $path
+        ]);        
+      } catch (Exception $e) {
+        $message = 'Uploade photography IMARC - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        Log::emergency($message);
+        return "Upload error. Please contact commitee";
+      }
+
+      return redirect('users/uploads')->with('message', 'Successfully uploaded!');
+
+    }
+
+    public function getImarcSubmissions($type) {
+      // get educational videos data that has submission
+      $photos = User::where('cabang_spesifik', $type)
+                ->whereHas('imarcs.submissions')->with('imarcs.submissions')->get();
+
+      return response()->json(['data' => $photos]);
+    }
+
+    public function findImarcSubmissions($id) {
+      return response()->json(Submission::find($id));
+    }
+
+    public function downloadSubmissions($id) {
+      $path = Submission::find($id);
+      $myFile = public_path().'/storage'.$path->file_path;
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      $newName = str_slug($path->imarc->user->name).'.zip';      
+      return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
     }
 
 }

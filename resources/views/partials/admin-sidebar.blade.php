@@ -75,6 +75,7 @@
           <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/public-poster')}}">Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/literature-review')}}">Literature Review</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{url('/admin/inamscs/submissions/research-paper')}}"> Research Paper</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('/admin/imarcs/submissions/photography')}}"> Photography</a></li>
         </ul>
       </div>
     </li>

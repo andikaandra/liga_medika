@@ -36,4 +36,8 @@ class User extends Authenticatable
     public function inamscs() {
       return $this->hasMany('App\INAMSC');
     }
+
+    public function imarcs() {
+      return $this->hasMany('App\IMARC');
+    }
 }

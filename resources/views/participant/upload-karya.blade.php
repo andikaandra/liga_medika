@@ -13,6 +13,11 @@
 
 
 @section('style')
+
+@if (Auth::user()->cabang == 2)
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css" />
+@endif
+
 <style media="screen">
 
 .dropzone {
@@ -28,6 +33,7 @@
 .dropzone:hover{
   cursor: pointer;
 }
+
 
 </style>
 @endsection
@@ -90,17 +96,37 @@
                     @if (Auth::user()->cabang_spesifik == 2)
                       <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}" and its Letter of Originality.</p>
                       <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
-                    @else
-                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
-                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    
+                      @elseif (Auth::user()->cabang == 2)
+                      <p>You have uploaded submission with description:</p>
+                      <div>{!! Auth::user()->imarcs[0]->submissions[0]->title !!}</div>                      
+                      <p>Submission time: {{Auth::user()->imarcs[0]->submissions[0]->created_at}}</p>                    
+                      @else
+                        <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
+                        <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
                     @endif
                   @else
-                    <form class="" action="{{url('users/inamsc/submissions')}}" method="post" enctype="multipart/form-data">
+                  @if (Auth::user()->cabang == 2)
+                    <form class="" action="{{url('users/imarc/submissions')}}" method="post" enctype="multipart/form-data" id="submission">
+                  @else
+                    <form class="" action="{{url('users/inamsc/submissions')}}" method="post" enctype="multipart/form-data" >
+                  @endif
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label for="">Title: </label>
-                        <input class="form-control" type="text" name="title" value="" required pattern=".*\S+.*" placeholder="What is the title of your submission?">
-                        <small class="form-text text-muted">Example : 
+                        
+                        
+                        @if (Auth::user()->cabang == 2)
+                        <label for="">Description: </label>                          
+                          <div id="editor">
+                              <p>Describe your submission.</p>
+                          </div>
+
+                        @else
+                          <label for="">Title: </label>
+                          <input class="form-control" type="text" name="title" value="" required pattern=".*\S+.*" placeholder="What is the title of your submission?">  
+                          <small class="form-text text-muted">Example : 
+                          @endif
+                        
                           @if(Auth::user()->cabang_spesifik == 2)
                             Videdu_First Creator Name_Title of Video
                           @elseif(Auth::user()->cabang_spesifik == 3)
@@ -133,19 +159,29 @@
                       @endif
                       <input type="hidden" name="cabang_spesifik" value="{{Auth::user()->cabang_spesifik}}">
                       <input type="submit" class="btn btn-success" name="" value="Submit">
+
+                      <input type="hidden" name="quill_contents">
+
                     </form>
                   @endif
 
                 @else
                   @if ($uploaded->count())
 
-                    @if (Auth::user()->cabang_spesifik == 2)
-                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}", with this provided <a target="_blank" href="{{Auth::user()->inamscs[0]->submissions[0]->file_path}}">link</a>.</p>
-                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                    @if (Auth::user()->cabang == 2)
+                      <p>You have uploaded submission with description:</p>
+                      <div>{{Auth::user()->imarcs[0]->submissions[0]->title}}</div>                      
+                      <p>Submission time: {{Auth::user()->imarcs[0]->submissions[0]->created_at}}</p>
                     @else
-                      <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
-                      <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                      @if (Auth::user()->cabang_spesifik == 2)
+                        <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}", with this provided <a target="_blank" href="{{Auth::user()->inamscs[0]->submissions[0]->file_path}}">link</a>.</p>
+                        <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                      @else
+                        <p>You have uploaded "{{Auth::user()->inamscs[0]->submissions[0]->title}}"</p>
+                        <p>Submission time: {{Auth::user()->inamscs[0]->submissions[0]->created_at}}</p>
+                      @endif
                     @endif
+
 
                   @else
                   <div class="alert alert-danger">
@@ -172,9 +208,35 @@
     $(document).ready(function(){
       $("#user-files").addClass('active');
 
-
-
-
     });
   </script>
+
+  @if (Auth::user()->cabang == 2)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.js"></script>
+
+    <script>
+      const toolbarOptions = ['bold', 'italic', 'underline', 'strike'];
+
+      const quill = new Quill('#editor', {
+        theme: 'snow',        
+      });
+
+
+      $("#submission").submit(function(e) {                
+        var myEditor = document.querySelector('#editor')
+        var html = myEditor.children[0].innerHTML
+
+        if (!html.length) {
+          alert("Cannot be empty!");
+          return false;
+        }
+          
+        $("input[name='quill_contents']").val(html);
+
+      })
+
+    </script>
+
+  @endif
+
 @endsection

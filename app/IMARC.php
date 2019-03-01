@@ -16,6 +16,9 @@ class IMARC extends Model
 
     public function participants() {
       return $this->hasMany('App\IMARCParticipant', 'imarc_id', 'id');
+    }
 
+    public function submissions() {
+      return $this->hasMany('App\Submission', 'inamsc_id', 'id');
     }
 }

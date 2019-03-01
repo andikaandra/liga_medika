@@ -133,7 +133,7 @@ class AdminController extends Controller
         $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
         $newName = str_slug($data->nama).'.zip';
       } catch (\Exception $e) {
-        return response()->json(['message' => $e->getMessage()], $e->getCode());
+        return response()->json(['message' => $e->getMessage()], 500);
       }
 
       return response()->download($myFile, $newName, $headers);
@@ -199,6 +199,10 @@ class AdminController extends Controller
 
     public function publicPosterPage() {
       return view('admin.inamsc.submissions_publication_poster');
+    }
+
+    public function photographyPage() {      
+      return view('admin.imarc.submissions_photography');
     }
 
     public function resendEmails() {

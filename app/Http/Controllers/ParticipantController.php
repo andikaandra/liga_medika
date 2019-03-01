@@ -42,7 +42,12 @@ class ParticipantController extends Controller
     }
 
     public function getParticipants() {
-      $participants = Auth::user()->inamscs;
+      if (Auth::user()->cabang ==2 ) {
+        $participants = Auth::user()->imarcs;
+      } else {
+        $participants = Auth::user()->inamscs;        
+      }
+      
       return view('participant.participants', ['participants' => $participants]);
     }
 
@@ -59,7 +64,11 @@ class ParticipantController extends Controller
       $cabang_spesifik = Auth::user()->cabang_spesifik;
       $dataLomba=Lomba::find($cabang_spesifik);;
 
-      $uploaded = Auth::user()->inamscs[0]->submissions;
+      if(Auth::user()->cabang == 3)
+        $uploaded = Auth::user()->inamscs[0]->submissions;
+      else if(Auth::user()->cabang == 2)
+        $uploaded = Auth::user()->imarcs[0]->submissions;      
+      
       if ($uploaded->count()) {
         $uploaded = $uploaded[0];
       }
