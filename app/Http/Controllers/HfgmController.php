@@ -25,15 +25,19 @@ class HfgmController extends Controller
 
     
     public function registerCampaign(Request $request) {
-      $tipe_lomba = 8;
+      $tipe_lomba = 13;
       $user_id = Auth::user()->id;
 
       try {
 
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'ktp' => 'max:1100|mimes:jpeg,jpg,png',
-            'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'ktp' => 'required|max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'required|max:1100|mimes:jpeg,jpg,png',
+            'nama' => 'required',
+            'jumlah' => 'required|size:20',
+            'nama_rekening' => 'required',
+            'gelombang' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -44,7 +48,7 @@ class HfgmController extends Controller
       	}
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 1, //campaign
+          'cabang_spesifik' => $tipe_lomba, //campaign
         ]);
 
         $path = $request->file('ktp')->store('public/identifications');
@@ -81,7 +85,7 @@ class HfgmController extends Controller
     }
 
     public function registerConcert(Request $request) {
-      $tipe_lomba = 9;
+      $tipe_lomba = 14;
       $user_id = Auth::user()->id;
 
       try {
@@ -90,6 +94,10 @@ class HfgmController extends Controller
         $validator = Validator::make($request->all(), [
             'ktp' => 'max:1100|mimes:jpeg,jpg,png',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
+            'nama' => 'required',
+            'jumlah' => 'required|size:20',
+            'nama_rekening' => 'required',
+            'gelombang' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -100,7 +108,7 @@ class HfgmController extends Controller
       	}
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 2, //concert
+          'cabang_spesifik' => $tipe_lomba, //concert
         ]);
 
         $path = $request->file('ktp')->store('public/identifications');

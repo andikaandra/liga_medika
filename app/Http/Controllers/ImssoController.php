@@ -76,7 +76,7 @@ class ImssoController extends Controller
         }
 
         $user = User::find($user_id)->update([
-          'cabang_spesifik' => 8,
+          'cabang_spesifik' => $tipe_lomba,
         ]);
 
         $imsso = IMSSO::create([

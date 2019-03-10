@@ -21,16 +21,16 @@
               <li>Uploaded proof of payment file cannot exceed 1 mb.</li>
               <li>Uploaded proof of payment file has to be jpeg, jpg or png format.</li>
               <li>Uploaded participant files cannot exceed 3 mb and has to be a zip format.</li>
-              <li>Don't leave any fields empty (except marked as optional).</li>              
-
-
-            </ul>
+              <li>Don't leave any fields empty (except marked as optional).</li> </ul>
 
           </div>
         @endif
 
         <div class="alert alert-warning">
           <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMSSO - Men Futsal is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Rekening Pembayaran/ Bank Account for payment: <br> Nama: “REGISTRASI LIGA MEDIKA”, Bank
+            Mandiri, 157-00-0476595-5
+        </p>
           <hr>
           <p>IMSSO - Men Futsal wave: {{$lomba->gelombang_sekarang}}</p>
         </div>

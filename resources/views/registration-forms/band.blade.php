@@ -29,6 +29,9 @@
 
         <div class="alert alert-warning">
           <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMARC - Band is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Rekening Pembayaran/ Bank Account for payment: <br> Nama:    “REGISTRASI LIGA MEDIKA”, Bank
+            Mandiri, 157-00-0476595-5
+          </p>
           <hr>
           <p>IMARC - Band wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
@@ -82,7 +85,6 @@
                 <div class="col-sm-4 col-md-4">
                     <input type="hidden" name="gelombang" value="{{$lomba->gelombang_sekarang}}">
                     <input type="hidden" name="daftarPeserta" id="daftarPeserta">
-{{--                     <button type="button" class="btn btn-primary btn-block" id="submit">Console&emsp;<i class="fas fa-paper-plane"></i></i></button> --}}
                     <button type="submit" class="btn btn-success btn-block" id="submit">Submit&emsp;<i class="fas fa-paper-plane"></i></i></button>
                     </form>
                 </div>

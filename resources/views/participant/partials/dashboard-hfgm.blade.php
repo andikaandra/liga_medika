@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label for="">Event/ competition: </label>
-      <input type="text" disabled class="form-control" name="" value="IMARC - {{\App\Lomba::find(Auth::user()->cabang_spesifik)->nama}}">
+      <input type="text" disabled class="form-control" name="" value="HFGM - {{\App\Lomba::find(Auth::user()->cabang_spesifik)->nama}}">
     </div>
     <div class="form-group">
 

@@ -170,7 +170,7 @@
 
 
                 @elseif (Auth::user()->cabang == 4)
-                  <p>Dashboard HFGM</p>
+                @include('participant.partials.dashboard-hfgm')
                 @endif
             </div>
 

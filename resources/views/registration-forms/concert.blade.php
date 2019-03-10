@@ -13,7 +13,7 @@
 @section('content')
   <div class="content-wrapper">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12">        
         @if ($errors->all())
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
@@ -33,6 +33,9 @@
 
         <div class="alert alert-info">
           <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register Concert is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Rekening Pembayaran/ Bank Account for payment: <br> Nama: “REGISTRASI LIGA MEDIKA”, Bank
+              Mandiri, 157-00-0476595-5
+          </p>
           <hr>
           <p>HFGM Concert wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
@@ -70,7 +73,7 @@
                     <input type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
                   </div>
                   <div class="form-group">
-                    <label for="">Ticket/s Ammount</label>
+                    <label for="">Ticket/s Amount</label>
                     <input type="number" min="1" max="20" step="1" class="price form-control" placeholder="Ammount of tickets you will buy?" class="form-control" name="jumlah" value="">
                   </div>
                   <div class="form-group">

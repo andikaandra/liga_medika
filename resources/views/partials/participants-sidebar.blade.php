@@ -111,5 +111,16 @@
     @endif
       
     @endif
+
+    @if (Auth::user()->cabang == 4)
+      <li class="nav-item unclickable" id="user-team">
+        <a class="nav-link" href="#">
+          <span class="menu-title">
+            E-tickets
+          </span>
+          <i class="mdi mdi-ticket menu-icon"></i>
+        </a>
+      </li>
+    @endif
   </ul>
 </nav>
