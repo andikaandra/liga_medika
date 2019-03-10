@@ -14,12 +14,12 @@ use Auth;
 class HfgmController extends Controller
 {
     public function registerCampaignPage(){
-        $lomba = Lomba::where('nama', 'HFGM')->first();
+        $lomba = Lomba::find(13);
         return view('registration-forms.campaign', compact('lomba'));
     }
 
     public function registerConcertPage(){
-        $lomba = Lomba::where('nama', 'HFGM')->first();
+        $lomba = Lomba::find(14);
         return view('registration-forms.concert', compact('lomba'));
     }
 

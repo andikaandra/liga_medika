@@ -70,8 +70,8 @@
                     <input type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
                   </div>
                   <div class="form-group">
-                    <label for="">Ticket/s Ammount</label>
-                    <input type="text" class="price form-control" placeholder="Ammount of tickets you will buy?" class="form-control" name="jumlah" value="">
+                    <label for="">Ticket/s Amount</label>
+                    <input type="number" min="1" max="20" step="1" class="price form-control" placeholder="Ammount of tickets you will buy?" class="form-control" name="jumlah" value="">
                   </div>
                   <div class="form-group">
                     <label for="">Scan Student ID card/ KTP</label>
