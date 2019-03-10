@@ -19,27 +19,52 @@ class InamscController extends Controller
 {
     public function registerVideoPublikasiPage(){
         $lomba = Lomba::find(2);
-        return view('registration-forms.videoPublikasi', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.videoPublikasi', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerPosterPublicationPage(){
         $lomba = Lomba::find(3);
-        return view('registration-forms.posterPublication', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.posterPublication', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerLiteratureReviewPage(){
         $lomba = Lomba::find(4);
-        return view('registration-forms.literatureReview', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.literatureReview', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerResearchPosterPage(){
         $lomba = Lomba::find(5);
-        return view('registration-forms.researchPoster', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.researchPoster', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerSymposiumPage() {
       $lomba = Lomba::find(1);
-      return view('registration-forms.symposium', ['lomba' => $lomba]);
+      if ($lomba->status_pendaftaran) {
+        return view('registration-forms.symposium', ['lomba' => $lomba]);
+      }
+      else{
+        return redirect()->action('PagesController@index');
+      }
     }
 
     // register current user to inamsc

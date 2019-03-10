@@ -15,12 +15,22 @@ class HfgmController extends Controller
 {
     public function registerCampaignPage(){
         $lomba = Lomba::find(13);
-        return view('registration-forms.campaign', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.campaign', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerConcertPage(){
         $lomba = Lomba::find(14);
-        return view('registration-forms.concert', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.concert', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function getCampaign() {

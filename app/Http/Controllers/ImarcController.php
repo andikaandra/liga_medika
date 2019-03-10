@@ -18,22 +18,42 @@ class ImarcController extends Controller
 
     public function registerImarcPhotographyPage(){
         $lomba = Lomba::find(9);
-        return view('registration-forms.photography', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.photography', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImarcDancePage(){
         $lomba = Lomba::find(10);
-        return view('registration-forms.traditional-dance', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.traditional-dance', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImarcVocalPage(){
         $lomba = Lomba::find(11);
-        return view('registration-forms.vocal-group', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.vocal-group', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImarcBandPage(){
         $lomba = Lomba::find(12);
-        return view('registration-forms.band', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.band', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImarcPhotography(Request $request) {
