@@ -63,6 +63,19 @@
         </ul>
       </div>
     </li>
+    <li class="nav-item" id="admin-hfgm">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic8" aria-expanded="false" aria-controls="ui-basic8">
+        <span class="menu-title">HFGM</span>
+        <i class="menu-arrow"></i>
+        <i class="mdi mdi-library-books menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic8">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.campaign')}}">Campaign</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.concert')}}">Concert</a></li>
+        </ul>
+      </div>
+    </li>
     <li class="nav-item" id="admin-submissions">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic5" aria-expanded="false" aria-controls="ui-basic5">
         <span class="menu-title">Submissions</span>

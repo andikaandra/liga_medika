@@ -111,6 +111,18 @@ class AdminController extends Controller
         return view('admin.imsso.verification_men_futsal', compact('title'));
     }
 
+    public function verifHfgmCampaignPage()
+    {
+        $title = "Verification - HFGM Campaign";
+        return view('admin.hfgm.verification_campaign', compact('title'));
+    }
+
+    public function verifHfgmConcertPage()
+    {
+        $title = "Verification - HFGM Concert";
+        return view('admin.hfgm.verification_concert', compact('title'));
+    }
+
     public function getInamscFiles($id)
     {
       try {
@@ -168,6 +180,25 @@ class AdminController extends Controller
         // }
         if ($type=="ktp") {
             $path = Symposium::find($id);
+            $path = $path->ktp;
+        }
+        if ($type=="payment") {
+            $path = Payment::find($id);
+            $path = $path->location;
+        }
+        return view('admin.view_uploaded_file', compact('path'));
+    }
+
+    public function viewUploadedFilehfgm($type, $id)
+    {
+        // $path='';
+        // $path = Symposium::find($id);
+        // $user_id = $path->user_id;
+        // if (!$path) {
+        //   return "Not found";
+        // }
+        if ($type=="ktp") {
+            $path = HFGM::find($id);
             $path = $path->ktp;
         }
         if ($type=="payment") {

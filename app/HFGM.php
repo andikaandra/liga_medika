@@ -8,4 +8,8 @@ class HFGM extends Model
 {
     protected $table = "hfgm";
     protected $fillable = ['user_id', 'type', 'nama', 'ktp', 'status_pembayaran', 'jumlah_tiket', 'gelombang'];
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
 }

@@ -23,6 +23,92 @@ class HfgmController extends Controller
         return view('registration-forms.concert', compact('lomba'));
     }
 
+    public function getCampaign() {
+      return response()->json(['data' => HFGM::with('user:id,email')->where('type','1')->get()]);
+    }
+
+    public function getConcert() {
+      return response()->json(['data' => HFGM::with('user:id,email')->where('type','2')->get()]);
+    }
+
+    public function findCampaign($id) {
+      $campaign = HFGM::find($id); //find campaign data
+      $payment = Payment::where('user_id', $campaign->user_id)->first(); //get payment for user
+      return response()->json(['campaign_data' => $campaign, 'payment' => $payment]);
+    }
+
+    public function acceptCampaign($id) {
+      // look for campaign data and verify it
+      $campaign = HFGM::find($id);
+      // verify user aswell
+      User::find($campaign->user_id)
+      ->update([
+        'lomba_verified' => 1
+      ]);
+
+      $campaign->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineCampaign($id) {
+      // look for campaign data and verify it
+      $campaign = HFGM::find($id);
+      // verify user aswell
+      User::find($campaign->user_id)
+      ->update([
+        'lomba_verified' => -1
+      ]);
+
+      $campaign->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function findConcert($id) {
+      $concert = HFGM::find($id); //find concert data
+      $payment = Payment::where('user_id', $concert->user_id)->first(); //get payment for user
+      return response()->json(['concert_data' => $concert, 'payment' => $payment]);
+    }
+
+    public function acceptConcert($id) {
+      // look for concert data and verify it
+      $concert = HFGM::find($id);
+      // verify user aswell
+      User::find($concert->user_id)
+      ->update([
+        'lomba_verified' => 1
+      ]);
+
+      $concert->update([
+        'status_pembayaran' => 1,
+        'status_verif' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function declineConcert($id) {
+      // look for concert data and verify it
+      $concert = HFGM::find($id);
+      // verify user aswell
+      User::find($concert->user_id)
+      ->update([
+        'lomba_verified' => -1
+      ]);
+
+      $concert->update([
+        'status_pembayaran' => -1,
+        'status_verif' => -1
+      ]);
+
+      return response()->json(['message' => 'ok']);
+    }
+
     
     public function registerCampaign(Request $request) {
       $tipe_lomba = 13;
@@ -32,10 +118,10 @@ class HfgmController extends Controller
 
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'ktp' => 'required|max:1100|mimes:jpeg,jpg,png',
-            'bukti_pembayaran' => 'required|max:1100|mimes:jpeg,jpg,png',
+            'ktp' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
             'nama' => 'required',
-            'jumlah' => 'required|size:20',
+            'jumlah' => 'required',
             'nama_rekening' => 'required',
             'gelombang' => 'required'
         ]);
@@ -95,7 +181,7 @@ class HfgmController extends Controller
             'ktp' => 'max:1100|mimes:jpeg,jpg,png',
             'bukti_pembayaran' => 'max:1100|mimes:jpeg,jpg,png',
             'nama' => 'required',
-            'jumlah' => 'required|size:20',
+            'jumlah' => 'required',
             'nama_rekening' => 'required',
             'gelombang' => 'required'
         ]);

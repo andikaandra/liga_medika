@@ -103,7 +103,23 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('imsso/imsso/decline/{id}', 'ImssoController@declineImsso');
 
 
+  //verifikasi hfgm
+  Route::get('/verification/campaign', 'AdminController@verifHfgmCampaignPage')->name('verif.campaign');
+  Route::get('/verification/concert', 'AdminController@verifHfgmConcertPage')->name('verif.concert');
+
+  Route::get('hfgm/campaign', 'HfgmController@getCampaign');
+  Route::get('hfgm/concert', 'HfgmController@getConcert');
+  Route::get('hfgm/campaign/{id}', 'HfgmController@findCampaign');
+  Route::get('hfgm/concert/{id}', 'HfgmController@findConcert');
+
+  Route::put('hfgm/campaign/accept/{id}', 'HfgmController@acceptCampaign');
+  Route::put('hfgm/campaign/decline/{id}', 'HfgmController@declineCampaign');
+
+  Route::put('hfgm/concert/accept/{id}', 'HfgmController@acceptConcert');
+  Route::put('hfgm/concert/decline/{id}', 'HfgmController@declineConcert');
+
   Route::get('/view/symposium/image/{type}/{id}', 'AdminController@viewUploadedFilesymposium');
+  Route::get('/view/hfgm/image/{type}/{id}', 'AdminController@viewUploadedFilehfgm');
   Route::get('/view/image/{type}/{id}', 'AdminController@viewUploadedEducationAndLitrev');
 
 
