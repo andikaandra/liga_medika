@@ -38,7 +38,7 @@
 					</h2>	
 				<p class="text-white link-nav mb-5"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('imsso')}}"> IMSSO</a></p>
 				<p class="text-justify text-white about mb-3" style="font-size: 16px">
-					Indonesian Medical Student Sports Olympiad (IMSSO) IMSSO merupakan kompetisi olahraga tingkat nasional yang terdiri dari 3 cabang untuk dilombakan, yaitu Basket Putra, Basket Putri dan Futsal Putra dengan sasaran mahasiswa Kedokteran dan Kedokteran Gigi se-Indonesia. Acara akan berlangsung selama 8 hari.
+					Indonesian Medical Student Sports Olympiad (IMSSO) IMSSO merupakan kompetisi olahraga tingkat nasional yang terdiri dari 3 cabang untuk dilombakan, yaitu Basket Putra, Basket Putri dan Futsal Putra dengan sasaran mahasiswa Kedokteran dan Kedokteran Gigi se-Indonesia. Acara akan berlangsung pada tanggal 19-25 Agustus.
 				</p>
 {{-- 				<a class="guideline-btn mr-3 mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a> --}}
 				<a href="{{url('register')}}" class="imsso-btn">Register IMSSO</a>
