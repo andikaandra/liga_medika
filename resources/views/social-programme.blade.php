@@ -85,7 +85,7 @@
 						Museum of National Awakening atau yang sering disebut sebagai Museum Kebangkitan Nasional merupakan gedung yang dibangun sebagai monumen dari tempat lahir dan berkembangnya kesadaran nasional serta ditemukannya organisasi pergerakan yang dikenal sebagai Boedi Oetomo. Dahulu, bangunan ini merupakan sekolah kedokteran yang didirikan Belanda dengan nama Sekolah Dokter Bumiputra atau disebut STOVIA yang merupakan singkatan dari School tot Opleiding van Inlandsche Artsen.</p>
 				</div>
 			</div>
-<hr>
+		<hr>
 			<div class="row my-5 wow slideInRight">
 				<div class="col-lg-7 quote-left">
 					<h1 class="text-info mb-3">Galeri Nasional Indonesia</h1>
@@ -96,7 +96,7 @@
 					<img class="img-fluid" src="{{asset('img/ligmed/city-tour/gaalnas.jpg')}}" alt="city tour" style="width: 100%;">
 				</div>
 			</div>
-<hr>
+		<hr>
 			<div class="row my-5 wow slideInLeft">
 				<div class="col-lg-5 quote-left">
 					<img class="img-fluid" src="{{asset('img/ligmed/city-tour/monas.jpg')}}" alt="city tour" style="width: 100%;">
@@ -104,7 +104,7 @@
 				<div class="col-lg-7 quote-right">
 					<h1 class="text-info mb-3">Monumen Nasional</h1>
 					<p class="justify text-justify">
-						Monas yang merupakan singkatan dari Monumen Nasional ialah monumen peringatan dengan tinggi 132 meter yang didirikan guna mengenang perjuangan dan perlawanan dari rakyat Indonesia dalam memperebutkan kemerdekaan dari pemerintahan kolonial Hindia Belanda. Pembangunan monas dimulai dari tanggal 17 Agustus 1961 dan selesai pada tanggal 12 Juli 2075 pada pemerintahan Soekarno. Di atas tugu terdapat lidah api yang dilapisi lembaran emas yang menggambarkan semangat perjuangan rakyat Indonesia yang berapi-api.
+						Monas yang merupakan singkatan dari Monumen Nasional ialah monumen peringatan dengan tinggi 132 meter yang didirikan guna mengenang perjuangan dan perlawanan dari rakyat Indonesia dalam memperebutkan kemerdekaan dari pemerintahan kolonial Hindia Belanda. Pembangunan monas dimulai dari tanggal 17 Agustus 1961 dan selesai pada tanggal 12 Juli 1975 pada pemerintahan Soekarno. Di atas tugu terdapat lidah api yang dilapisi lembaran emas yang menggambarkan semangat perjuangan rakyat Indonesia yang berapi-api.
 					</p>
 				</div>
 			</div>

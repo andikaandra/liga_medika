@@ -149,6 +149,13 @@
                           <input type="file" name="letter_of_originality_path" value="" accept="application/zip" required>
                           <small class="form-text text-muted">Please zip your file. You can download letter of originality template <a href="{{url('users/download/letter-of-originality')}}">here</a>. Max size 3 mb.</small>
                         </div>
+                      @elseif(Auth::user()->cabang_spesifik == 3)
+                        <div class="form-group">
+                          <label for="">File to be submitted: </label> <br>
+                          <input type="file" name="file_path" value="" accept="application/zip" required>
+                          <small class="form-text text-muted">Please zip your file(s). It contains your work and letter of originality. Max size 20 mb.</small>
+                          <small class="form-text text-muted">You can download letter of originallity template <a href="{{url('users/download/letter-of-originality')}}">here</a></small>
+                        </div>
                       @else
                         <div class="form-group">
                           <label for="">File to be submitted: </label> <br>
