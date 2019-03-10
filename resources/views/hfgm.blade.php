@@ -42,7 +42,7 @@
 					</h2>
 				<p class="text-white link-nav mb-5"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('hfgm')}}"> HFGM</a></p>
 				<p class="text-justify text-white about mb-3" style="font-size: 16px">
-					Have Fun Go Med atau HFGM merupakan acara pembuka dan penutup Liga Medika dengan disertai oleh kampanye kesehatan. Adapun tagline HFGM 2019 adalah #KenaliJiwa. Rangkaian acara HFGM sendiri meliputi Opening Liga Medika, Viral Campaign, Exhibition, dan Closing Ceremony Liga Medika.
+					Have Fun Go Med atau HFGM merupakan acara pembuka dan penutup Liga Medika dengan disertai oleh kampanye kesehatan yang akan berlangsung pada tanggal 24 Agustus 2019. Adapun tagline HFGM 2019 adalah #KenaliJiwa. Rangkaian acara HFGM sendiri meliputi Opening Liga Medika, Viral Campaign, Exhibition, dan Closing Ceremony Liga Medika.
 				</p>
 {{-- 				<a class="guideline-btn mr-3 mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a> --}}
 				<a href="{{url('register')}}" class="hfgm-btn">Register HFGM</a>
