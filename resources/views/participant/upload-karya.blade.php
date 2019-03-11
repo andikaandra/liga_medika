@@ -71,7 +71,11 @@
             <strong>Failed to submit: </strong>
             <ul>
               @if ($errors->has('file_path'))
+              @if (Auth::user()->cabang_spesifik == 3)
+                <li>Uploaded file file cannot exceed 20 mb.</li>
+              @else
                 <li>Uploaded file file cannot exceed 6 mb.</li>
+              @endif                
                 <li>Uploaded file has to be zip format.</li>
               @endif
             </ul>
