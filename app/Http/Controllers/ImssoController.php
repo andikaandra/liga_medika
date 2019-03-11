@@ -17,17 +17,32 @@ class ImssoController extends Controller
 {
     public function registerImssoMenBasketballPage(){
         $lomba = Lomba::find(6);
-        return view('registration-forms.men-basketball', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.men-basketball', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImssoWomenBasketballPage(){
         $lomba = Lomba::find(7);
-        return view('registration-forms.women-basketball', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.women-basketball', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImssoMenFutsalPage(){
         $lomba = Lomba::find(8);
-        return view('registration-forms.men-futsal', compact('lomba'));
+        if ($lomba->status_pendaftaran) {
+          return view('registration-forms.men-futsal', compact('lomba'));
+        }
+        else{
+          return redirect()->action('PagesController@index');
+        }
     }
 
     public function registerImssoMenBasketball(Request $request) {
