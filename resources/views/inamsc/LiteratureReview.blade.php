@@ -8,7 +8,7 @@
                 <div class="card border-secondary">
                     <div class="card-body">
                         <div class="form-group">
-                            <h2>LITERATURE REVIEW & Research Paper</h2>
+                            <h2>Literature Review & Research Paper</h2>
                         </div>
                     </div>
                 </div>
@@ -58,12 +58,14 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class="row justify-content-center"></div>');
-            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-primary" id="'+iter+'Panel"><div class="card-body"><div class="card-title" align="center">Peserta '+iter+'</div><div class="form-group"><label for="nama'+iter+'">Nama Lengkap</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">Universitas/Perguruan Tinggi</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Jurusan/Program Studi</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Kode Ambassador</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Kode Ambassador bersifat opsional</small></div></div></div></div>');
+            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-primary" id="'+iter+'Panel"><div class="card-body"><div class="card-title" align="center">Participant '+iter+'</div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Ambassador Code</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Ambassador code is optional. If you're not referred by our ambassador, just leave this field blank.</small></div></div></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }
+
+
             var myCol = $('<div class="row justify-content-center"></div>');
-            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">File Pendukung</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">File meliputi Foto 3x4, Scan Student ID card, Scan ID card, CV, Surat keterangan mahasiswa aktif, Scan letter of originality</small></div></div>');
+            var myPanel = $('<div class="col-sm-6 col-md-6 pb-4"><div class="card border-danger"><div class="card-body"><div class="card-title" align="center"></div><div class="form-group"><label for="file">Participant\'s File</label><div class="custom-file"><input type="file" class="custom-file-input" id="file" required><label class="custom-file-label">Pilih file...</label><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV, Scan letter of originality.</small></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
     };
