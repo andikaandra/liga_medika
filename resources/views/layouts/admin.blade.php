@@ -19,7 +19,7 @@
 
     <title>Liga Medika | User Dashboard</title>
     <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/iconfonts/mdi/css/materialdesignicons.min.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/css/vendor.bundle.base.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('admin-dashboard/vendors/css/vendor.bundle.base.css')}}">
     <link rel="stylesheet" href="{{asset('admin-dashboard/css/style.css')}}">
     {{-- <link rel="shortcut icon" href="{{asset('admin-dashboard/images/favicon.png')}}"> --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.css"/>
@@ -152,12 +152,12 @@
     <form class="logout-form" action="{{url('/logout')}}" method="post">
         {{ csrf_field() }}
     </form>
-    {{-- <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.base.js')}}"></script> --}}
+    <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.base.js')}}"></script>
     {{-- <script src="{{asset('admin-dashboard/vendors/js/vendor.bundle.addons.js')}}"></script> --}}
     <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    {{-- src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> --}}
   
 
     <script src="{{asset('admin-dashboard/js/off-canvas.js')}}"></script>
