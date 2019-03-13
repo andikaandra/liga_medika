@@ -3,7 +3,7 @@
       <li class="active">Choose competition/ event</li>
       <li class="">Fill in self data and payment</li>
       <li>Data verification by Admin</li>
-      <li>Upload Files*</li>
+      <li>Upload your work*</li>
   </ul>
 </div>
 

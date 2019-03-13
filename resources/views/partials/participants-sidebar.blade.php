@@ -55,7 +55,7 @@
 
         <li class="nav-item unclickable" id="user-files">
           <a class="nav-link" href="#">
-            <span class="menu-title">Upload Files</span>
+            <span class="menu-title">Upload Your Work</span>
             <i class="mdi mdi-folder-upload menu-icon"></i>
           </a>
         </li>
@@ -89,7 +89,7 @@
 
       <li class="nav-item unclickable" id="user-files">
         <a class="nav-link" href="#">
-          <span class="menu-title">Upload Files</span>
+          <span class="menu-title">Upload Your Work</span>
           <i class="mdi mdi-folder-upload menu-icon"></i>
         </a>
       </li>

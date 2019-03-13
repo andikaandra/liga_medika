@@ -46,7 +46,7 @@
               <li class="active">Choose sub competition</li>
                <li class="active">Fill in self data</li>
                <li>Data verification by Admin</li>
-               <li>Upload files</li>
+               <li>Upload you work</li>
             </ul>
           </div>
 
