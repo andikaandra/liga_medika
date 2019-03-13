@@ -657,6 +657,10 @@ class InamscController extends Controller
       return response()->download(storage_path("app/public/committee-files/litrev.zip"));
     }
 
+    public function downloadInamscFiles() {
+      return response()->download(storage_path("app/public/committee-files/INAMSC.zip"));
+    }
+
     public function downloadTemplates() {
       return response()->download(storage_path("app/public/committee-files/templates.zip"));
     }

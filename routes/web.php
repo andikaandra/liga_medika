@@ -160,7 +160,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
 
-      Route::get('users/inamsc/literature-review/files', 'InamscController@downloadLitrevFiles');
+      Route::get('users/inamsc/literature-review/files', 'InamscController@downloadInamscFiles');
 
 
 
