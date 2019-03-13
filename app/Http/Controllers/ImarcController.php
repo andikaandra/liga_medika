@@ -79,9 +79,9 @@ class ImarcController extends Controller
                       ->withErrors($validator)
                       ->withInput();
         }
-        
+
         $rules = [];
-        
+
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
             $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
             $rules['nama'.$i] = 'bail|required';
