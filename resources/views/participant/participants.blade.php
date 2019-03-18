@@ -60,7 +60,7 @@
                       <input class="form-control" type="text" disabled name="" value="{{$p->nama}}">
                     </div>
                     <div class="form-group">
-                      <label for="">Email: </label>
+                      <label for="">Universitas: </label>
                       <input class="form-control" type="text" disabled name="" value="{{$p->universitas}}">
                     </div>
                     <div class="form-group">
