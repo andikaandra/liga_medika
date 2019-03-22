@@ -22,6 +22,7 @@ Route::get('imsso', 'PagesController@imsso');
 Route::get('hfgm', 'PagesController@hfgm');
 Route::get('social-programme', 'PagesController@inamscSocialProgramme');
 Route::get('gallery', 'PagesController@gallery');
+Route::get('faq', 'PagesController@faq');
 
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
@@ -161,7 +162,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
 
-      Route::get('users/inamsc/literature-review/files', 'InamscController@downloadLitrevFiles');
+      Route::get('users/inamsc/literature-review/files', 'InamscController@downloadInamscFiles');
 
 
 

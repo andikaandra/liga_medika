@@ -20,7 +20,7 @@
           <div class="alert alert-danger">
             <strong>Failed to submit: </strong>
             <ul>
-              <li>Uploaded files cannot exceed 3 mb and has to be a zip format.</li>
+              <li>Uploaded files cannot exceed 5 mb and has to be a zip format.</li>
               <li>Don't leave any fields empty (except marked as optional).</li>
             </ul>
           </div>
@@ -46,7 +46,7 @@
               <li class="active">Choose sub competition</li>
                <li class="active">Fill in self data</li>
                <li>Data verification by Admin</li>
-               <li>Upload files</li>
+               <li>Upload you work</li>
             </ul>
           </div>
 
@@ -99,7 +99,7 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class=""></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Ambassador Code</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Ambassador code is optional</small></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta'+iter+'" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV. (Compressed as .zip file). Max size 3 mb</small><a href="{{url('users/inamsc/literature-review/files')}}">Download file templates</a></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="kode'+iter+'">Ambassador Code</label><input type="text" class="form-control" id="kode'+iter+'" name="kode'+iter+'" placeholder=""><small class="form-text text-muted">Ambassador code is optional. If you are not referred by our ambassador, just leave this field blank.</small></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta'+iter+'" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID card, Scan ID card, CV. (Compressed as .zip file). Max size 5 mb</small><a href="{{url('users/inamsc/literature-review/files')}}">Download file templates</a></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }

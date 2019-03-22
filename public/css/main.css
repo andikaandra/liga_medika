@@ -3720,6 +3720,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-color: rgba(59, 33, 33, 0.8);
 }
 
+.banner-area-faq {
+  background: url(../img/faq.jpeg) center;
+  background-size: cover;
+}
+
+
+.banner-area-faq .overlay {
+  background-color: rgba(100, 112, 51, 0.8);
+}
+
 
 .banner-area-imarc {
   background: url(../img/ligmed/imarc/bg-imarc.jpeg) center;
