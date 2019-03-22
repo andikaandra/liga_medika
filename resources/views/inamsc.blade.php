@@ -52,6 +52,8 @@
 				<br>
 				
 				<p style="color: white">Download CV Format, Letter of Originality Template, Abstract and Preliminary Guideline INAMSC 2019</p><a href="{{url('users/inamsc/literature-review/files?v=1.1')}}" class="btn btn-warning">Download Here</a>
+				<br>
+				<a href="{{url('/inamsc-ambassador')}}" class="inamsc-ambassador-btn mt-5 ">INAMSC Ambassador</a>
 
 			</div>
 		</div>

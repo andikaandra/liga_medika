@@ -49,27 +49,14 @@
 
 @section('content')
 	<!-- start banner Area -->
-<section class="banner-area-inamsc relative" id="home">	
+<section class="banner-area-inamsc-ambassador relative" id="home">	
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12 inamsc-mobile">
-					<h2 class="text-white">
-					Indonesian International (Bio)Medical Students’ Congress	
-					</h2>	
-				<p class="text-white link-nav mb-5"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc')}}"> INAMSC</a></p>
-				<p class="text-justify text-white about mb-3" style="font-size: 16px">
-					INAMSC (Indonesian International (Bio)Medical Students’ Congress) 2019 is the seventh annual scientific subprogram of Liga Medika 2019. INAMSC is the biggest scientific event held by medical students in Indonesia. INAMSC 2019 is going to be held in Faculty of Medicine University of Indonesia, Jakarta on 22 - 25 August 2019. As the biggest scientific platform in Indonesia intended for international and national medical and biomedical students, INAMSC offers the opportunity for students majoring in medical and biomedical sciences all across the globe to engage in scientific discussions and to exchange knowledge. Research enthusiasts around the world are welcomed to participate in this event. 
-					This year INAMSC 2019 theme is <strong style="font-weight: 1000; font-size: 16px; ; padding: 2px">Psychiatry</strong>
-					With the theme of Psychiatry, we wish to raise awareness on Mental Health prevention, diagnosis, and therapy. 
-					INAMSC 2019 consists of four competitions, symposium workshop, and social program.
-				</p>
-				<a class="guideline-btn mb-3" href="{{url('inamsc/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
-				<a href="{{url('register')}}" class="inamsc-btn mb-3">Register INAMSC</a>		
-				<br>
-				
-				<p style="color: white">Download CV Format, Letter of Originality Template, Abstract and Preliminary Guideline INAMSC 2019</p><a href="{{url('users/inamsc/literature-review/files')}}" class="btn btn-warning">Download Here</a>
-
+					<h2 class="text-white">INAMSC Ambassadors</h2>
+{{-- 				<p class="text-white link-nav mb-5"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc')}}"> INAMSC</a></p> --}}
+				<br><br><br><br>
 			</div>
 		</div>
 		</div>
@@ -83,7 +70,7 @@
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">
 					<div class="title text-center mb-10">
-						<h1>INAMSC Ambassadors</h1>
+						<h1></h1>
 						<hr>		
 					</div>
 				</div>
