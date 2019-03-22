@@ -51,7 +51,7 @@
 				<a href="{{url('register')}}" class="inamsc-btn mb-3">Register INAMSC</a>		
 				<br>
 				
-				<p style="color: white">Download CV Format, Letter of Originality Template, Abstract and Preliminary Guideline INAMSC 2019</p><a href="{{url('users/inamsc/literature-review/files')}}" class="btn btn-warning">Download Here</a>
+				<p style="color: white">Download CV Format, Letter of Originality Template, Abstract and Preliminary Guideline INAMSC 2019</p><a href="{{url('users/inamsc/literature-review/files?v=1.1')}}" class="btn btn-warning">Download Here</a>
 
 			</div>
 		</div>
