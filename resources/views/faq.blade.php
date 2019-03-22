@@ -1,23 +1,33 @@
 @extends('layouts.app2')
 
-
 @section('style')
-    <style>
-    
+	<style>
+	.banner-area {
+	    border-bottom: none !important;
+	}
     .text-info-inamsc {
 		color: #ee2427 !important;
-	}
+    }
     
-    </style>
+    #accordion .btn {
+        overflow-wrap: break-word;
+        white-space:normal;
+
+    }
+
+    .btn-link[aria-expanded="true"] {
+        font-weight: 600 !important; 
+    }
+
+	</style>
 @endsection
 
 @section('content')
-<!-- start banner Area -->
-<section class="banner-area-faq relative " id="home">	
+	<section class="banner-area-faq relative " id="home">	
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
-            <div class="about-content col-lg-12 inamsc-mobile">
+            <div class="about-content col-lg-12">
                 <h2 class="text-white">
                 Frequently Asked Questions
                 </h2>	                    
@@ -106,6 +116,7 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
+            <img class="img-fluid" src="{{asset('img/visa_indo.jpg')}}" alt="country indonesia visa">
                 <p>
                     You can visit the link bellow for more detail information. 
                     <a href="https://en.wikipedia.org/wiki/Visa_policy_of_Indonesia" target="_blank">
@@ -157,10 +168,11 @@
         </div>
     </div>		
 </section>
-
-<br>
 @endsection
 
+
 @section('script')
-    
+	<script>
+		$("#nav-gallery").addClass("menu-active");
+	</script>
 @endsection
