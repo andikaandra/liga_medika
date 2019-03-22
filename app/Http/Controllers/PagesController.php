@@ -14,6 +14,10 @@ class PagesController extends Controller
         return view('inamsc');
     }
 
+    public function inamscAmbassador() {
+        return view('ambassadors');
+    }
+
     public function imarc() {
         return view('imarc');
     }
