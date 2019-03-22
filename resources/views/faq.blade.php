@@ -173,6 +173,6 @@
 
 @section('script')
 	<script>
-		$("#nav-gallery").addClass("menu-active");
+		$("#nav-faq").addClass("menu-active");
 	</script>
 @endsection
