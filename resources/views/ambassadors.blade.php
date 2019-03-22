@@ -54,8 +54,8 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12 inamsc-mobile">
-					<h2 class="text-white">INAMSC Ambassadors</h2>
-{{-- 				<p class="text-white link-nav mb-5"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('inamsc')}}"> INAMSC</a></p> --}}
+					<h2 class="text-white">INAMSC Ambassadors Program</h2>
+
 				<br><br><br><br>
 			</div>
 		</div>
