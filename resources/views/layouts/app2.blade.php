@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">					        
-    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.7">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}?v=1.0.8">
     <link rel="stylesheet" href="{{asset('wow/css/libs/animate.css')}}">
         
         @yield('style')
@@ -97,6 +97,8 @@
                     <li id="nav-hfgm"><a href="{{url('hfgm')}}" >HFGM</a></li>
                     <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
+                    <li id="nav-faq"><a href="{{url('faq')}}">FAQ</a></li>
+                    
                     @guest                  
                         <li id="nav-login"><a href="{{('login')}}"><strong>Login</strong></a></li>
                     @else
