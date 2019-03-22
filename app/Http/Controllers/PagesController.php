@@ -33,4 +33,8 @@ class PagesController extends Controller
     public function gallery() {
         return view('gallery');
     }
+
+    public function faq() {
+        return view('faq');
+    }
 }
