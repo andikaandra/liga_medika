@@ -107,7 +107,7 @@ class AdminController extends Controller
 
     public function verifImssoMenFutsalPage()
     {
-        $title = "Verification - IMSSO Men Futsal";
+        $title = "Verification - IMSSO Mini Soccer";
         return view('admin.imsso.verification_men_futsal', compact('title'));
     }
 
