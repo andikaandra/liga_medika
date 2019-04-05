@@ -27,6 +27,7 @@ Route::get('faq', 'PagesController@faq');
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 Route::get('inamsc/guidelines', 'InamscController@downloadGuidelines');
+Route::get('imarc/guidelines', 'ImarcController@downloadGuidelines');
 
 // admin
 Route::prefix('admin')->middleware(['admin_only'])->group(function () {
@@ -163,7 +164,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
       Route::get('users/inamsc/literature-review/files', 'InamscController@downloadInamscFiles');
-
+      Route::get('users/imarc/bundle/files', 'ImarcController@downloadImarcFiles');
 
 
 // participant

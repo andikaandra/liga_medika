@@ -523,4 +523,14 @@ class ImarcController extends Controller
       return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
     }
 
+    public function downloadGuidelines() {
+      $myFile = storage_path("app/public/committee-files/Peraturan Umum IMARC 2019.pdf");
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      return response()->download(storage_path("app/public/committee-files/Peraturan Umum IMARC 2019.pdf", 'Peraturan Umum IMARC 2019.pdf', $headers));      
+    }
+
+    public function downloadImarcFiles() {
+      return response()->download(storage_path("app/public/committee-files/IMARC.zip"));
+    }
+
 }
