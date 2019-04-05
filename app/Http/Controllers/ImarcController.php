@@ -56,6 +56,10 @@ class ImarcController extends Controller
         }
     }
 
+    public function downloadTemplates() {
+      return response()->download(storage_path("app/public/committee-files/imarc-templates.zip"));
+    }
+
     public function registerImarcPhotography(Request $request) {
       $tipe_lomba = 9;
       $user_id = Auth::user()->id;

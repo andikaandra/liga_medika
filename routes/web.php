@@ -220,6 +220,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
 
       Route::get('inamsc/files', 'InamscController@downloadTemplates');
+      Route::get('imarc/files', 'ImarcController@downloadTemplates');
 
       //imarc
       Route::get('imarc/photography', 'ImarcController@registerImarcPhotographyPage');
