@@ -83,4 +83,8 @@ class ParticipantController extends Controller
       return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_First Author_Institution.docx"));
     }
 
+    public function getLetterOfOriginalityPhotography(){
+      return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_Photography.docx"));
+    }
+
 }

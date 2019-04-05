@@ -259,6 +259,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
       Route::post('imarc/submissions', 'ImarcController@uploadSubmission');
       Route::get('download/letter-of-originality', 'ParticipantController@getLetterOfOriginality');
+      Route::get('download/letter-of-originality-photography', 'ParticipantController@getLetterOfOriginalityPhotography');
 
     });
 
