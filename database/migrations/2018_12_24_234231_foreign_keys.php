@@ -53,9 +53,9 @@ class ForeignKeys extends Migration
           $table->foreign('imarc_id')->references('id')->on('imarc');
         });
 
-        Schema::table('submission', function(Blueprint $table) {
-          $table->foreign('inamsc_id')->references('id')->on('inamsc');
-        });
+        // Schema::table('submission', function(Blueprint $table) {
+        //   $table->foreign('inamsc_id')->references('id')->on('inamsc');
+        // });
     }
 
     /**

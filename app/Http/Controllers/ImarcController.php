@@ -504,7 +504,7 @@ class ImarcController extends Controller
       $path = Submission::find($id);
       $myFile = public_path().'/storage'.$path->file_path;
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-      $newName = str_slug($path->imarc->user->name).'.zip';      
+      $newName = str_slug($path->imarc->user->name).'.zip';   
       return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
     }
 
