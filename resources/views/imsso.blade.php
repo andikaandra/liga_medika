@@ -29,7 +29,7 @@
 @section('content')
 	<!-- start banner Area -->
 <section class="banner-area-imsso relative" id="home">	
-		<div class="overlay overlay-bg"></dfiv>
+		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12 inamsc-mobile">
