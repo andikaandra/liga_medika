@@ -59,7 +59,7 @@
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.men.basketball')}}">Men Basketball</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.women.basketball')}}">Women Basketball</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{route('verif.men.futsal')}}">Men Fustal</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{route('verif.men.futsal')}}">Mini Soccer</a></li>
         </ul>
       </div>
     </li>

@@ -27,12 +27,12 @@
         @endif
 
         <div class="alert alert-warning">
-          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMSSO - Men Futsal is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
+          <p>Hello <strong>{{Auth::user()->name}}</strong>. You have been assigned unique <strong>ID {{Auth::user()->id + 000}}</strong>. The amount you must transfer to register IMSSO - Mini Soccer is <strong>Rp {{ number_format($lomba->biaya + Auth::user()->id + 000 ,2,',','.')}}</strong>. This is to make sure the verification process is done fast.</p>
           <p>Rekening Pembayaran/ Bank Account for payment: <br> Nama: “REGISTRASI LIGA MEDIKA”, Bank
             Mandiri, 157-00-0476595-5
         </p>
           <hr>
-          <p>IMSSO - Men Futsal wave: {{$lomba->gelombang_sekarang}}</p>
+          <p>IMSSO - Mini Soccer wave: {{$lomba->gelombang_sekarang}}</p>
         </div>
           <form id="reset" method="post" action="{{route('reset.cabang')}}">
           @csrf
@@ -53,7 +53,7 @@
           <div class="card-body">
             <div class="page-header">
               <h3 class="page-title">
-                IMSSO - Men Futsal
+                IMSSO - Mini Soccer
               </h3>
             </div>
             <hr>
