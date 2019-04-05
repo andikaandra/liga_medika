@@ -56,8 +56,19 @@ class ImarcController extends Controller
         }
     }
 
-    public function downloadTemplates() {
-      return response()->download(storage_path("app/public/committee-files/imarc-templates.zip"));
+    public function downloadTemplatesBand() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-band.zip"));
+    }
+
+    public function downloadTemplatesDance() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-dance.zip"));
+    }
+
+    public function downloadTemplatesFoto() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-foto.zip"));
+    }
+    public function downloadTemplatesVg() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-vg.zip"));
     }
 
     public function registerImarcPhotography(Request $request) {
