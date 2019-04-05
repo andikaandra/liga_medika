@@ -479,7 +479,7 @@ class ImarcController extends Controller
           'file_path' => $path
         ]);        
       } catch (Exception $e) {
-        $message = 'Uploade photography IMARC - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        $message = 'Uploaded photography IMARC - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
         return "Upload error. Please contact commitee";
       }

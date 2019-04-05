@@ -44,8 +44,10 @@ class ParticipantController extends Controller
     public function getParticipants() {
       if (Auth::user()->cabang ==2 ) {
         $participants = Auth::user()->imarcs;
-      } else {
-        $participants = Auth::user()->inamscs;        
+      } else if(Auth::user()->cabang ==3) {
+        $participants = Auth::user()->inamscs;
+      } else if(Auth::user()->cabang ==1) {
+        $participants = Auth::user()->imsso;
       }
       
       return view('participant.participants', ['participants' => $participants]);
