@@ -54,9 +54,15 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12 inamsc-mobile">
-					<h2 class="text-white">INAMSC Ambassadors Program</h2>
-
-				<br><br><br><br>
+					<h2 class="text-white">INAMSC Ambassador Programme</h2>
+					<br><br>
+					<p class="text-justify text-white about mb-3" style="font-size: 16px">
+						INAMSC ambassadors are biomedical students from all over the world that helps promote INAMSC in their own faculty/country. With this system of ambassadorship, we are able to inform international students about the upcoming INAMSC and attract them to attend our congress.
+					</p><br>
+					<p class="text-justify text-white about mb-3" style="font-size: 16px">
+					INAMSC ambassadors have to be enthusiastic about INAMSC, as well as being creative in promoting our congress. It is not necessary for them to previously attended to our congress(es) before. However, they should tell as many biomedical students as possible about the upcoming INAMSC 2019 and hopefully most of them will join our INAMSC family. The digital promotion materials will be given by the committee and the ambassadors are expected to share them in their Facebook, Twitter and/or other social media and website. The most enthusiastic and creative ambassador will get the Best Ambassador prize.
+					</p>
+				<br><br>
 			</div>
 		</div>
 		</div>
@@ -70,7 +76,7 @@
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-60 col-lg-10">
 					<div class="title text-center mb-10">
-						<h1></h1>
+						<h1>The Ambassadors</h1>
 						<hr>		
 					</div>
 				</div>
@@ -78,59 +84,76 @@
 			<div class="international-comp">
 				<div class="row my-5 wow slideInLeft justify-content-center">
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Aakriti_R_Gogireddy_United_States_of_America.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Aakriti_R_Gogireddy_United_States_of_America.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Aakriti R Gogireddy</h4>
 						<p class="text-center font-weight-lighter">United States of America</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Abdiqani_Ainan_Somalia.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Abdiqani_Ainan_Somalia.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Abdiqani Ainan</h4>
 						<p class="text-center font-weight-lighter">Somalia</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Abhimanyu_Agrawal_India.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Abhimanyu_Agrawal_India.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Abhimanyu Agrawal</h4>
 						<p class="text-center font-weight-lighter">India</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Abu_Talha_bin_Fokhrul_Bangladesh.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Abu_Talha_bin_Fokhrul_Bangladesh.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Abu Talha bin Fokhrul</h4>
 						<p class="text-center font-weight-lighter">Bangladesh</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Belma_Strugalioska_Austria.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Ali_Raza_China.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
+						<h4 class="text-center">Ali Raza</h4>
+						<p class="text-center font-weight-lighter">China</p>
+					</div>
+
+					<div class="col-lg-3 col-md-4 col-xs-6 ">
+						<img src="{{asset('img/ligmed/inamsc/Ann_Nazmul_Islam_Bangladesh.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
+						<h4 class="text-center">Ann Nazmul Islam</h4>
+						<p class="text-center font-weight-lighter">Bangladesh</p>
+					</div>
+
+					<div class="col-lg-3 col-md-4 col-xs-6 ">
+						<img src="{{asset('img/ligmed/inamsc/Belma_Strugalioska_Austria.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Belma Strugalioska</h4>
 						<p class="text-center font-weight-lighter">Austria</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Christos_Tsagkaris_Greece.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Christos_Tsagkaris_Greece.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Christos Tsagkaris</h4>
 						<p class="text-center font-weight-lighter">Greece</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Faizan_Akram_Pakistan.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Faizan_Akram_Pakistan.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Faizan Akram</h4>
 						<p class="text-center font-weight-lighter">Pakistan</p>
 					</div>					
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Mashkur_Isa_Ukraine.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Mashkur_Isa_Ukraine.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Mashkur Isa</h4>
 						<p class="text-center font-weight-lighter">Ukraine</p>
 					</div>
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
-						<img src="{{asset('img/ligmed/inamsc/Muhammad_Umair_Ihsan_Pakistan.jpg')}}" alt="literature review" style="width: 100%;" class="zoom img-fluid mb-3">
+						<img src="{{asset('img/ligmed/inamsc/Muhammad_Umair_Ihsan_Pakistan.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
 						<h4 class="text-center">Muhammad Umair Ihsan</h4>
 						<p class="text-center font-weight-lighter">Pakistan</p>
 					</div>
 
+					<div class="col-lg-3 col-md-4 col-xs-6 ">
+						<img src="{{asset('img/ligmed/inamsc/Sergillees_Jeeph_Haiti.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
+						<h4 class="text-center">Sergillees Jeeph</h4>
+						<p class="text-center font-weight-lighter">Haiti</p>
+					</div>
 					
 				</div>
 				<hr>
