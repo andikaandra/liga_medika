@@ -1,6 +1,7 @@
 @extends('layouts.app2')
 
 @section('style')
+<<<<<<< HEAD
 	<style>
 	.banner-area {
 
@@ -8,6 +9,18 @@
 	}
 		
 	</style>
+=======
+    <style>
+        .image-hover {
+            opacity: 0.6;
+        }
+
+        .image-hover:hover {
+            opacity: 1;
+        }
+
+    </style>
+>>>>>>> 8c6ce67e19f262ec082babb00576ce1e367e4287
 @endsection
 
 @section('content')
@@ -18,9 +31,15 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
+<<<<<<< HEAD
 					<h1 class="text-white">
 						Gallery				
 					</h1>	
+=======
+					<h2 class="text-white">
+						Gallery				
+					</h2>	
+>>>>>>> 8c6ce67e19f262ec082babb00576ce1e367e4287
 				<p class="text-white link-nav"><a href="{{url('/')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{url('gallery')}}"> Gallery</a></p>
 				</div>											
 			</div>
@@ -42,6 +61,7 @@
 					</div>
 				</div>						
 				<div id="grid-container" class="row">
+<<<<<<< HEAD
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
 					<a class="single-gallery  image-hover wow flipInX" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
@@ -63,6 +83,35 @@
 					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7392.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7392.JPG')}}"></a>
 					<a class="single-gallery image-hover wow flipInX" href="img/ligmed/city-tour/IMG_7993.JPG"><img class="grid-item" src="{{asset('img/ligmed/city-tour/IMG_7993.JPG')}}"></a>
 			
+=======
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/litrev.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev.JPG')}}"></a>
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/litrev2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/litrev2.JPG')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/pposter.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter.JPG')}}"></a>
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/pposter2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/pposter2.JPG')}}"></a>
+	                
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/rpp.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp.JPG')}}"></a>
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/rpp2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/rpp2.JPG')}}"></a>
+	                
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/sym.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/sym.JPG')}}"></a>
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/workshop.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop.JPG')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/inamsc/workshop2.JPG"><img class="grid-item" src="{{asset('img/ligmed/inamsc/workshop2.JPG')}}"></a>
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/hfgm/hfgm2.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm2.jpg')}}"></a>
+
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/hfgm/hfgm3.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm3.jpg')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/hfgm/hfgm1.jpg"><img class="grid-item" src="{{asset('img/ligmed/hfgm/hfgm1.jpg')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/imsso/imsso1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso1.jpg')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/imsso/imsso2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imsso/imsso2.jpg')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/imarc/imarc1.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc1.jpg')}}"></a>
+	
+					<a class="single-gallery wow fadeIn image-hover" href="img/ligmed/imarc/imarc2.jpg"><img class="grid-item" src="{{asset('img/ligmed/imarc/imarc2.jpg')}}"></a>
+
+>>>>>>> 8c6ce67e19f262ec082babb00576ce1e367e4287
 				</div>	
 			</div>	
 		</section>

@@ -82,8 +82,8 @@
                 <div class="row align-items-center justify-content-between d-flex">
                     <div id="logo">
                     <a href="{{url('/')}}" style="color:white; text-decoration: none; font-size: 24px">
-                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="width: 60px; margin-top: -5px; display: none" />
-                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="width: 60px; margin-top: -5px;"  />
+                        <img id="logo-white" src="{{asset('img/logo.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px; display: none" />
+                        <img id="logo-black" src="{{asset('img/logo-black.png')}}" alt="" title="" style="max-width:50px; max-height:50px; width: auto; height: auto; margin-top: -5px;"  />
                         Liga Medika 2019
                     </a>
                     
@@ -91,11 +91,34 @@
                     <nav id="nav-menu-container">
                     <ul class="nav-menu">
                     <li class="" id="nav-home"><a href="{{url('/')}}">Home</a></li>
+<<<<<<< HEAD
                     <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>
                     <li id="nav-imarc"><a href="{{url('imarc')}}" >IMARC</a></li>
                     <li id="nav-imsso"><a href="{{url('imsso')}}" >IMSSO</a></li>
                     <li id="nav-hfgm"><a href="{{url('hfgm')}}" >HFGM</a></li>
                     <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>
+=======
+                    <li id="nav-inamsc"><a href="{{url('inamsc')}}" >INAMSC</a></li>                    
+
+                      <li class="menu-has-children"><a href="#">IMARC</a>
+                        <ul>
+                            <li><a class="dropdown-item under-construction" href="{{url('#')}}">Photography</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Traditional Dance</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Vocal Group</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Band</a></li>
+                        </ul>
+                      </li>	
+
+                      <li class="menu-has-children"><a href="#">IMSSO</a>
+                        <ul>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Basketball</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Women Basketball</a></li>
+                          <li><a class="dropdown-item under-construction" href="{{url('#')}}">Men Futsal</a></li>
+                        </ul>
+                      </li>	
+                    <li><a class="under-construction" href="#">HFGM</a></li>  
+                    <li id="nav-social-programme"><a href="{{url('social-programme')}}">SOCIAL PROGRAMME</a></li>                            
+>>>>>>> 8c6ce67e19f262ec082babb00576ce1e367e4287
                     <li id="nav-gallery"><a href="{{url('gallery')}}">Gallery</a></li>
                     <li id="nav-faq"><a href="{{url('faq')}}">FAQ</a></li>
                     
@@ -122,6 +145,7 @@
                     </nav><!-- #nav-menu-container -->		    		
                 </div>
             </div>
+<<<<<<< HEAD
         </header>
         <!-- #header -->
 
@@ -153,6 +177,50 @@
                             Handcrafted & Nurtured with huge <i class="fa fa-heart-o heart" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
 
                         </p>
+=======
+          </header><!-- #header -->
+
+
+          
+                                
+          
+          
+          
+                                
+
+            <div class="animated fadeIn">
+                @yield('content')
+            </div>
+
+        
+        
+
+        <!-- start footer Area -->		
+        <footer class="footer-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="single-footer-widget">
+                            <h6>Address</h6>
+                            <p style="font-weight: bold">
+                                Faculty of Medicine University Indonesia
+                            </p>
+                            <p class="text-justify">
+                                No VI, Jl. Salemba Raya, RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
+                            </p>
+                            <hr>
+                            <p class="text-justify">
+                                Rumpun Ilmu Kesehatan, Universitas Indonesia, Beji, Kota Depok, Jawa Barat - 16424
+                                {{-- Kampus Baru UI Depok, Pondok Cina, Beji, Kota Depok, Jawa Barat 16424 --}}
+                            </p>
+                            <hr>
+                            <p class="footer-text">
+                                Copyright Liga Medika &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | 
+                                Handcrafted & Nurtured with huge <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Software Silo</a> 
+
+                            </p>
+                        </div>
+>>>>>>> 8c6ce67e19f262ec082babb00576ce1e367e4287
                     </div>
                 </div>	
                 <div class="col-md-4 social-widget">
