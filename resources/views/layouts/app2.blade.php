@@ -11,7 +11,6 @@
     gtag('config', 'UA-131788430-1');
     </script>
 
-    <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <!-- Author Meta -->
     <meta name="author" content="Software Silo">
