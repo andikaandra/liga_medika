@@ -770,4 +770,24 @@ class InamscController extends Controller
     public function registrationUnsuccessfull() {
       return "Registration unsuccessful. Please contact commitee.";
     }
+
+    public function accTeam($id) {
+      User::find($id)->update([
+        'status_lolos' => 1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
+
+    public function decTeam($id) {
+      $user = User::find($id);
+      //jika telah di acc, gabisa di decline
+      if ($user->status_lolos==1) {
+        return response()->json(['message' => 'fail']);
+      }
+
+      $user->update([
+        'status_lolos' => -1
+      ]);
+      return response()->json(['message' => 'ok']);
+    }
 }

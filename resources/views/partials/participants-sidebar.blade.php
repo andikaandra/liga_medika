@@ -130,6 +130,16 @@
 
     @endif
 
+    @if (Auth::user()->status_lolos == 1)
+      <li class="nav-item" id="travel-plan-sidebar">
+        <a class="nav-link" href="{{url('users/travel-plan')}}">
+          <span class="menu-title">
+            Travel Plan
+          </span>
+          <i class="mdi mdi-ticket menu-icon"></i>
+        </a>
+      </li>
+    @endif
 
 
     @if (Auth::user()->cabang == 4)

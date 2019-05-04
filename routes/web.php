@@ -75,6 +75,9 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('inamsc/research-poster/decline/{id}', 'InamscController@declineResearch');
 
 
+  Route::put('inamsc/final/accept/{id}', 'InamscController@accTeam');
+  Route::put('inamsc/final/decline/{id}', 'InamscController@decTeam');
+
   //verifikasi imarc
   Route::get('/verification/photography', 'AdminController@verifImarcPhotographyPage')->name('verif.photography');
   Route::get('/verification/dance', 'AdminController@verifImarcDancePage')->name('verif.traditional.dance');
@@ -266,6 +269,11 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::post('imarc/submissions', 'ImarcController@uploadSubmission');
       Route::get('download/letter-of-originality', 'ParticipantController@getLetterOfOriginality');
       Route::get('download/letter-of-originality-photography', 'ParticipantController@getLetterOfOriginalityPhotography');
+
+      Route::middleware(['join_final'])->group(function () {
+        Route::get('travel-plan', 'ParticipantController@travelPlanPage');
+        Route::post('travel-plan', 'ParticipantController@travelPlan')->name('users.travel.plan');
+      });
 
     });
 

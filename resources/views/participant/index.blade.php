@@ -131,6 +131,7 @@
 
         @if (Auth::user()->cabang_spesifik)
           @include('participant.partials.account-status')
+
         @endif
 
           {{-- if user hasnt verified email, can't regis --}}

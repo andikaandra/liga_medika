@@ -87,4 +87,14 @@ class ParticipantController extends Controller
       return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_Photography.docx"));
     }
 
+
+    public function travelPlanPage() {
+      return view('participant.travel-plan');
+    }
+
+    public function travelPlan(Request $request) {
+      return $request;
+      return view('participant.dashboard');
+    }    
+
 }
