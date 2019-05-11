@@ -128,9 +128,9 @@
                 <h4>INAMSC</h4>
                 
                 <p>
-                    <strong>First Wave Submission:</strong><br> 23 rd December 2018 – 20 th January
+                    <strong>First Wave Submission:</strong><br> 23 rd December 2018 – 17 th March
                     2019 <br>
-                    <strong>Second Wave Submission:</strong> <br> 21 st January 2019 – 17 th February 2019
+                    <strong>Second Wave Submission:</strong> <br> 18 th March 2019 – 26 th May 2019
                 </p>	
                                 
                 <div class="overlay">
