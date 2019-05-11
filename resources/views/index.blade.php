@@ -3,6 +3,10 @@
 @section('style')
     <link rel="stylesheet" href="{{asset('FlipClock/compiled/flipclock.css')}}">
     <style>
+        .clock{
+            zoom: 0.75;
+            -moz-transform: scale(0.75);
+        }
         .single-service {
             height: 340px !important;
             margin-bottom: 20px;
@@ -31,12 +35,10 @@
         }
 
         @media only screen and (max-width: 1200px) {  
-
             #typed {
-            height: 100px;
-            margin-bottom: 10px;
+                height: 100px;
+                margin-bottom: 10px;
             }
-
         }
 
         .image-overlay {
@@ -80,7 +82,7 @@
                     </h1>
                 </div>  
                 <h2 class="text-white mb-3">COMING SOON THIS AUGUST</h2>
-                <div style="text-align: center;">
+                <div style="text-align: center;" class="d-none d-md-block">
                     <div class="clock" style="display: inline-block; width: auto; margin:2em;"></div>
                 </div>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
