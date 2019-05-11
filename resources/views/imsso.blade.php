@@ -45,6 +45,9 @@
 
 				<a href="{{url('register')}}" class="imsso-btn">Register IMSSO</a>
 				<br>
+
+				<p style="color: white">Letter of Originality Template, Rule and Preliminary Guideline IMSSO 2019</p><a href="{{url('users/imsso/files')}}" class="btn btn-warning">Download Here</a>
+				<br>
 			</div>
 		</div>
 		</div>
