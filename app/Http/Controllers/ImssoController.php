@@ -352,4 +352,14 @@ class ImssoController extends Controller
       return response()->json(['message' => 'ok']);
     }
 
+    public function downloadGuidelines() {
+      $myFile = storage_path("app/public/committee-files/Persyaratan Pendaftaran IMSSO Liga Medika 2019.pdf");
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      return response()->download(storage_path("app/public/committee-files/Persyaratan Pendaftaran IMSSO Liga Medika 2019.pdf", 'Persyaratan Pendaftaran IMSSO Liga Medika 2019.pdf', $headers));      
+    }
+
+    public function downloadTemplates() {
+      return response()->download(storage_path("app/public/committee-files/imsso-template.zip"));
+    }
+
 }
