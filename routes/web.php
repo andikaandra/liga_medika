@@ -169,6 +169,7 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
       Route::get('users/inamsc/literature-review/files', 'InamscController@downloadInamscFiles');
       Route::get('users/imarc/bundle/files', 'ImarcController@downloadImarcFiles');
+      Route::get('users/imsso/files', 'ImssoController@downloadTemplates');
 
 
 // participant
@@ -229,7 +230,7 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('imarc/files/dance', 'ImarcController@downloadTemplatesDance');
       Route::get('imarc/files/foto', 'ImarcController@downloadTemplatesFoto');
       Route::get('imarc/files/vg', 'ImarcController@downloadTemplatesVg');
-      Route::get('imsso/files', 'ImssoController@downloadTemplates');
+      
 
 
       //imarc
