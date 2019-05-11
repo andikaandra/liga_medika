@@ -1,6 +1,7 @@
 @extends('layouts.app2')
 
 @section('style')
+    <link rel="stylesheet" href="{{asset('FlipClock/compiled/flipclock.css')}}">
     <style>
         .single-service {
             height: 340px !important;
@@ -79,7 +80,9 @@
                     </h1>
                 </div>  
                 <h2 class="text-white mb-3">COMING SOON THIS AUGUST</h2>
-
+                <div style="text-align: center;">
+                    <div class="clock" style="display: inline-block; width: auto; margin:2em;"></div>
+                </div>
                 <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
                 
   
@@ -287,12 +290,25 @@
 
 @section('script')
 <script>
-
   $("#nav-home").addClass("menu-active");
-
-
-    
 </script>    
-        
+<script src="{{asset('FlipClock/compiled/flipclock.js')}}"></script>
+<script type="text/javascript">
+    var clock;
 
+    $(document).ready(function() {
+        var currentDate = new Date();
+
+        var futureDate  = new Date(currentDate.getFullYear(), 7, 18);
+
+        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+        if (diff>0) {
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'DailyCounter',
+                countdown: true
+            });            
+        }
+    });
+</script>
 @endsection
