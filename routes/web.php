@@ -27,6 +27,8 @@ Route::get('faq', 'PagesController@faq');
 
 Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 Route::get('inamsc/guidelines', 'InamscController@downloadGuidelines');
+Route::get('imarc/guidelines', 'ImarcController@downloadGuidelines');
+Route::get('imsso/guidelines', 'ImssoController@downloadGuidelines');
 
 // admin
 Route::prefix('admin')->middleware(['admin_only'])->group(function () {
@@ -73,6 +75,9 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('inamsc/research-poster/accept/{id}', 'InamscController@acceptResearch');
   Route::put('inamsc/research-poster/decline/{id}', 'InamscController@declineResearch');
 
+
+  Route::put('inamsc/final/accept/{id}', 'InamscController@accTeam');
+  Route::put('inamsc/final/decline/{id}', 'InamscController@decTeam');
 
   //verifikasi imarc
   Route::get('/verification/photography', 'AdminController@verifImarcPhotographyPage')->name('verif.photography');
@@ -163,7 +168,8 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
 
 
       Route::get('users/inamsc/literature-review/files', 'InamscController@downloadInamscFiles');
-
+      Route::get('users/imarc/bundle/files', 'ImarcController@downloadImarcFiles');
+      Route::get('users/imsso/files', 'ImssoController@downloadTemplates');
 
 
 // participant
@@ -220,6 +226,12 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
 
       Route::get('inamsc/files', 'InamscController@downloadTemplates');
+      Route::get('imarc/files/band', 'ImarcController@downloadTemplatesBand');
+      Route::get('imarc/files/dance', 'ImarcController@downloadTemplatesDance');
+      Route::get('imarc/files/foto', 'ImarcController@downloadTemplatesFoto');
+      Route::get('imarc/files/vg', 'ImarcController@downloadTemplatesVg');
+      
+
 
       //imarc
       Route::get('imarc/photography', 'ImarcController@registerImarcPhotographyPage');
@@ -259,6 +271,12 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::post('inamsc/submissions', 'InamscController@uploadSubmission');
       Route::post('imarc/submissions', 'ImarcController@uploadSubmission');
       Route::get('download/letter-of-originality', 'ParticipantController@getLetterOfOriginality');
+      Route::get('download/letter-of-originality-photography', 'ParticipantController@getLetterOfOriginalityPhotography');
+
+      Route::middleware(['join_final'])->group(function () {
+        Route::get('travel-plan', 'ParticipantController@travelPlanPage');
+        Route::post('travel-plan', 'ParticipantController@travelPlan')->name('users.travel.plan');
+      });
 
     });
 

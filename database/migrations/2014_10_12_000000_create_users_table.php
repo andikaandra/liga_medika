@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('cabang_spesifik')->nullable(); //1 symposium, 2 vid edukasi, 3 publikasi poster, 4 litrev, 5 rpp
             $table->tinyInteger('verified')->default(0); //verifikasi akun
             $table->tinyInteger('lomba_verified')->default(0); //verifikasi oleh admin tentang lomba yang diikuti
+            $table->tinyInteger('status_lolos')->nullable();
             $table->string('email_token')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -56,6 +56,21 @@ class ImarcController extends Controller
         }
     }
 
+    public function downloadTemplatesBand() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-band.zip"));
+    }
+
+    public function downloadTemplatesDance() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-dance.zip"));
+    }
+
+    public function downloadTemplatesFoto() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-foto.zip"));
+    }
+    public function downloadTemplatesVg() {
+      return response()->download(storage_path("app/public/committee-files/imarc-template-vg.zip"));
+    }
+
     public function registerImarcPhotography(Request $request) {
       $tipe_lomba = 9;
       $user_id = Auth::user()->id;
@@ -479,7 +494,7 @@ class ImarcController extends Controller
           'file_path' => $path
         ]);        
       } catch (Exception $e) {
-        $message = 'Uploade photography IMARC - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        $message = 'Uploaded photography IMARC - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
         Log::emergency($message);
         return "Upload error. Please contact commitee";
       }
@@ -506,6 +521,16 @@ class ImarcController extends Controller
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
       $newName = str_slug($path->imarc->user->name).'.zip';   
       return response()->download(storage_path("app/public". $path->file_path, $newName, $headers));
+    }
+
+    public function downloadGuidelines() {
+      $myFile = storage_path("app/public/committee-files/Peraturan Umum IMARC 2019.pdf");
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      return response()->download(storage_path("app/public/committee-files/Peraturan Umum IMARC 2019.pdf", 'Peraturan Umum IMARC 2019.pdf', $headers));      
+    }
+
+    public function downloadImarcFiles() {
+      return response()->download(storage_path("app/public/committee-files/IMARC.zip"));
     }
 
 }

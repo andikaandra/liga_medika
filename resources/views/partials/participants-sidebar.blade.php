@@ -76,6 +76,21 @@
       </li>
       @endif
 
+    @elseif(Auth::user()->cabang == 1)
+      @if (Auth::user()->lomba_verified != 1)
+        <li class="nav-item unclickable" id="user-team">
+        <a class="nav-link" href="#">
+      @else
+        <li class="nav-item" id="user-team">
+        <a class="nav-link" href="{{url('users/participants')}}">
+      @endif  
+          <span class="menu-title">
+            My Team
+          </span>
+          <i class="mdi mdi-account-multiple menu-icon"></i>
+        </a>
+      </li>
+
     @elseif(Auth::user()->cabang == 2)
       @if (Auth::user()->lomba_verified != 1)
       <li class="nav-item unclickable" id="user-team">
@@ -86,31 +101,46 @@
           <i class="mdi mdi-account-multiple menu-icon"></i>
         </a>
       </li>
-
+      @if(Auth::user()->cabang_spesifik==9)
       <li class="nav-item unclickable" id="user-files">
         <a class="nav-link" href="#">
           <span class="menu-title">Upload Your Work</span>
           <i class="mdi mdi-folder-upload menu-icon"></i>
         </a>
       </li>
-    @else
-      <li class="nav-item" id="user-team">
-        <a class="nav-link" href="{{url('users/participants')}}">
+      @endif
+      @else
+        <li class="nav-item" id="user-team">
+          <a class="nav-link" href="{{url('users/participants')}}">
+            <span class="menu-title">
+              My Team
+            </span>
+            <i class="mdi mdi-account-multiple menu-icon"></i>
+          </a>
+        </li>
+        @if(Auth::user()->cabang_spesifik==9)
+        <li class="nav-item" id="user-files">
+          <a class="nav-link" href="{{route('users.upload.karya')}}">
+            <span class="menu-title">Submissions</span>
+            <i class="mdi mdi-folder-upload menu-icon"></i>
+          </a>
+        </li>
+        @endif
+      @endif    
+
+    @endif
+
+    @if (Auth::user()->status_lolos == 1)
+      <li class="nav-item" id="travel-plan-sidebar">
+        <a class="nav-link" href="{{url('users/travel-plan')}}">
           <span class="menu-title">
-            My Team
+            Travel Plan
           </span>
-          <i class="mdi mdi-account-multiple menu-icon"></i>
+          <i class="mdi mdi-ticket menu-icon"></i>
         </a>
       </li>
-      <li class="nav-item" id="user-files">
-      <a class="nav-link" href="{{route('users.upload.karya')}}">
-        <span class="menu-title">Submissions</span>
-        <i class="mdi mdi-folder-upload menu-icon"></i>
-      </a>
-    </li>
     @endif
-      
-    @endif
+
 
     @if (Auth::user()->cabang == 4)
       <li class="nav-item unclickable" id="user-team">

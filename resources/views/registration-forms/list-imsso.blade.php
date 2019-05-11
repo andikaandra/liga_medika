@@ -32,7 +32,7 @@
         <a href="{{url('users/imsso/men-futsal')}}">
           <div class="cabang">
         @endif
-            Men Futsal
+            Mini Soccer
           </div>
         </a>
       </div>

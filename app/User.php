@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'email_token', 'role', 'penanggung_jawab', 'universitas', 'cabang',
-        'verified', 'cabang_spesifik', 'lomba_verified'
+        'verified', 'cabang_spesifik', 'lomba_verified', 'status_lolos'
     ];
 
     /**
@@ -35,6 +35,10 @@ class User extends Authenticatable
 
     public function inamscs() {
       return $this->hasMany('App\INAMSC');
+    }
+
+    public function imsso() {
+      return $this->hasMany('App\IMSSO');
     }
 
     public function imarcs() {

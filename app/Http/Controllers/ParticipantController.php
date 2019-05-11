@@ -44,8 +44,10 @@ class ParticipantController extends Controller
     public function getParticipants() {
       if (Auth::user()->cabang ==2 ) {
         $participants = Auth::user()->imarcs;
-      } else {
-        $participants = Auth::user()->inamscs;        
+      } else if(Auth::user()->cabang ==3) {
+        $participants = Auth::user()->inamscs;
+      } else if(Auth::user()->cabang ==1) {
+        $participants = Auth::user()->imsso;
       }
       
       return view('participant.participants', ['participants' => $participants]);
@@ -80,5 +82,19 @@ class ParticipantController extends Controller
     public function getLetterOfOriginality(){
       return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_First Author_Institution.docx"));
     }
+
+    public function getLetterOfOriginalityPhotography(){
+      return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_Photography.docx"));
+    }
+
+
+    public function travelPlanPage() {
+      return view('participant.travel-plan');
+    }
+
+    public function travelPlan(Request $request) {
+      return $request;
+      return view('participant.dashboard');
+    }    
 
 }
