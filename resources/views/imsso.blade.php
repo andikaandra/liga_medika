@@ -91,7 +91,7 @@
 	        <hr>
 	        <div class="row my-5 wow slideInLeft">
 	            <div class="col-lg-5 quote-left">
-					<img class="img-fluid" src="{{asset('img/ligmed/imsso/imsso3.jpg')}}" alt="mini_soccer" style="width: 100%;">
+					<img class="img-fluid" src="{{asset('img/ligmed/imsso/imsso3ms.jpg')}}" alt="mini_soccer" style="width: 100%;">
 	            </div>
 	            <div class="col-lg-7 quote-right">
 	                <h1 class="text-info mb-3">Mini Soccer</h1>

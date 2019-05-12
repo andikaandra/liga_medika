@@ -81,7 +81,7 @@
                         Liga Medika 2019			
                     </h1>
                 </div>  
-                <h2 class="text-white mb-3">COMING SOON THIS AUGUST</h2>
+                <h2 class="text-white mb-3">COMING SOON AUGUST 18-25 2019</h2>
                 <div style="text-align: center;" class="d-none d-md-block">
                     <div class="clock" style="display: inline-block; width: auto; margin:2em;"></div>
                 </div>
