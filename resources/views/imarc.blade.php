@@ -49,7 +49,7 @@
 				<a href="{{url('register')}}" class="imarc-btn">Register IMARC</a>
 				<br>
 				
-				<p style="color: white">Letter of Originality Template, Rule and Preliminary Guideline IMARC 2019</p><a href="{{url('users/imarc/bundle/files')}}" class="btn btn-warning">Download Here</a>
+				<p style="color: white">Letter of Originality Template, Rule and Preliminary Guideline IMARC 2019</p><a href="{{url('users/imarc/bundle/files?v=1.1')}}" class="btn btn-warning">Download Here</a>
 				<br>
 			</div>
 		</div>
