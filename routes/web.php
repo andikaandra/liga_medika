@@ -184,6 +184,8 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
   Route::get('/', 'ParticipantController@index')->name('user.index');
   Route::get('/dashboard', 'ParticipantController@dashboard');
 
+  // add phone number of leader
+  Route::put('phone', 'ParticipantController@storePhoneNumber');
 
   // register cabang lomba
   Route::put('register', 'LombaController@store');

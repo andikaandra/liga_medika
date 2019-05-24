@@ -49,8 +49,10 @@ class ParticipantController extends Controller
       } else if(Auth::user()->cabang ==1) {
         $participants = Auth::user()->imsso;
       }
+
+      $has_filled_phone = Auth::user()->phone;
       
-      return view('participant.participants', ['participants' => $participants]);
+      return view('participant.participants', ['participants' => $participants, 'phone' => $has_filled_phone]);
     }
 
     public function dashboard() {
@@ -87,14 +89,20 @@ class ParticipantController extends Controller
       return response()->download(storage_path("app/public/committee-files/Letter-of-Originality_Photography.docx"));
     }
 
-
+    // TODO: Travel Plan
     public function travelPlanPage() {
       return view('participant.travel-plan');
     }
-
+    // TODO: Travel Plan
     public function travelPlan(Request $request) {
       return $request;
       return view('participant.dashboard');
-    }    
+    }
+
+    public function storePhoneNumber(Request $request) {
+      Auth::user()->phone = $request->phone;
+      Auth::user()->save();
+      return redirect()->back()->with('message', 'Phone number added!');
+    }
 
 }

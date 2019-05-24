@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('lomba_verified')->default(0); //verifikasi oleh admin tentang lomba yang diikuti
             $table->tinyInteger('status_lolos')->nullable();
             $table->string('email_token')->nullable();
+            $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

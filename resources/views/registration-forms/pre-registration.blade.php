@@ -14,6 +14,14 @@
     </h3>
   </div>
 
+  @if ($errors->any())
+  <div class="alert alert-danger">
+    @foreach ($errors->all() as $error)
+        <div>{{$error}}</div>
+    @endforeach
+  </div>
+  @endif
+
   <form class="" action="{{url('users/register')}}" method="post" autocomplete="off">
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="PUT">
@@ -50,6 +58,11 @@
       <div class="form-group">
         <label for="">University: </label>
         <input type="text" class="form-control" name="universitas" value="" required pattern=".*\S+.*" title="This field is required">
+      </div>
+      <div class="form-group">
+        <label for="phone">Contact Number of Person in Charge:</label> <br>
+        <small class="text-muted">* Person in charge is the team leader. Please provide a <strong>valid</strong> contact number, because it will be used by us to contact the team. E.g. 0811 111 1111</small>
+        <input type="text" name="phone" class="form-control" required title="This field is required" id="" pattern=".*\S+.*">
       </div>
     </div>
     <input type="submit" class="btn btn-success" name="" value="Submit" required>

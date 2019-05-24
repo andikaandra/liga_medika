@@ -6,34 +6,47 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Lomba;
+use Validator;
 
 class LombaController extends Controller
 {
   // register cabang
   public function store(Request $request) {
-    $user_id = 1;
+
+    $validator = Validator::make($request->all(), [
+      'penanggung_jawab' => 'required',
+      'cabang' => 'required',
+      'universitas' => 'required',
+      'phone' => 'required'
+  ]);
+
+  // test the validator
+  if ($validator->fails()) {
+    return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+  }
+
     if (Auth::user()) {
       $user_id = Auth::user()->id;
     }
     $user = User::find($user_id)->update([
       'penanggung_jawab' => $request->penanggung_jawab,
       'cabang' => $request->cabang,
-      'universitas' => $request->universitas
+      'universitas' => $request->universitas,
+      'phone' => $request->phone
     ]);
 
     return redirect()->back()->with('message', 'Success');
-
-    // $user = User::find($user_id);
-
-    // return response()->json(['message' => $user], 200);
   }
 
   public function resetCabang(Request $request) {
     $user = User::find($request->user_id)->update([
       'penanggung_jawab' => NULL,
       'cabang' => NULL,
-      'universitas' => NULL
-      // 'cabang_spesifik' => NULL
+      'universitas' => NULL,
+      'phone' => NULL
     ]);
 
     return redirect('users')->with('message', 'Reset Data Success!');;
