@@ -41,7 +41,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Verified</th>
+                  <th>Email Verified</th>
                   <th>Action</th>
                 </thead>
                 <tbody>
@@ -74,6 +74,10 @@
                   <div class="form-group">
                     <label for="">Name of Person in Charge:</label>
                     <input class="form-control" type="text" name="penanggung_jawab" disabled>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Contact Number:</label>
+                    <input class="form-control" type="text" name="phone" disabled>
                   </div>
                   <hr>
                   <div class="form-group">
@@ -185,6 +189,9 @@
           $("input[name='cabang_spesifik']").val("-");
           $("input[name='lomba_verified']").val("Not Submitted Yet");
         }
+
+        $("input[name='phone']").val(data.user.phone);
+        
 
         $("#modal1").modal('show');
 

@@ -256,13 +256,13 @@ class AdminController extends Controller
     }
 
     public function acceptAccount($id) {
-      $user = USER::find($id);
+      $user = User::find($id);
       $user->update(['verified' => 1]);
       return response()->json(['message' => 'ok']);
     }
 
     public function getAccountSingle($id) {
-      $user = USER::find($id);
+      $user = User::find($id);
       return response()->json(['user' => $user]);
     }
 }
