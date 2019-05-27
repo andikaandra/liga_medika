@@ -29,21 +29,21 @@
       <div class="form-group">
         <label for="">Competition/ event: </label>
         <select class="form-control" name="cabang" required>
-          @if($listLomba[0]->status_pendaftaran==0 && $listLomba[1]->status_pendaftaran==0 && $listLomba[2]->status_pendaftaran==0 && $listLomba[3]->status_pendaftaran==0 && $listLomba[4]->status_pendaftaran==0)
+{{--           @if($listLomba[0]->status_pendaftaran==0 && $listLomba[1]->status_pendaftaran==0 && $listLomba[2]->status_pendaftaran==0 && $listLomba[3]->status_pendaftaran==0 && $listLomba[4]->status_pendaftaran==0)
           <option value="3" disabled>INAMSC</option>
-          @else
+          @else --}}
           <option value="3">INAMSC</option>
-          @endif
+{{--           @endif
           @if($listLomba[8]->status_pendaftaran==0 && $listLomba[9]->status_pendaftaran==0 && $listLomba[10]->status_pendaftaran==0 && $listLomba[11]->status_pendaftaran==0)
           <option value="2" disabled>IMARC</option>
-          @else
+          @else --}}
           <option value="2">IMARC</option>
-          @endif
+{{--           @endif
           @if($listLomba[5]->status_pendaftaran==0 && $listLomba[6]->status_pendaftaran==0 && $listLomba[7]->status_pendaftaran==0)
           <option value="1" disabled>IMSSO</option>
-          @else
+          @else --}}
           <option value="1">IMSSO</option>
-          @endif
+          {{-- @endif --}}
           @if($listLomba[12]->status_pendaftaran==0 && $listLomba[13]->status_pendaftaran==0)
           <option value="4" disabled>HFGM</option>
           @else
