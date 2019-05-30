@@ -151,8 +151,14 @@
 
 					<div class="col-lg-3 col-md-4 col-xs-6 ">
 						<img src="{{asset('img/ligmed/inamsc/Sergillees_Jeeph_Haiti.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
-						<h4 class="text-center">Sergillees Jeeph</h4>
+						<h4 class="text-center">Jeeph Sergilles</h4>
 						<p class="text-center font-weight-lighter">Haiti</p>
+					</div>
+
+					<div class="col-lg-3 col-md-4 col-xs-6 ">
+						<img src="{{asset('img/ligmed/inamsc/Sirajum_Munira_Bangladesh.jpg')}}" alt="ambassador" style="width: 100%;" class="zoom img-fluid mb-3">
+						<h4 class="text-center">Sirajum Munira</h4>
+						<p class="text-center font-weight-lighter">Bangladesh</p>
 					</div>
 					
 				</div>
