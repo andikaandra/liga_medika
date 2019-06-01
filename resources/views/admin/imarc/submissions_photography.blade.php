@@ -101,7 +101,7 @@
           {data: "id"},
           {data: "name"},
           {data: "email"},
-          {data: "inamscs[0].gelombang"},
+          {data: "imarcs[0].gelombang"},
           {data: null,
             render: function(data, type, row) {
               return "<button class='btn btn-info info' submission-id='"+row.imarcs[0].submissions[0].id+"'>Info</button>"
