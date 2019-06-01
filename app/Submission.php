@@ -14,6 +14,6 @@ class Submission extends Model
   }
 
   public function imarc() {
-    return $this->belongsTo('App\IMARC', 'inamsc_id', 'id');
+    return $this->belongsTo('App\IMARC', 'imarc_id', 'id');
   }
 }

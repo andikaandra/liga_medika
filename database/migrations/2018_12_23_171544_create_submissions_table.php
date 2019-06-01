@@ -15,7 +15,8 @@ class CreateSubmissionsTable extends Migration
     {
         Schema::create('submission', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('inamsc_id');
+            $table->unsignedInteger('inamsc_id')->nullable();
+            $table->unsignedInteger('imarc_id')->nullable();
             $table->text('title');
             $table->text('file_path');
             $table->text('letter_of_originality_path')->nullable();

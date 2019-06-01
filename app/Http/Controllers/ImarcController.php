@@ -489,7 +489,7 @@ class ImarcController extends Controller
       
   
         Submission::create([
-          'inamsc_id' => Auth::user()->imarcs[0]->id,
+          'imarc_id' => Auth::user()->imarcs[0]->id,
           'title' => $request->quill_contents,
           'file_path' => $path
         ]);        
