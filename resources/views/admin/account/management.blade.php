@@ -161,11 +161,11 @@
             let temp=data.user.cabang_spesifik;
             if (data.user.cabang==1) {
               cabang = "IMSSO";
-              if(temp==1) {cabang_spesifik="Men Basketball"} else if(temp==2) {cabang_spesifik="Women Basketball"} else {cabang_spesifik="Men Futsal"}
+              if(temp==6) {cabang_spesifik="Men Basketball"} else if(temp==7) {cabang_spesifik="Women Basketball"} else {cabang_spesifik="Men Futsal"}
             }
             else if(data.user.cabang==2){
               cabang = "IMARC";
-              if(temp==1) {cabang_spesifik="Photography"} else if(temp==2) {cabang_spesifik="Traditional Dance"} else if(temp==3) {cabang_spesifik="Vocal Group"} else {cabang_spesifik="Band"}
+              if(temp==9) {cabang_spesifik="Photography"} else if(temp==10) {cabang_spesifik="Traditional Dance"} else if(temp==11) {cabang_spesifik="Vocal Group"} else {cabang_spesifik="Band"}
             }
             else if(data.user.cabang==3){
               cabang = "INAMSC";
@@ -173,7 +173,7 @@
             }
             else if(data.user.cabang==4){
               cabang = "HFGM";
-              if(temp==1) {cabang_spesifik="Campaign"} else {cabang_spesifik="Concert"}
+              if(temp==13) {cabang_spesifik="Campaign"} else {cabang_spesifik="Concert"}
             }
             $("input[name='cabang_spesifik']").val(cabang_spesifik);
             $("input[name='lomba_verified']").val((data.user.lomba_verified==1) ? ("Accepted by Admin") : ("Not Accepted Yet"));
