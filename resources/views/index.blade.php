@@ -301,7 +301,7 @@
     $(document).ready(function() {
         var currentDate = new Date();
 
-        var futureDate  = new Date(currentDate.getFullYear(), 7, 18);
+        var futureDate  = new Date(currentDate.getFullYear(), 8, 17);
 
         var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
 
