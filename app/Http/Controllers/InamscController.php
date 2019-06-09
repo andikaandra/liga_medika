@@ -396,7 +396,8 @@ class InamscController extends Controller
             'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
             'nama' => 'required',
             'nama_rekening' => 'required',
-            'jumlah_transfer' => 'required'
+            'jumlah_transfer' => 'required',
+            'workshop' => 'required',
         ], $messages);
 
         // test the validator out
@@ -428,7 +429,13 @@ class InamscController extends Controller
 
         $path = $request->file('ktp')->store('public/identifications');
 
-      
+        if ($request->workshop==1) {
+          $sertifikat = $request->accreditation;
+        }
+        else{
+          $sertifikat = 'no';
+        }
+        
         // register symposium
         Symposium::create([
           'user_id' => $user_id,
@@ -436,7 +443,9 @@ class InamscController extends Controller
           'ktp' => str_replace("public","", $path),
           'status_pembayaran' => $request->status_pembayaran,
           'gelombang' => $request->gelombang,
-          'status_pembayaran' => 0
+          'status_pembayaran' => 0,
+          'workshop' => $request->workshop,
+          'sertifikat' => $sertifikat,
         ]);
 
 
@@ -454,6 +463,7 @@ class InamscController extends Controller
         // done -> wait for admin confirmation
       } catch (\Exception $e) {
         $message = 'Symposium - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+        return $message;
         Log::emergency($message);
         return redirect()->route('regis.error');
       }

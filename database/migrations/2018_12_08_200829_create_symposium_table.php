@@ -15,6 +15,8 @@ class CreateSymposiumTable extends Migration
           $table->text('ktp');
           $table->integer('status_pembayaran');
           $table->integer('gelombang');
+          $table->integer('workshop');
+          $table->string('sertifikat')->default("no");
           $table->integer('status_verif')->default(0);
           $table->timestamps();
         });

@@ -42,6 +42,7 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Wave</th>
+                  <th>Workshop(Certificate)</th>
                   <th>Status</th>
                   <th>Action</th>
                 </thead>
@@ -103,6 +104,19 @@
           {data: 'nama'},
           {data: 'user.email'},
           {data: 'gelombang'},
+          {data: null,
+            render: function(data, type, row) {
+              if (row.workshop == 1) {
+                return `Less Stress for Future Doctors: an Introduction to PRH (${row.sertifikat})`;
+              }
+              else if (row.workshop == 2) {
+                return "Mental Health Assessment in General Practice (none)";
+              }
+              else {
+                return "Cognitive Function (none)";
+              }
+            }
+          },
           {data: 'status_verif',
             render: function(data, type, row) {
               if (data == -1) {

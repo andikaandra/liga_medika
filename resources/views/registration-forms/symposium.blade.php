@@ -64,6 +64,23 @@
 
             <form class="" action="#" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
+              <div class="form-group">
+                <label for="">Workshop Options: </label>
+                <select class="custom-select" id="workshop" name="workshop">
+                  <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option>
+                  <option value="2">Mental Health Assessment in General Practice</option>
+                  <option value="3">Cognitive Function</option>
+                </select>
+              </div>
+              <div class="form-group" id="sertifikat" style="display: block;">
+                <label for="">International Accreditation Certificate: </label>
+                <select class="custom-select" id="accreditation" name="accreditation">
+                  <option value="no" selected>No</option>
+                  <option value="yes">Yes</option>
+                </select>
+                <small>If you choose yes, you will be charged an additional Rp. 50.000,00 then you will pay <strong>Rp {{ number_format($lomba->biaya + 50000 + Auth::user()->id + 000 ,2,',','.')}}</strong></small>
+              </div>
+              <hr>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -103,4 +120,28 @@
     </div>
   </div>
 
+@endsection
+
+@section('script')
+<script>
+
+  let status = $('#workshop').val();
+  if (status==1) {
+    $('#sertifikat').css('display', 'block');
+  }
+  else{
+    $('#sertifikat').css('display', 'none');
+  }
+
+  $('#workshop').on('change', function() {
+      status = $(this).val();
+      console.log(status);
+      if (status==1) {
+        $('#sertifikat').css('display', 'block');
+      }
+      else{
+        $('#sertifikat').css('display', 'none');
+      }
+  });
+</script>
 @endsection
