@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 
+@section('style')
+<style>
+
+  .files-description {
+    display: none;
+  }
+
+</style>
+@endsection
 
 @section('navbar')
   @include('partials.participants-navbar')
