@@ -168,6 +168,12 @@
         $(".participants").html("");
 
         data.participants.forEach(function(el, idx, arr){
+          let html= '';
+
+          if (el.berkas_lengkap == "0") {
+            html = `<p>Files not complete. Description from participant ${idx+1}: ${el.deskripsi_berkas}</p>`;
+          }
+
 
           $(".participants").append(
             "<div class='participant'>"
@@ -188,6 +194,7 @@
                 "<label>Participant's File:</label><br>"+
                 '<a class="btn btn-sm btn-info" href="{{url('admin/imarc/file')}}/'+el.id+'" id="files" target="_blank" role="button">Check</a>'+
               "</div>" +
+              "<div>"+html+"</div>"+
             "</div>"
           );
 

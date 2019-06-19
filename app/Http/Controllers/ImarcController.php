@@ -130,13 +130,18 @@ class ImarcController extends Controller
           // store the participant files
           $path = $request->file('data_peserta' . $i)->store('public/imarc/photography-participants');
 
+          $deskripsi_berkas = $request->{'files_description_'.$i};
+          $files_complete = $request->{'files_complete_'.$i};
+
+
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'file_path' => str_replace("public","", $path)
-
+            'file_path' => str_replace("public","", $path),
+            'deskripsi_berkas' => $deskripsi_berkas,
+            'berkas_lengkap' => $files_complete
           ]);
         }
 
@@ -215,13 +220,19 @@ class ImarcController extends Controller
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
           // store the participant files
         $path = $request->file('data_peserta' . $i)->store('public/imarc/dance-participants');
+        
+        $deskripsi_berkas = $request->{'files_description_'.$i};
+        $files_complete = $request->{'files_complete_'.$i};
+
 
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'file_path' => str_replace("public","", $path)
+            'file_path' => str_replace("public","", $path),
+            'deskripsi_berkas' => $deskripsi_berkas,
+            'berkas_lengkap' => $files_complete
           ]);
         }
 
@@ -301,13 +312,19 @@ class ImarcController extends Controller
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
           // store the participant files
           $path = $request->file('data_peserta' . $i)->store('public/imarc/vocal-participants');
+
+
+          $deskripsi_berkas = $request->{'files_description_'.$i};
+          $files_complete = $request->{'files_complete_'.$i};
           
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'file_path' => str_replace("public","", $path)
+            'file_path' => str_replace("public","", $path),
+            'deskripsi_berkas' => $deskripsi_berkas,
+            'berkas_lengkap' => $files_complete
 
           ]);
         }
@@ -390,12 +407,18 @@ class ImarcController extends Controller
           // store the participant files
           $path = $request->file('data_peserta' . $i)->store('public/imarc/band-participants');
 
+          
+          $deskripsi_berkas = $request->{'files_description_'.$i};
+          $files_complete = $request->{'files_complete_'.$i};
+
           IMARCParticipant::create([
             'imarc_id' => $imarc->id,
             'nama' => $request->{'nama'.$i},
             'universitas' => $request->{'univ'.$i},
             'jurusan' => $request->{'jurusan'.$i},
-            'file_path' => str_replace("public","", $path)
+            'file_path' => str_replace("public","", $path),
+            'deskripsi_berkas' => $deskripsi_berkas,
+            'berkas_lengkap' => $files_complete
           ]);
         }
 

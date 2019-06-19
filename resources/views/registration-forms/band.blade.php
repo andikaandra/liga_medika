@@ -105,7 +105,7 @@
     var addCols = function (num){
         for (var iter = 1; iter <= num; iter++) {
             var myCol = $('<div class=""></div>');
-            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta'+iter+'" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID and KTP ID card, Active status letter as student from University, Letter of Agreement. (Compressed as .zip file). Max size 3 mb.</small><a href="{{url('users/imarc/files/band')}}">Download file templates</a></div></div>');
+            var myPanel = $('<div class="col-md-12"><div align="center"><strong>Participant '+iter+'</strong></div><div class="form-group"><label for="nama'+iter+'">Full Name</label><input type="text" class="form-control" id="nama'+iter+'" name="nama'+iter+'" placeholder="" required></div><div class="form-group"><label for="univ'+iter+'">University/College</label><input type="text" class="form-control" id="univ'+iter+'" name="univ'+iter+'" placeholder="" required></div><div class="form-group"><label for="jurusan'+iter+'">Department</label><input type="text" class="form-control" id="jurusan'+iter+'" name="jurusan'+iter+'" placeholder="" required></div><div class="form-group"><label for="">Participant\'s File</label><br><input type="file" accept="application/zip" name="data_peserta'+iter+'" id="file" required><small class="form-text text-muted">Files are Photo 3x4, Scan Student ID and KTP ID card, Active status letter as student from University, Letter of Agreement. (Compressed as .zip file). Max size 3 mb.</small><a href="{{url('users/imarc/files/band')}}">Download file templates</a></div><div class="form-group"><p>Click the button below if some files for this participant is not complete. You can submit it later.</p><button type="button" class="mb-2 btn btn-primary btn-not-complete" number='+iter+'>Files not complete</button><textarea class="form-control files-description number-'+iter+'" name="files_description_'+iter+'"></textarea><p style="display: none" class="help-files-text-'+iter+'">What files are missing? e.g. Scan ID card, Active status letter as student from University. Please still do upload the files you have.</p><input type="hidden" value="1" class="files_complete_'+iter+'" name="files_complete_'+iter+'"></div></div>');
             myPanel.appendTo(myCol);
             myCol.appendTo('#contentPanel');
         }
@@ -145,6 +145,23 @@
         e.preventDefault();
       }
         $('#daftarPeserta').val($('#jumlahPeserta').val());
+    });
+
+    $(document).on('click', '.btn-not-complete', function() {
+      if ($(this).text() == "Files not complete") {
+        const num = $(this).attr('number');
+        $(`.files-description.number-${num}`).show();
+        $(`.files_complete_${num}`).val("0");
+        $(`.help-files-text-${num}`).show();
+        $(this).text("Undo");
+      } else {
+        const num = $(this).attr('number');
+        $(`.files-description.number-${num}`).hide();
+        $(`.files_complete_${num}`).val("1");
+        $(`.help-files-text-${num}`).hide();
+        $(this).text("Files not complete");
+      }
+      
     });
 
 </script>
