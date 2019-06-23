@@ -174,9 +174,16 @@
             html = `<p>Files not complete. Description from participant ${idx+1}: ${el.deskripsi_berkas}</p>`;
           }
 
+          if (el.is_official) {
+            off = "[OFFICIAL] : Participant"
+          }
+          else{
+            off = "Participant"
+          }
+
           $(".participants").append(
             "<div class='participant'>"
-            + "<h5>Participant "+ parseInt(idx+1) +"</h5>"+
+            + "<h5>"+off+" "+ parseInt(idx+1) +"</h5>"+
               "<div class='form-group'>"+
                 "<label>Name</label>" +
                 "<input class='form-control' type='text' disabled value=\""+el.nama+"\">" +

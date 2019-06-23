@@ -17,7 +17,7 @@ class CreateImssoparticipantsTable extends Migration
             $table->text('file_path');
             $table->integer('berkas_lengkap')->nullable();
             $table->string('deskripsi_berkas')->nullable();
-
+            $table->integer('is_official')->default(0);
         });
     }
 

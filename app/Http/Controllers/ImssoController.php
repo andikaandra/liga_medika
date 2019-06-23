@@ -109,6 +109,13 @@ class ImssoController extends Controller
           $deskripsi_berkas = $request->{'files_description_'.$i};
           $files_complete = $request->{'files_complete_'.$i};
 
+          if ($request->{'check'.$i}) {
+            $official = 1;
+          }
+          else{
+            $official = 0;
+          }
+
           IMSSOParticipant::create([
             'imsso_id' => $imsso->id,
             'nama' => $request->{'nama'.$i},
@@ -116,7 +123,8 @@ class ImssoController extends Controller
             'jurusan' => $request->{'jurusan'.$i},
             'file_path' => str_replace("public","", $path),
             'deskripsi_berkas' => $deskripsi_berkas,
-            'berkas_lengkap' => $files_complete
+            'berkas_lengkap' => $files_complete,
+            'is_official' => $official
           ]);
         }
 
@@ -198,6 +206,13 @@ class ImssoController extends Controller
           $deskripsi_berkas = $request->{'files_description_'.$i};
           $files_complete = $request->{'files_complete_'.$i};
 
+          if ($request->{'check'.$i}) {
+            $official = 1;
+          }
+          else{
+            $official = 0;
+          }
+
           // store the participant files
           $path = $request->file('data_peserta' . $i)->store('public/imsso/women-basketball-participants');
           IMSSOParticipant::create([
@@ -207,7 +222,8 @@ class ImssoController extends Controller
             'jurusan' => $request->{'jurusan'.$i},
             'file_path' => str_replace("public","", $path),
             'deskripsi_berkas' => $deskripsi_berkas,
-            'berkas_lengkap' => $files_complete
+            'berkas_lengkap' => $files_complete,
+            'is_official' => $official
           ]);
         }
 
@@ -289,6 +305,13 @@ class ImssoController extends Controller
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
           $deskripsi_berkas = $request->{'files_description_'.$i};
           $files_complete = $request->{'files_complete_'.$i};
+
+          if ($request->{'check'.$i}) {
+            $official = 1;
+          }
+          else{
+            $official = 0;
+          }
           
           // store the participant files
           $path = $request->file('data_peserta' . $i)->store('public/imsso/men-futsal-participants');
@@ -300,7 +323,8 @@ class ImssoController extends Controller
             'jurusan' => $request->{'jurusan'.$i},
             'file_path' => str_replace("public","", $path),
             'deskripsi_berkas' => $deskripsi_berkas,
-            'berkas_lengkap' => $files_complete
+            'berkas_lengkap' => $files_complete,
+            'is_official' => $official
           ]);
         }
 
