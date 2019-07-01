@@ -20,7 +20,7 @@ class INAMSC extends Model
     }
 
     public function submissions() {
-      return $this->hasMany('App\Submission', 'inamsc_id', 'id');
+      return $this->hasMany('App\Submission', 'inamsc_id', 'id')->orderBy('created_at', 'ASC');
 
     }
 
