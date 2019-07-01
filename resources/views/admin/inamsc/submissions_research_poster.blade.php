@@ -110,7 +110,7 @@
           {data: "id"},
           {data: "name"},
           {data: "email"},
-          {data: "inamscs[0].gelombang"},
+          {data: "gelombang"},
           {data: "status_lolos",
             render: function(data, type, row) {
               if (data == 1) {
@@ -124,7 +124,7 @@
           },
           {data: null,
             render: function(data, type, row) {
-              return "<button class='btn btn-info info' user-id='"+row.id+"' submission-id='"+row.inamscs[0].submissions[0].id+"'>Info</button>"              
+              return "<button class='btn btn-info info' user-id='"+row.id+"' submission-id='"+row.id+"'>Info</button>"              
             }
           }
         ]

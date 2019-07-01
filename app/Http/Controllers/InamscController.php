@@ -14,6 +14,7 @@ use Validator;
 use Storage;
 use App\Submission;
 use Log;
+use DB;
 
 class InamscController extends Controller
 {
@@ -745,8 +746,15 @@ class InamscController extends Controller
 
     public function getInamscSubmissions($type) {
       // get educational videos data that has submission
-      $videos = User::where('cabang_spesifik', $type)
-                ->whereHas('inamscs.submissions')->with('inamscs.submissions')->get();
+      // $videos = User::where('cabang_spesifik', $type)
+      //           ->whereHas('inamscs.submissions')->with('inamscs.submissions')->orderBy('created_at', 'ASC')->get();
+
+      $videos = DB::table('users')
+          ->join('inamsc', 'inamsc.user_id', '=', 'users.id')
+          ->join('submission', 'submission.inamsc_id', '=', 'inamsc.id')
+          ->where('users.cabang_spesifik', '=', $type)
+          ->orderBy('submission.created_at', 'ASC')
+          ->get();
 
       return response()->json(['data' => $videos]);
     }
