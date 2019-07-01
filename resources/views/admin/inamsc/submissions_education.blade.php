@@ -71,6 +71,10 @@
                 <label for="">Title:</label>
                 <input type="text" class="form-control" id="title" disabled name="" value="">
               </div>
+              <div class="form-group">
+                <label for="">Time:</label>
+                <input type="text" class="form-control" id="time" disabled name="" value="">
+              </div>
               {{-- <div class="form-group">
                 <label for="">Video link:</label><br>
                 <a target="_blank" class="btn btn-info" href="#" id="video-link">Click here</a>
@@ -149,6 +153,7 @@
         path = '{{url('admin/letter-of-originality')}}/' + data.id;
         $("#loo").attr('href', path);
         $("#title").val(data.title);
+        $("#time").val(data.created_at);
         $("#modal1").modal('show');
 
       });
