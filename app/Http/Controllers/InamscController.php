@@ -746,7 +746,7 @@ class InamscController extends Controller
     public function getInamscSubmissions($type) {
       // get educational videos data that has submission
       $videos = User::where('cabang_spesifik', $type)
-                ->whereHas('inamscs.submissions')->with('inamscs.submissions')->get();
+                ->whereHas('inamscs.submissions')->with('inamscs.submissions')->orderBy('created_at', 'ASC')->get();
 
       return response()->json(['data' => $videos]);
     }
