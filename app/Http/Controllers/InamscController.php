@@ -754,6 +754,7 @@ class InamscController extends Controller
           ->join('submission', 'submission.inamsc_id', '=', 'inamsc.id')
           ->where('users.cabang_spesifik', '=', $type)
           ->orderBy('submission.created_at', 'ASC')
+          ->select('users.*', 'submission.*', 'inamsc.*', 'users.status_lolos as status_lolos_user')
           ->get();
 
       return response()->json(['data' => $videos]);

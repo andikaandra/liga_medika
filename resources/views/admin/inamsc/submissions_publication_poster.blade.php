@@ -111,7 +111,7 @@
           {data: "name"},
           {data: "email"},
           {data: "gelombang"},
-          {data: "status_lolos",
+          {data: "status_lolos_user",
             render: function(data, type, row) {
               if (data == 1) {
                 return "Finalist";
@@ -124,7 +124,7 @@
           },
           {data: null,
             render: function(data, type, row) {
-              return "<button class='btn btn-info info' user-id='"+row.id+"' submission-id='"+row.id+"'>Info</button>"
+              return "<button class='btn btn-info info' user-id='"+row.user_id+"' submission-id='"+row.id+"'>Info</button>"
             }
           }
         ]
