@@ -16,7 +16,7 @@ class JoinFinal
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::user()->status_lolos==1) {
+      if (Auth::user()->status_lolos==1 || (Auth::user()->cabang==1 && Auth::user()->lomba_verified==1)) {
         return $next($request);
       }
       if ($request->ajax()) {

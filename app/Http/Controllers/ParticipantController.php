@@ -102,14 +102,6 @@ class ParticipantController extends Controller
       return redirect()->back();
     }
 
-    public function travelPlanImarc(Request $request) {
-      IMARC::find(Auth::user()->imarcs[0]->id)
-      ->update([
-        'link_travel_plan' => $request->link
-      ]);
-      return redirect()->back();
-    }
-
     public function travelPlanImsso(Request $request) {
       IMSSO::find(Auth::user()->imsso[0]->id)
       ->update([
