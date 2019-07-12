@@ -72,6 +72,10 @@
                 <input type="text" class="form-control" id="title" disabled name="" value="">
               </div>
               <div class="form-group">
+                <label for="">Time:</label>
+                <input type="text" class="form-control" id="time" disabled name="" value="">
+              </div>
+              <div class="form-group">
                 <label for="">Submission Files:</label><br>
                 <a target="_blank" class="btn btn-info" href="" id="loo" target="_blank" role="button">Submission Files</a>
               </div>
@@ -105,8 +109,8 @@
           {data: "id"},
           {data: "name"},
           {data: "email"},
-          {data: "inamscs[0].gelombang"},
-          {data: "status_lolos",
+          {data: "gelombang"},
+          {data: "status_lolos_user",
             render: function(data, type, row) {
               if (data == 1) {
                 return "Finalist";
@@ -119,7 +123,7 @@
           },
           {data: null,
             render: function(data, type, row) {
-              return "<button class='btn btn-info info' user-id='"+row.id+"' submission-id='"+row.inamscs[0].submissions[0].id+"'>Info</button>"
+              return "<button class='btn btn-info info' user-id='"+row.user_id+"' submission-id='"+row.id+"'>Info</button>"
             }
           }
         ]
@@ -143,6 +147,7 @@
         path = '{{url('admin/inamscs')}}/' + data.id + '/download/submissions';
         $("#loo").attr('href', path);
         $("#title").val(data.title);
+        $("#time").val(data.created_at);
         $("#modal1").modal('show');
 
       });

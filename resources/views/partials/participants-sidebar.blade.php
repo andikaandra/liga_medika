@@ -130,7 +130,7 @@
 
     @endif
 
-    @if (Auth::user()->status_lolos == 1)
+    @if (Auth::user()->status_lolos==1 || (Auth::user()->cabang==1 && Auth::user()->lomba_verified==1))
       <li class="nav-item" id="travel-plan-sidebar">
         <a class="nav-link" href="{{url('users/travel-plan')}}">
           <span class="menu-title">

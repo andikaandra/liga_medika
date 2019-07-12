@@ -277,7 +277,8 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 
       Route::middleware(['join_final'])->group(function () {
         Route::get('travel-plan', 'ParticipantController@travelPlanPage');
-        Route::post('travel-plan', 'ParticipantController@travelPlan')->name('users.travel.plan');
+        Route::post('travel-plan-inamsc', 'ParticipantController@travelPlanInamsc')->name('users.travel.plan.inamsc');
+        Route::post('travel-plan-imsso', 'ParticipantController@travelPlanImsso')->name('users.travel.plan.imsso');
       });
 
     });

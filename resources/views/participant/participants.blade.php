@@ -78,7 +78,12 @@
                     $idx = 1;
                   @endphp
                   @foreach ($participants[0]->participants as $p)
-                    <h5>Participant {{$idx}}</h5>
+                    @if($p->is_official)
+                      <h5>Participant {{$idx}} ~ [OFFICIAL]</h5>
+                    @else
+                      <h5>Participant {{$idx}}</h5>
+                    @endif
+                    
                     <div class="form-group">
                       <label for="">Name: </label>
                       <input class="form-control" type="text" disabled name="" value="{{$p->nama}}">

@@ -94,9 +94,20 @@ class ParticipantController extends Controller
       return view('participant.travel-plan');
     }
     // TODO: Travel Plan
-    public function travelPlan(Request $request) {
-      return $request;
-      return view('participant.dashboard');
+    public function travelPlanInamsc(Request $request) {
+      INAMSC::find(Auth::user()->inamscs[0]->id)
+      ->update([
+        'link_travel_plan' => $request->link
+      ]);
+      return redirect()->back();
+    }
+
+    public function travelPlanImsso(Request $request) {
+      IMSSO::find(Auth::user()->imsso[0]->id)
+      ->update([
+        'link_travel_plan' => $request->link
+      ]);
+      return redirect()->back();
     }
 
     public function storePhoneNumber(Request $request) {
