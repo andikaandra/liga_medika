@@ -41,10 +41,12 @@
 					Indonesian Medical Student Sports Olympiad (IMSSO) IMSSO merupakan kompetisi olahraga tingkat nasional yang terdiri dari 3 cabang untuk dilombakan, yaitu Basket Putra, Basket Putri dan Mini Soccer dengan sasaran mahasiswa Kedokteran dan Kedokteran Gigi se-Indonesia. Acara akan berlangsung pada tanggal 17-25 Agustus.
 				</p>
 
+				<h4 class="text-white mb-3">Pastikan kalian registrasi terlebih dahulu sebelum membayar dengan memencet tombol "REGISTER IMSSO"</h4>
+
 				<a class="guideline-btn mb-3" href="{{url('imsso/guidelines')}}" data-toggle="tooltip" data-placement="top" title="Rules and relevant information are here" target="_blank">Read Guidelines</a>
 
 				<a href="{{url('register')}}" class="imsso-btn">Register IMSSO</a>
-				<br>
+				<br><br>
 
 				<p style="color: white">Letter of Originality Template, Rule and Preliminary Guideline IMSSO 2019</p><a href="{{url('users/imsso/files')}}" class="btn btn-warning">Download Here</a>
 				<br>
