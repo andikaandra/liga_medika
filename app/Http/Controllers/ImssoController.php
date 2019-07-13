@@ -79,7 +79,8 @@ class ImssoController extends Controller
             $rules['nama'.$i] = 'bail|required';
             $rules['univ'.$i] = 'bail|required';
             $rules['jurusan'.$i] = 'bail|required';
-        }
+            $rules['files_description_'.$i] = 'bail|max:255';
+          }
 
         $validator = Validator::make($request->all(), $rules);
 
@@ -178,7 +179,8 @@ class ImssoController extends Controller
             $rules['nama'.$i] = 'bail|required';
             $rules['univ'.$i] = 'bail|required';
             $rules['jurusan'.$i] = 'bail|required';
-        }
+            $rules['files_description_'.$i] = 'bail|max:255';
+          }
 
         $validator = Validator::make($request->all(), $rules);
 
@@ -279,7 +281,8 @@ class ImssoController extends Controller
             $rules['nama'.$i] = 'bail|required';
             $rules['univ'.$i] = 'bail|required';
             $rules['jurusan'.$i] = 'bail|required';
-        }
+            $rules['files_description_'.$i] = 'bail|max:255';
+          }
 
         $validator = Validator::make($request->all(), $rules);
 
