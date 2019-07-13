@@ -78,7 +78,7 @@ class ImarcController extends Controller
       try {
         // make sure file uploaded are within size limit and file type
         $validator = Validator::make($request->all(), [
-            'bukti_pembayaran' => 'bail|required|max:1100|mimes:jpeg,jpg,png',
+            'bukti_pembayaran' => 'bail|required|max:2100|mimes:jpeg,jpg,png',
             'nama_rekening' => 'bail|required',
             'jumlah_transfer' => 'bail|required'
         ]);
@@ -98,7 +98,7 @@ class ImarcController extends Controller
         $rules = [];
 
         for ($i=1; $i <=$request->daftarPeserta ; $i++) {
-            $rules['data_peserta'.$i] = 'bail|required|max:3100|mimes:zip';
+            $rules['data_peserta'.$i] = 'bail|required|max:5100|mimes:zip';
             $rules['nama'.$i] = 'bail|required';
             $rules['univ'.$i] = 'bail|required';
             $rules['jurusan'.$i] = 'bail|required';
