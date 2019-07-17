@@ -163,6 +163,16 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::get('account/data', 'AdminController@getAccount');
   Route::get('account/data/{id}', 'AdminController@getAccountSingle');
   Route::put('account/accept/{id}', 'AdminController@acceptAccount');
+
+
+  Route::get('inamsc/finalist/{id}', 'InamscController@findInamscFinalist');
+  Route::get('inamscs/finalists/{type}', 'InamscController@getInamscFinalists');
+  Route::get('inamscs/finalist/educational-videos', 'AdminController@finalistEducationalVideosPage');
+  Route::get('inamscs/finalist/literature-review', 'AdminController@finalistliteratureReviewPage');
+  Route::get('inamscs/finalist/research-paper', 'AdminController@finalistrppPage');
+  Route::get('inamscs/finalist/public-poster', 'AdminController@finalistpublicPosterPage');
+  Route::get('view/finalist/image/{id}', 'AdminController@viewUploadedFilefinalist');
+
 });
 
 

@@ -8,6 +8,7 @@ use Auth;
 use App\Payment;
 use App\Symposium;
 use App\INAMSC;
+use Validator;
 use App\IMARC;
 use App\IMSSO;
 use App\HFGM;
@@ -95,9 +96,36 @@ class ParticipantController extends Controller
     }
     // TODO: Travel Plan
     public function travelPlanInamsc(Request $request) {
+      $validator = Validator::make($request->all(), [
+          'workshop' => 'bail|required',
+          'accreditation' => 'bail|required',
+          'link' => 'bail|max:126|required',
+          'nama_rekening' => 'bail|max:126|required',
+          'jumlah_transfer' => 'bail|max:12|required',
+          'bukti_pembayaran' => 'bail|required|max:1500|mimes:jpeg,jpg,png',
+      ]);
+
+      if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        return redirect()->back();
+      }
+
+      if ($validator->fails()) {
+        return redirect()
+                    ->back()
+                    ->withErrors($validator)
+                    ->withInput();
+      }
+
+      $path = $request->file('bukti_pembayaran')->store('public/full-payments');
+
       INAMSC::find(Auth::user()->inamscs[0]->id)
       ->update([
-        'link_travel_plan' => $request->link
+        'link_travel_plan' => $request->link,
+        'workshop' => $request->workshop,
+        'accreditation' => $request->accreditation,
+        'nama_rekening' => $request->nama_rekening,
+        'jumlah_transfer' => str_replace('.','',$request->jumlah_transfer),
+        'bukti_pembayaran' => str_replace("public","", $path),
       ]);
       return redirect()->back();
     }

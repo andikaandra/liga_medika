@@ -18,6 +18,11 @@ class CreateInamscTable extends Migration
             $table->integer('status_verif')->default(0);
             $table->integer('gelombang');
             $table->text('letter_of_originality_path')->nullable();
+            $table->string('workshop')->nullable();
+            $table->string('accreditation')->nullable();
+            $table->text('nama_rekening')->nullable();
+            $table->decimal('jumlah_transfer', 15, 2)->nullable();
+            $table->text('bukti_pembayaran')->nullable();
             $table->timestamps();
         });
     }

@@ -30,7 +30,7 @@
       for more information.</p>
     <hr>
     @if(Auth::user()->status_lolos == 1)
-      <strong class="text-danger">Congratulations, your team was chosen to be a finalist, please fill your travel plan <a href="{{url('users/travel-plan')}}">Here</a></strong>
+      <strong class="text-danger">Congratulations, your team was chosen to be a finalist, please fill your travel plan and choose your workshop <a href="{{url('users/travel-plan')}}">Here</a></strong>
     @elseif(Auth::user()->status_lolos == -1)
       <strong class="text-danger">Sorry, your team cannot proceed to the next round, thanks for joining Liga Medika 2019</strong>
     @endif

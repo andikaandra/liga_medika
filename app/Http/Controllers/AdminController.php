@@ -189,6 +189,13 @@ class AdminController extends Controller
         return view('admin.view_uploaded_file', compact('path'));
     }
 
+    public function viewUploadedFilefinalist($id)
+    {
+        $inamsc = INAMSC::find($id);
+        $path = $inamsc->bukti_pembayaran;
+        return view('admin.view_uploaded_file', compact('path'));
+    }
+
     public function viewUploadedFilehfgm($type, $id)
     {
         // $path='';
@@ -231,6 +238,22 @@ class AdminController extends Controller
     public function publicPosterPage() {
       return view('admin.inamsc.submissions_publication_poster');
     }
+
+    public function finalistEducationalVideosPage() {
+      return view('admin.inamsc.finalist_education');
+    }
+
+    public function finalistliteratureReviewPage() {
+      return view('admin.inamsc.finalist_literature');
+    }
+    public function finalistrppPage() {
+      return view('admin.inamsc.finalist_research_poster');
+    }
+
+    public function finalistpublicPosterPage() {
+      return view('admin.inamsc.finalist_publication_poster');
+    }
+
 
     public function photographyPage() {      
       return view('admin.imarc.submissions_photography');

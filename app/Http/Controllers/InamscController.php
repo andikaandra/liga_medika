@@ -760,6 +760,17 @@ class InamscController extends Controller
       return response()->json(['data' => $videos]);
     }
 
+    public function getInamscFinalists($type) {
+      $videos = DB::table('users')
+          ->join('inamsc', 'inamsc.user_id', '=', 'users.id')
+          ->where('users.cabang_spesifik', '=', $type)
+          ->where('users.status_lolos', '=', '1')
+          ->select('*', 'users.status_lolos as status_lolos_user')
+          ->get();
+
+      return response()->json(['data' => $videos]);
+    }
+
     public function findInamscSubmissions($id) {
       return response()->json(Submission::find($id));
     }
