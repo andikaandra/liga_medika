@@ -68,8 +68,20 @@ class InamscController extends Controller
       }
     }
 
+    public function registerPassiveParticipantPage()
+    {
+        $lomba = Lomba::where('nama', 'Passive Participant')->first();
+        if ($lomba->status_pendaftaran) {
+            return view('registration-forms.passive-participant', ['lomba' => $lomba]);
+        }
+        else{
+            return redirect()->action('PagesController@index');
+        }
+    }
+
     // register current user to inamsc
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
       $user_id = Auth::user()->id;
 
       $user = User::find($user_id)->update([
@@ -473,6 +485,74 @@ class InamscController extends Controller
 
     }
 
+    public function registerPassiveParticipant(Request $request) {
+        $tipe_lomba = 16;
+        $user_id = Auth::user()->id;
+
+        try {
+            // make sure file uploaded are within size limit and file type
+            $rules = [  'bukti_pembayaran' => 'bail|required|max:3100|mimes:jpeg,jpg,png',
+                        'nama_rekening' => 'bail|required',
+                        'jumlah_transfer' => 'bail|required'
+                    ];
+
+
+            for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+                $rules['nama'.$i] = 'required';
+                $rules['univ'.$i] = 'required';
+            }
+
+
+            $validator = Validator::make($request->all(), $rules);
+
+            if ($validator->fails()) {
+                return redirect()
+                    ->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            $user = User::find($user_id)->update([
+                'cabang_spesifik' => $tipe_lomba,
+            ]);
+
+            // register literature review
+            $inamsc = INAMSC::create([
+                'user_id' => $user_id,
+                'type' => $tipe_lomba,
+                'gelombang' => $request->gelombang,
+            ]);
+
+            $path = $request->file('bukti_pembayaran')->store('public/passive-participant-payments');
+            // upload payment details
+            Payment::create([
+                'user_id' => $user_id,
+                'tipe_lomba' => $tipe_lomba,
+                'location' => str_replace("public","", $path),
+                'tipe_pembayaran' => 2, // Lunas
+                'nama_rekening' => $request->nama_rekening,
+                'jumlah' => str_replace('.','', $request->jumlah_transfer)
+            ]);
+
+            for ($i=1; $i <=$request->daftarPeserta ; $i++) {
+                INAMSCParticipant::create([
+                    'inamsc_id' => $inamsc->id,
+                    'nama' => $request->{'nama'.$i},
+                    'universitas' => $request->{'univ'.$i},
+                    'jurusan' => '',
+                    'kode_ambassador' => '',
+                    'file_path' => '',
+                ]);
+            }
+
+        } catch (\Exception $e) {
+            $message = 'Passive Participant - User: ' . Auth::user()->email . ', error: ' . $e->getMessage();
+            Log::emergency($message);
+            return redirect()->route('regis.error');
+        }
+        return redirect('users');
+    }
+
     //get users who are registered to inamsc
     public function getInamsc() {
       return response()->json(['data' => INAMSC::all()]);
@@ -558,6 +638,43 @@ class InamscController extends Controller
       return response()->json(['message' => 'ok']);
     }
 
+    public function getPassiveParticipant()
+    {
+        return response()->json(['data' => INAMSC::where('type', 16)->with('user:id,email,name')->get()]);
+    }
+
+    public function findPassiveParticipantDetails($id)
+    {
+        $passiveParticipant = INAMSC::find($id);
+//        passive participant langsung lunas!
+        $payment = Payment::where('user_id', $passiveParticipant->user_id)->first();
+        return response()->json(['payment' => $payment, 'user_id' => $passiveParticipant->user_id,
+            'participants' => $passiveParticipant->participants, 'id' => $passiveParticipant->id]);
+    }
+
+    public function acceptPassiveParticipant($id) {
+        $inamsc = INAMSC::find($id);
+        $userUpdate =   $inamsc->user->update([
+            'lomba_verified' => 1
+        ]);
+        $inamscUpdate = $inamsc->update([
+            'status_pembayaran' => 1,
+            'status_verif' => 1
+        ]);
+        return response()->json(['message' => 'ok']);
+    }
+
+    public function declinePassiveParticipant($id) {
+        $inamsc = INAMSC::find($id);
+        $userUpdate =   $inamsc->user->update([
+            'lomba_verified' => -1
+        ]);
+        $inamscUpdate = $inamsc->update([
+            'status_pembayaran' => -1,
+            'status_verif' => -1
+        ]);
+        return response()->json(['message' => 'ok']);
+    }
 
     public function getPublicationPoster() {
       return response()->json(['data' => INAMSC::where('type', 3)->with('user:id,email,name')->get()]);

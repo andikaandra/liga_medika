@@ -39,7 +39,9 @@ class ParticipantController extends Controller
       //cek status buka dan cek kuota
       $listLomba = Lomba::all();
 
-      return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus, 'listLomba' => $listLomba, 'pendaftarLomba' => $pendaftarLomba]);
+      $passiveParticipant = Lomba::where('nama', 'Passive Participant')->first();
+
+      return view('participant.index', ['lomba' => $lomba, 'status' => $accountStatus, 'listLomba' => $listLomba, 'pendaftarLomba' => $pendaftarLomba, 'passiveParticipant' => $passiveParticipant]);
     }
 
     public function getParticipants() {

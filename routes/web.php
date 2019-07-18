@@ -75,6 +75,14 @@ Route::prefix('admin')->middleware(['admin_only'])->group(function () {
   Route::put('inamsc/research-poster/accept/{id}', 'InamscController@acceptResearch');
   Route::put('inamsc/research-poster/decline/{id}', 'InamscController@declineResearch');
 
+    //Verifikasi passive participant
+    Route::get('/verification/passive-participant', 'AdminController@verifPassiveParticipantPage')->name('verif.passive');
+    Route::get('inamsc/passive-participant', 'InamscController@getPassiveParticipant');
+    Route::get('inamsc/passive-participant/{id}', 'InamscController@findPassiveParticipantDetails');
+
+    Route::put('inamsc/passive-participant/accept/{id}', 'InamscController@acceptPassiveParticipant');
+    Route::put('inamsc/passive-participant/decline/{id}', 'InamscController@declinePassiveParticipant');
+
 
   Route::put('inamsc/final/accept/{id}', 'InamscController@accTeam');
   Route::put('inamsc/final/decline/{id}', 'InamscController@decTeam');
@@ -233,8 +241,14 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::middleware(['inamsc_research_has_enough_quota'])->group(function () {
         Route::get('inamsc/research-paper', 'InamscController@registerResearchPosterPage');
         Route::post('inamsc/research-paper', 'InamscController@registerResearchPoster')->name('register.research.poster');
-
       });
+
+        Route::middleware(['inamsc_passive_participant_has_enough_quota'])->group(function () {
+            Route::get('inamsc/passive-participant', 'InamscController@registerPassiveParticipantPage');
+            Route::post('inamsc/passive-participant', 'InamscController@registerPassiveParticipant')->name('register.passive.participant');
+        });
+
+
 
 
       Route::get('inamsc/files', 'InamscController@downloadTemplates');

@@ -66,6 +66,12 @@ class AdminController extends Controller
         return view('admin.inamsc.verification_research_poster', compact('title'));
     }
 
+    public function verifPassiveParticipantPage()
+    {
+        $title = "Verification - Passive Participant";
+        return view('admin.inamsc.verification_passive_participant', compact('title'));
+    }
+
 
     //VERIFIKASI IMARC
     public function verifImarcPhotographyPage()

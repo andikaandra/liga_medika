@@ -160,6 +160,9 @@
                     @include('participant.partials.dashboard-litrev')
                   @elseif (Auth::user()->cabang_spesifik == 5)
                     @include('participant.partials.dashboard-rpp')
+
+                  @elseif (Auth::user()->cabang_spesifik == 16)
+                    @include('participant.partials.dashboard-passive-participant')
                   @endif
 
                 @elseif (Auth::user()->cabang == 1)
