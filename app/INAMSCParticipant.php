@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class INAMSCParticipant extends Model
 {
-  protected $table = "inamscparticipants";
-  protected $fillable = ['nama', 'inamsc_id','kode_ambassador', 'file_path', 'universitas', 'jurusan'];
+  	protected $table = "inamscparticipants";
+	protected $guarded = [];
 
   public function inamsc() {
     return $this->belongsTo('App\INAMSC');

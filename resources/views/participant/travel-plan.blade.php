@@ -66,44 +66,55 @@
         @endif
           <div class="card">
               <div class="card-body">
-{{--                 @if(Auth::user()->status_lolos && Auth::user()->cabang==3 && Auth::user()->cabang_spesifik!=1)
+                @if(Auth::user()->status_lolos && Auth::user()->cabang==3 && Auth::user()->cabang_spesifik!=1)
                   @if(Auth::user()->inamscs[0]->link_travel_plan)
                     <div class="alert alert-success">
                       <h5>Thank you,</h5>
-                      <p>Your travel plan : {{Auth::user()->inamscs[0]->link_travel_plan}}<br></p>
-                      <p>You choose workshop 
-                      @if(Auth::user()->inamscs[0]->workshop == 1)
-                        Less Stress for Future Doctors: an Introduction to PRH
-                      @elseif(Auth::user()->inamscs[0]->workshop == 2)
-                        Mental Health Assessment in General Practice
-                      @else
-                        Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult
-                      @endif
-                      </p>
+                      <p class="font-weight-bold">Your travel plan : {{Auth::user()->inamscs[0]->link_travel_plan}}<br></p>
+                      @foreach(Auth::user()->inamscs[0]->participants as $participant)
+                        <p class="font-weight-bold">{{$participant->nama}} choose workshop : 
+                        @if($participant->workshop == 1)
+                          Less Stress for Future Doctors: an Introduction to PRH
+                        @elseif($participant->workshop == 2)
+                          Mental Health Assessment in General Practice
+                        @else
+                          Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult
+                        @endif
+                        </p>
+                      @endforeach
                     </div>
                     <small>Contact commitee for more information.</small>
                   @else
                   <form class="" id="form" action="{{route('users.travel.plan.inamsc')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="alert alert-info">
-                      INAMSC Finalist are required to attend one of the following workshows 
+                      Every INAMSC Finalist are required to attend one of the following workshows 
                     </div>
                     <hr>
+                    @foreach(Auth::user()->inamscs[0]->participants as $participant)
+                      <h5><strong>Participant : </strong> {{$participant->nama}}</h5>
+                      <div class="form-group">
+                        <label for="">Workshop Options: </label>
+                        <select class="custom-select text-muted" id="workshop" name="workshop[]" required>
+                          <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option>
+                          <option value="2">Mental Health Assessment in General Practice</option>
+                          <option value="3">Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
+                        </select>
+                      </div>
+                      <div class="form-group" id="sertifikat">
+                        <label for="">International Accreditation Certificate (only for Less Stress for Future Doctors: an Introduction to PRH workshop): </label>
+                        <select class="custom-select" id="accreditation" name="accreditation[]" required>
+                          <option value="no" selected>No</option>
+                          <option value="yes">Yes</option>
+                        </select>
+                        <small class="text-muted form-text">If you choose yes, you will be charged an additional Rp. 50.000,00</small>
+                      </div><br>
+                    @endforeach
+                    <hr>
                     <div class="form-group">
-                      <label for="">Workshop Options: </label>
-                      <select class="custom-select" id="workshop" name="workshop" required>
-                        <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option>
-                        <option value="2">Mental Health Assessment in General Practice</option>
-                        <option value="3">Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
-                      </select>
-                    </div>
-                    <div class="form-group" id="sertifikat" style="display: block;">
-                      <label for="">International Accreditation Certificate: </label>
-                      <select class="custom-select" id="accreditation" name="accreditation" required>
-                        <option value="no" selected>No</option>
-                        <option value="yes">Yes</option>
-                      </select>
-                      <small class="text-muted form-text">If you choose yes, you will be charged an additional Rp. 50.000,00 then you will pay <strong>Rp {{ number_format(150000 + 50000 + Auth::user()->id + 000 ,2,',','.')}}</strong></small>
+                      <label for="">Delegation Letter/Active student letter from faculty: </label>
+                      <br><input type="file" name="delegasi" id="delegasi" accept="application/zip" value="" required><br>
+                      <small class="form-text text-muted">Max size 4 mb (Compressed as .zip file).</small>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -149,8 +160,8 @@
                     <button type="button" class="save btn btn-primary btn-sm">Save</button>
                   </form>
                   @endif
-                @endif --}}
-                Sorry, you cant fill travel plan for a while
+                @endif
+                {{-- Sorry, you cant fill travel plan for a while --}}
               </div>
           </div>
         </div>
@@ -188,23 +199,23 @@
       });
     });
     let status = $('#workshop').val();
-    if (status==1) {
-      $('#sertifikat').css('display', 'block');
-    }
-    else{
-      $('#sertifikat').css('display', 'none');
-    }
+    // if (status==1) {
+    //   $('#sertifikat').css('display', 'block');
+    // }
+    // else{
+    //   $('#sertifikat').css('display', 'none');
+    // }
 
-    $('#workshop').on('change', function() {
-        status = $(this).val();
-        console.log(status);
-        if (status==1) {
-          $('#sertifikat').css('display', 'block');
-        }
-        else{
-          $('#sertifikat').css('display', 'none');
-        }
-    });
+    // $('#workshop').on('change', function() {
+    //     status = $(this).val();
+    //     console.log(status);
+    //     if (status==1) {
+    //       $('#sertifikat').css('display', 'block');
+    //     }
+    //     else{
+    //       $('#sertifikat').css('display', 'none');
+    //     }
+    // });
   </script>
 
 @endsection
