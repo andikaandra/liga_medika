@@ -94,7 +94,8 @@ class ParticipantController extends Controller
 
     // TODO: Travel Plan
     public function travelPlanPage() {
-      return view('participant.travel-plan');
+        $inamsc = INAMSC::find(Auth::user()->inamscs[0]->id);
+        return view('participant.travel-plan', ['inamsc' => $inamsc]);
     }
     // TODO: Travel Plan
     public function travelPlanInamsc(Request $request) {
@@ -145,6 +146,14 @@ class ParticipantController extends Controller
         ]);
         $iter++;
       }
+
+      if (isset($request->temporary_state))
+      {
+          Auth::user()->update(['temporary_state' => 1]);
+      } else {
+          Auth::user()->update(['temporary_state' => 0]);
+      }
+
       return redirect()->back();
     }
 

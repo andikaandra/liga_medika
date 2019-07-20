@@ -38,6 +38,13 @@
 </style>
 @endsection
 
+
+{{--'link_travel_plan' => $request->link,--}}
+{{--'nama_rekening' => $request->nama_rekening,--}}
+{{--'jumlah_transfer' => str_replace('.','',$request->jumlah_transfer),--}}
+{{--'bukti_pembayaran' => str_replace("public","", $path),--}}
+{{--'delegasi' => str_replace("public","", $path_delegasi),--}}
+
 @section('content')
 <div class="content-wrapper">
   <div class="page-header">
@@ -67,7 +74,7 @@
           <div class="card">
               <div class="card-body">
                 @if(Auth::user()->status_lolos && Auth::user()->cabang==3 && Auth::user()->cabang_spesifik!=1)
-                  @if(Auth::user()->inamscs[0]->link_travel_plan)
+                  @if(Auth::user()->inamscs[0]->link_travel_plan && Auth::user()->temporary_state != 1)
                     <div class="alert alert-success">
                       <h5>Thank you,</h5>
                       <p class="font-weight-bold">Your travel plan : {{Auth::user()->inamscs[0]->link_travel_plan}}<br></p>
@@ -88,7 +95,7 @@
                   <form class="" id="form" action="{{route('users.travel.plan.inamsc')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="alert alert-info">
-                      Every INAMSC Finalist are required to attend one of the following workshows 
+                      Every INAMSC Finalist are required to attend one of the following workshops
                     </div>
                     <hr>
                     @foreach(Auth::user()->inamscs[0]->participants as $participant)
@@ -96,16 +103,16 @@
                       <div class="form-group">
                         <label for="">Workshop Options: </label>
                         <select class="custom-select text-muted" id="workshop" name="workshop[]" required>
-                          <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option>
-                          <option value="2">Mental Health Assessment in General Practice</option>
-                          <option value="3">Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
+                          <option value="1" {{$participant->workshop == 1 || $participant->workshop == null ? 'selected' : ''}}>Less Stress for Future Doctors: an Introduction to PRH</option>
+                          <option value="2" {{$participant->workshop == 2 ? 'selected' : ''}}>Mental Health Assessment in General Practice</option>
+                          <option value="3" {{$participant->workshop == 3 ? 'selected' : ''}}>Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
                         </select>
                       </div>
                       <div class="form-group" id="sertifikat">
                         <label for="">International Accreditation Certificate (only for Less Stress for Future Doctors: an Introduction to PRH workshop): </label>
                         <select class="custom-select" id="accreditation" name="accreditation[]" required>
-                          <option value="no" selected>No</option>
-                          <option value="yes">Yes</option>
+                          <option value="no" {{$participant->accreditation == null || $participant->accreditation == "no" ? 'selected' : ''}}>No</option>
+                          <option value="yes" {{$participant->accreditation == "yes" ? 'selected' : ''}}>Yes</option>
                         </select>
                         <small class="text-muted form-text">If you choose yes, you will be charged an additional Rp. 50.000,00</small>
                       </div><br>
@@ -119,19 +126,19 @@
                     <hr>
                     <div class="form-group">
                       <label for="">Link Travel Plan: </label>
-                      <input class="form-control" type="text" id="link" name="link" value="" required placeholder="my travel plan">
-                      <small class="form-text text-muted">Once submitted you cant change your travel plan. Contact commitee for more information.</small>
+                      <input class="form-control" type="text" id="link" name="link" required placeholder="my travel plan" value="{{$inamsc->link_travel_plan}}">
+                      <small class="form-text text-muted">Once submitted you can't change your travel plan. Contact commitee for more information.</small>
                     </div>
                     <hr>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="">Account Sender's name: </label>
-                          <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" id="nama_rekening" value="">
+                          <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" id="nama_rekening" value="{{$inamsc->nama_rekening}}">
                         </div>
                         <div class="form-group">
                           <label for="">Amount: </label>
-                          <input type="text" class="price form-control" placeholder="How much did you transfer? e.g. 150003" class="form-control" name="jumlah_transfer" id="jumlah_transfer" value="" required>
+                          <input type="text" class="price form-control" placeholder="How much did you transfer? e.g. 150003" class="form-control" name="jumlah_transfer" id="jumlah_transfer" value="{{$inamsc->jumlah_transfer}}" required>
                         </div>
                         <div class="form-group">
                           <label for="">Scan proof of payment receipt: </label>
@@ -140,6 +147,16 @@
                         </div>
                       </div>
                     </div>
+
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="">Please check this if you would like to save the current state of your data and files:</label>
+                                  <input type="checkbox" class="" name="temporary_state"> <br>
+                                  <small class="text-muted">For example you haven't got the complete data or paperwork, then you can continue where you left off. Please uncheck it if all your data is already complete, so our committee can verify it.</small>
+                              </div>
+                          </div>
+                      </div>
                     <button type="button" class="save btn btn-primary btn-sm">Save</button>
                   </form>
                   @endif
@@ -161,7 +178,6 @@
                   </form>
                   @endif
                 @endif
-                {{-- Sorry, you cant fill travel plan for a while --}}
               </div>
           </div>
         </div>
@@ -188,10 +204,18 @@
         } 
         if (!$("#jumlah_transfer").val()) {
           return ; 
-        } 
+        }
+          let delegasi = $("#delegasi")[0].files.length;
+          if(delegasi === 0){
+              alert("Please upload delegation letter file.");
+              return false;
+          }
+
         if (!$("#bukti_pembayaran").val()) {
+            alert("Please upload proof of payment file.");
           return ; 
-        } 
+        }
+
         $("#form").submit();
       },
       function(){

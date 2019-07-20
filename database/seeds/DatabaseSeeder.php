@@ -122,5 +122,10 @@ class DatabaseSeeder extends Seeder
           'id' => 14, 'nama' => 'Concert', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
           'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
         ]);
+
+        Lomba::create([
+            'id' => 15, 'nama' => 'Passive Participant', 'jumlah_gelombang' => 2, 'gelombang_sekarang' => 1, 'biaya' => 150000,
+            'status_pendaftaran' => 0, 'status_pengumpulan' => 0, 'kuota' => rand(50, 150), 'dp' => 150000
+        ]);
     }
 }
