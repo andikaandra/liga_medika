@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ParticipantSelectedForFinal;
 use Illuminate\Http\Request;
 use App\User;
 use App\Symposium;
@@ -398,7 +399,8 @@ class InamscController extends Controller
           'bukti_pembayaran.mimes' => 'Uploaded proof of payment file has to be jpeg, jpg or png format.',
           'nama.required' => 'Please fill in name field.',
           'nama_rekening.required' => 'Please fill in account sender.',
-          'jumlah_transfer' => 'Please fill in amount.'
+          'jumlah_transfer' => 'Please fill in amount.',
+          'universitas' => 'Please fill in university/ institute field.'
       ];
 
       try {
@@ -411,6 +413,7 @@ class InamscController extends Controller
             'nama_rekening' => 'required',
             'jumlah_transfer' => 'required',
             'workshop' => 'required',
+            'universitas' => 'required'
         ], $messages);
 
         // test the validator out
@@ -459,6 +462,7 @@ class InamscController extends Controller
           'status_pembayaran' => 0,
           'workshop' => $request->workshop,
           'sertifikat' => $sertifikat,
+            'universitas' => $request->universitas
         ]);
 
 
@@ -919,9 +923,12 @@ class InamscController extends Controller
     }
 
     public function accTeam($id) {
-      User::find($id)->update([
+      $user = User::find($id);
+
+      $user->update([
         'status_lolos' => 1
       ]);
+      event(new ParticipantSelectedForFinal($user));
       return response()->json(['message' => 'ok']);
     }
 

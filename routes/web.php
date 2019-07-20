@@ -14,6 +14,10 @@
 Auth::routes();
 Route::post('login', 'Auth\LoginController@doLogin');
 
+Route::get('finalist', function () {
+   return view('email.email-finalist');
+});
+
 Route::get('/', 'PagesController@index');
 Route::get('inamsc', 'PagesController@inamsc');
 Route::get('inamsc-ambassador', 'PagesController@inamscAmbassador');

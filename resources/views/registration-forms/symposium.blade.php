@@ -87,6 +87,10 @@
                     <label for="">Student name: </label>
                     <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is your name?" class="form-control" name="nama" value="" required>
                   </div>
+                    <div class="form-group">
+                        <label for="">University/ Institute: </label>
+                        <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is your university/ institute?" class="form-control" name="universitas" value="" required>
+                    </div>
                   <div class="form-group">
                     <label for="">Scan Student ID card/ KTP</label>
                     <br><input type="file" name="ktp" accept="image/*" value=""><br>

@@ -17,6 +17,7 @@ class CreateSymposiumTable extends Migration
           $table->integer('gelombang');
           $table->integer('workshop');
           $table->string('sertifikat')->default("no");
+          $table->string('universitas')->nullable(true);
           $table->integer('status_verif')->default(0);
           $table->timestamps();
         });
