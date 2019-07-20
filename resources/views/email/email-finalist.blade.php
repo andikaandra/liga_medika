@@ -181,7 +181,7 @@
                 <!-- Body content -->
                 <tr>
                   <td class="content-cell">
-                    <h1>Congratulations {{\App\User::first()->name}}</h1>
+                    <h1>Congratulations {{$user->name}}</h1>
                     <p>Your team has been chosen to continue to the finals. Please open your  <a href="{{url('login')}}">Liga Medika</a> account to complete the further requirements. Contact our committee for further inquiries.</p>
 
                     <p>Thanks,<br>The LIGA MEDIKA UI Team</p>
