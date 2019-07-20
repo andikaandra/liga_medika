@@ -42,7 +42,6 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Travel Plan</th>
-                  <th>Workshop(Certificate)</th>
                   <th>Account Name</th>
                   <th>Amount</th>
                   <th>Payments</th>
@@ -56,6 +55,28 @@
         </div>
       </div>
     </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="modal1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col participants">
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('script')
@@ -72,22 +93,6 @@
           {data: "name"},
           {data: "email"},
           {data: "link_travel_plan"},
-          {data: null,
-            render: function(data, type, row) {
-              if (row.workshop == 1) {
-                return `Less Stress for Future Doctors: an Introduction to PRH ( ${row.accreditation} )`;
-              }
-              else if (row.workshop == 2) {
-                return "Mental Health Assessment in General Practice (none)";
-              }
-              else if (row.workshop == 3) {
-                return "Cognitive Function (none)";
-              }
-              else {
-                return ""
-              }
-            }
-          },
           {data: "nama_rekening"},
           {data: null,
             render: function(data, type, row) {
@@ -102,12 +107,56 @@
               if(!row.jumlah_transfer){
                 return ""
               }
-              return `<a class="btn btn-info text-white info" target="_blank" href="{{url('admin/view/finalist/image')}}/${row.inamsc_id}">Payment</a>`
+              return `<button class="btn btn-info mr-2 info-participant" inamsc-id="${row.inamsc_id}">Info</button><a class="btn btn-info text-white info" target="_blank" href="{{url('admin/view/finalist/image')}}/${row.inamsc_id}">Payment</a>`
             }
           }
         ]
       });
 
+      $(document).on('click', '.info-participant', async function(){
+        const id = $(this).attr('inamsc-id');
+        let data;
+
+        try {
+            data = await $.ajax({
+              url: '{{url('admin/inamsc/publication-poster')}}/' + id
+            });
+        } catch (e) {
+          alert("Ajax error");
+          console.log(e);
+          return;
+        }
+
+        $(".participants").html("");
+
+        data.participants.forEach(function(el, idx, arr){
+          let faqq = ""
+          if (el.workshop == 1) {
+            faqq = `Less Stress for Future Doctors: an Introduction to PRH ( ${el.accreditation} )`;
+          }
+          else if (el.workshop == 2) {
+            faqq = "Mental Health Assessment in General Practice";
+          }
+          else if (el.workshop == 3) {
+            faqq = "Cognitive Function";
+          }
+          $(".participants").append(`
+            <div class="participant">
+              <div class="form-group">
+                <label>Name:</label>
+                <input class="form-control" type="text" disabled value="${el.nama}">
+              </div>
+              <div class="form-group">
+                <label>Workshop:</label>
+                <input class="form-control" type="text" disabled value="${faqq}">
+              </div>
+            </div><hr><br>`
+          );
+        });
+
+        $("#modal1").modal('show');
+
+      });
 
     });
   </script>

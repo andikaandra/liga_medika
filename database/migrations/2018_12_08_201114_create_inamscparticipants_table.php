@@ -16,6 +16,8 @@ class CreateInamscparticipantsTable extends Migration
             $table->text('jurusan');
             $table->text('file_path');
             $table->text('kode_ambassador')->nullable();
+            $table->string('workshop')->nullable();
+            $table->string('accreditation')->nullable();
             // $table->timestamps();
         });
     }

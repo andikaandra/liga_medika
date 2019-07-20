@@ -105,6 +105,7 @@ class ParticipantController extends Controller
           'nama_rekening' => 'bail|max:126|required',
           'jumlah_transfer' => 'bail|max:12|required',
           'bukti_pembayaran' => 'bail|required|max:1500|mimes:jpeg,jpg,png',
+          'delegasi' => 'bail|required|max:4500|mimes:zip',
       ]);
 
       if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
@@ -119,16 +120,31 @@ class ParticipantController extends Controller
       }
 
       $path = $request->file('bukti_pembayaran')->store('public/full-payments');
+      $path_delegasi = $request->file('delegasi')->store('public/delegasi');
 
       INAMSC::find(Auth::user()->inamscs[0]->id)
       ->update([
         'link_travel_plan' => $request->link,
-        'workshop' => $request->workshop,
-        'accreditation' => $request->accreditation,
         'nama_rekening' => $request->nama_rekening,
         'jumlah_transfer' => str_replace('.','',$request->jumlah_transfer),
         'bukti_pembayaran' => str_replace("public","", $path),
+        'delegasi' => str_replace("public","", $path_delegasi),
       ]);
+
+      $participants = Auth::user()->inamscs[0]->participants;
+      $iter = 0;
+      foreach ($participants as $participant) {
+        $acc = 'no';
+        if ($request->workshop[$iter] == '1') {
+          $acc = $request->accreditation[$iter];
+        }
+
+        $participant->update([
+          'workshop' => $request->workshop[$iter],
+          'accreditation' => $acc,
+        ]);
+        $iter++;
+      }
       return redirect()->back();
     }
 
