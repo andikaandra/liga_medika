@@ -85,7 +85,7 @@
               </div>
             </form>
               <div class="form-group">
-                <label for="">Is this team goes to final?:</label><br>
+                <label for="">Pick this team to continue to the final stage?:</label><br>
                 <button class='btn btn-success mr-2 yes'>Yes</button>
                 <button class='btn btn-danger mr-2 no'>No</button>
                 <input type="hidden" id="user_id" value=""><br>
