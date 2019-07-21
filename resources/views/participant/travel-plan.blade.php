@@ -92,20 +92,34 @@
                     </div>
                     <small>Contact commitee for more information.</small>
                   @else
-                  <form class="" id="form" action="{{route('users.travel.plan.inamsc')}}" method="post" enctype="multipart/form-data">
-                    @csrf
                     <div class="alert alert-info">
                       <ul>
+                        <li>You can find guideline for semifinalist and finalist <a href="{{ url('users/guidelines/inamsc/finalist') }}">here</a></li>
                         <li><strong>Every</strong> INAMSC Finalist are required to attend one of the following workshops</li>
                         <li>International Accreditation Certificate is only for Less Stress for Future Doctors: an Introduction to PRH workshop</li>
                         <li>The final registration fee for each participant is Rp1.085.000 for <strong>National Participant</strong>, 78 USD for <strong>International participant</strong>. For example your team consists of 3 participants then the final price would be Rp3.255.000 or </li>
-                        <li><p>Rekening Pembayaran/ Bank Account for payment: <br> Name: “REGISTRASI LIGA MEDIKA”, Bank
-            Mandiri, 157-00-0476595-5</li>
+                        <li><p>Rekening Pembayaran/ Bank Account for payment: <br> Name: “REGISTRASI LIGA MEDIKA”, Bank Mandiri, 157-00-0476595-5</li>
                         <hr>
                         Example: if you are national participant and your team consists of 3 participants, if 2 of your team members join workshop Less Stress for Future Doctors: an Introduction to PRH workshop with International Accreditation Certificate, so you should pay Rp3.355.000
                       </ul>
                     </div>
                     <hr>
+                    @if(Auth::user()->can_attend_final != 1)
+                    <form class="" id="form_attend" action="{{route('users.cant.attend')}}" method="post">
+                    @csrf
+                    <div class="alert alert-danger">
+                      <ul>
+                        <li>The final event will be held on <strong>August 22-25, 2019</strong></li>
+                        <li>If you are willing to take part in the final event, you can fill in the form taken, if you cannot follow it you can press the button below</li>
+                        <small>by pressing this button the status of your finalist will be replaced by another team</small><br><br>
+                        <button type="button" class="cantattend btn btn-outline-danger btn-sm">I can't attend the final event</button>
+                      </ul>
+                    </div>
+                    <hr>
+                    @endif
+                    </form>
+                  <form class="" id="form" action="{{route('users.travel.plan.inamsc')}}" method="post" enctype="multipart/form-data">
+                    @csrf
                     @foreach(Auth::user()->inamscs[0]->participants as $participant)
                       <h5><strong>Participant : </strong> {{$participant->nama}}</h5>
                       <div class="form-group">
@@ -166,6 +180,7 @@
                               </div>
                           </div>
                       </div>
+                    <small class="text-muted">By submitting this form you agree to attend the final event at Universitas Indonesia on August 22-25, 2019</small><br><br>
                     <button type="button" class="save btn btn-primary btn-sm">Save</button>
                   </form>
                   @endif
@@ -181,7 +196,7 @@
                     <div class="form-group">
                       <label for="">Link Travel Plan: </label>
                       <input class="form-control" type="text" name="link" value="" required placeholder="my travel plan">
-                      <small class="form-text text-muted">Once submitted you cant change your travel plan. Contact commitee for more information.</small>
+                      <small class="form-text text-muted">By submitting this form you agree to attend the final event at Universitas Indonesia on August 22-25, 2019.<br>Once submitted you cant change your travel plan. Contact commitee for more information.</small>
                     </div>
                     <button type="button" class="save btn btn-primary btn-sm">Save</button>
                   </form>
@@ -231,7 +246,17 @@
         console.log("cancel");
       });
     });
-    let status = $('#workshop').val();
+
+    $(document).on('click', '.cantattend', function(){
+      alertify.confirm('Confirmation', 'Are you sure cant join final event?',
+      function(){
+        $("#form_attend").submit();
+      },
+      function(){
+        console.log("cancel");
+      });
+    });
+    // let status = $('#workshop').val();
     // if (status==1) {
     //   $('#sertifikat').css('display', 'block');
     // }

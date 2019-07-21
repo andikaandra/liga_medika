@@ -16,7 +16,7 @@ class CanJoinFinal
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::user()->can_join_final == 1) {
+      if (Auth::user()->can_join_final != -1) {
         return $next($request);
       }
       if ($request->ajax()) {

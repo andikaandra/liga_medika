@@ -304,8 +304,10 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
       Route::get('download/letter-of-originality-photography', 'ParticipantController@getLetterOfOriginalityPhotography');
 
       Route::middleware(['join_final'])->group(function () {
-        Route::post('final/attendance', 'ParticipantController@finalAttendance')->name('final.attendance');
+        Route::get('/guidelines/inamsc/finalist', 'ParticipantController@downloadGuidelineFinalistInamsc');
+        Route::post('final/attendance/not-attend', 'ParticipantController@cantAttendFinal')->name('users.cant.attend');
         Route::middleware(['can_join_final'])->group(function () {
+          Route::post('final/attendance', 'ParticipantController@finalAttendance')->name('final.attendance');
           Route::get('travel-plan', 'ParticipantController@travelPlanPage');
           Route::post('travel-plan-inamsc', 'ParticipantController@travelPlanInamsc')->name('users.travel.plan.inamsc');
           Route::post('travel-plan-imsso', 'ParticipantController@travelPlanImsso')->name('users.travel.plan.imsso');

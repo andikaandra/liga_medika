@@ -152,7 +152,11 @@ class ParticipantController extends Controller
       {
           Auth::user()->update(['temporary_state' => 1]);
       } else {
-          Auth::user()->update(['temporary_state' => 0]);
+          Auth::user()->update(['temporary_state' => 0, 'can_join_final' => 1]);
+          // User::find(Auth::user()->id)
+          // ->update([
+          //   'can_join_final' => 1
+          // ]);
       }
 
       return redirect()->back();
@@ -178,5 +182,17 @@ class ParticipantController extends Controller
           'can_join_final' => $request->attendance
         ]);
       return redirect()->back();
+    }
+
+    public function cantAttendFinal(Request $request) {
+      User::find(Auth::user()->id)
+        ->update([
+          'can_join_final' => -1
+        ]);
+      return redirect()->back();
+    }
+
+    public function downloadGuidelineFinalistInamsc() {
+      return response()->download(storage_path("app/public/committee-files/INAMSC_GUIDELINE_FOR_SEMIFINALIST_AND_FINALIST.pdf"));
     }
 }
