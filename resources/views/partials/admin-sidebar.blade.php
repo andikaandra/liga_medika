@@ -31,7 +31,7 @@
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.publication')}}">Public Poster</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.literature')}}">Literature Review</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{route('verif.research')}}"> Research Paper</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{route('verif.passive')}}"> Passive Participant</a></li>
+            {{-- <li class="nav-item"> <a class="nav-link" href="{{route('verif.passive')}}"> Passive Participant</a></li> --}}
         </ul>
       </div>
     </li>

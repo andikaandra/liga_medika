@@ -35,7 +35,7 @@
     @if(Auth::user()->status_lolos == 1)
       @if(Auth::user()->can_join_final == 0)
         <strong class="text-danger">Congratulations, your team was chosen to be a finalist, please fill this form to confirm your attendance at finals</strong><br>
-        <p>Will you be able to attend the final on .... at Universitas Indonesia ?</p>
+        <p>Can you attend the final event at Universitas Indonesia ?</p>
         <form action="{{ route('final.attendance') }}" id="can_join_finals" method="POST">
             <div class="form-group-row">
               <label for=""  class="col-sm-2 col-form-label">Final Attendance: </label>
@@ -56,7 +56,7 @@
       @elseif(Auth::user()->can_join_final == 1)
         <strong class="text-danger">Congratulations, your team was chosen to be a finalist, please fill your travel plan and choose your workshop <a href="{{url('users/travel-plan')}}">Here</a></strong>
       @else
-        <strong class="text-danger">okee sip</strong>
+        <strong class="text-danger">We are sad to see you unable to attend the Final event. thank you for being a part of Liga Medika 2019. For further inquiries please contact our committee.</strong>
       @endif
     @elseif(Auth::user()->status_lolos == -1)
       <strong class="text-danger">Sorry, your team cannot proceed to the next round, thanks for joining Liga Medika 2019</strong>

@@ -68,7 +68,7 @@
         @endif
       </div>
 
-        <div class="col-md-4 col-12 mb-2">
+{{--         <div class="col-md-4 col-12 mb-2">
             @if($passiveParticipant->status_pendaftaran == 0)
                 <a href="#" style="pointer-events: none">
                     <div class="cabang" style="pointer-events: none; background-color: #f2edf3;">
@@ -82,7 +82,7 @@
                     </div>
                 </a>
             @endif
-        </div>
+        </div> --}}
     </div>
 
 
