@@ -1,5 +1,9 @@
 @if(Auth::user()->status_lolos == -1)
-    <strong class="text-danger">Sorry, your team cannot proceed to the next round, thanks for joining Liga Medika 2019</strong>
+    <div class="alert alert-danger">
+        <p>
+            <strong class="text-danger">Sorry, your team cannot proceed to the next round, thanks for joining Liga Medika 2019</strong>
+        </p>
+    </div>
 @endif
 
 @if (Auth::user()->lomba_verified == -1)
