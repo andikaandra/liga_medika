@@ -1,4 +1,4 @@
-@if(Auth::user()->status_lolos == -1)
+@if(Auth::user()->status_lolos == -1 || Auth::user()->status_lolos == "-1")
     <div class="alert alert-danger">
         <p>
             <strong class="text-danger">Sorry, your team cannot proceed to the next round, thanks for joining Liga Medika 2019</strong>
