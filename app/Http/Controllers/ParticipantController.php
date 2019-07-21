@@ -12,6 +12,7 @@ use Validator;
 use App\IMARC;
 use App\IMSSO;
 use App\HFGM;
+use App\User;
 
 class ParticipantController extends Controller
 {
@@ -171,4 +172,11 @@ class ParticipantController extends Controller
       return redirect()->back()->with('message', 'Phone number added!');
     }
 
+    public function finalAttendance(Request $request) {
+      User::find(Auth::user()->id)
+        ->update([
+          'can_join_final' => $request->attendance
+        ]);
+      return redirect()->back();
+    }
 }

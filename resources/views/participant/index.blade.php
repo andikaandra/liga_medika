@@ -198,5 +198,14 @@
 @section('script')
 <script type="text/javascript">
   $("#user-home").addClass("active");
+  $(document).on('click', '.saveattendance', function(){
+    alertify.confirm('Confirmation', 'Would you like submit this form?',
+    function(){
+      $("#can_join_finals").submit();
+    },
+    function(){
+      console.log("cancel");
+    });
+  });
 </script>
 @endsection

@@ -41,6 +41,7 @@
                   <th>ID</th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Can Join Final</th>
                   <th>Travel Plan</th>
                   <th>Account Name</th>
                   <th>Amount</th>
@@ -92,6 +93,17 @@
           {data: "id"},
           {data: "name"},
           {data: "email"},
+          {data: null,
+            render: function(data, type, row) {
+              if(row.can_join_final=='0'){
+                return "Pending";
+              } else if(row.can_join_final=='1'){
+                return "Yes";
+              } else {
+                return "No";
+              }
+            }
+          },
           {data: "link_travel_plan"},
           {data: "nama_rekening"},
           {data: null,

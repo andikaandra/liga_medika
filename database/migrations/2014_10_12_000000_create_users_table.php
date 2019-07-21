@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email_token')->nullable();
             $table->string('phone')->nullable();
             $table->integer('temporary_state')->default(0);
+            $table->integer('can_join_final')->default(0);            
             $table->rememberToken();
             $table->timestamps();
         });

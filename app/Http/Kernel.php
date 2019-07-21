@@ -73,6 +73,7 @@ class Kernel extends HttpKernel
         'inamsc_research_has_enough_quota' => \App\Http\Middleware\InamscResearchEnoughQuota::class,
         'inamsc_passive_participant_has_enough_quota' => \App\Http\Middleware\InamscPassiveParticipantEnoughQuota::class,
         'join_final' => \App\Http\Middleware\JoinFinal::class,
+        'can_join_final' => \App\Http\Middleware\CanJoinFinal::class,
     ];
 
     /**
