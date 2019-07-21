@@ -929,7 +929,7 @@ class InamscController extends Controller
       $user->update([
         'status_lolos' => 1
       ]);
-//      event(new ParticipantSelectedForFinal($user));
+      event(new ParticipantSelectedForFinal($user));
       return response()->json(['message' => 'ok']);
     }
 
