@@ -52,7 +52,7 @@
       <span class="page-title-icon bg-gradient-primary text-white mr-2">
         <i class="mdi mdi-folder-upload"></i>
       </span>
-      Travel Plan
+      Finalists Requirements
     </h3>
     <nav aria-label="breadcrumb">
       <ul class="breadcrumb">
@@ -95,7 +95,15 @@
                   <form class="" id="form" action="{{route('users.travel.plan.inamsc')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="alert alert-info">
-                      Every INAMSC Finalist are required to attend one of the following workshops
+                      <ul>
+                        <li><strong>Every</strong> INAMSC Finalist are required to attend one of the following workshops</li>
+                        <li>International Accreditation Certificate is only for Less Stress for Future Doctors: an Introduction to PRH workshop</li>
+                        <li>The final registration fee for each participant is Rp1.085.000 for <strong>National Participant</strong>, 78 USD for <strong>International participant</strong>. For example your team consists of 3 participants then the final price would be Rp3.255.000 or </li>
+                        <li><p>Rekening Pembayaran/ Bank Account for payment: <br> Name: “REGISTRASI LIGA MEDIKA”, Bank
+            Mandiri, 157-00-0476595-5</li>
+                        <hr>
+                        Example: if you are national participant and your team consists of 3 participants, if 2 of your team members join workshop Less Stress for Future Doctors: an Introduction to PRH workshop with International Accreditation Certificate, so you should pay Rp3.355.000
+                      </ul>
                     </div>
                     <hr>
                     @foreach(Auth::user()->inamscs[0]->participants as $participant)
@@ -114,7 +122,7 @@
                           <option value="no" {{$participant->accreditation == null || $participant->accreditation == "no" ? 'selected' : ''}}>No</option>
                           <option value="yes" {{$participant->accreditation == "yes" ? 'selected' : ''}}>Yes</option>
                         </select>
-                        <small class="text-muted form-text">If you choose yes, you will be charged an additional Rp. 50.000,00</small>
+                        <small class="text-muted form-text">If you choose yes, you will be charged an additional Rp. 50.000 for national participants and 4 USD for international participant</small>
                       </div><br>
                     @endforeach
                     <hr>
@@ -138,7 +146,8 @@
                         </div>
                         <div class="form-group">
                           <label for="">Amount: </label>
-                          <input type="text" class="price form-control" placeholder="How much did you transfer? e.g. 150003" class="form-control" name="jumlah_transfer" id="jumlah_transfer" value="{{$inamsc->jumlah_transfer}}" required>
+                          <input type="text" class="price form-control" placeholder="How much did you transfer? e.g. 1.085.000" class="form-control" name="jumlah_transfer" id="jumlah_transfer" value="{{$inamsc->jumlah_transfer}}" required>
+                          <small class="text-muted">Total amount.</small>
                         </div>
                         <div class="form-group">
                           <label for="">Scan proof of payment receipt: </label>
