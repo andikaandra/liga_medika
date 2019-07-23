@@ -103,7 +103,7 @@ class ParticipantController extends Controller
       $validator = Validator::make($request->all(), [
           'workshop' => 'bail|required',
           'accreditation' => 'bail|required',
-          'link' => 'bail|max:126|required',
+//          'link' => 'bail|max:126|required', //disabled by Adis on 23 July 2019. Requested by client
           'nama_rekening' => 'bail|max:126|required',
           'jumlah_transfer' => 'bail|max:12|required',
           'bukti_pembayaran' => 'bail|required|max:1500|mimes:jpeg,jpg,png',
@@ -124,9 +124,12 @@ class ParticipantController extends Controller
       $path = $request->file('bukti_pembayaran')->store('public/full-payments');
       $path_delegasi = $request->file('delegasi')->store('public/delegasi');
 
+      $now = strval(now());
+
       INAMSC::find(Auth::user()->inamscs[0]->id)
       ->update([
-        'link_travel_plan' => $request->link,
+          'link_travel_plan' => $now,
+//        'link_travel_plan' => $request->link, //disabled by Adis on 23 July 2019. Requested by client
         'nama_rekening' => $request->nama_rekening,
         'jumlah_transfer' => str_replace('.','',$request->jumlah_transfer),
         'bukti_pembayaran' => str_replace("public","", $path),
@@ -162,6 +165,7 @@ class ParticipantController extends Controller
       return redirect()->back();
     }
 
+//    TODO: currently disabled on frontend
     public function travelPlanImsso(Request $request) {
       IMSSO::find(Auth::user()->imsso[0]->id)
       ->update([

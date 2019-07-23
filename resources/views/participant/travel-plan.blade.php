@@ -76,8 +76,8 @@
                 @if(Auth::user()->status_lolos && Auth::user()->cabang==3 && Auth::user()->cabang_spesifik!=1)
                   @if(Auth::user()->inamscs[0]->link_travel_plan && Auth::user()->temporary_state != 1)
                     <div class="alert alert-success">
-                      <h5>Thank you,</h5>
-                      <p class="font-weight-bold">Your travel plan : {{Auth::user()->inamscs[0]->link_travel_plan}}<br></p>
+                      <h5>Thank you</h5>
+{{--                      <p class="font-weight-bold">Your travel plan : {{Auth::user()->inamscs[0]->link_travel_plan}}<br></p>--}}
                       @foreach(Auth::user()->inamscs[0]->participants as $participant)
                         <p class="font-weight-bold">{{$participant->nama}} choose workshop : 
                         @if($participant->workshop == 1)
@@ -146,11 +146,11 @@
                       <small class="form-text text-muted">Max size 4 mb (Compressed as .zip file).</small>
                     </div>
                     <hr>
-                    <div class="form-group">
-                      <label for="">Link Travel Plan: </label>
-                      <input class="form-control" type="text" id="link" name="link" required placeholder="my travel plan" value="{{$inamsc->link_travel_plan}}">
-                      <small class="form-text text-muted">Once submitted you can't change your travel plan. Contact commitee for more information.</small>
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                      <label for="">Link Travel Plan: </label>--}}
+{{--                      <input class="form-control" type="text" id="link" name="link" required placeholder="my travel plan" value="{{$inamsc->link_travel_plan}}">--}}
+{{--                      <small class="form-text text-muted">Once submitted you can't change your travel plan. Contact commitee for more information.</small>--}}
+{{--                    </div>--}}
                     <hr>
                     <div class="row">
                       <div class="col-md-6">
@@ -184,23 +184,24 @@
                     <button type="button" class="save btn btn-primary btn-sm">Save</button>
                   </form>
                   @endif
-                @elseif(Auth::user()->cabang==1 && Auth::user()->lomba_verified==1)
-                  @if(Auth::user()->imsso[0]->link_travel_plan)
-                    <div class="alert alert-success">
-                      Your travel plan : {{Auth::user()->imsso[0]->link_travel_plan}}
-                    </div>
-                    <small>Contact commitee for more information.</small>
-                  @else
-                  <form class="" id="form" action="{{route('users.travel.plan.imsso')}}" method="post">
-                    @csrf
-                    <div class="form-group">
-                      <label for="">Link Travel Plan: </label>
-                      <input class="form-control" type="text" name="link" value="" required placeholder="my travel plan">
-                      <small class="form-text text-muted">By submitting this form you agree to attend the final event at Universitas Indonesia on August 22-25, 2019.<br>Once submitted you cant change your travel plan. Contact commitee for more information.</small>
-                    </div>
-                    <button type="button" class="save btn btn-primary btn-sm">Save</button>
-                  </form>
-                  @endif
+{{--                      Disabled by Adis on 23 July 2019 because of client request. No travel plan as of 23 July 2019 --}}
+{{--                @elseif(Auth::user()->cabang==1 && Auth::user()->lomba_verified==1)--}}
+{{--                  @if(Auth::user()->imsso[0]->link_travel_plan)--}}
+{{--                    <div class="alert alert-success">--}}
+{{--                      Your travel plan : {{Auth::user()->imsso[0]->link_travel_plan}}--}}
+{{--                    </div>--}}
+{{--                    <small>Contact commitee for more information.</small>--}}
+{{--                  @else--}}
+{{--                  <form class="" id="form" action="{{route('users.travel.plan.imsso')}}" method="post">--}}
+{{--                    @csrf--}}
+{{--                    <div class="form-group">--}}
+{{--                      <label for="">Link Travel Plan: </label>--}}
+{{--                      <input class="form-control" type="text" name="link" value="" required placeholder="my travel plan">--}}
+{{--                      <small class="form-text text-muted">By submitting this form you agree to attend the final event at Universitas Indonesia on August 22-25, 2019.<br>Once submitted you cant change your travel plan. Contact commitee for more information.</small>--}}
+{{--                    </div>--}}
+{{--                    <button type="button" class="save btn btn-primary btn-sm">Save</button>--}}
+{{--                  </form>--}}
+{{--                  @endif--}}
                 @endif
               </div>
           </div>
