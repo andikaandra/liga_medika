@@ -916,7 +916,7 @@ class InamscController extends Controller
     public function downloadGuidelines() {
       $myFile = storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf");
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-      return response()->download(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
+      return response()->file(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
     }
     
     public function registrationUnsuccessfull() {
