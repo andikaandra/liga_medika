@@ -110,8 +110,8 @@
                     <div class="alert alert-danger">
                       <ul>
                         <li>The final event will be held on <strong>August 22-25, 2019</strong></li>
-                        <li>If you are willing to take part in the final event, you can fill in the form taken, if you cannot follow it you can press the button below</li>
-                        <small>by pressing this button the status of your finalist will be replaced by another team</small><br><br>
+                        <li>If you are willing to take part in the final event, you can fill in the form given, if you cannot follow it you can press the button below</li>
+                       {{-- <small>by pressing this button the status of your finalist will be replaced by another team</small><br><br> --}}
                         <button type="button" class="cantattend btn btn-outline-danger btn-sm">I can't attend the final event</button>
                       </ul>
                     </div>

@@ -88,7 +88,7 @@
 
       let dataTable = $(".table").DataTable({
         responsive: true,
-        ajax: '{{url('admin/inamscs/finalists/1')}}',
+        ajax: '{{url('admin/inamscs/finalists/5')}}',
         columns: [
           {data: "id"},
           {data: "name"},

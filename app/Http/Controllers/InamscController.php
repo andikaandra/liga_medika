@@ -886,7 +886,7 @@ class InamscController extends Controller
           ->join('inamsc', 'inamsc.user_id', '=', 'users.id')
           ->where('users.cabang_spesifik', '=', $type)
           ->where('users.status_lolos', '=', '1')
-          ->where('users.temporary_state', '=', '0')
+          // ->where('users.temporary_state', '=', '0')
           ->select('*', 'users.status_lolos as status_lolos_user', 'inamsc.id as inamsc_id')
           ->get();
 
@@ -916,7 +916,7 @@ class InamscController extends Controller
     public function downloadGuidelines() {
       $myFile = storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf");
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-      return response()->download(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
+      return response()->file(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
     }
     
     public function registrationUnsuccessfull() {
