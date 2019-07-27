@@ -886,7 +886,7 @@ class InamscController extends Controller
           ->join('inamsc', 'inamsc.user_id', '=', 'users.id')
           ->where('users.cabang_spesifik', '=', $type)
           ->where('users.status_lolos', '=', '1')
-          ->where('users.temporary_state', '=', '0')
+          // ->where('users.temporary_state', '=', '0')
           ->select('*', 'users.status_lolos as status_lolos_user', 'inamsc.id as inamsc_id')
           ->get();
 
