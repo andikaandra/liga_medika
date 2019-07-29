@@ -155,11 +155,11 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="">Account Sender's name: </label>
+                          <label for="">Bank account sender's name: </label>
                           <input pattern=".*\S+.*" title="This field is required" type="text" placeholder="What is the name of the account used to send the payment?" class="form-control" name="nama_rekening" id="nama_rekening" value="{{$inamsc->nama_rekening}}">
                         </div>
                         <div class="form-group">
-                          <label for="">Amount: </label>
+                          <label for="">Amount transferred: </label>
                           <input type="text" class="price form-control" placeholder="How much did you transfer? e.g. 1.085.000" class="form-control" name="jumlah_transfer" id="jumlah_transfer" value="{{$inamsc->jumlah_transfer}}" required>
                           <small class="text-muted">Total amount.</small>
                         </div>
@@ -221,13 +221,15 @@
     $(document).on('click', '.save', function(){
       alertify.confirm('Confirmation', 'Would you like submit this form?',
       function(){
-        if (!$("#link").val()) {
-          return ; 
-        } 
+        // if (!$("#link").val()) {
+        //   return ;
+        // }
         if (!$("#nama_rekening").val()) {
+            alert("Please fill in bank account sender's name");
           return ; 
         } 
         if (!$("#jumlah_transfer").val()) {
+            alert("Please fill in amount transferred.");
           return ; 
         }
           let delegasi = $("#delegasi")[0].files.length;
