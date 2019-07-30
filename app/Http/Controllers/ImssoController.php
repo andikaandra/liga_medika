@@ -59,7 +59,11 @@ class ImssoController extends Controller
         ]);
 
         // make sure jumlah_transfer doesnt exceced max decimal capacity
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 14'
+            ]);
           return redirect()->back();
         }
 
@@ -169,7 +173,11 @@ class ImssoController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 14'
+            ]);
           return redirect()->back();
         }
 
@@ -277,7 +285,11 @@ class ImssoController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 14'
+            ]);
           return redirect()->back();
         }
 

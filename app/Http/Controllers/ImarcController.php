@@ -84,7 +84,11 @@ class ImarcController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 10'
+            ]);
           return redirect()->back();
         }
 
@@ -182,7 +186,11 @@ class ImarcController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 10'
+            ]);
           return redirect()->back();
         }
 
@@ -278,7 +286,11 @@ class ImarcController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 10'
+            ]);
           return redirect()->back();
         }
 
@@ -380,7 +392,11 @@ class ImarcController extends Controller
             'jumlah_transfer' => 'bail|required'
         ]);
 
-        if (strlen(str_replace('.','',$request->jumlah_transfer))>=10) {
+        if (strlen(str_replace('.','',$request->jumlah_transfer))>=14) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => 'Jumlah transfer >= 10'
+            ]);
           return redirect()->back();
         }
 
