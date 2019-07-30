@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ErrorValidation;
 use Validator;
 use Illuminate\Http\Request;
 use App\HFGMParticipant;
@@ -137,6 +138,10 @@ class HfgmController extends Controller
         ]);
 
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           	return redirect()
 				   ->back()
                    ->withErrors($validator)
@@ -197,6 +202,10 @@ class HfgmController extends Controller
         ]);
 
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           	return redirect()
 				   ->back()
                    ->withErrors($validator)

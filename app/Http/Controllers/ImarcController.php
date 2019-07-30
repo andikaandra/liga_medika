@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ErrorValidation;
 use Illuminate\Http\Request;
 use App\User;
 use App\Payment;
@@ -89,6 +90,10 @@ class ImarcController extends Controller
 
         // test the validator out
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -183,6 +188,10 @@ class ImarcController extends Controller
 
         // test the validator out
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -275,6 +284,10 @@ class ImarcController extends Controller
 
         // test the validator out
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -294,6 +307,10 @@ class ImarcController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -369,6 +386,10 @@ class ImarcController extends Controller
 
         // test the validator out
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
@@ -388,6 +409,10 @@ class ImarcController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
+            ErrorValidation::create([
+                'user_id' => Auth::user()->id,
+                'message' => json_encode($validator->errors())
+            ]);
           return redirect()
                       ->back()
                       ->withErrors($validator)
