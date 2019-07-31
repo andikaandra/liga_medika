@@ -113,7 +113,7 @@
                 return "Mental Health Assessment in General Practice (none)";
               }
               else {
-                return "Cognitive Function (none)";
+                return "Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult (none)";
               }
             }
           },

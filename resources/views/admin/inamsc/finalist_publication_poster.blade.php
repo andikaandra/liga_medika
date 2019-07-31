@@ -150,7 +150,7 @@
             faqq = "Mental Health Assessment in General Practice";
           }
           else if (el.workshop == 3) {
-            faqq = "Cognitive Function";
+            faqq = "Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult";
           }
           $(".participants").append(`
             <div class="participant">
