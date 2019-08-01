@@ -918,7 +918,14 @@ class InamscController extends Controller
       $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
       return response()->file(storage_path("app/public/committee-files/Preliminary Guideline INAMSC 2019.pdf", 'Preliminary Guideline INAMSC 2019.pdf', $headers));      
     }
-    
+
+    public function downloadGuidelinesFinalist() {
+      $myFile = storage_path("app/public/committee-files/GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf");
+      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
+      return response()->file(storage_path("app/public/committee-files/GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf", 'GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf', $headers));      
+    }
+  
+
     public function registrationUnsuccessfull() {
       return "Registration unsuccessful. Please contact commitee.";
     }

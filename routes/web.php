@@ -33,6 +33,7 @@ Route::get('/email/verify/{token}', 'Auth\VerificationController@verify');
 Route::get('inamsc/guidelines', 'InamscController@downloadGuidelines');
 Route::get('imarc/guidelines', 'ImarcController@downloadGuidelines');
 Route::get('imsso/guidelines', 'ImssoController@downloadGuidelines');
+Route::get('inamsc/finalist-guidelines', 'InamscController@downloadGuidelinesFinalist');
 
 // admin
 Route::prefix('admin')->middleware(['admin_only'])->group(function () {
