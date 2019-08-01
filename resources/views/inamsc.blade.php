@@ -51,7 +51,7 @@
 				<a href="{{url('register')}}" class="inamsc-btn mb-3">Register INAMSC</a>		
 				<br>
 				
-				<p style="color: white">Semifinalist and Finalist Guideline INAMSC 2019</p><a href="{{url('inamsc/finalist-guidelines?v=1.1')}}" class="btn btn-warning">Download Here</a>
+				<p style="color: white">Semifinalist and Finalist Guideline INAMSC 2019</p><a href="{{url('inamsc/finalist-guidelines?v=1.2')}}" class="btn btn-warning">Download Here</a>
 				<br>
 				<a href="{{url('/inamsc-ambassador')}}" class="inamsc-ambassador-btn mt-5 ">INAMSC Ambassador Programme</a>
 

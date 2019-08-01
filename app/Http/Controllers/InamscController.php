@@ -920,9 +920,7 @@ class InamscController extends Controller
     }
 
     public function downloadGuidelinesFinalist() {
-      $myFile = storage_path("app/public/committee-files/GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf");
-      $headers = array('Content-Type: application/octet-stream','Content-Length: '. filesize($myFile));
-      return response()->file(storage_path("app/public/committee-files/GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf", 'GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.pdf', $headers));      
+      return response()->download(storage_path("app/public/committee-files/GUIDELINE FOR SEMIFINALIST AND FINALIST INAMSC 2019.zip"));
     }
   
 
