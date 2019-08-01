@@ -94,7 +94,7 @@
                   @else
                     <div class="alert alert-info">
                       <ul>
-                        <li>You can find guideline for semifinalist and finalist <a href="{{ url('users/guidelines/inamsc/finalist') }}">here</a></li>
+                        <li>You can find guideline for semifinalist and finalist, and INAMSC 2019 logo <a href="{{url('inamsc/finalist-guidelines?v=1.2')}}">here</a></li>
                         <li><strong>Every</strong> INAMSC Finalist are required to attend one of the following workshops</li>
                         <li>International Accreditation Certificate is only for Less Stress for Future Doctors: an Introduction to PRH workshop</li>
                         <li>The final registration fee for each participant is Rp1.085.000 for <strong>National Participant</strong>, 78 USD for <strong>International participant</strong>. For example your team consists of 3 participants then the final price would be Rp3.255.000 or </li>
