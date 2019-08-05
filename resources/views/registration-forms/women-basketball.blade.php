@@ -166,6 +166,9 @@
       if ($('#jumlahPeserta').val()==0) {
         e.preventDefault();
       }
+        $('.container-fluid.page-body-wrapper').loading({
+            message: 'Uploading registration data. Do not refresh or close your browser.'
+        });
         $('#daftarPeserta').val($('#jumlahPeserta').val());
     });
 

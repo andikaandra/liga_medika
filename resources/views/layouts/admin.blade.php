@@ -28,6 +28,7 @@
 
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
     <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('css/loading.css')}}">
     <style media="screen">
     .progressbar {
        counter-reset: step;
@@ -167,6 +168,7 @@
     <script src="{{asset('js/jquery.mask.min.js')}}" charset="utf-8"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
+    <script src="{{asset('js/loading.js')}}"></script>
     <script type="text/javascript">
       $.ajaxSetup({
         headers: {
