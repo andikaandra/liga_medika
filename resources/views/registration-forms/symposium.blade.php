@@ -67,8 +67,8 @@
               <div class="form-group">
                 <label for="">Workshop Options: </label>
                 <select class="custom-select" id="workshop" name="workshop">
-                  <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option>
-                  <option value="2">Mental Health Assessment in General Practice</option>
+                  {{-- <option value="1" selected>Less Stress for Future Doctors: an Introduction to PRH</option> --}}
+                  <option value="2" selected>Mental Health Assessment in General Practice</option>
                   <option value="3">Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
                 </select>
               </div>
