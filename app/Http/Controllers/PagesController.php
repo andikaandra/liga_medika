@@ -41,4 +41,19 @@ class PagesController extends Controller
     public function faq() {
         return view('faq');
     }
+
+    public function generalGuidelinesImsso()
+    {
+        return response()->download(public_path('guidelines/imsso/imsso_2019_guidelines.pdf'));
+    }
+
+    public function basketballGuidelines()
+    {
+        return response()->download(public_path('guidelines/imsso/basketball_guidelines.pdf'));
+    }
+
+    public function miniSoccerGuidelines()
+    {
+        return response()->download(public_path('guidelines/imsso/mini_soccer_guidelines.pdf'));
+    }
 }
