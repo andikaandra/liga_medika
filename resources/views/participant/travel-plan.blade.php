@@ -125,8 +125,8 @@
                       <div class="form-group">
                         <label for="">Workshop Options: </label>
                         <select class="custom-select text-muted" id="workshop" name="workshop[]" required>
-                          <option value="1" {{$participant->workshop == 1 || $participant->workshop == null ? 'selected' : ''}}>Less Stress for Future Doctors: an Introduction to PRH</option>
-                          <option value="2" {{$participant->workshop == 2 ? 'selected' : ''}}>Mental Health Assessment in General Practice</option>
+                          <option disabled>Less Stress for Future Doctors: an Introduction to PRH (Full)</option>
+                          <option value="2" {{$participant->workshop == 1 || $participant->workshop == 2 || $participant->workshop == null ? 'selected' : ''}}>Mental Health Assessment in General Practice</option>
                           <option value="3" {{$participant->workshop == 3 ? 'selected' : ''}}>Assessment of schizophrenia in primary health care: mental disease with common occurence in young adult</option>
                         </select>
                       </div>
