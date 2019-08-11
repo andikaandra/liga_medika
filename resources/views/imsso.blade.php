@@ -52,8 +52,8 @@
                 <br><br>
                 <p style="color: white">Download IMSSO General Guideline, Basketball, and Mini Soccer Guideline.</p>
                     <a target="_blank" href="{{url('guidelines/imsso2019')}}" class="btn btn-info">General</a>
-                    <a target="_blank" href="{{url('guidelines/basketball2019')}}" class="btn btn-info">Basketball</a>
-                    <a target="_blank" href="{{url('guidelines/minisoccer2019')}}" class="btn btn-info">Mini Soccer</a>
+                    <a target="_blank" href="{{url('guidelines/basketball2019?v=1.1')}}" class="btn btn-info">Basketball</a>
+                    <a target="_blank" href="{{url('guidelines/minisoccer2019?v=1.1')}}" class="btn btn-info">Mini Soccer</a>
 				<br>
 			</div>
 		</div>
