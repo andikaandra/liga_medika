@@ -95,8 +95,12 @@ class ParticipantController extends Controller
 
     // TODO: Travel Plan
     public function travelPlanPage() {
+      // only for inamsc
+      if (Auth::user()->cabang==3) {
         $inamsc = INAMSC::find(Auth::user()->inamscs[0]->id);
         return view('participant.travel-plan', ['inamsc' => $inamsc]);
+      }
+      return redirect()->action('ParticipantController@index');
     }
     // TODO: Travel Plan
     public function travelPlanInamsc(Request $request) {
