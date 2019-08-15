@@ -290,7 +290,7 @@
 </section>
 <section class="exibition-area service-area">
     <br><br><br>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="menu-content col-lg-10">
                 <div class="title text-center">
@@ -304,12 +304,12 @@
         </div>
         <br>
         <div class="row justify-content-center mt-5">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/bank_BJB.png')}}">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/bantex.png')}}">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/BI.png')}}">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/jasa_raharja.png')}}">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/pegadaian.png')}}">
-            <img class="img-fluid m-3" style="height: 80px" src="{{asset('img/sponsor/mandiri.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/bank_BJB.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/bantex.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/BI.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/jasa_raharja.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/pegadaian.png')}}">
+            <img class="img-fluid m-3" style="height: 110px" src="{{asset('img/sponsor/mandiri.jpg')}}">
         </div>
         <br>
         <div class="row justify-content-center mt-5">
