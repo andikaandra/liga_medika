@@ -80,14 +80,15 @@
                     <h1 class="text-white">
                         Liga Medika 2019			
                     </h1>
-                </div>  
-                <h2 class="text-white mb-3">COMING SOON AUGUST 17-25 2019</h2>
-                <div style="text-align: center;" class="d-none d-md-block">
-                    <div class="clock" style="display: inline-block; width: auto; margin:2em;"></div>
                 </div>
-                <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>
-                
-  
+                <div id="coming-soon" style="display: block;">
+                    <h2 class="text-white mb-3">COMING SOON AUGUST 17-25 2019</h2>
+                    <div style="text-align: center;" class="d-none d-md-block">
+                        <div class="clock" style="display: inline-block; width: auto; margin:2em;"></div>
+                    </div>
+                    <a href="{{url('register')}}" class="primary-btn text-uppercase">Register Here</a>                    
+                </div>
+
             </div>											
         </div>
     </div>					
@@ -343,6 +344,8 @@
                 clockFace: 'DailyCounter',
                 countdown: true
             });            
+        } else {
+            $("#coming-soon").css('display', 'none')
         }
     });
 </script>
