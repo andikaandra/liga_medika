@@ -56,4 +56,9 @@ class PagesController extends Controller
     {
         return response()->download(public_path('guidelines/imsso/mini_soccer_guidelines.pdf'));
     }
+
+    public function downloadMedicalSop()
+    {
+        return response()->download(public_path('guidelines/imsso/medical_sop.pdf'));
+    }
 }

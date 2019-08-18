@@ -326,3 +326,4 @@ Route::prefix('users')->middleware(['participant_only'])->group(function () {
 Route::get('/guidelines/imsso2019', 'PagesController@generalGuidelinesImsso');
 Route::get('/guidelines/basketball2019', 'PagesController@basketballGuidelines');
 Route::get('/guidelines/minisoccer2019', 'PagesController@miniSoccerGuidelines');
+Route::get('/guidelines/medical-sop', 'PagesController@downloadMedicalSop');

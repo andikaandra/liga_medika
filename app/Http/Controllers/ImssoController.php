@@ -440,5 +440,4 @@ class ImssoController extends Controller
     public function downloadTemplates() {
       return response()->download(storage_path("app/public/committee-files/imsso-template.zip"));
     }
-
 }

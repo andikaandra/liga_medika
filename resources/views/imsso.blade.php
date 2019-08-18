@@ -54,7 +54,9 @@
                     <a target="_blank" href="{{url('guidelines/imsso2019?v=1.1')}}" class="btn btn-info">General</a>
                     <a target="_blank" href="{{url('guidelines/basketball2019?v=1.1')}}" class="btn btn-info">Basketball</a>
                     <a target="_blank" href="{{url('guidelines/minisoccer2019?v=1.1')}}" class="btn btn-info">Mini Soccer</a>
-				<br>
+				<br><br>
+                <p style="color: white">Download Medical SOP</p>
+                    <a class="btn btn-warning" href="{{url('guidelines/medical-sop?v=1.0')}}" target="_blank">Medical SOP</a>
 			</div>
 		</div>
 		</div>
