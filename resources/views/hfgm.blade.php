@@ -103,6 +103,8 @@
 	        </div>
 		</div>
 	</section>
+	<hr>
+	@include('partials.sponsor')
 @endsection
 
 
